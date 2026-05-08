@@ -1,0 +1,197 @@
+# Debate 001 — Laws Count Cap and Multi-Repo Scaling
+
+> **Status:** decided.
+> **Opened:** 2026-05-08
+> **Decided:** 2026-05-08
+> **Decided by:** project owner
+> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md), specifically the "≤ 5 Immutable Laws" and "≤ 5 Guiding Principles" caps.
+> **Raised by:** project owner during Phase 1 debate.
+
+---
+
+## The Question
+
+The Phase 1 draft caps both Immutable Laws and Guiding Principles at five. What happens when a project is large enough to span multiple repositories, multiple services, or multiple product domains?
+
+Two candidate fixes were proposed:
+
+- **A.** Increase the cap (5 → 10 → 15) so a single Astronomican can carry more concerns.
+- **B.** Split into multiple smaller Astronomicans, one per repo / service / domain.
+
+Both are debated below, alongside a third option that emerged from the analysis.
+
+---
+
+## Option A — Increase the cap
+
+**Why it sounds reasonable**
+- Larger projects have more concerns.
+- Five Laws may exclude critical domain-specific items.
+
+**Why it fails**
+- The "≤ 5" cap is not arbitrary. It is grounded in cognitive load and recall (Miller's working-memory range, ~5 ± 2).
+- The Phase 1 quality gate "recite without reading" breaks at 10+ items, and is impossible at 15.
+- Each added Law is an additional interpretation surface — divergence in the stress test grows with item count.
+- The purpose of the Astronomican is *to bind*. The longer the document, the fewer people read it carefully, the less it binds. This is Goodhart's Law: optimizing for "comprehensive" destroys "recallable".
+- Real-world precedent: AWS Leadership Principles has 16 items and is itself criticized inside Amazon for being too many to internalize.
+
+**Verdict:** Increasing the cap defeats the framework's recall and binding premises. **Reject.**
+
+---
+
+## Option B — Flat split into many small Astronomicans
+
+**Why it sounds reasonable**
+- Each repo / service has its own context.
+- Local teams own local concerns.
+
+**Why it fails**
+- This is the failure mode of the United States under the **Articles of Confederation** (1781–1789): each state held sovereign authority with no enforceable federal level above. Coordination on currency, defense, and interstate commerce broke down within years; the Constitutional Convention was convened explicitly to fix it.
+- Same pattern in the late Holy Roman Empire — nominal central authority over hundreds of de facto sovereign principalities, persistent fragmentation until dissolution in 1806.
+- More recently, Yugoslavia after Tito: federation without a credible binding authority above the constituent republics, which fractured violently in the 1990s.
+- Cross-repo decisions have no anchor — each team interprets per its own Astronomican, and drift accumulates across the org.
+- Dead Light exists to defend against fragmentation, not to manufacture it.
+
+**Verdict:** Flat split recreates the failure mode that constitutional federations were invented to prevent. **Reject.**
+
+---
+
+## Option C — Hierarchical: Imperial + Sector Astronomicans
+
+This is the recommendation. It borrows from established precedent rather than inventing structure.
+
+### Precedent (real-world systems with this structure)
+
+| Source | Structure | Track record |
+|---|---|---|
+| United States constitutional federalism | Federal Constitution + state constitutions; Supremacy Clause prevents states from contradicting federal law. | Stable since 1789 (with one civil war as a known stress event). |
+| German cooperative federalism | Basic Law (Grundgesetz) + Länder constitutions; concurrent powers explicitly enumerated. | Stable since 1949. |
+| Catholic Church | Canon Law (universal) + diocesan and parish-level customs within canon limits. | ~1.3 billion members across 200+ countries; doctrinal coherence over ~2,000 years. |
+| Linux kernel | Kernel-wide coding standards + per-subsystem maintainer rules. | 30+ years, 10,000+ contributors, no schism. |
+| Toyota Production System | TPS principles (corporate, immutable) + plant-level kaizen within TPS frame. | 70+ years across global manufacturing footprint. |
+| AWS | Leadership Principles (corporate-wide) + per-team Tenets. | Corporate-scale precedent; deliberately scoped to avoid Tenets contradicting Principles. |
+| Spotify model | Tribe Mission + Squad missions. | Industry-cited even though Spotify itself has since modified the model — the two-tier pattern persists. |
+
+### Proposed structure
+
+```
+Imperial Astronomican (project / org level)
+  ≤ 5 Imperial Laws         — bind EVERY sector
+  ≤ 5 Imperial Principles   — guide EVERY sector
+  Imperial Boundaries
+
+  └── Sector Astronomican (per repo / service / domain)
+        Inherits all Imperial Laws (immutable; cannot be relaxed)
+        Adds ≤ 5 Local Laws (cannot contradict Imperial)
+        Adds ≤ 5 Local Principles
+        Sector Boundaries
+        Sector Ascension Council (subset of Imperial Council + local leads)
+        Sector Re-consecration scope (limited to local)
+```
+
+### Core rule
+
+> **Sectors inherit and add — never relax.**
+> A Sector Law cannot be softer than the Imperial Law it descends from. It may be stricter.
+
+### Why this works
+
+- **Cognitive load stays bounded.** At any level a participant carries ≤ 5 + 5 in working memory; inherited Laws are glanced at when needed, not memorized fresh.
+- **Hierarchical authority is explicit.** Imperial Council can override Sector decisions; the reverse is impossible.
+- **Local autonomy is real.** A Sector team adds local concerns without needing Imperial approval.
+- **No cross-org drift.** Imperial Laws still bind everyone, regardless of how many Sectors exist.
+
+---
+
+## When does a project trigger Sector splitting?
+
+Default: **single Astronomican.** Do not split early.
+
+A project should adopt Sector Astronomicans only when **all** of the following are true:
+
+- ≥ 2 repos / services that deploy independently
+- Each repo has a dedicated team or on-call rotation
+- Cross-team contracts (API, schema) exist and must be negotiated
+- Genuinely local decisions exist that the Imperial Council should not be making
+
+Below this threshold:
+- Monorepo with one team → **do not split.** Use Codex per Chapter for agent governance and ADRs for tech specifics.
+- Single service with many modules → **do not split.**
+
+---
+
+## Naming proposal
+
+**Sector Astronomican.** "Sector" is a generic organizational term used in militaries, economies, and federations — it carries the right semantic load (a defined sub-area of a larger whole) without requiring any specific cultural context. Combined with "Astronomican" it stays consistent with the framework's existing vocabulary.
+
+Alternatives considered and rejected:
+
+| Name | Rejected because |
+|---|---|
+| Sub-Astronomican | Flat and unevocative; reads as a versioning suffix. |
+| Domain Charter | Generic methodology language; loses continuity with the framework's vocabulary. |
+| Local Astronomican | Suggests the local artifact replaces the global one rather than nesting under it. |
+| Sector Charter | Mixes vocabularies (charter is a methodology term; Astronomican is the framework's term). |
+
+---
+
+## Application to LoreWeave
+
+LoreWeave currently has at least six services in `contracts/api/`: identity, books, catalog, model-billing, model-registry, sharing.
+
+This is the textbook trigger condition for Sector Astronomicans:
+- One Imperial Astronomican for the LoreWeave platform (e.g. canon integrity, single knowledge gateway, author owns narrative, …).
+- Sector Astronomicans for individual service clusters where genuinely local concerns exist (e.g. identity vs catalog have very different concerns about data sensitivity, latency, and consistency).
+
+Hypothesis: part of LoreWeave's repeated scope changes may stem from having no tier separation — every decision lands at the same level, so every change is felt across the whole platform. A hierarchical structure would localize most changes to the Sector level and leave the Imperial core untouched.
+
+---
+
+## Impact on Phase 1
+
+If the Sector tier is accepted, Phase 1 must address:
+
+- Phase 1 runs at the **Imperial level first** (mandatory).
+- Sector Phase 1 runs only **after** the Imperial Astronomican is sealed (ordering cannot be reversed).
+- Re-consecration at the Sector level **does not** require convening the Imperial Council.
+- Re-consecration at the Imperial level **invalidates** all Sector inheritance and forces every Sector to re-review.
+
+The Phase 1 draft will need a "Sector variant" subsection covering the same activities with adjusted inputs (Imperial Astronomican already exists) and roles (Sector Council = subset of Imperial Council + local leads).
+
+---
+
+## Open questions remaining (carry forward if accepted)
+
+1. **More than two tiers?** Could the framework allow Imperial → Sub-sector → Sector → … ? Recommendation: **no.** Two tiers cover ~99% of cases. Three or more tiers tend to reproduce known historical drift patterns: the late Roman Empire's reforms (Praetorian Prefectures → Dioceses → Provinces) had decreasing central control at each step; the Holy Roman Empire (Empire → Imperial Circles → Principalities → Imperial Cities) was chronically dysfunctional with no level able to enforce against the others; the Soviet system (Union → Republics → ASSRs → Oblasts → Raions) showed cumulative attenuation that contributed to coordination failure in late stages.
+2. **Inter-Sector conflict.** Two Sectors hold local Laws that contradict each other but not Imperial. Resolution path? Proposed: escalate to Imperial Council; leave unresolved if there is no cross-impact.
+3. **Late-added Sector.** A team wants to add a Sector six months after Imperial sealing. Same Phase 1 process? Proposed: yes, but with the Imperial Astronomican as a fixed input, not subject to debate.
+
+---
+
+## Recommendation (TL;DR)
+
+- **No** — do not raise the cap above 5.
+- **No** — do not flat-split into independent Astronomicans.
+- **Yes** — adopt the hierarchical Imperial + Sector model with the inherit-and-add rule.
+- **Trigger** — split into Sectors only when multi-repo + dedicated teams + cross-team contracts + genuinely local decisions are all present.
+- **Default** — single Astronomican; do not split early.
+
+---
+
+## Decision
+
+- **Decision:** Adopt **Option C — Hierarchical Imperial + Sector Astronomicans** with the inherit-and-add rule. Default is single Astronomican; split only when all trigger conditions are met.
+- **Decided on:** 2026-05-08
+- **Decided by:** project owner
+- **Follow-up actions:**
+  - [x] Update [phase-1-for-debate.md](../phase-1-for-debate.md) with a Scaling section covering Imperial and Sector variants and the ordering rule (Imperial before Sector).
+  - [x] Update [debates/README.md](README.md) index to status `decided`.
+  - [ ] When mapping to LoreWeave, evaluate whether its current 6 services in `contracts/api/` warrant Sector Astronomicans or whether a single platform Astronomican is sufficient at this stage.
+
+## Methodological note (applies forward to all framework analysis)
+
+Justification in this debate originally cited Warhammer 40,000 lore (Horus Heresy, Imperium drift modes) as evidence. That citation was removed because **fictional settings do not constitute evidentiary precedent**. Going forward in Dead Light Framework documentation:
+
+- Warhammer 40,000 vocabulary (Astronomican, High Lords, Chapters, Codex, Heresy, Sector, …) is used purely as **naming and shared metaphor** — chosen for memorability and identity.
+- All justification, structural arguments, and assessments of effectiveness must rest on **real-world organizational systems with observable track records** — constitutional federalism, religious institutions, military doctrine, established corporate practice, open-source governance, established software methodologies, and similar.
+- Where the 40k name and the real-world precedent diverge in implication, the real-world precedent governs the design; the name is then either kept as flavor or revised.
