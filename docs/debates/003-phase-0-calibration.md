@@ -21,7 +21,7 @@ Phase 0 was authored with four open questions deferred to a focused close-out de
 PM owns the threshold. Should the framework offer a default heuristic to anchor PM judgment, or leave it fully unguided?
 
 ### Real-world anchor
-Audit standards (ISA, GAAP) define materiality with both quantitative and qualitative anchors; preparers tune to context. PMBOK / PRINCE2 provide categorical guidance on what counts as a tracked project change. Architecture review board practice typically uses thresholds like "affects > 2 services" or "creates a cross-team contract." Postmortem severity tiers (S1/S2/S3 in Etsy / Google SRE) anchor judgment while leaving project-specific calibration to teams. The pattern across all four: **categorical anchor + numeric flexibility**.
+Audit standards (ISA, GAAP) define materiality with both quantitative and qualitative anchors; preparers tune to context. PMBOK / PRINCE2 (current PRINCE2 7th edition, 2023) provide categorical guidance on what counts as a tracked project change. Architecture review board practice typically uses **organization-defined** thresholds — common examples include "affects > 2 services" or "creates a cross-team contract" — but specific cut-offs vary by team and are not standardized across the industry. Postmortem severity tiers (S1/S2/S3 in Etsy / Google SRE) anchor judgment while leaving project-specific calibration to teams. The pattern across all four: **categorical anchor + numeric flexibility**.
 
 ### Proposed answer
 Framework provides a **categorical heuristic; PM tunes numbers and may extend or override.** Non-binding default.
@@ -65,7 +65,7 @@ The two "when … permits" softeners cover small / young projects where the rule
 PM sets a time budget for Phase 0. Is it a soft target or hard stop? What happens if quality gates are not met within the budget?
 
 ### Real-world anchor
-Agile timeboxing uses hard time and treats scope as the variable. PRINCE2 stages use soft time with a formal extension process. Toyota's kaizen events (typically 5 days) hard-time and adjust scope. PMBOK tracks variance and escalates when off-budget. The shared logic: **hard limits force pressure; structured escalation prevents corner-cutting**.
+Agile timeboxing (the Iron Triangle pattern) uses hard time and treats scope as the variable. PRINCE2 stages use soft time with a formal extension process via the tolerance pattern. Toyota's kaizen events (typically 3–5 days; US convention 3–5) hard-time and adjust scope. PMBOK tracks variance and escalates when off-budget. The shared logic: **hard limits force pressure; structured escalation prevents corner-cutting**.
 
 ### Proposed answer
 **Soft target with structured escalation** (rejects both pure hard-stop and pure unbounded).

@@ -281,7 +281,7 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 |---|---|
 | Five pre-work questions | Borrowed from Agile Inception Deck |
 | NOT list / Boundaries | Borrowed from Agile Inception Deck |
-| Sign-off ceremony | Borrowed from RUP Lifecycle Objective Milestone + PRINCE2 PID approval |
+| Sign-off ceremony | Borrowed from RUP Lifecycle Objective Milestone + PRINCE2 PID approval (current PRINCE2 7th edition, 2023; PID approval is structurally consistent across recent editions) |
 | Re-consecration playbook structure | Borrowed from PRINCE2 Change Control, with stricter cost |
 | Stakeholder register pattern | Borrowed from PMBOK |
 | **Two-tier hardness (Laws / Principles)** | Novel |
