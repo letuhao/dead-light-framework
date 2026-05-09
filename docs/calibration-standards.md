@@ -15,9 +15,9 @@ For Phase 0 Q1 (Past Decisions Catalog significance threshold) and Phase 1 Recko
 | Standard | Source | Formula / mechanism | Application |
 |---|---|---|---|
 | **ITIL Change Management — change tiers** | AXELOS, ITIL 4 (2019) | Categorical: Standard / Normal / Emergency, by impact × urgency matrix | Adapt the impact-urgency matrix to architectural decisions: e.g., Standard = within-service, Normal = cross-service, Emergency = cross-platform. |
-| **ISA 320 / GAAP / IFRS materiality** | International Standards on Auditing 320 (IAASB); Generally Accepted Accounting Principles | Quantitative: typically 5–10% of relevant base (revenue, assets, expenses) | For software: 5–10% of project budget, KLOC, or effort. A decision affecting more than this base is "material". |
+| **ISA 320 materiality (judgement framework)** | IAASB, *ISA 320: Materiality in Planning and Performing an Audit* (current edition). Note: ISA 320 itself prescribes **professional judgement**, not fixed percentages. | ISA 320 §A8 illustrative examples: **5% of profit before tax** (profit-oriented manufacturing entity), **1% of total revenue or expenses** (not-for-profit entity). Practitioner methodology heuristics commonly cited in firm guidance and the CEAOB 2022 materiality survey: **3–10% of PBT**, or **0.5–2% of revenue**. | For software: adapt the *judgement discipline* (pick a base meaningful to the project, apply a defensible percentage, document rationale) — e.g., 5–10% of project budget or effort if budget/effort is the meaningful base, or 0.5–2% of a revenue-equivalent metric. The standard supplies the framework for choosing; the percentage is a practitioner convention, not an ISA 320 mandate. |
 | **PMBOK Earned Value Management variance thresholds** | PMI, *PMBOK Guide* (current edition) | Schedule Variance (SV), Cost Variance (CV), Schedule Performance Index (SPI), Cost Performance Index (CPI). Typical thresholds: SPI/CPI < 0.9 or > 1.1 triggers review. | Adapt: a decision that produced > 10% schedule or cost variance is significant by definition. |
-| **CMMI Causal Analysis & Resolution (CAR)** | SEI, CMMI for Development v2.0 (2018) | Historical baseline of decision rate per project size (KLOC, function points, story points) | `expected_decisions = historical_rate × project_size × adjustment`. Backward-tune significance threshold to filter to roughly that count. |
+| **CMMI Causal Analysis & Resolution (CAR)** | CMMI Institute (ISACA), *CMMI Development V3.0* (2023; successor to v2.0 released 2018, retired June 2024) | Historical baseline of decision rate per project size (KLOC, function points, story points) | `expected_decisions = historical_rate × project_size × adjustment`. Backward-tune significance threshold to filter to roughly that count. |
 | **ITIL Incident Severity tiers** | AXELOS, ITIL 4 | Sev1 / Sev2 / Sev3 / Sev4 by % users affected + $ revenue impact + downtime duration | Adapt for "decision blast radius": Sev1 = whole platform, Sev2 = a service, Sev3 = a module, Sev4 = a file. |
 
 ---
@@ -116,10 +116,10 @@ For organizations operating at CMMI L4 (Quantitatively Managed) or L5 (Optimizin
 
 | CMMI practice | Source | Mechanism |
 |---|---|---|
-| **Process Performance Baselines (PPB)** | SEI, CMMI for Development v2.0 (2018) | Historical mean and variance of process metrics, established as the baseline for new projects |
-| **Quantitative Project Management (QPM)** | CMMI v2.0 process area | Setting and managing project quantitative objectives derived from PPB |
+| **Process Performance Baselines (PPB)** | CMMI Institute (ISACA), *CMMI Development V3.0* (2023; successor to v2.0 released 2018, retired June 2024) | Historical mean and variance of process metrics, established as the baseline for new projects |
+| **Quantitative Project Management (QPM)** | CMMI V3.0 high-maturity Practice Area (in v3.0, capability levels 4 and 5 are eliminated; high-maturity practices apply across CL 1–3) | Setting and managing project quantitative objectives derived from PPB |
 | **Statistical Process Control (SPC)** | Walter Shewhart (1931); industrial application standard | Control charts (X̄, R, p, c) to detect out-of-control variation |
-| **Causal Analysis & Resolution (CAR)** | CMMI v2.0 process area | Identify root causes of defects and other problems for systemic resolution |
+| **Causal Analysis & Resolution (CAR)** | CMMI V3.0 high-maturity Practice Area (in v3.0, capability levels 4 and 5 are eliminated; high-maturity practices apply across CL 1–3) | Identify root causes of defects and other problems for systemic resolution |
 
 When applicable, all Phase 0 calibration questions become PPB lookups rather than PM judgment.
 
@@ -153,7 +153,7 @@ The current adoption status is tracked per phase in each phase's `*-for-debate.m
 - Nagappan, N., Ball, T. "Use of Relative Code Churn Measures to Predict System Defect Density." *ICSE*, 2005.
 - PMI. *PMBOK Guide.* Latest edition.
 - Putnam, L. *Measures for Excellence.* Yourdon Press, 1992.
-- SEI. *CMMI for Development v2.0.* 2018.
+- CMMI Institute (ISACA). *CMMI Development V3.0.* 2023. (Successor to v2.0, released 2018; v2.x retired June 2024.)
 - Skelton, M., Pais, M. *Team Topologies.* IT Revolution, 2019.
 - AXELOS. *ITIL 4 Foundation.* 2019.
 - IAASB. *International Standard on Auditing 320: Materiality in Planning and Performing an Audit.*

@@ -40,8 +40,8 @@ Before convening the Ascension Council:
 
 1. **Read prior context.** Council reads the Project mandate together, plus a record of what has previously failed (if any).
 2. **Define The Purpose.** One sentence, by full consensus. If consensus fails, Phase 1 stops here — the project itself is not aligned, and that is the real problem to solve first.
-3. **Draft Immutable Laws.** Propose, stress-test, prune. Maximum five.
-4. **Draft Guiding Principles.** Propose, stress-test, prune. Maximum five.
+3. **Draft Immutable Laws.** Propose, stress-test, prune. **Hard cap 9; target ~7** (Miller 7±2 working-memory range; see [debate 004](debates/004-cap-revision-miller-correction.md)). Below 5 is permitted for narrowly-scoped projects but is reviewed by the Council, not auto-padded.
+4. **Draft Guiding Principles.** Propose, stress-test, prune. **Hard cap 9; target ~7** (same anchor as Laws).
 5. **Define Boundaries.** Concrete list of what the project is NOT.
 6. **Stress test the whole.** Run 5–10 hard scenarios. Each Council member decides independently using the Astronomican, then results are compared. Divergence is a signal of remaining vagueness — fix immediately.
 7. **Sealing ceremony.** All Council members sign. The document is committed to immutable storage (signed git tag or equivalent).
@@ -87,7 +87,7 @@ Phase 1 is NOT done until all of the following are true:
 | Council cannot agree on Purpose after two rounds | Disagreement is upstream of Phase 1 — the project itself is not aligned. Stop and resolve before continuing. |
 | Laws read as platitudes ("good code", "best UX") | Too vague — will not be enforceable. |
 | Laws read as coding instructions ("use PostgreSQL", "use React") | Too specific — belong in Codex or ADR, not the Astronomican. |
-| More than 5 Laws or 5 Principles | Bloat. Each extra item adds an interpretation surface. Force a cut. |
+| More than 9 Laws or 9 Principles | Bloat — past Miller's upper bound (7±2). Each extra item adds an interpretation surface and breaks the recall premise. Force a cut. (Cap revised in [debate 004](debates/004-cap-revision-miller-correction.md).) |
 | Document keeps being edited after "sealing" | The seal was symbolic only — either ceremony was skipped or the Council lacked binding authority. |
 | Stress-test divergence > 20% | Wording is still ambiguous; humans and agents will interpret differently at runtime. |
 | Boundaries section is empty | The project will scope-creep. Boundaries are the vaccine; an empty list means no immunity. |
@@ -173,7 +173,7 @@ Below this threshold: keep a single Astronomican. Use Codex per Chapter for agen
 ### Sector Astronomican
 
 - **Inherits all Imperial Laws** — they cannot be relaxed, only tightened.
-- Adds up to 5 local Laws and 5 local Principles within Imperial bounds.
+- Adds up to 9 local Laws and 9 local Principles (target ~7) within Imperial bounds. Same Miller-7±2 anchor as the Imperial cap; see [debate 004](debates/004-cap-revision-miller-correction.md).
 - Has its own Boundaries.
 - Sealed by a Sector Ascension Council (subset of Imperial Council + local leads).
 - Re-consecration scope is local; Imperial-level Re-consecration invalidates all Sector inheritance and forces every Sector to re-review.

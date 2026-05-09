@@ -27,3 +27,4 @@ Keeping them separate means:
 | [001](001-laws-count-and-multirepo-scaling.md) | Laws Count Cap and Multi-Repo Scaling | decided | 2026-05-08 | 2026-05-08 |
 | [002](002-retrofit-vs-greenfield.md) | Retrofit vs Greenfield Application of Phase 1 | decided | 2026-05-08 | 2026-05-08 |
 | [003](003-phase-0-calibration.md) | Phase 0 Calibration (significance, team, time-box, greenfield variant) | decided | 2026-05-08 | 2026-05-08 |
+| [004](004-cap-revision-miller-correction.md) | Cap Revision: Miller Citation Correction (5±2 → 7±2; cap → 5–9 target ~7) | decided | 2026-05-09 | 2026-05-09 |

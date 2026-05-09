@@ -151,3 +151,64 @@ Recommended ordering if doing Phase work over LoreWeave: #3 (short close-out) �
 - Branch: `main`
 - Uncommitted changes: present (HANDOFF.md is new; many doc additions / edits in this session were not committed). Check `git status` to confirm.
 - No external dependencies, no build, no tests — this is a documentation repository.
+
+---
+
+## Post-handoff updates — 2026-05-09 (Session 2)
+
+### IVP audit infrastructure added
+
+A formal audit workflow was specified and a rodage pass was executed against the framework.
+
+- **`docs/audit/independent-verification-pass-for-debate.md`** — full IVP methodology spec: 7 phases (inventory → citation verification → citation appropriateness → argument analysis → internal consistency → external benchmarking → synthesis), pre-registered rubric, industry-pragmatic source tier hierarchy, anti-bias guardrails (symmetric search, mandatory audit trail, falsifiability test, separation of audit-from-authoring).
+- **`.claude/commands/ivp.md`** — slash command `/ivp [scope]` to re-run IVP from the spec.
+- **`docs/audit/inventory.md`** — Phase 1 output: 44 load-bearing claims, 76 distinct citations, 40 defined terms, 11 analogy invocations.
+- **`docs/audit/findings-2026-05-08.md`** — Phase 2 partial output: 30 citations rigorously verified (17 VERIFIED, 11 PARTIAL, 1 CONTRADICTED, 0 UNVERIFIABLE); 3 HIGH, 4 MEDIUM, 6 LOW findings; 46 citations queued for full pass.
+
+### HIGH findings remediated (this session)
+
+| Finding | Action | Reflected in |
+|---|---|---|
+| F-01 — Miller's number cited as ~5±2; actual is 7±2 (CONTRADICTED) | Citation corrected; cap revised from `≤ 5` to `5–9 target ~7` (within Miller's range). | [debate 004](docs/debates/004-cap-revision-miller-correction.md); [debate 001](docs/debates/001-laws-count-and-multirepo-scaling.md) Miller line + Sector code block + Methodological note 2; [phase-1](docs/phase-1-for-debate.md) §3 Activities + §6 Failure Modes + §9 Sector |
+| F-02 — CMMI v2.0 (2018) cited but v3.0 (2023) is current; v2.x retired June 2024 | Citations updated to CMMI Institute (ISACA) *CMMI Development V3.0* (2023). High-maturity practice areas (CAR, PPB, QPM) confirmed to persist in v3.0; capability levels 4 and 5 eliminated, high-maturity practices applied across CL 1–3. | [calibration-standards.md](docs/calibration-standards.md) §A row, §F rows, References list |
+| F-03 — ISA 320 "5–10% of revenue/assets/expenses" misattributed | Re-framed as practitioner heuristic (per ISA 320.A8 examples + CEAOB / firm methodology surveys). ISA 320 itself prescribes professional judgement, not fixed percentages. | [calibration-standards.md](docs/calibration-standards.md) §A row |
+
+MEDIUM and LOW findings (F-04 through F-13) are recorded in the findings file but **not** remediated this session — deferred until full IVP Phase 2 (which still has 46 citations queued for verification) is complete.
+
+### Decisions locked since handoff
+
+| Debate | Decision |
+|---|---|
+| [004 — Cap Revision: Miller Citation Correction](docs/debates/004-cap-revision-miller-correction.md) | Adopt 5–9 range with target ~7 (anchored on Miller 1956's actual 7 ± 2 working-memory range). Hard cap 9, soft target ~7, informal floor 5 (below permitted with Council review). Same caps apply to Imperial and Sector Astronomicans. Council size (3–7) and Reckoning Team size (2–5) are *not* affected — they anchor on Dunbar / Brooks for group dynamics, not Miller for item recall. |
+
+### Document tree (added since handoff)
+
+```
+dead-light-framework/
+├── .claude/
+│   └── commands/
+│       └── ivp.md                                                ← Slash command for IVP re-run
+└── docs/
+    ├── audit/
+    │   ├── independent-verification-pass-for-debate.md           ← IVP methodology spec
+    │   ├── inventory.md                                          ← Phase 1 inventory (added 2026-05-08)
+    │   └── findings-2026-05-08.md                                ← Phase 2 partial findings
+    └── debates/
+        └── 004-cap-revision-miller-correction.md                 ← New decided debate
+```
+
+### Open questions in IVP methodology (to resolve before next pass)
+
+Recorded in the spec § 9 and validated by the rodage:
+
+- Symmetric (confirming + disconfirming) search should be **mandatory** for load-bearing claims, not "where applicable" — the rodage held this loosely.
+- Source-tier ambiguity for AXELOS-style commercial-publisher quasi-standards (T1 vs T2) — needs clarification.
+- Citation deduplication — same source cited in multiple files; spec should formalize "verify entity once; record locations."
+- "Load-bearing" classification is itself a judgement; second-pass independent classification would help.
+
+### Repo state at end of Session 2
+
+- Branch: `claude/read-handoff-status-53xfC` (per system instruction; not yet merged to `main`).
+- All changes committed; pushed to `origin`.
+- 46 citations from Phase 1 inventory remain unverified (queued for full Phase 2 in a future IVP run).
+- F-04 through F-13 (MEDIUM and LOW findings) remain open.
