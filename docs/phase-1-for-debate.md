@@ -184,7 +184,7 @@ Imperial Phase 1 must complete before any Sector Phase 1 begins. This is non-neg
 
 ### Real-world precedent
 
-The Imperial + Sector pattern is borrowed directly from constitutional federalism (US, Germany), the Catholic Church's Canon Law plus diocesan customs, the Linux kernel's whole-tree standards plus subsystem rules, Toyota's TPS plus plant-level kaizen, and AWS Leadership Principles plus team Tenets. The framework is not inventing a new structure — it is adopting a structure with multiple multi-decade-to-multi-century track records.
+The Imperial + Sector pattern is borrowed directly from constitutional federalism (US, Germany), the Catholic Church's Canon Law plus diocesan customs (with the qualifier that the multi-century continuity refers to the Roman Catholic legal-doctrinal lineage specifically; the Great Schism of 1054 and the Reformation of 1517 are recognized governance events — see [debate 001 § Precedent](debates/001-laws-count-and-multirepo-scaling.md#precedent-real-world-systems-with-this-structure) for fuller treatment), the Linux kernel's whole-tree standards plus subsystem rules, Toyota's TPS plus plant-level kaizen, and AWS Leadership Principles plus team Tenets. The framework is not inventing a new structure — it is adopting a structure with multiple multi-decade-to-multi-century track records.
 
 ---
 
