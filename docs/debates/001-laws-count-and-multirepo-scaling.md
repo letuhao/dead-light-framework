@@ -29,11 +29,11 @@ Both are debated below, alongside a third option that emerged from the analysis.
 - Five Laws may exclude critical domain-specific items.
 
 **Why it fails**
-- The "≤ 5" cap is not arbitrary. It is grounded in cognitive load and recall (Miller's working-memory range, ~5 ± 2).
+- The cap is grounded in cognitive load and recall — **Miller's (1956) working-memory range, ~7 ± 2** (*"The Magical Number Seven, Plus or Minus Two"*, *Psychological Review* 63: 81–97). An earlier draft of this debate misquoted Miller as "~5 ± 2"; the misquote was caught by the IVP audit on 2026-05-08 (finding F-01) and corrected. The cap itself was subsequently revised to **5–9 with target ~7** (within Miller's range) in [debate 004](004-cap-revision-miller-correction.md). The arguments below — which reject *uncapped* increase to 10–15 — remain valid for that range; debate 004 supersedes only the original "≤ 5" specific number.
 - The Phase 1 quality gate "recite without reading" breaks at 10+ items, and is impossible at 15.
 - Each added Law is an additional interpretation surface — divergence in the stress test grows with item count.
 - The purpose of the Astronomican is *to bind*. The longer the document, the fewer people read it carefully, the less it binds. This is Goodhart's Law: optimizing for "comprehensive" destroys "recallable".
-- Real-world precedent: AWS Leadership Principles has 16 items and is itself criticized inside Amazon for being too many to internalize.
+- Real-world precedent: AWS Leadership Principles has 16 items (originally 14, two added in 2021) and is widely critiqued — by external commentary and inside-Amazon-adjacent practitioners — as too many to internalize at speed. The qualifier is "widely critiqued" rather than "official internal criticism" because there is no public Amazon document acknowledging this critique formally.
 
 **Verdict:** Increasing the cap defeats the framework's recall and binding premises. **Reject.**
 
@@ -66,7 +66,7 @@ This is the recommendation. It borrows from established precedent rather than in
 |---|---|---|
 | United States constitutional federalism | Federal Constitution + state constitutions; Supremacy Clause prevents states from contradicting federal law. | Stable since 1789 (with one civil war as a known stress event). |
 | German cooperative federalism | Basic Law (Grundgesetz) + Länder constitutions; concurrent powers explicitly enumerated. | Stable since 1949. |
-| Catholic Church | Canon Law (universal) + diocesan and parish-level customs within canon limits. | ~1.3 billion members across 200+ countries; doctrinal coherence over ~2,000 years. |
+| Catholic Church | Canon Law (universal) + diocesan and parish-level customs within canon limits. | ~1.4 billion members worldwide (1.422 billion at end of 2024 per *Annuario Pontificio* 2026), present in essentially every country with the Vatican holding diplomatic relations with 180+ states; institutional continuity ~2,000 years (despite the Great Schism of 1054 and the Reformation of 1517 producing the Eastern Orthodox and Protestant traditions, the Roman Catholic legal-doctrinal continuity itself is uninterrupted). |
 | Linux kernel | Kernel-wide coding standards + per-subsystem maintainer rules. | 30+ years, 10,000+ contributors, no schism. |
 | Toyota Production System | TPS principles (corporate, immutable) + plant-level kaizen within TPS frame. | 70+ years across global manufacturing footprint. |
 | AWS | Leadership Principles (corporate-wide) + per-team Tenets. | Corporate-scale precedent; deliberately scoped to avoid Tenets contradicting Principles. |
@@ -76,14 +76,14 @@ This is the recommendation. It borrows from established precedent rather than in
 
 ```
 Imperial Astronomican (project / org level)
-  ≤ 5 Imperial Laws         — bind EVERY sector
-  ≤ 5 Imperial Principles   — guide EVERY sector
+  ≤ 9 Imperial Laws (target ~7)        — bind EVERY sector
+  ≤ 9 Imperial Principles (target ~7)  — guide EVERY sector
   Imperial Boundaries
 
   └── Sector Astronomican (per repo / service / domain)
         Inherits all Imperial Laws (immutable; cannot be relaxed)
-        Adds ≤ 5 Local Laws (cannot contradict Imperial)
-        Adds ≤ 5 Local Principles
+        Adds ≤ 9 Local Laws (target ~7; cannot contradict Imperial)
+        Adds ≤ 9 Local Principles (target ~7)
         Sector Boundaries
         Sector Ascension Council (subset of Imperial Council + local leads)
         Sector Re-consecration scope (limited to local)
@@ -96,7 +96,7 @@ Imperial Astronomican (project / org level)
 
 ### Why this works
 
-- **Cognitive load stays bounded.** At any level a participant carries ≤ 5 + 5 in working memory; inherited Laws are glanced at when needed, not memorized fresh.
+- **Cognitive load stays bounded.** At any level a participant carries the local caps (≤ 9 Laws + ≤ 9 Principles, each typically ~7 per [debate 004](004-cap-revision-miller-correction.md)) in working memory; inherited Imperial Laws are glanced at when needed, not memorized fresh.
 - **Hierarchical authority is explicit.** Imperial Council can override Sector decisions; the reverse is impossible.
 - **Local autonomy is real.** A Sector team adds local concerns without needing Imperial approval.
 - **No cross-org drift.** Imperial Laws still bind everyone, regardless of how many Sectors exist.
@@ -195,3 +195,14 @@ Justification in this debate originally cited Warhammer 40,000 lore (Horus Heres
 - Warhammer 40,000 vocabulary (Astronomican, High Lords, Chapters, Codex, Heresy, Sector, …) is used purely as **naming and shared metaphor** — chosen for memorability and identity.
 - All justification, structural arguments, and assessments of effectiveness must rest on **real-world organizational systems with observable track records** — constitutional federalism, religious institutions, military doctrine, established corporate practice, open-source governance, established software methodologies, and similar.
 - Where the 40k name and the real-world precedent diverge in implication, the real-world precedent governs the design; the name is then either kept as flavor or revised.
+
+## Methodological note 2 — Miller citation correction (added 2026-05-09)
+
+The Independent Verification Pass on 2026-05-08 ([findings](../audit/findings-2026-05-08.md), finding F-01) flagged that the line above which now reads "~7 ± 2" was originally written as "~5 ± 2" and attributed to Miller (1956). Miller's actual finding is 7 ± 2; the closer-to-5 figure (~4 ± 1) is from Cowan (2001). The framework had been citing the wrong source for its number.
+
+The correction was made in two parts:
+
+1. **Citation text** (this debate, the bullet above) corrected to Miller 7 ± 2.
+2. **Cap value** (Phase 1 §3 and §9; this debate's Sector code block) revised from a fixed "≤ 5" to a Miller-aligned range "5–9 with target ~7" via [debate 004](004-cap-revision-miller-correction.md).
+
+This is the second self-correction recorded in this file (the first being the 40k-justification removal in the methodological note above). The pattern stands: when the framework's text drifts from its cited source, the framework's text yields. This is the operational meaning of the policy *"industry standards over framework-invented formulas."*

@@ -14,11 +14,11 @@ For Phase 0 Q1 (Past Decisions Catalog significance threshold) and Phase 1 Recko
 
 | Standard | Source | Formula / mechanism | Application |
 |---|---|---|---|
-| **ITIL Change Management — change tiers** | AXELOS, ITIL 4 (2019) | Categorical: Standard / Normal / Emergency, by impact × urgency matrix | Adapt the impact-urgency matrix to architectural decisions: e.g., Standard = within-service, Normal = cross-service, Emergency = cross-platform. |
-| **ISA 320 / GAAP / IFRS materiality** | International Standards on Auditing 320 (IAASB); Generally Accepted Accounting Principles | Quantitative: typically 5–10% of relevant base (revenue, assets, expenses) | For software: 5–10% of project budget, KLOC, or effort. A decision affecting more than this base is "material". |
-| **PMBOK Earned Value Management variance thresholds** | PMI, *PMBOK Guide* (current edition) | Schedule Variance (SV), Cost Variance (CV), Schedule Performance Index (SPI), Cost Performance Index (CPI). Typical thresholds: SPI/CPI < 0.9 or > 1.1 triggers review. | Adapt: a decision that produced > 10% schedule or cost variance is significant by definition. |
-| **CMMI Causal Analysis & Resolution (CAR)** | SEI, CMMI for Development v2.0 (2018) | Historical baseline of decision rate per project size (KLOC, function points, story points) | `expected_decisions = historical_rate × project_size × adjustment`. Backward-tune significance threshold to filter to roughly that count. |
-| **ITIL Incident Severity tiers** | AXELOS, ITIL 4 | Sev1 / Sev2 / Sev3 / Sev4 by % users affected + $ revenue impact + downtime duration | Adapt for "decision blast radius": Sev1 = whole platform, Sev2 = a service, Sev3 = a module, Sev4 = a file. |
+| **ITIL Change Management — change tiers** | AXELOS, ITIL 4 (2019). PeopleCert/AXELOS launched ITIL 5 Foundation in February 2026; ITIL 4 modules sunset 31 December 2027. Either edition is valid for this row's purpose; ITIL 4 is the longer-tenured anchor. | Categorical: Standard / Normal / Emergency. ITIL Priority within each type is derived from an Impact × Urgency matrix. | Adapt the impact-urgency matrix to architectural decisions: e.g., Standard = within-service, Normal = cross-service, Emergency = cross-platform. |
+| **ISA 320 materiality (judgement framework)** | IAASB, *ISA 320: Materiality in Planning and Performing an Audit* (current edition). Note: ISA 320 itself prescribes **professional judgement**, not fixed percentages. | ISA 320 §A8 illustrative examples: **5% of profit before tax** (profit-oriented manufacturing entity), **1% of total revenue or expenses** (not-for-profit entity). Practitioner methodology heuristics commonly cited in firm guidance and the CEAOB 2022 materiality survey: **3–10% of PBT**, or **0.5–2% of revenue**. | For software: adapt the *judgement discipline* (pick a base meaningful to the project, apply a defensible percentage, document rationale) — e.g., 5–10% of project budget or effort if budget/effort is the meaningful base, or 0.5–2% of a revenue-equivalent metric. The standard supplies the framework for choosing; the percentage is a practitioner convention, not an ISA 320 mandate. |
+| **PMBOK Earned Value Management variance thresholds** | PMI, *PMBOK Guide* (current edition) | Schedule Variance (SV), Cost Variance (CV), Schedule Performance Index (SPI), Cost Performance Index (CPI). PMBOK defines the indices but does not prescribe specific trigger values. Common practitioner conventions (vendor and consultancy guidance): yellow alert at SPI/CPI 0.8–0.9 or 1.1–1.2; red alert <0.8 or >1.2. The "<0.9 or >1.1" band is widely used but is firm-methodology, not PMBOK-mandated. | Adapt: a decision that produced > 10% schedule or cost variance is significant by definition (the team's chosen threshold is a calibration question — set it explicitly). |
+| **CMMI Causal Analysis & Resolution (CAR)** | CMMI Institute (ISACA), *CMMI Development V3.0* (2023; successor to v2.0 released 2018, retired June 2024) | Historical baseline of decision rate per project size (KLOC, function points, story points) | `expected_decisions = historical_rate × project_size × adjustment`. Backward-tune significance threshold to filter to roughly that count. |
+| **Incident severity tiers (Sev1–Sev4)** | Industry SRE / incident-management practice (Etsy, Google SRE, Atlassian, runframe). ITIL 4 itself uses **Priority** (often P1–P4) derived from an Impact × Urgency matrix; the "Sev1–Sev4" labels are SRE-vernacular, not ITIL-prescribed terminology. | Sev1 / Sev2 / Sev3 / Sev4 by % users affected + revenue impact + downtime duration. | Adapt for "decision blast radius": Sev1 = whole platform, Sev2 = a service, Sev3 = a module, Sev4 = a file. (For ITIL Priority via Impact × Urgency, see the change-tier row above.) |
 
 ---
 
@@ -74,7 +74,7 @@ For Phase 0 Q2 (Reckoning Team) and Phase 1 Council size.
 | Standard | Source | Rule / formula | Application |
 |---|---|---|---|
 | **Brooks's Law / communication overhead** | Fred Brooks, *The Mythical Man-Month* (1975, anniversary 1995) | Communication channels = N(N − 1) / 2 | At N=5: 10 channels. At N=7: 21 channels. Justifies cap of 5–7 for Reckoning Team and Council. |
-| **Two-pizza team rule** | Jeff Bezos / Amazon, ~2002 (informal) | Empirical: a team is too big if two pizzas can't feed it (~6–10 people) | Aligned with Council 3–7 cap. |
+| **Two-pizza team rule** | Jeff Bezos / Amazon, late 1990s (introduced at an Amazon management offsite; never formally codified). Often cited around 2002 because that is when the API mandate memo popularized adjacent ideas. | Empirical: a team is too big if two pizzas can't feed it (~6–10 people) | Aligned with Council 3–7 cap. |
 | **Dunbar's number — layered model** | Robin Dunbar, *Grooming, Gossip, and the Evolution of Language* (1996); later refinements | 5 / 15 / 50 / 150 / 500 / 1500 cognitive layers | Reckoning Team and Council both sit at layer 1 (≤5) for tight decision groups. |
 | **Team Topologies** | Matthew Skelton & Manuel Pais, *Team Topologies* (IT Revolution, 2019) | Four team types: stream-aligned, platform, enabling, complicated-subsystem | Reckoning Team behaves as an *enabling team* (deep dive then disband); Council behaves as a *governance pattern* across teams. |
 
@@ -89,7 +89,7 @@ For scoping Phase 0 inventory work.
 | **SLOC / LOC / KLOC** | Source Lines of Code; counted via tools like cloc, scc | Baseline size for scoping the Reckoning Team's coverage budget. |
 | **McCabe Cyclomatic Complexity** | Thomas McCabe (1976). `M = E − N + 2P` (edges, nodes, connected components) | Identifies "hotspot" functions that warrant deeper audit. Threshold conventions: < 10 = simple, 10–20 = moderate, > 20 = complex, > 50 = untestable. |
 | **Halstead metrics** | Maurice Halstead, *Elements of Software Science* (1977) | Effort, Volume, Difficulty derived from unique operators/operands. Useful for comparing modules of similar function. |
-| **Maintainability Index (MI)** | Coleman et al. (1994); built into Visual Studio, Radon | `MI = 171 − 5.2·ln(HV) − 0.23·CC − 16.2·ln(SLOC)`; sometimes scaled to 0–100 | Composite difficulty signal. < 65 typically flagged as hard-to-maintain. |
+| **Maintainability Index (MI)** | Oman & Hagemeister (1992) ICSM original; refined by Coleman, Ash, Lowther, Oman (*IEEE Computer*, 1994). Built into Visual Studio (normalized 0–100 scale), Radon, and other static-analysis tools. | `MI = 171 − 5.2·ln(HV) − 0.23·CC − 16.2·ln(SLOC)` (original, unnormalized; range roughly 0–171, sometimes negative). Visual Studio normalizes to 0–100 via `MAX(0, MI · 100 / 171)`. | **Threshold depends on which scale.** Original Coleman et al. rule of thumb: <65 hard-to-maintain, <85 moderate (on the unnormalized formula). Visual Studio (0–100 normalized): 0–9 difficult, 10–19 moderate, 20–100 highly maintainable. State which scale is used before quoting a threshold. |
 | **Code churn** | Nagappan & Ball (Microsoft Research, 2005) | LOC changed per file per period, normalized | Identifies "active decision areas" — high recent churn signals decisions worth cataloguing. |
 | **Bus factor** | Folk software engineering term; formalized in academic literature (Cosentino et al., 2015) | Minimum number of developers whose departure puts the project at risk | Surfaces hidden tenure-spanning members for Reckoning Team composition. |
 | **SQALE technical debt index** | Jean-Louis Letouzey, *The SQALE Method for Evaluating Technical Debt* (2012); operationalized in SonarQube | Debt expressed in effort-minutes per rule violation | Direct quantitative input for the Failure Inventory's "accumulated debt" entries. |
@@ -102,11 +102,11 @@ For the Phase 0 Failure Inventory.
 
 | Standard | Source | Formula / definition |
 |---|---|---|
-| **MTBF / MTTR** | Reliability engineering, IEEE Standard 1633-2016 | Mean Time Between Failures, Mean Time To Recovery |
+| **MTBF / MTTR** | General reliability engineering practice (predates and is broader than any single standard). IEEE 1633-2016 *Recommended Practice on Software Reliability* describes software-reliability engineering processes that operate on these metrics; it is not the canonical originator of MTBF/MTTR. | Mean Time Between Failures (MTBF), Mean Time To Recovery / Repair (MTTR). |
 | **DORA Change Failure Rate** | *Accelerate* (Forsgren, Humble, Kim, 2018) | % of changes resulting in production incidents |
 | **ITIL Incident Severity tiers** | AXELOS, ITIL 4 | Sev1 / Sev2 / Sev3 / Sev4 by impact + urgency |
 | **Postmortem severity (Etsy / Google SRE)** | Beyer et al., *Site Reliability Engineering* (O'Reilly, 2016) | S0 / S1 / S2 / S3 by user impact and revenue impact |
-| **Six Sigma DPMO** | Mikel Harry (Motorola, 1980s); ASQ standards | Defects Per Million Opportunities; six sigma = 3.4 DPMO |
+| **Six Sigma DPMO** | Bill Smith and Mikel Harry, Motorola (Smith introduced Six Sigma in 1986; Harry developed the MAIC methodology and 1.5σ shift); ASQ standards | Defects Per Million Opportunities; six sigma = 3.4 DPMO |
 
 ---
 
@@ -116,10 +116,10 @@ For organizations operating at CMMI L4 (Quantitatively Managed) or L5 (Optimizin
 
 | CMMI practice | Source | Mechanism |
 |---|---|---|
-| **Process Performance Baselines (PPB)** | SEI, CMMI for Development v2.0 (2018) | Historical mean and variance of process metrics, established as the baseline for new projects |
-| **Quantitative Project Management (QPM)** | CMMI v2.0 process area | Setting and managing project quantitative objectives derived from PPB |
+| **Process Performance Baselines (PPB)** | CMMI Institute (ISACA), *CMMI Development V3.0* (2023; successor to v2.0 released 2018, retired June 2024) | Historical mean and variance of process metrics, established as the baseline for new projects |
+| **Quantitative Project Management (QPM)** | CMMI V3.0 high-maturity Practice Area (in v3.0, capability levels 4 and 5 are eliminated; high-maturity practices apply across CL 1–3) | Setting and managing project quantitative objectives derived from PPB |
 | **Statistical Process Control (SPC)** | Walter Shewhart (1931); industrial application standard | Control charts (X̄, R, p, c) to detect out-of-control variation |
-| **Causal Analysis & Resolution (CAR)** | CMMI v2.0 process area | Identify root causes of defects and other problems for systemic resolution |
+| **Causal Analysis & Resolution (CAR)** | CMMI V3.0 high-maturity Practice Area (in v3.0, capability levels 4 and 5 are eliminated; high-maturity practices apply across CL 1–3) | Identify root causes of defects and other problems for systemic resolution |
 
 When applicable, all Phase 0 calibration questions become PPB lookups rather than PM judgment.
 
@@ -153,7 +153,7 @@ The current adoption status is tracked per phase in each phase's `*-for-debate.m
 - Nagappan, N., Ball, T. "Use of Relative Code Churn Measures to Predict System Defect Density." *ICSE*, 2005.
 - PMI. *PMBOK Guide.* Latest edition.
 - Putnam, L. *Measures for Excellence.* Yourdon Press, 1992.
-- SEI. *CMMI for Development v2.0.* 2018.
+- CMMI Institute (ISACA). *CMMI Development V3.0.* 2023. (Successor to v2.0, released 2018; v2.x retired June 2024.)
 - Skelton, M., Pais, M. *Team Topologies.* IT Revolution, 2019.
-- AXELOS. *ITIL 4 Foundation.* 2019.
+- AXELOS / PeopleCert. *ITIL 4 Foundation.* 2019. (ITIL 5 Foundation launched February 2026; ITIL 4 sunset 31 December 2027.)
 - IAASB. *International Standard on Auditing 320: Materiality in Planning and Performing an Audit.*
