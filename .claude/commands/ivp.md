@@ -24,22 +24,24 @@ If the argument is unclear, ask the project owner with `AskUserQuestion` before 
 3. Confirm `docs/audit/` exists; create it if not.
 4. Set today's date once at the start; reuse it for `findings-YYYY-MM-DD.md` and all access-date entries.
 
-## Hard rules during the run (from spec section 2)
+## Hard rules during the run (from spec § 2 + cross-cutting rules in § 4.1, v0.2)
 
 - **Do not modify any file outside `docs/audit/`** during the run. Findings only; remediation is a separate downstream activity.
-- **Symmetric search.** For every external lookup, run a confirming and a disconfirming query; record both outcomes.
+- **Symmetric search — MANDATORY for load-bearing.** For every load-bearing citation or claim, run both a confirming and a disconfirming query; record both outcomes. For non-load-bearing items, disconfirming is recommended but optional.
+- **Primary-source read — MANDATORY for load-bearing citations.** A T2 textbook summary or T3 grey-literature secondary is *insufficient* grounds for `VERIFIED` on a load-bearing item. If primary cannot be reached (paywall, archive offline, language barrier), the verdict is `UNVERIFIABLE` until a future pass — no guess from secondary.
 - **Audit trail mandatory.** No verdict without (file:line, query, source URL, access date, excerpt).
-- **Falsifiability test** for every load-bearing claim.
+- **Falsifiability test** for every load-bearing claim. A claim flagged `UNFALSIFIABLE` by Phase 4 escalates by one severity level above its rubric base, except for explicitly definitional/conventional claims.
+- **Tier-floor rule.** Load-bearing claims resting solely on T3 grey literature (no T1/T2 triangulation) are flagged at minimum `MEDIUM` regardless of T3 source accuracy.
 - **No early termination** on CRITICAL findings — run all phases to completion.
 - **No editorial.** State only what evidence supports. Recommended actions in the report are limited to `defer to project owner` or `obvious fix: <one sentence>`.
-- **Tier sources** per the authority hierarchy in spec section 3. Industry-pragmatic mode is in effect: T3 grey literature is admissible for load-bearing claims only when triangulated with at least one T1/T2.
+- **Tier sources** per the authority hierarchy in spec § 3. Industry-pragmatic mode is in effect: T1 includes ISO/IEC, IEEE, IAASB, NIST, peer-reviewed venues, *and* standards-body-owned commercial publishers (AXELOS, PMI, CMMI Institute, IFPUG, SEI). T3 grey literature is admissible but tier-floor rule above applies for load-bearing.
 
 ## Execution order
 
 Run phases sequentially per the spec. Each phase writes its own file under `docs/audit/`.
 
-1. **Phase 1 — Inventory** → `docs/audit/inventory.md` (four tables: Claims, Citations, Defined terms, Analogies). Use `Read` for full files and `Agent (Explore)` to parallelise across files. No judgement during this phase.
-2. **Phase 2 — Citation Verification** → append to `docs/audit/findings-YYYY-MM-DD.md` under "Phase 2". Use `WebSearch` (confirming + disconfirming) and `WebFetch` for primary sources. Apply rubric 4.2.
+1. **Phase 1 — Inventory** → `docs/audit/inventory.md` (four tables: Claims, Citations, Defined terms, Analogies). Use `Read` for full files and `Agent (Explore)` to parallelise across files. **Citation deduplication is mandatory** (spec § 5 Phase 1): each distinct entity gets one row with a `Locations` column listing every file:line. No judgement during this phase.
+2. **Phase 2 — Citation Verification** → append to `docs/audit/findings-YYYY-MM-DD.md` under "Phase 2". Use `WebSearch` (confirming + disconfirming for LB) and `WebFetch` for primary sources. **Load-bearing items require primary-source read AND disconfirming query — both mandatory** (spec § 5 Phase 2 procedure steps 2 and 4). Apply rubric 4.2 plus cross-cutting rules from § 4.1 (`UNFALSIFIABLE` escalation, tier-floor rule).
 3. **Phase 3 — Citation Appropriateness** → append under "Phase 3". For each verified citation, state actual scope vs framework use; apply rubric 4.3.
 4. **Phase 4 — Argument Analysis** → append under "Phase 4". Toulmin decomposition + the fixed fallacy checklist + falsifiability test; apply rubric 4.4.
 5. **Phase 5 — Internal Consistency** → append under "Phase 5". Term drift, decision-to-doc reflection, quantitative consistency, policy compliance, README link integrity.

@@ -1,6 +1,8 @@
 # Independent Verification Pass (IVP) — Audit Workflow (For Debate)
 
-> **Status:** Draft, not final. To be refined after first execution against the existing repository.
+> **Version:** v0.2 (2026-05-09). Refined after the 2026-05-08 rodage execution against the existing repository. See [§ 11 Changelog](#11-changelog) for what changed and why; rodage findings in [`findings-2026-05-08.md`](findings-2026-05-08.md).
+>
+> **Status:** Draft, not final. To be refined after each execution against the repository; spec changes go between passes, not during.
 >
 > **Purpose:** Define a repeatable workflow that an *outside reviewer* can run against the Dead Light Framework documents to verify (a) the existence and accuracy of cited sources, (b) the appropriateness of those sources for the claims they support, (c) the soundness of arguments, (d) the internal consistency of the framework, and (e) the framework's standing relative to external literature.
 >
@@ -28,7 +30,7 @@ Both policies are testable: either a citation matches the precedent it claims, o
 These principles must be honoured by anyone executing IVP. They are deliberately strict to prevent the audit from drifting into editorial review.
 
 1. **Pre-registration of rubric.** The rubric tables in section 4 are fixed *before* the auditor opens any framework document. The auditor may not modify the rubric mid-pass. If a rubric flaw is found, log it under "Limitations of this audit" and continue with the existing rubric; revise only between passes.
-2. **Symmetric search.** For every citation or claim sent to external search, the auditor runs both a confirming query *and* a disconfirming query. The disconfirming result, if any, is recorded with the same weight.
+2. **Symmetric search (mandatory for load-bearing).** For every **load-bearing** citation or claim sent to external search, the auditor MUST run both a confirming query *and* a disconfirming query, and record the disconfirming result with the same weight as the confirming one. For non-load-bearing items, disconfirming search is recommended but optional. Disconfirming-query templates appear in [§ 5 Phase 2 procedure](#phase-2--citation-verification-factual). The 2026-05-08 rodage held this loosely (~6 of 30 verifications had disconfirming counterparts) and was identified as a coverage gap; this revision closes it.
 3. **Audit trail mandatory.** Every verdict is backed by: (a) the file:line of the claim, (b) the search query or read action performed, (c) the source consulted including URL and access date, (d) the excerpt or summary supporting the verdict. No verdict without trail.
 4. **Falsifiability check.** For each load-bearing claim, the auditor states what evidence would falsify it. A claim with no conceivable disconfirming evidence is flagged `UNFALSIFIABLE` regardless of its plausibility.
 5. **Separation of concerns.** During an IVP run the auditor must not modify the framework documents themselves. Findings go to `docs/audit/findings-YYYY-MM-DD.md`. Remediation is a separate authoring pass after the project owner reviews findings.
@@ -44,7 +46,7 @@ Used by phases 2, 3, and 6 to weigh sources.
 
 | Tier | Examples | Treatment |
 |---|---|---|
-| **T1 — Primary standards / peer-reviewed** | ISO/IEC standards, IEEE standards, IAASB (ISA), SEI CMMI publications, peer-reviewed journal articles, ACM/IEEE conference proceedings, ITIL official publications, official PMBOK / PRINCE2 manuals | Strongest. Use when available; cite directly. |
+| **T1 — Primary standards / peer-reviewed** | Three sub-categories, all treated as T1 for verdicts: (a) **International / governmental standards bodies** — ISO/IEC, IEEE, IAASB (ISA), NIST. (b) **Standards-body-owned commercial publishers (de-facto standards)** — AXELOS / PeopleCert (ITIL), PMI (PMBOK), CMMI Institute / ISACA (CMMI), IFPUG (Function Points), SEI (CMMI legacy v1.x–v2.x). These are commercial publishers but own the de-facto standard for their domain. (c) **Peer-reviewed venues** — ACM and IEEE conference proceedings, peer-reviewed journals (e.g., *IEEE Computer*, *IEEE Trans. SE*, *Behavioral and Brain Sciences*). | Strongest. Use when available; cite directly. The 2026-05-08 rodage exposed ambiguity in earlier wording (T1 vs T2 for AXELOS/PMI); category (b) is now explicit. |
 | **T2 — Recognized practitioner texts and standards-adjacent** | Established textbooks (Boehm COCOMO II, Putnam SLIM, Fowler refactoring, Nygard *Release It!*), DORA *Accelerate*/*State of DevOps* reports, NIST publications, ISACA/COBIT guidance, OWASP project outputs | Strong. Treat as primary for industry questions. Note edition. |
 | **T3 — Major-vendor / major-consultancy grey literature** | Microsoft/Google/AWS architecture papers, Big-4 consulting whitepapers, Gartner / Forrester reports (when accessible), Martin Fowler's bliki, well-known engineering blogs from FAANG-tier engineering teams | Admissible. Flag as grey-tier. Triangulate with at least one T1/T2 source for load-bearing claims. |
 | **T4 — Practitioner blogs, conference talks (no proceedings), podcasts** | Individual practitioner posts, recorded conference talks without papers, podcast interviews | Admissible only as colour or as illustrative example. Cannot be sole basis for a load-bearing claim. |
@@ -65,9 +67,15 @@ These four tables are the operational rubric. Auditor maps every item to one row
 | Code | Definition | Examples |
 |---|---|---|
 | **CRITICAL** | Falsifies a load-bearing decision, violates a framework-level policy, or makes the framework's central claim unsupportable. | Cited standard does not exist; Council minimum-diversity rule rests on a fallacy; 40k metaphor used as primary justification (policy-1 violation). |
-| **HIGH** | Cited source exists but does not say what is claimed; argument has a missing or implausible warrant on a sealed decision; cross-document contradiction in a sealed phase. | "ISA 320 prescribes 5-10%" claim where ISA 320 actually says materiality is qualitative + quantitative; "Council ≥ 3" justified solely by 40k analogy. |
+| **HIGH** | Cited source exists but does not say what is claimed; argument has a missing or implausible warrant on a sealed decision; cross-document contradiction in a sealed phase. | "ISA 320 prescribes 5-10%" claim where ISA 320 actually says materiality is qualitative + quantitative; "Council ≥ 3" justified solely by 40k analogy; Miller cited as "5±2" when actual is 7±2 (rodage F-01). |
 | **MEDIUM** | Stretched citation, missing qualifier, partial verification, weak warrant on an open question, terminology drift between drafts. | Source cited from secondary text without primary check; PMBOK threshold given without edition; "Council" in phase-0 vs phase-1 used with subtle scope difference. |
 | **LOW** | Citation-style or hygiene issues that do not affect the substance. | Missing access date, link rot, inconsistent reference formatting, missing edition number where edition is stable. |
+
+**Cross-cutting rules (apply on top of the row classification):**
+
+- **`UNFALSIFIABLE` escalation.** Any claim flagged `UNFALSIFIABLE` by Phase 4 escalates by **one severity level above its rubric base**, unless the claim is explicitly *definitional* or *conventional* (per § 7 limitations: definitional claims are not falsifiable in the empirical sense and the verdict is informational for them, not penal). Resolved from § 9 open question.
+- **Load-bearing weighting.** Findings on load-bearing items (LB=Y in inventory) are reported first and never bumped down for brevity.
+- **Tier-floor rule.** A load-bearing claim resting solely on T3 grey literature, with no T1/T2 triangulation, is flagged at minimum `MEDIUM` regardless of whether the T3 source itself is accurate. Industry-pragmatic mode admits T3, but unanchored T3 is itself a finding.
 
 ### 4.2 Citation verification verdict (Phase 2)
 
@@ -112,7 +120,7 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 1. Read each in-scope file end-to-end.
 2. Extract into four tables in `audit/inventory.md`:
    - **Claims** — every assertive proposition. Columns: id (`C-NNN`), file:line, claim text (≤ 30 words), type (`descriptive` | `normative` | `causal` | `definitional`), load-bearing (`Y`/`N`).
-   - **Citations** — every reference to an external entity. Columns: id (`R-NNN`), file:line, cited entity (e.g., "COCOMO II", "ITIL 4 (2019)"), claimed attribute (e.g., "5–10% materiality", "Sev1/Sev2/Sev3 tiers"), type (standard | book | report | doctrine | historical fact).
+   - **Citations** — every reference to an external entity. **Deduplication rule (mandatory):** each *distinct entity* gets exactly one row; if the same entity is cited in multiple files, list every file:line in a single **Locations** column. Phase 2 verifies the entity once and applies the verdict to every location. Columns: id (`R-NNN`), cited entity (e.g., "COCOMO II", "ITIL 4 (2019)"), **Locations** (file:line list), claimed attribute(s) (e.g., "5–10% materiality", "Sev1/Sev2/Sev3 tiers"), type (standard | book | report | doctrine | historical fact). The 2026-05-08 rodage already followed this convention informally; this revision makes it explicit.
    - **Defined terms** — every framework term defined or used as if defined. Columns: id (`T-NNN`), term, file:line of first definition, occurrences elsewhere.
    - **Analogies** — every 40k metaphor invoked. Columns: id (`A-NNN`), file:line, metaphor, role (naming-only | risks-becoming-justification).
 
@@ -131,11 +139,13 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 **Inputs.** Citations table from Phase 1.
 
 **Procedure.** For each citation `R-NNN`:
+
 1. Run **confirming query** to locate primary source. Prefer publisher's official site, standards-body site, or an indexed bibliographic database.
-2. If primary source not directly accessible, climb tier ladder (T1 → T2 → T3) and record the tier reached.
-3. Run **disconfirming query** to find any source asserting the framework's claim is wrong about the citation's content (e.g., "ISA 320 materiality is qualitative not 5%").
-4. Compare attribute claimed in framework against source. For numeric claims, the number must match within stated precision. For doctrine claims, the source must explicitly support the doctrine being attributed.
-5. Assign verdict from rubric 4.2.
+2. **For load-bearing citations (LB=Y in any of the citation's claim references): primary-source read is MANDATORY.** A T2 textbook summary or T3 grey-literature secondary is *insufficient* grounds for a `VERIFIED` verdict on a load-bearing item — the auditor must reach the standard's text, the paper's PDF, or the publisher's official documentation page. If the primary source cannot be reached within reasonable effort (paywall, archive offline, language barrier), the verdict is `UNVERIFIABLE` until a future pass with better access — no guess from secondary.
+3. **For non-load-bearing citations:** if primary not directly accessible, climb tier ladder (T1 → T2 → T3) and record the tier reached.
+4. Run **disconfirming query** — **MANDATORY for load-bearing** items, recommended for others — to find any source asserting the framework's claim is wrong about the citation's content (e.g., "ISA 320 materiality is qualitative not 5%", "Miller's number is 7 not 5", "CMMI v3.0 is current not v2.0", "two-pizza team origin is late 1990s not 2002").
+5. Compare attribute claimed in framework against source. For numeric claims, the number must match within stated precision. For doctrine claims, the source must explicitly support the doctrine being attributed.
+6. Assign verdict from rubric 4.2.
 
 **Output.** Table appended to `audit/findings-YYYY-MM-DD.md`:
 
@@ -328,7 +338,15 @@ IVP is designed to be repeated as the framework evolves.
 5. Project owner reviews, decides remediation actions, and authorises a *separate* authoring branch. The remediation branch may modify framework documents; the audit branch may not.
 6. Diff between consecutive IVP runs goes in `audit/diff-PREV-to-CURRENT.md` to track whether prior findings were resolved.
 
-**Cadence guidance.** Run IVP after any of: a sealed decision being added, a new phase being drafted, a case study being introduced, or every 90 days regardless. The 90-day default mirrors typical audit-recurrence practice (internal audit annual + quarterly check-ins).
+**Cadence guidance (event-driven primary; calendar fallback).** Run IVP after any of:
+
+- a sealed decision being added or a sealed decision being amended;
+- a new phase being drafted;
+- a case study being introduced or substantially revised (e.g., LoreWeave application);
+- an external standard being updated or superseded that the framework depends on (e.g., CMMI v2.0 → v3.0 in 2023, ITIL 4 → ITIL 5 in 2026);
+- significant external academic findings on the framework's anchored concepts (e.g., a major working-memory or organizational-governance result that affects citations).
+
+**Calendar fallback:** at most **12 months** between runs even if no events have triggered. The earlier draft suggested 90 days; the 2026-05-08 rodage experience indicates event-driven is more useful and the calendar exists only as a safety net. Resolved from § 9 open question.
 
 ---
 
@@ -342,6 +360,8 @@ Stated up front so they cannot be raised post-hoc as defences against findings.
 - **Single-pass single-reviewer risk.** Inter-rater reliability cannot be measured from one pass by one reviewer. Repeated runs by different reviewers (or different agents) are the only mitigation.
 - **Falsifiability test is itself imperfect.** Some legitimately useful framework concepts (definitional, conventional) are not falsifiable in the empirical sense. The rubric's `UNFALSIFIABLE` verdict is informative, not condemning.
 - **No experimental component.** IVP does not run the framework on a project to test it; that is the LoreWeave case study's job. IVP audits only the *texts*.
+- **Same-reviewer classification bias.** When a single reviewer (human or agent) does both Phase 1 inventory (which includes the load-bearing classification) and Phase 2 verification, the load-bearing decision and the verification effort are correlated. A load-bearing item misclassified as non-load-bearing receives less rigour and may hide a finding. Mitigations: (a) a second-pass independent re-classification by a different reviewer, or (b) for single-reviewer runs, the classifications themselves are explicitly subject to audit and listed as a known risk in the limitations of the report. The 2026-05-08 rodage was a single-reviewer run; the limitation was acknowledged in [`findings-2026-05-08.md`](findings-2026-05-08.md) § 8 and is now formalized here.
+- **Non-Latin and paywalled sources under-sampled.** A reviewer running IVP via web search alone will miss content not indexed by major engines (older standards PDFs behind login, non-English methodology literature, internal corporate documents). State this explicitly in any finding that depended on a single-tier reach.
 
 ---
 
@@ -364,15 +384,22 @@ Stated up front so they cannot be raised post-hoc as defences against findings.
 
 ---
 
-## 9. Open questions about this methodology (for first-pass debate)
+## 9. Open questions about this methodology — status after rodage
 
-These should be revisited *after* the first IVP run, not before — initial answers are first guesses.
+Status legend: ✅ resolved (decision baked into v0.2 spec); ⏳ still open (carry to next debate cycle).
 
-- Is the load-bearing classification reliable? A claim's load-bearing status is itself a judgement; should the rubric require triangulation by two independent passes?
-- Should `UNFALSIFIABLE` automatically escalate severity, or is it informational only?
-- Industry-pragmatic admits T3; should there be a hard cap on the *fraction* of citations that can rest on T3 alone?
-- Should Phase 6's gap matrix be its own debate document, or remain part of the audit?
-- Re-run cadence — 90 days is a guess; should it be tied to events only, not calendar?
+- ✅ **Is the load-bearing classification reliable?** Single-reviewer classification has correlation risk (resolved as a § 7 limitation; mitigation = second-pass independent classification or explicit risk-listing). Not a hard rubric requirement, since requiring two independent reviewers is impractical for many runs.
+- ✅ **Should `UNFALSIFIABLE` automatically escalate severity, or informational only?** Resolved: escalates by one severity level above rubric base, except for definitional/conventional claims (§ 4.1 cross-cutting rule).
+- ✅ **Industry-pragmatic admits T3; hard cap on the fraction of T3-only?** Resolved: not a hard fractional cap; instead a *tier-floor rule* — load-bearing claims resting solely on T3 are flagged at minimum MEDIUM regardless of T3 source accuracy (§ 4.1 cross-cutting rule).
+- ✅ **Phase 6's gap matrix — own debate document or part of audit?** Resolved: stays as part of audit, lives in `docs/audit/benchmark.md` (§ 5 Phase 6 unchanged).
+- ✅ **Re-run cadence — 90 days vs event-driven?** Resolved: event-driven primary, 12-month calendar fallback (§ 6 Cadence guidance).
+
+⏳ **Carried open into next cycle:**
+
+- Should the IVP spec itself be subject to a "meta-IVP" pass periodically? (Today the spec excludes itself from scope to avoid self-reference; a separate reviewer running IVP on the spec would be the cleanest answer.)
+- For multi-reviewer runs, what inter-rater-reliability metric is reported (Cohen's κ on classification, agreement rate on verdicts)?
+- For frameworks that themselves cite *other governance frameworks* (Dead Light citing PRINCE2, ITIL, CMMI), is there a recursion risk — does the framework inherit the cited framework's evidentiary issues? When and how should this be flagged in Phase 6?
+- Should Phase 4 fallacy checklist be expanded based on which fallacies actually surface in real runs? (Add only after a fallacy has been observed to surface; do not pre-emptively bloat the checklist.)
 
 ---
 
@@ -388,3 +415,36 @@ These are the methodology's own citations and are themselves subject to a future
 - COSO Internal Control — Integrated Framework (2013) — control-environment framing.
 - Karl Popper, *The Logic of Scientific Discovery* (Hutchinson, 1959) — falsifiability.
 - DORA, *Accelerate: State of DevOps* (annual) — exemplar of industry-pragmatic empirical evidence.
+
+---
+
+## 11. Changelog
+
+### v0.2 — 2026-05-09 (post-rodage refinement)
+
+Driven by lessons from the 2026-05-08 rodage execution against the existing repository ([`findings-2026-05-08.md`](findings-2026-05-08.md)). Each change cites the specific gap the rodage exposed.
+
+| § | Change | Why |
+|---|---|---|
+| Status header | Added `Version: v0.2` and pointer to changelog | Spec is now versioned; future revisions accumulate visibly. |
+| § 2 principle 2 (Symmetric search) | Made disconfirming queries **mandatory** for load-bearing claims (was "for every citation"). | Rodage held the principle loosely — only ~6 of 30 verifications had disconfirming counterparts (§ 2 Pre-registered methodology checks in findings file). |
+| § 3 source authority hierarchy (T1 row) | Split T1 into three sub-categories: international/governmental standards bodies, standards-body-owned commercial publishers (AXELOS / PMI / CMMI Institute / IFPUG / SEI), and peer-reviewed venues. | Rodage exposed ambiguity over whether AXELOS-style commercial-publishers-of-de-facto-standards counted as T1 or T2 (limitation surfaced around F-13 ITIL edition currency). |
+| § 4.1 severity scale | Added three cross-cutting rules: `UNFALSIFIABLE` escalation by one level (resolved from § 9); load-bearing weighting (LB findings reported first, never bumped down); tier-floor rule (LB on T3-only flagged ≥ MEDIUM). | Resolves three open questions from § 9 v0.1. |
+| § 5 Phase 1 Citations table | Citation deduplication is now an **explicit mandatory rule** with a `Locations` column (was implicit). | Rodage already followed this convention informally; now formalized so future runs do not drift. |
+| § 5 Phase 2 procedure | Added: primary-source read **MANDATORY** for load-bearing citations (T2/T3 secondary insufficient for `VERIFIED`); disconfirming search **MANDATORY** for load-bearing; explicit step-numbered procedure (1–6). | Rodage limitation § 8.3: "No primary-source PDFs read in full" — would have caught F-01 (Miller) and F-03 (ISA 320) faster, and may have caught additional issues. |
+| § 6 Re-run procedure (Cadence) | Replaced "every 90 days regardless" with event-driven primary triggers + 12-month calendar fallback. | Resolves § 9 open question; calendar-only cadence is a poor fit for a documentation framework. |
+| § 7 Limitations | Added "Same-reviewer classification bias" and "Non-Latin and paywalled sources under-sampled". | First was acknowledged in [`findings-2026-05-08.md`](findings-2026-05-08.md) § 8.8; second was implicit and is now explicit. |
+| § 9 Open questions | Updated with status legend (✅ resolved / ⏳ open). Five v0.1 questions resolved; four new questions surfaced from rodage carry into v0.3 cycle. | Standard housekeeping. |
+| § 11 (this section) | Added. | Versioning hygiene. |
+
+### v0.1 — 2026-05-08 (initial draft)
+
+Initial specification — written before the rodage. Authored by Claude Code (Opus 4.7) at the project owner's request to define a repeatable workflow for outside-reviewer verification of Dead Light Framework documents. Industry-pragmatic mode, separate audit-from-authoring, pre-registered rubric.
+
+### Out-of-scope-for-this-revision (carried forward)
+
+These were considered for v0.2 but deferred:
+
+- A formal *meta-IVP* pass over this spec (the audit doc auditing itself is excluded from scope to avoid self-reference; a separate reviewer is the cleanest path).
+- Inter-rater-reliability formalism (Cohen's κ etc.) for multi-reviewer runs — not yet needed because all runs to date have been single-reviewer.
+- Recursion-risk handling for governance-framework-citing-other-governance-frameworks (open in § 9).
