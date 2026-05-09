@@ -16,7 +16,7 @@ For Phase 0 Q1 (Past Decisions Catalog significance threshold) and Phase 1 Recko
 |---|---|---|---|
 | **ITIL Change Management — change tiers** | AXELOS, ITIL 4 (2019). PeopleCert/AXELOS launched ITIL 5 Foundation in February 2026; ITIL 4 modules sunset 31 December 2027. Either edition is valid for this row's purpose; ITIL 4 is the longer-tenured anchor. | Categorical: Standard / Normal / Emergency. ITIL Priority within each type is derived from an Impact × Urgency matrix. | Adapt the impact-urgency matrix to architectural decisions: e.g., Standard = within-service, Normal = cross-service, Emergency = cross-platform. |
 | **ISA 320 materiality (judgement framework)** | IAASB, *ISA 320: Materiality in Planning and Performing an Audit* (current edition). Note: ISA 320 itself prescribes **professional judgement**, not fixed percentages. | ISA 320 §A8 illustrative examples: **5% of profit before tax** (profit-oriented manufacturing entity), **1% of total revenue or expenses** (not-for-profit entity). Practitioner methodology heuristics commonly cited in firm guidance and the CEAOB 2022 materiality survey: **3–10% of PBT**, or **0.5–2% of revenue**. | For software: adapt the *judgement discipline* (pick a base meaningful to the project, apply a defensible percentage, document rationale) — e.g., 5–10% of project budget or effort if budget/effort is the meaningful base, or 0.5–2% of a revenue-equivalent metric. The standard supplies the framework for choosing; the percentage is a practitioner convention, not an ISA 320 mandate. |
-| **PMBOK Earned Value Management variance thresholds** | PMI, *PMBOK Guide* (current edition) | Schedule Variance (SV), Cost Variance (CV), Schedule Performance Index (SPI), Cost Performance Index (CPI). PMBOK defines the indices but does not prescribe specific trigger values. Common practitioner conventions (vendor and consultancy guidance): yellow alert at SPI/CPI 0.8–0.9 or 1.1–1.2; red alert <0.8 or >1.2. The "<0.9 or >1.1" band is widely used but is firm-methodology, not PMBOK-mandated. | Adapt: a decision that produced > 10% schedule or cost variance is significant by definition (the team's chosen threshold is a calibration question — set it explicitly). |
+| **PMBOK Earned Value Management variance thresholds** | PMI, *PMBOK Guide* (8th edition, 2025; previously 7th edition, 2021). EVM concepts and indices are edition-stable across recent editions. | Schedule Variance (SV), Cost Variance (CV), Schedule Performance Index (SPI), Cost Performance Index (CPI). PMBOK defines the indices but does not prescribe specific trigger values. Common practitioner conventions (vendor and consultancy guidance): yellow alert at SPI/CPI 0.8–0.9 or 1.1–1.2; red alert <0.8 or >1.2. The "<0.9 or >1.1" band is widely used but is firm-methodology, not PMBOK-mandated. | Adapt: a decision that produced > 10% schedule or cost variance is significant by definition (the team's chosen threshold is a calibration question — set it explicitly). |
 | **CMMI Causal Analysis & Resolution (CAR)** | CMMI Institute (ISACA), *CMMI Development V3.0* (2023; successor to v2.0 released 2018, retired June 2024) | Historical baseline of decision rate per project size (KLOC, function points, story points) | `expected_decisions = historical_rate × project_size × adjustment`. Backward-tune significance threshold to filter to roughly that count. |
 | **Incident severity tiers (Sev1–Sev4)** | Industry SRE / incident-management practice (Etsy, Google SRE, Atlassian, runframe). ITIL 4 itself uses **Priority** (often P1–P4) derived from an Impact × Urgency matrix; the "Sev1–Sev4" labels are SRE-vernacular, not ITIL-prescribed terminology. | Sev1 / Sev2 / Sev3 / Sev4 by % users affected + revenue impact + downtime duration. | Adapt for "decision blast radius": Sev1 = whole platform, Sev2 = a service, Sev3 = a module, Sev4 = a file. (For ITIL Priority via Impact × Urgency, see the change-tier row above.) |
 
@@ -49,15 +49,15 @@ For Phase 0 Q3 (time budget) and any phase needing effort scoping.
 
 ### Putnam's SLIM
 
-- **Source:** Lawrence Putnam, *Measures for Excellence* (Yourdon Press, 1992).
+- **Source:** Lawrence H. Putnam & Ware Myers, *Measures for Excellence: Reliable Software on Time, Within Budget* (Prentice Hall / Yourdon Press, October 1991). Putnam developed the underlying SLIM model in 1978 from observations of Army and GE software-staffing profiles.
 - **Mechanism:** Rayleigh curve fit to historical organizational data; produces effort, schedule, and defect projections.
 - **Application:** For organizations with CMMI L4+ historical baselines.
 
 ### M&A IT due-diligence rule of thumb
 
-- **Source:** Big 4 audit firms (Deloitte, PwC, EY, KPMG) — practice standards, not formal specification.
-- **Rule:** 1 person-week per 10–50 KLOC of legacy code, depending on complexity and documentation quality.
-- **Application:** Practical anchor for Phase 0 retrofit audit when COCOMO is overkill.
+- **Source:** Big 4 audit firms (Deloitte, PwC, EY, KPMG) — practitioner working heuristic. **Not surfaced in any indexed Big-4 publication and not formally codified as a methodology standard.** Treat as practitioner sanity-check, not as a citable industry rule.
+- **Rule:** ~1 person-week per 10–50 KLOC of legacy code, depending on complexity and documentation quality. The wide 5× range reflects how much the heuristic depends on engagement specifics (target system age, documentation completeness, engineer familiarity).
+- **Application:** Practical anchor for Phase 0 retrofit audit when COCOMO is overkill. **For load-bearing budget commitments, prefer the COCOMO-derived 5–15% from the COCOMO II row above; this row is for sanity-checking only.**
 
 ### DORA metrics for baseline
 

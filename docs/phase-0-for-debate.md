@@ -173,11 +173,11 @@ These commitments are made **before** Phase 0 begins. Without them, Phase 0 has 
 
 | Component | Source |
 |---|---|
-| Current state audit + decision archaeology | Borrowed from M&A due diligence practice; software archaeology (Diomidis Spinellis); *Working Effectively with Legacy Code* (Michael Feathers) |
+| Current state audit + decision archaeology | Borrowed from M&A due diligence practice; the code-reading and code-comprehension tradition (representative reference: Diomidis Spinellis, *Code Reading: The Open Source Perspective*, Addison-Wesley, 2003); *Working Effectively with Legacy Code* (Michael Feathers, Pearson, 2004) |
 | Failure inventory with full attribution but blameless framing | Borrowed from blameless postmortem culture (John Allspaw, "Blameless PostMortems and a Just Culture", 2012); long-established practice in aviation safety (NTSB) and clinical medicine (root-cause analysis) |
-| Implicit principles surface — independent capture before synthesis | Borrowed from organizational ethnography (Edgar Schein, *Organizational Culture and Leadership* — espoused vs in-use values); Delphi method for forecast aggregation |
-| Bottom-up Reckoning Team (not Council) producing the inventory | Borrowed from open-source maintainer-driven processes (Linux subsystem maintainers, Apache committers); RUP's "spike" pattern for investigation work |
-| PM-defined thresholds for significance, materiality, scope, cadence | Borrowed from PMBOK / PRINCE2 project sizing patterns; Lean Startup's "scope is the variable" principle |
+| Implicit principles surface — independent capture before synthesis | Borrowed from organizational ethnography (Edgar Schein, *Organizational Culture and Leadership* — three-level model: artifacts / espoused values / underlying assumptions) and from action science (Chris Argyris & Donald Schön, *Theory in Practice*, 1974 — espoused theory vs theory-in-use); Delphi method for forecast aggregation |
+| Bottom-up Reckoning Team (not Council) producing the inventory | Borrowed from open-source maintainer-driven processes (Linux subsystem maintainers, Apache committers); XP's "spike" pattern for investigation work (Kent Beck, *Extreme Programming Explained*, 1999) |
+| PM-defined thresholds for significance, materiality, scope, cadence | Borrowed from PMBOK / PRINCE2 project sizing patterns; the Agile Iron Triangle's "fix time, vary scope" framing (also expressed in PRINCE2 as the tolerance pattern); Lean Startup's minimal-upfront-artifacts and validated-learning principles for scope discovery |
 | No sealing ceremony for Phase 0 | Borrowed from the engineering review pattern in IETF and W3C — investigation outputs feed governance bodies but are not themselves governance acts |
 | **Phase 0 → Phase 1 hand-off without approval gate** | **Novel** — most prep phases require formal approval; here the Council is a reader, not a gate |
 | **Implicit principles independent capture as a *required* step in retrofit governance** | **Novel** — surfaced as a methodology pattern but not previously codified at the governance level |
