@@ -1,8 +1,8 @@
 # Independent Verification Pass (IVP) — Audit Workflow (For Debate)
 
-> **Version:** v0.2 (2026-05-09). Refined after the 2026-05-08 rodage execution against the existing repository. See [§ 11 Changelog](#11-changelog) for what changed and why; rodage findings in [`findings-2026-05-08.md`](findings-2026-05-08.md).
+> **Version:** v0.3 (2026-05-09). Refined after the 2026-05-09 multi-phase run executed Phases 2 (extension), 3, and 4 with remediation between phases. See [§ 11 Changelog](#11-changelog) for what changed and why; findings in [`findings-2026-05-08.md`](findings-2026-05-08.md), [`findings-2026-05-09.md`](findings-2026-05-09.md), [`findings-phase3-2026-05-09.md`](findings-phase3-2026-05-09.md), [`findings-phase4-2026-05-09.md`](findings-phase4-2026-05-09.md).
 >
-> **Status:** Draft, not final. To be refined after each execution against the repository; spec changes go between passes, not during.
+> **Status:** Draft, not final. To be refined after each execution against the repository; spec changes go between *runs* (not between phases of the same run, and not during a phase).
 >
 > **Purpose:** Define a repeatable workflow that an *outside reviewer* can run against the Dead Light Framework documents to verify (a) the existence and accuracy of cited sources, (b) the appropriateness of those sources for the claims they support, (c) the soundness of arguments, (d) the internal consistency of the framework, and (e) the framework's standing relative to external literature.
 >
@@ -75,7 +75,8 @@ These four tables are the operational rubric. Auditor maps every item to one row
 
 - **`UNFALSIFIABLE` escalation.** Any claim flagged `UNFALSIFIABLE` by Phase 4 escalates by **one severity level above its rubric base**, unless the claim is explicitly *definitional* or *conventional* (per § 7 limitations: definitional claims are not falsifiable in the empirical sense and the verdict is informational for them, not penal). Resolved from § 9 open question.
 - **Load-bearing weighting.** Findings on load-bearing items (LB=Y in inventory) are reported first and never bumped down for brevity.
-- **Tier-floor rule.** A load-bearing claim resting solely on T3 grey literature, with no T1/T2 triangulation, is flagged at minimum `MEDIUM` regardless of whether the T3 source itself is accurate. Industry-pragmatic mode admits T3, but unanchored T3 is itself a finding.
+- **Tier-floor rule (citations).** A load-bearing claim resting solely on T3 grey literature, with no T1/T2 triangulation, is flagged at minimum `MEDIUM` regardless of whether the T3 source itself is accurate. Industry-pragmatic mode admits T3, but unanchored T3 is itself a finding.
+- **Argument-warrant tier-floor (added v0.3).** A load-bearing argument resting solely on framework-internal reasoning (no external citation at all), is flagged at minimum `MEDIUM` regardless of how plausible the warrant appears — by analogy to the citation tier-floor rule. The framework's policy 2 (industry-standards-over-invention) applies to argument-warrants, not just to citations. Driven by the 2026-05-09 Phase 4 finding F-28 on the framework's central premise lacking an external anchor.
 
 ### 4.2 Citation verification verdict (Phase 2)
 
@@ -143,7 +144,7 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 1. Run **confirming query** to locate primary source. Prefer publisher's official site, standards-body site, or an indexed bibliographic database.
 2. **For load-bearing citations (LB=Y in any of the citation's claim references): primary-source read is MANDATORY.** A T2 textbook summary or T3 grey-literature secondary is *insufficient* grounds for a `VERIFIED` verdict on a load-bearing item — the auditor must reach the standard's text, the paper's PDF, or the publisher's official documentation page. If the primary source cannot be reached within reasonable effort (paywall, archive offline, language barrier), the verdict is `UNVERIFIABLE` until a future pass with better access — no guess from secondary.
 3. **For non-load-bearing citations:** if primary not directly accessible, climb tier ladder (T1 → T2 → T3) and record the tier reached.
-4. Run **disconfirming query** — **MANDATORY for load-bearing** items, recommended for others — to find any source asserting the framework's claim is wrong about the citation's content (e.g., "ISA 320 materiality is qualitative not 5%", "Miller's number is 7 not 5", "CMMI v3.0 is current not v2.0", "two-pizza team origin is late 1990s not 2002").
+4. Run **disconfirming query** — **MANDATORY for load-bearing** items, recommended for others — to find any source asserting the framework's claim is wrong about the citation's content (e.g., "ISA 320 materiality is qualitative not 5%", "Miller's number is 7 not 5", "CMMI v3.0 is current not v2.0", "two-pizza team origin is late 1990s not 2002"). **Distinction added v0.3:** for **characterization claims** (interpretive — "X was a fragmentation pattern", "Y was a successful retrofit"), the disconfirming query is mandatory and must surface scholarly counter-readings. For **named-factual claims** (year, event, name — "HRE dissolved 1806", "TRC established 1996"), the disconfirming check may be abbreviated to "is the framework's characterization standard scholarly consensus, yes/no" with the abbreviation explicitly recorded in the audit trail. Driven by the 2026-05-09 Phase 2 extension limitation observation that mandating full disconfirming queries on canonical historical facts (HRE 1806 etc.) is low-yield.
 5. Compare attribute claimed in framework against source. For numeric claims, the number must match within stated precision. For doctrine claims, the source must explicitly support the doctrine being attributed.
 6. Assign verdict from rubric 4.2.
 
@@ -168,9 +169,10 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 
 **Inputs.** Verified citations from Phase 2 (verdicts `VERIFIED` or `PARTIAL`).
 
-**Procedure.** For each:
+**Procedure.** **(Pre-step added v0.3) — refresh inventory paraphrases against current framework text before beginning Phase 3.** Driven by the 2026-05-09 Phase 3 erratum: two of three new findings (F-25, F-26) were over-stated because Phase 3 worked from `inventory.md`'s Phase-1-state paraphrases rather than the post-remediation framework text. If a remediation pass has occurred between Phase 2 and Phase 3, either (a) re-extract the Citations table's "Attribute(s) the framework claims" column from current source files, or (b) read the source files directly when evaluating each citation, treating the inventory as a pointer-list only. For each citation:
+
 1. State the source's *actual scope* (one sentence) from the source's own framing.
-2. State the framework's *use* of the source (one sentence).
+2. State the framework's *use* of the source (one sentence) — **read from current source file, not from inventory paraphrase (v0.3)**.
 3. Apply the four sub-checks:
    - **Scope match** — does the source's domain include the framework's question?
    - **Authority in context** — within the framework's question, is this source authoritative? (E.g., COCOMO II is authoritative for *cost*; not for *governance threshold*.)
@@ -194,7 +196,9 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 
 **Inputs.** Load-bearing claims from Phase 1 (load-bearing = `Y`), plus all decisions in `docs/debates/`.
 
-**Procedure.** For each load-bearing argument:
+**Procedure.** **(Cluster option added v0.3) — cluster-level Toulmin decomposition is acceptable when multiple load-bearing claims share data, warrant, and backing structure.** Each cluster gets one full Toulmin decomposition + one fallacy checklist + one falsifiability test; per-claim verdicts are recorded in the cluster's verdict table. A stricter pass produces per-claim decompositions. Cluster grouping must be explicit (claim IDs listed) and the analysis must surface per-claim differences (e.g., one claim in the cluster may earn WEAK-WARRANT while others earn SOUND for the same data and warrant). Driven by the 2026-05-09 Phase 4 execution against 41 load-bearing claims; cluster-level analysis kept the run tractable without losing per-claim resolution.
+
+For each load-bearing argument (or cluster):
 1. Extract Toulmin elements:
    - **Claim** — what is asserted.
    - **Data** — evidence offered.
@@ -331,12 +335,14 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 
 IVP is designed to be repeated as the framework evolves.
 
-1. Create a new branch (e.g., `audit/ivp-YYYY-MM-DD`).
+1. Create a new branch (e.g., `audit/ivp-YYYY-MM-DD`). For multi-phase runs in one session, use one branch per phase: `audit/ivp-YYYY-MM-DD-phase{N}` (added v0.3 from observed workflow).
 2. Copy the rubric tables from this document into a fresh working file. **Do not modify the rubric** during the run.
 3. Run phases 1–7 in order. Each phase writes to its own file under `audit/`. Do not modify framework documents during the run.
-4. On completion, file the report at `audit/findings-YYYY-MM-DD.md`, commit, and open a PR for project-owner review.
-5. Project owner reviews, decides remediation actions, and authorises a *separate* authoring branch. The remediation branch may modify framework documents; the audit branch may not.
-6. Diff between consecutive IVP runs goes in `audit/diff-PREV-to-CURRENT.md` to track whether prior findings were resolved.
+4. On completion of each phase, file the report and commit. **Findings file naming (clarified v0.3):** for runs producing a single phase, use `audit/findings-YYYY-MM-DD.md`; for runs producing multiple phases (each with its own audit branch), use `audit/findings-phase{N}-YYYY-MM-DD.md` per phase. Phase 7's Synthesis Report integrates all per-phase files when multi-phase runs are completed.
+5. Project owner reviews, decides remediation actions, and authorises a *separate* authoring branch off the audit branch. The remediation branch may modify framework documents; the audit branch may not.
+6. **Multi-phase runs with remediation between phases (added v0.3):** when a remediation pass is applied between Phase N and Phase N+1, the next audit branch (`audit/ivp-YYYY-MM-DD-phase{N+1}`) branches off the *remediation* branch (not off the previous audit branch), so Phase N+1 evaluates against the post-remediation framework state. The pre-Phase-3 inventory-paraphrase refresh (§ 5 Phase 3) and the Phase 4 evaluation-against-current-text rule (§ 5 Phase 4) both depend on this branching pattern.
+7. **Audit erratum convention (added v0.3):** if a finding is partially over-stated upon re-reading during a remediation pass, an erratum may be appended to the findings file noting the reassessment, severity downgrade, or retraction. The original finding remains in the body for audit-trail integrity. The erratum lives on the audit branch as a separate commit (per § 5 separation-of-concerns), not on the remediation branch. Driven by the 2026-05-09 Phase 3 erratum that reduced F-25 (MEDIUM → LOW) and retracted F-26.
+8. Diff between consecutive IVP **runs** (not between phases of the same run) goes in `audit/diff-PREV-to-CURRENT.md` to track whether prior findings were resolved.
 
 **Cadence guidance (event-driven primary; calendar fallback).** Run IVP after any of:
 
@@ -384,9 +390,11 @@ Stated up front so they cannot be raised post-hoc as defences against findings.
 
 ---
 
-## 9. Open questions about this methodology — status after rodage
+## 9. Open questions about this methodology — status after multi-phase 2026-05-09 run
 
-Status legend: ✅ resolved (decision baked into v0.2 spec); ⏳ still open (carry to next debate cycle).
+Status legend: ✅ resolved (decision baked into v0.2 or v0.3 spec); ⏳ still open (carry to next debate cycle).
+
+**Resolved in v0.2:**
 
 - ✅ **Is the load-bearing classification reliable?** Single-reviewer classification has correlation risk (resolved as a § 7 limitation; mitigation = second-pass independent classification or explicit risk-listing). Not a hard rubric requirement, since requiring two independent reviewers is impractical for many runs.
 - ✅ **Should `UNFALSIFIABLE` automatically escalate severity, or informational only?** Resolved: escalates by one severity level above rubric base, except for definitional/conventional claims (§ 4.1 cross-cutting rule).
@@ -394,12 +402,23 @@ Status legend: ✅ resolved (decision baked into v0.2 spec); ⏳ still open (car
 - ✅ **Phase 6's gap matrix — own debate document or part of audit?** Resolved: stays as part of audit, lives in `docs/audit/benchmark.md` (§ 5 Phase 6 unchanged).
 - ✅ **Re-run cadence — 90 days vs event-driven?** Resolved: event-driven primary, 12-month calendar fallback (§ 6 Cadence guidance).
 
-⏳ **Carried open into next cycle:**
+**Resolved in v0.3 (from 2026-05-09 multi-phase run lessons):**
 
-- Should the IVP spec itself be subject to a "meta-IVP" pass periodically? (Today the spec excludes itself from scope to avoid self-reference; a separate reviewer running IVP on the spec would be the cleanest answer.)
-- For multi-reviewer runs, what inter-rater-reliability metric is reported (Cohen's κ on classification, agreement rate on verdicts)?
+- ✅ **Should argument-warrant be subject to a tier-floor rule like citations are?** Resolved: yes — added as new § 4.1 cross-cutting rule. Driven by Phase 4 finding F-28 on the framework's central premise lacking external citation despite being the most load-bearing claim in the framework.
+- ✅ **Phase 3 evaluating against stale inventory paraphrases vs current text?** Resolved: pre-Phase-3 step requires refreshing inventory paraphrases or reading source files directly; § 5 Phase 3 procedure updated. Driven by Phase 3 erratum where F-25 and F-26 were over-stated due to paraphrase staleness.
+- ✅ **How to handle multi-phase runs in one session with remediation between phases?** Resolved: per-phase audit branches, each branched off the previous remediation branch; § 6 Re-run procedure step 1 + step 6 updated. Driven by the 2026-05-09 workflow that ran Phase 2 ext → remediate → Phase 3 → remediate → Phase 4 → remediate.
+- ✅ **Audit erratum convention for findings over-stated upon re-reading?** Resolved: erratum appended to findings file on audit branch as separate commit; § 6 step 7 added. Driven by Phase 3 erratum.
+- ✅ **Per-claim vs cluster-level Toulmin decomposition in Phase 4?** Resolved: cluster-level acceptable when claims share data + warrant + backing structure, with per-claim verdicts in cluster table; § 5 Phase 4 procedure updated. Driven by 41-claim Phase 4 execution.
+- ✅ **Disconfirming search burden on canonical historical/legal facts?** Resolved: distinguish characterization claims (mandatory full disconfirming) from named-factual claims (abbreviated check, recorded explicitly); § 5 Phase 2.4 updated. Driven by Phase 2 extension limitation observation.
+
+⏳ **Carried open into next cycle (post-v0.3):**
+
+- Should the IVP spec itself be subject to a "meta-IVP" pass periodically? (Today the spec excludes itself from scope to avoid self-reference; a separate reviewer running IVP on the spec would be the cleanest answer.) **Status update 2026-05-09:** v0.3 spec now references multiple phase-specific findings files which themselves cite the spec — recursion risk is increasing; meta-IVP pass becoming more relevant.
+- For multi-reviewer runs, what inter-rater-reliability metric is reported (Cohen's κ on classification, agreement rate on verdicts)? **Status update 2026-05-09:** the F-29 remediation introduced Cohen's κ as an *external* anchor for the framework's stress-test threshold; using the same metric for IVP's own inter-rater reliability would be coherent.
 - For frameworks that themselves cite *other governance frameworks* (Dead Light citing PRINCE2, ITIL, CMMI), is there a recursion risk — does the framework inherit the cited framework's evidentiary issues? When and how should this be flagged in Phase 6?
-- Should Phase 4 fallacy checklist be expanded based on which fallacies actually surface in real runs? (Add only after a fallacy has been observed to surface; do not pre-emptively bloat the checklist.)
+- Should Phase 4 fallacy checklist be expanded based on which fallacies actually surface in real runs? **Status update 2026-05-09:** Phase 4 surfaced *survivorship bias* as a recurring pattern (F-30, F-31). Already in the v0.2 checklist; Phase 4 found multiple cases. No expansion needed yet.
+- **New (v0.3):** What constitutes an "argument cluster" formally? The Phase 4 cluster option is permissive; without a formal definition, two reviewers could cluster the same 41 claims into 5 vs 10 vs 20 clusters with different verdict implications. Practical guidance: cluster on shared data + warrant + backing; do not cluster solely on shared topic.
+- **New (v0.3):** Should remediation commits include a `Findings-addressed:` trailer linking to specific finding IDs for traceability? Currently the commit messages list F-IDs in body text; structured trailers would make automated cross-reference between audit and remediation easier.
 
 ---
 
@@ -419,6 +438,21 @@ These are the methodology's own citations and are themselves subject to a future
 ---
 
 ## 11. Changelog
+
+### v0.3 — 2026-05-09 (post-multi-phase-run refinement)
+
+Driven by lessons from the 2026-05-09 multi-phase run that executed Phases 2 (extension), 3, and 4 in one session with remediation between phases. Findings: [`findings-2026-05-09.md`](findings-2026-05-09.md), [`findings-phase3-2026-05-09.md`](findings-phase3-2026-05-09.md), [`findings-phase4-2026-05-09.md`](findings-phase4-2026-05-09.md). Each change cites the specific gap that surfaced.
+
+| § | Change | Why |
+|---|---|---|
+| Status header | Bumped to `Version: v0.3`; clarified that "between *runs*, not between phases of the same run". | Multi-phase runs in one session are now an observed pattern; spec needs to distinguish run boundaries from phase boundaries. |
+| § 4.1 cross-cutting rules | Added **Argument-warrant tier-floor**: load-bearing argument resting solely on framework-internal reasoning, with no external citation, is at minimum MEDIUM. By analogy to citation tier-floor. | Phase 4 finding F-28 — the framework's central premise (README: "AI agents break methodology assumptions") had no external citation despite being the most load-bearing claim in the entire framework. Policy 2 (industry-standards-over-invention) applies to argument-warrants, not just citations. |
+| § 5 Phase 2.4 (disconfirming) | Distinguished **characterization claims** (full disconfirming mandatory) from **named-factual claims** (year/event/name; abbreviated check explicitly recorded in trail). | Phase 2 extension limitation: full disconfirming on canonical historical facts (HRE 1806 etc.) is low-yield; abbreviating saves rate-limited search budget for the cases where it matters. |
+| § 5 Phase 3 procedure | Added pre-step: refresh inventory paraphrases against current framework text, OR read source files directly. Updated step 2 to "read from current source file, not from inventory paraphrase". | Phase 3 erratum: F-25 (MEDIUM → LOW) and F-26 (retracted) were over-stated because Phase 3 worked from `inventory.md`'s Phase-1-state paraphrases rather than the post-remediation framework text. Pre-step prevents recurrence. |
+| § 5 Phase 4 procedure | Added cluster option: cluster-level Toulmin decomposition acceptable when claims share data + warrant + backing; per-claim verdicts in cluster table; cluster grouping must be explicit. | Phase 4 ran 41 load-bearing claims; per-claim full Toulmin × 41 was infeasible. Cluster-level analysis (7 clusters) preserved per-claim resolution while keeping the run tractable. |
+| § 6 Re-run procedure | Multi-phase pattern formalized: per-phase audit branches; each subsequent phase branches off the previous remediation branch; findings file naming `findings-phase{N}-YYYY-MM-DD.md` for multi-phase runs; audit erratum convention added as step 7. | The 2026-05-09 workflow (Phase 2 ext → remediate → Phase 3 → remediate → Phase 4 → remediate) was not anticipated by v0.2's "single-pass single-branch" model. v0.3 formalizes the observed practice. |
+| § 9 Open questions | Six v0.2 questions resolved (one new from F-28 escalated to immediate v0.3 fix; five process questions resolved by the multi-phase-run experience). Two new questions added (formal cluster definition; commit trailer for traceability). Status updates added to four ⏳ questions. | Standard housekeeping. |
+| § 11 (this section) | v0.3 entry added. | Versioning hygiene. |
 
 ### v0.2 — 2026-05-09 (post-rodage refinement)
 
@@ -441,10 +475,12 @@ Driven by lessons from the 2026-05-08 rodage execution against the existing repo
 
 Initial specification — written before the rodage. Authored by Claude Code (Opus 4.7) at the project owner's request to define a repeatable workflow for outside-reviewer verification of Dead Light Framework documents. Industry-pragmatic mode, separate audit-from-authoring, pre-registered rubric.
 
-### Out-of-scope-for-this-revision (carried forward)
+### Out-of-scope-for-v0.3-revision (carried forward)
 
-These were considered for v0.2 but deferred:
+These were considered for v0.3 but deferred:
 
-- A formal *meta-IVP* pass over this spec (the audit doc auditing itself is excluded from scope to avoid self-reference; a separate reviewer is the cleanest path).
-- Inter-rater-reliability formalism (Cohen's κ etc.) for multi-reviewer runs — not yet needed because all runs to date have been single-reviewer.
+- A formal *meta-IVP* pass over this spec (the audit doc auditing itself is excluded from scope to avoid self-reference; a separate reviewer is the cleanest path). **v0.3 status:** the spec now has more in-depth cross-references to multiple findings files; meta-IVP is increasingly relevant but still requires a separate reviewer.
+- Inter-rater-reliability formalism (Cohen's κ etc.) for multi-reviewer runs — not yet needed because all runs to date have been single-reviewer. **v0.3 status:** Cohen's κ is now an *external* anchor for the framework's stress-test threshold (F-29 remediation); using the same metric for IVP's own inter-rater reliability would be coherent, but no multi-reviewer IVP run has been performed yet.
 - Recursion-risk handling for governance-framework-citing-other-governance-frameworks (open in § 9).
+- **(New v0.3)** Formal definition of "argument cluster" for Phase 4 cluster-level decomposition — current spec is permissive; future v0.4 may add a typology.
+- **(New v0.3)** `Findings-addressed:` commit trailer for remediation traceability — currently ad-hoc in commit body text.
