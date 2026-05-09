@@ -291,4 +291,40 @@ Phase 3 is internal-text analysis; no new web queries beyond those in Phase 2 we
 
 ---
 
+## 8. Erratum (added 2026-05-09 after remediation pass)
+
+During the immediately-following remediation pass on `remediate/ivp-2026-05-09-phase3-findings`, re-reading the current framework text revealed that two of the three new findings above were partially over-stated because the Phase 3 analysis worked from `inventory.md`'s paraphrases rather than the post-remediation framework text. The findings are kept above as originally recorded for audit-trail integrity, with corrections recorded here.
+
+### F-25 reduction: MEDIUM → LOW
+
+The original F-25 stated that the framework's Catholic Church citation "does not surface" the Great Schism (1054) and Reformation (1517). In fact, [`docs/debates/001-laws-count-and-multirepo-scaling.md:69`](../debates/001-laws-count-and-multirepo-scaling.md#L69) **already explicitly acknowledges both** events in its post-F-12-remediation text: "institutional continuity ~2,000 years (despite the Great Schism of 1054 and the Reformation of 1517 producing the Eastern Orthodox and Protestant traditions, the Roman Catholic legal-doctrinal continuity itself is uninterrupted)."
+
+The legitimate residual issue: [`docs/phase-1-for-debate.md:187`](../phase-1-for-debate.md#L187) referenced Catholic Church without the same qualifier. That is a one-line consistency issue, **LOW severity** (not MEDIUM). Remediation pass added a brief cross-reference to debate 001's fuller treatment.
+
+The Phase 3 finding's underlying concern — methodological cherry-pick of the most generous time-window — is technically resolved by the existing acknowledgment, although a stricter reading might still flag the definitional choice ("Roman Catholic specifically" rather than "Christian governance generally"). That deeper question is outside Phase 3's scope (it is a Phase 4 argument-validity question about how the framework defines its category boundaries).
+
+### F-26 needed no action: already satisfied
+
+The original F-26 stated that the Spotify model citation "should acknowledge Spotify's departure from it." In fact, [`docs/debates/001-laws-count-and-multirepo-scaling.md:73`](../debates/001-laws-count-and-multirepo-scaling.md#L73) **already says** "Industry-cited even though Spotify itself has since modified the model — the two-tier pattern persists." This qualifier was present before Phase 3 began. The finding was based on a re-read miss against the inventory's older paraphrase. No remediation needed.
+
+### F-27 stands
+
+F-27 (Goodhart's Law stretched) was correctly identified. The framework text at [`debate 001:35`](../debates/001-laws-count-and-multirepo-scaling.md#L35) was reframed in the remediation pass to invoke Goodhart as analogy and re-anchor the memorability claim on Miller (already correctly cited above after F-01 remediation).
+
+### Methodological lesson for future Phase 3 runs
+
+Phase 3 (and Phase 5) should evaluate citations against the **current framework text**, not against `inventory.md`'s paraphrases. The inventory captures Phase-1-state at audit time and may lag behind remediation. A pre-Phase-3 step of "refresh inventory paraphrases against current text" would prevent this kind of over-statement. Considered for v0.3 of the IVP spec.
+
+### Updated aggregate (post-erratum)
+
+| Category | Original Phase 3 | After erratum |
+|---|---|---|
+| `STRETCHED` verdicts | 3 | 2 effective (F-26 had no actionable issue) |
+| Findings — MEDIUM | 1 (F-25) | 0 |
+| Findings — LOW | 2 (F-26, F-27) | 2 (F-25-reduced, F-27); F-26 retracted |
+
+**Combined cross-phase totals revised:** 0 CRITICAL · 6 HIGH · 6 MEDIUM · 14 LOW · 1 retracted (F-26) = 26 findings of practical effect, all remediated.
+
+---
+
 End of report.
