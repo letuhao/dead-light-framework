@@ -72,6 +72,8 @@ This is the recommendation. It borrows from established precedent rather than in
 | AWS | Leadership Principles (corporate-wide) + per-team Tenets. | Corporate-scale precedent; deliberately scoped to avoid Tenets contradicting Principles. |
 | Spotify model | Tribe Mission + Squad missions. | Industry-cited even though Spotify itself has since modified the model — the two-tier pattern persists. |
 
+**Selection criteria for these precedents (anti-survivorship-bias note).** The seven entries above were selected on three convergent criteria: (a) **multi-tier inherit-and-add structure** is explicit, not retrofitted from observation; (b) **scale of operation** is at least multi-decade (most are multi-century); (c) **the lower tier cannot legally or practically override the upper tier** (Supremacy Clause / canon limits / kernel-wide standards / TPS principles / Leadership Principles). Multi-tier governance attempts that *failed* despite the structure — notably the Soviet Union's Republics → ASSRs → Oblasts → Raions hierarchy (collapsed 1991, see § Why hierarchy is not enough below) and the Late Roman Empire's Praetorian Prefectures → Dioceses → Provinces (cumulative-attenuation collapse, see same section) — share property (a) but lacked **either credible enforcement of the upper tier across the lower tiers** (Soviet) **or a self-correcting mechanism for cumulative drift** (Roman). The selection above is therefore not "successful examples cherry-picked" but "examples that held both the structure *and* the enforcement-and-correction mechanisms" — which are precisely what the framework's "inherit and add — never relax" rule (§ Core rule below) and Sector adoption gating (4 conjunctive criteria) carry forward.
+
 ### Proposed structure
 
 ```

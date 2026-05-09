@@ -73,7 +73,7 @@ Phase 1 is NOT done until all of the following are true:
 - [ ] Every Immutable Law has at least one example of violation and one of compliance.
 - [ ] Every Guiding Principle has both an Intent statement and a Direction statement.
 - [ ] Boundaries contains at least three explicit items (guards against vagueness).
-- [ ] Stress test covers ≥ 5 scenarios; divergence rate between Council members < 20%.
+- [ ] Stress test covers ≥ 5 scenarios; divergence rate between Council members < 20%. *Anchor:* the 20% threshold is calibrated against inter-rater reliability conventions (Cohen 1960 kappa, Krippendorff alpha) — substantial agreement is conventionally κ > 0.6 (≈ < 40% disagreement); 20% disagreement targets stronger than substantial agreement, appropriate for a sealing gate. The exact number is a heuristic anchor pending empirical calibration from the LoreWeave case study.
 - [ ] All Council members have signed.
 - [ ] Document exists in immutable storage (signed git tag, hash-pinned commit, or equivalent).
 - [ ] At least one agent has been test-run with the Astronomican as system prompt and produced output consistent with the Laws.
@@ -89,7 +89,7 @@ Phase 1 is NOT done until all of the following are true:
 | Laws read as coding instructions ("use PostgreSQL", "use React") | Too specific — belong in Codex or ADR, not the Astronomican. |
 | More than 9 Laws or 9 Principles | Bloat — past Miller's upper bound (7±2). Each extra item adds an interpretation surface and breaks the recall premise. Force a cut. (Cap revised in [debate 004](debates/004-cap-revision-miller-correction.md).) |
 | Document keeps being edited after "sealing" | The seal was symbolic only — either ceremony was skipped or the Council lacked binding authority. |
-| Stress-test divergence > 20% | Wording is still ambiguous; humans and agents will interpret differently at runtime. |
+| Stress-test divergence > 20% | Wording is still ambiguous; humans and agents will interpret differently at runtime. (Threshold anchored against inter-rater reliability conventions — see § 5 quality gates.) |
 | Boundaries section is empty | The project will scope-creep. Boundaries are the vaccine; an empty list means no immunity. |
 
 ---
@@ -290,7 +290,7 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 | **Format constraint for agent recital (ID-addressable, system-prompt-able)** | Novel |
 | **Quality gate "recite without reading"** | Borrowed in spirit from military doctrine drilling; novel applied to software |
 | **Imperial + Sector tier with inherit-and-add rule** | Borrowed from constitutional federalism, Catholic Church canon law plus diocesan customs, Linux kernel maintainer tree, Toyota TPS plus plant kaizen |
-| **Phase 0: Reckoning + retrofit-aware Phase 1** | Borrowed from constitutional retrofit precedents (Japan 1947, Spain 1978, South Africa TRC 1996), corporate transformation patterns (Microsoft / Nadella, Apple / Jobs 1997), Toyota's Ohno-circle exercise, Linux kernel CoC effective-date model, and the Strangler Fig refactoring pattern (Fowler) |
+| **Phase 0: Reckoning + retrofit-aware Phase 1** | Borrowed from constitutional retrofit precedents (Japan 1947, Spain 1978, South Africa TRC 1996 — selected as post-WWII *successful* retrofits; failed cases such as Iraq 2005 and Weimar Germany 1919 lacked explicit past-violations machinery, the durability anchor that distinguishes the successes — see [debate 002 § Real-world precedents](debates/002-retrofit-vs-greenfield.md#real-world-precedents-for-retrofit-governance)), corporate transformation patterns (Microsoft / Nadella, Apple / Jobs 1997), Toyota's Ohno-circle exercise, Linux kernel CoC effective-date model, and the Strangler Fig refactoring pattern (Fowler) |
 
 ---
 
