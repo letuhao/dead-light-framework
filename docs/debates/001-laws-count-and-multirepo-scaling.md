@@ -33,7 +33,7 @@ Both are debated below, alongside a third option that emerged from the analysis.
 - The Phase 1 quality gate "recite without reading" breaks at 10+ items, and is impossible at 15.
 - Each added Law is an additional interpretation surface — divergence in the stress test grows with item count.
 - The purpose of the Astronomican is *to bind*. The longer the document, the fewer people read it carefully, the less it binds. This is Goodhart's Law: optimizing for "comprehensive" destroys "recallable".
-- Real-world precedent: AWS Leadership Principles has 16 items and is itself criticized inside Amazon for being too many to internalize.
+- Real-world precedent: AWS Leadership Principles has 16 items (originally 14, two added in 2021) and is widely critiqued — by external commentary and inside-Amazon-adjacent practitioners — as too many to internalize at speed. The qualifier is "widely critiqued" rather than "official internal criticism" because there is no public Amazon document acknowledging this critique formally.
 
 **Verdict:** Increasing the cap defeats the framework's recall and binding premises. **Reject.**
 
@@ -66,7 +66,7 @@ This is the recommendation. It borrows from established precedent rather than in
 |---|---|---|
 | United States constitutional federalism | Federal Constitution + state constitutions; Supremacy Clause prevents states from contradicting federal law. | Stable since 1789 (with one civil war as a known stress event). |
 | German cooperative federalism | Basic Law (Grundgesetz) + Länder constitutions; concurrent powers explicitly enumerated. | Stable since 1949. |
-| Catholic Church | Canon Law (universal) + diocesan and parish-level customs within canon limits. | ~1.3 billion members across 200+ countries; doctrinal coherence over ~2,000 years. |
+| Catholic Church | Canon Law (universal) + diocesan and parish-level customs within canon limits. | ~1.4 billion members worldwide (1.422 billion at end of 2024 per *Annuario Pontificio* 2026), present in essentially every country with the Vatican holding diplomatic relations with 180+ states; institutional continuity ~2,000 years (despite the Great Schism of 1054 and the Reformation of 1517 producing the Eastern Orthodox and Protestant traditions, the Roman Catholic legal-doctrinal continuity itself is uninterrupted). |
 | Linux kernel | Kernel-wide coding standards + per-subsystem maintainer rules. | 30+ years, 10,000+ contributors, no schism. |
 | Toyota Production System | TPS principles (corporate, immutable) + plant-level kaizen within TPS frame. | 70+ years across global manufacturing footprint. |
 | AWS | Leadership Principles (corporate-wide) + per-team Tenets. | Corporate-scale precedent; deliberately scoped to avoid Tenets contradicting Principles. |

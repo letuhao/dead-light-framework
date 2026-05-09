@@ -206,9 +206,26 @@ Recorded in the spec § 9 and validated by the rodage:
 - Citation deduplication — same source cited in multiple files; spec should formalize "verify entity once; record locations."
 - "Load-bearing" classification is itself a judgement; second-pass independent classification would help.
 
+### MEDIUM and LOW findings remediated (same session, separate commit)
+
+| Finding | Action | Reflected in |
+|---|---|---|
+| F-04 — PMBOK SPI/CPI 0.9/1.1 attributed too tightly to PMBOK | Re-framed as practitioner convention with PMBOK defining the indices, not the trigger values. Common bands documented (yellow 0.8–0.9 / 1.1–1.2; red <0.8 / >1.2). | [calibration-standards.md](docs/calibration-standards.md) §A row |
+| F-05 — Sev1–Sev4 misattributed to ITIL (it is SRE vernacular) | Row re-titled "Incident severity tiers (Sev1–Sev4)" and re-attributed to industry SRE / incident-management practice (Etsy, Google SRE, Atlassian). Note added that ITIL 4 itself uses Priority via Impact × Urgency. | [calibration-standards.md](docs/calibration-standards.md) §A row |
+| F-06 — Spolsky "correlate strongly" overclaims a statistical relationship | Re-phrased as anecdotal argument from the Netscape 4 → 6 case (per *"Things You Should Never Do, Part I"*, 2000), with explicit acknowledgement that this is anecdote, not statistics. | [debates/002](docs/debates/002-retrofit-vs-greenfield.md) "Refactoring discipline" row |
+| F-07 — AWS LP "criticized inside Amazon" qualifier unsupported | Reworded to "widely critiqued — by external commentary and inside-Amazon-adjacent practitioners". Note that no public Amazon document formally acknowledges the critique. | [debates/001](docs/debates/001-laws-count-and-multirepo-scaling.md) Option A bullet |
+| F-08 — Six Sigma originator attribution to Mikel Harry alone | Updated to "Bill Smith and Mikel Harry, Motorola" (Smith introduced Six Sigma in 1986; Harry developed MAIC and the 1.5σ shift). | [calibration-standards.md](docs/calibration-standards.md) §E row |
+| F-09 — IEEE 1633-2016 cited as canonical source for MTBF/MTTR | Source column re-framed: MTBF/MTTR are general reliability-engineering metrics; IEEE 1633-2016 is software-reliability practice that operates on them, not their canonical originator. | [calibration-standards.md](docs/calibration-standards.md) §E row |
+| F-10 — Two-pizza team year "~2002" | Updated to "late 1990s (Amazon management offsite); often cited around 2002 because that is when adjacent ideas were popularized." | [calibration-standards.md](docs/calibration-standards.md) §C row |
+| F-11 — Maintainability Index <65 threshold without scale | Distinguished original Coleman et al. unnormalized formula (range 0–171; <65 hard-to-maintain, <85 moderate) from Visual Studio normalized 0–100 (0–9 difficult, 10–19 moderate, 20–100 highly maintainable). Reader must state which scale before quoting a threshold. Citation upgraded to include Oman & Hagemeister (1992) ICSM origin alongside Coleman et al. (1994) refinement. | [calibration-standards.md](docs/calibration-standards.md) §D row |
+| F-12 — Catholic Church 1.3B membership figure | Updated to ~1.4B (1.422B at end of 2024 per *Annuario Pontificio* 2026). Doctrinal-coherence claim qualified to acknowledge the Great Schism (1054) and Reformation (1517); Roman Catholic legal-doctrinal continuity itself remains uninterrupted. | [debates/001](docs/debates/001-laws-count-and-multirepo-scaling.md) Catholic row |
+| F-13 — ITIL 4 (2019) edition currency note | Source column adds: ITIL 5 Foundation launched February 2026; ITIL 4 modules sunset 31 December 2027. Both editions are valid for the calibration purpose. | [calibration-standards.md](docs/calibration-standards.md) §A row + References list |
+
 ### Repo state at end of Session 2
 
 - Branch: `claude/read-handoff-status-53xfC` (per system instruction; not yet merged to `main`).
-- All changes committed; pushed to `origin`.
-- 46 citations from Phase 1 inventory remain unverified (queued for full Phase 2 in a future IVP run).
-- F-04 through F-13 (MEDIUM and LOW findings) remain open.
+- All changes committed; pushed to `origin`. Three commits on this branch beyond the initial handoff: (1) IVP spec + slash command, (2) IVP rodage (inventory + Phase 2 partial findings), (3) HIGH remediation (F-01, F-02, F-03), (4) MEDIUM/LOW remediation (F-04 through F-13).
+- F-01 through F-13 — all 13 findings from the rodage report — remediated.
+- 46 citations from Phase 1 inventory remain unverified — queued for a full Phase 2 in a future IVP run.
+- IVP Phases 3–7 (citation appropriateness, argument analysis, internal consistency, external benchmarking, synthesis) — not yet executed.
+- IVP spec § 9 open methodology issues — open; to revisit before next IVP cycle.
