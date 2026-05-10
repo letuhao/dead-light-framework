@@ -1,6 +1,6 @@
-# Session Handoff — 2026-05-09 (end of Session 2)
+# Session Handoff — 2026-05-10 (end of Session 3)
 
-> Snapshot of Dead Light Framework state at end of Session 2. Read this first to resume work without re-deriving context. Supersedes the 2026-05-08 handoff.
+> Snapshot of Dead Light Framework state at end of Session 3. Read this first to resume work without re-deriving context. Supersedes the 2026-05-09 handoff (end-of-Session-2).
 
 ---
 
@@ -8,8 +8,8 @@
 
 **Dead Light Framework** — a software development governance methodology for human + AI agent collaboration. It composes on top of existing methodologies (Agile, Scrum, RUP, …) rather than replacing them. The distinctive idea: a frozen source of authority (the *Astronomican*) that no participant — human or agent — can rewrite at will.
 
-Working tree (project-owner workstation): `C:\Works\_Researchs\dead-light-framework`
-Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-weave`
+Working tree (project-owner workstation): `C:\Works\_Researchs\dead-light-framework` (alternate workstation: `D:\Works\source\dead-light-framework`).
+Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-weave`.
 
 ---
 
@@ -17,7 +17,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 | Artifact | Status |
 |---|---|
-| README — Manifesto + Map | Drafted |
+| README — Manifesto + Map | Drafted; AI-collaboration literature anchors added in session 3 (F-28 remediation) |
 | Glossary — for debate | Working draft (final assembled bottom-up later) |
 | Phase 0 — The Reckoning | **Sealed** (all calibration questions resolved in debate 003) |
 | Phase 1 — The Astronomican | Partial — debates 001 and 004 resolved; 6 known questions still open (see § Open questions) |
@@ -25,7 +25,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | Phase 3 — Heresy detection | Not started |
 | Phase 4 — Re-consecration | Not started |
 | LoreWeave case study application | **Not started — recommended next step** |
-| IVP audit infrastructure | **Spec v0.2 + slash command + first rodage complete; all 13 findings remediated; 46 citations queued for full Phase 2** |
+| IVP audit infrastructure | **Spec v0.3 + slash command + Phases 1, 2 (full coverage), 3, 4 complete; all 30 findings (F-01–F-31, with F-26 retracted) remediated; Phases 5–7 queued** |
 
 ---
 
@@ -33,7 +33,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 1. **40k vocabulary is naming and shared metaphor only.** Justification, structural arguments, and assessments of effectiveness must rest on real-world organizational systems with observable track records (constitutional federalism, religious institutions, military doctrine, established corporate practice, open-source governance, established software methodologies, …). When the 40k name and the real-world precedent diverge in implication, the real-world precedent governs the design.
 
-2. **Industry standards over framework-invented formulas.** Calibration questions (thresholds, time budgets, team sizes, audit scopes, failure measurement) anchor to documented external practice — COCOMO II, CMMI v3.0, ITIL 4 / 5, ISA 320, DORA, McCabe, Miller, Brooks, Dunbar, etc. PM and Council retain authority to *select, calibrate, or override*, but the starting point is always documented external practice, never framework arithmetic. Operationalised by the IVP audit (see § IVP).
+2. **Industry standards over framework-invented formulas.** Calibration questions (thresholds, time budgets, team sizes, audit scopes, failure measurement) anchor to documented external practice — COCOMO II, CMMI v3.0, ITIL 4 / 5, ISA 320, DORA, McCabe, Miller, Brooks, Dunbar, Cohen's κ, Bommasani et al. 2021 Foundation Models, etc. PM and Council retain authority to *select, calibrate, or override*, but the starting point is always documented external practice, never framework arithmetic. Operationalised by the IVP audit (see § IVP). **Argument-warrant tier-floor (added IVP v0.3):** load-bearing arguments — not just citations — must rest on external anchors.
 
 ---
 
@@ -41,8 +41,8 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 | Debate | Decision (one-line) |
 |---|---|
-| [001 — Laws Count Cap and Multi-Repo Scaling](docs/debates/001-laws-count-and-multirepo-scaling.md) | Hierarchical Imperial + Sector Astronomicans with inherit-and-add rule. Default = single Astronomican; split only when ≥ 2 repos + dedicated teams + cross-team contracts + genuinely local decisions are all true. |
-| [002 — Retrofit vs Greenfield](docs/debates/002-retrofit-vs-greenfield.md) | Introduce **Phase 0: Reckoning** as prerequisite to Phase 1 for retrofit (greenfield runs lightweight or skips). Reckoning-first effective-date model with classification: Keep / Fix-now / Fix-by-date / Reconsider-Law. |
+| [001 — Laws Count Cap and Multi-Repo Scaling](docs/debates/001-laws-count-and-multirepo-scaling.md) | Hierarchical Imperial + Sector Astronomicans with inherit-and-add rule. Default = single Astronomican; split only when ≥ 2 repos + dedicated teams + cross-team contracts + genuinely local decisions are all true. **Anti-survivorship-bias selection-criteria note added in session 3 (F-30 remediation).** |
+| [002 — Retrofit vs Greenfield](docs/debates/002-retrofit-vs-greenfield.md) | Introduce **Phase 0: Reckoning** as prerequisite to Phase 1 for retrofit (greenfield runs lightweight or skips). Reckoning-first effective-date model with classification: Keep / Fix-now / Fix-by-date / Reconsider-Law. **Mechanism-based warrant for retrofit precedents (TRC's "explicit past-violations machinery" is the durability anchor) added in session 3 (F-31 remediation).** |
 | [003 — Phase 0 Calibration](docs/debates/003-phase-0-calibration.md) | Significance heuristic (6 categorical bullets), Reckoning Team composition rule (≥1 active-IC mandatory + ≥1 tenure-spanning + ≥1 outside-scope), soft time budget with 80%/100% escalation, lightweight greenfield Phase 0 (Assumption Surface + Commitment Audit + Stakeholder Map). |
 | [004 — Cap Revision: Miller Citation Correction](docs/debates/004-cap-revision-miller-correction.md) | Cap on Immutable Laws and Guiding Principles raised from `≤ 5` to **5–9 with target ~7** (anchored on Miller 1956's actual 7 ± 2). Same caps apply to Imperial and Sector. Driven by IVP finding F-01 (Miller misquote). |
 | Council composition multi-role | PM is a Council member. Council requires ≥ 3 distinct functional perspectives (minimum-diversity rule). Council size 3–7 (anchored on Dunbar / Brooks for group dynamics — *not* affected by debate 004's Miller-anchored cap revision). Small-team accommodation: AI-assistant Chapters as aides; Codex specifics deferred to Phase 2. |
@@ -52,14 +52,17 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 ## IVP — Independent Verification Pass
 
-Audit workflow specified, executed once (rodage 2026-05-08), and refined to spec v0.2 (2026-05-09). All 13 findings from the rodage have been remediated. The framework now has an external-reviewable evidentiary check.
+Audit workflow specified, executed once (rodage 2026-05-08), then run end-to-end across Phases 2 (extension), 3, and 4 in session 3 (2026-05-09 → 2026-05-10) with remediation between phases. **All 30 surfaced findings remediated (F-01–F-31; F-26 retracted via erratum after re-reading).** The framework now has a substantially complete external-reviewable evidentiary check through Phase 4.
 
-- **Spec** (v0.2): [`docs/audit/independent-verification-pass-for-debate.md`](docs/audit/independent-verification-pass-for-debate.md). 7 phases; pre-registered rubric; industry-pragmatic source-tier hierarchy; mandatory primary-source read + disconfirming search for load-bearing claims (added in v0.2 after rodage exposed coverage gaps); changelog at § 11.
+- **Spec** (v0.3, 2026-05-09): [`docs/audit/independent-verification-pass-for-debate.md`](docs/audit/independent-verification-pass-for-debate.md). 7 phases; pre-registered rubric; industry-pragmatic source-tier hierarchy; argument-warrant tier-floor (new in v0.3); cluster-level Phase 4 option (new in v0.3); multi-phase-run pattern with audit-erratum convention (new in v0.3); changelog at § 11.
 - **Slash command**: [`.claude/commands/ivp.md`](.claude/commands/ivp.md) — `/ivp [scope]` to re-run.
-- **Inventory**: [`docs/audit/inventory.md`](docs/audit/inventory.md) — 44 load-bearing claims, 76 distinct citations, 40 defined terms, 11 analogy invocations.
-- **Findings**: [`docs/audit/findings-2026-05-08.md`](docs/audit/findings-2026-05-08.md) — 30 citations rigorously verified (17 VERIFIED, 11 PARTIAL, 1 CONTRADICTED); 3 HIGH (F-01–F-03) + 4 MEDIUM (F-04–F-07) + 6 LOW (F-08–F-13) findings, all remediated.
-- **Coverage gap**: 46 of 76 citations not individually verified in the rodage. Queued for full Phase 2 in a future run.
-- **Phases 3–7**: not yet executed.
+- **Inventory** (2026-05-08): [`docs/audit/inventory.md`](docs/audit/inventory.md) — 44 load-bearing claims, 76 distinct citations, 40 defined terms, 11 analogy invocations. *Note: inventory paraphrases capture Phase-1-state at audit time and may lag remediation; per IVP v0.3 § 5 Phase 3 pre-step, refresh against current source files before re-running Phase 3.*
+- **Findings**:
+  - [`findings-2026-05-08.md`](docs/audit/findings-2026-05-08.md) — Phase 2 rodage on 30 citations. 17 V / 11 P / 1 C; 3 HIGH (F-01–F-03) + 4 MEDIUM (F-04–F-07) + 6 LOW (F-08–F-13). All remediated.
+  - [`findings-2026-05-09.md`](docs/audit/findings-2026-05-09.md) — Phase 2 extension over the queued 46. 33 V / 12 P / 1 C; 3 HIGH (F-18 Schein/Argyris, F-19 RUP/XP spike, F-20 Lean Startup scope-as-variable) + 2 MEDIUM (F-14, F-21) + 6 LOW (F-15–F-17, F-22–F-24). All remediated. **76/76 citations now have a Phase 2 verdict.**
+  - [`findings-phase3-2026-05-09.md`](docs/audit/findings-phase3-2026-05-09.md) — Phase 3 Citation Appropriateness on 73 verified citations. 70 APPROPRIATE / 3 STRETCHED. 1 MEDIUM (F-25, reduced to LOW via erratum) + 2 LOW (F-26 retracted via erratum; F-27 Goodhart). All practically-effective findings remediated. **Headline:** policy-1 check on R-001 (40k metaphor) PASSES.
+  - [`findings-phase4-2026-05-09.md`](docs/audit/findings-phase4-2026-05-09.md) — Phase 4 Argument Analysis on 41 LB claims (clustered into 7) + 4 debates. 35 SOUND / 4 WEAK-WARRANT / 0 FALLACIOUS / 2 UNFALSIFIABLE-but-conventional. 2 MEDIUM (F-28 central-premise WEAK-WARRANT, F-31 retrofit survivorship) + 2 LOW (F-29 stress-test threshold, F-30 multi-tier survivorship). All remediated.
+- **Phases 5–7**: not yet executed. Phase 5 = Internal Consistency (term drift, decision-to-doc reflection, quantitative consistency, policy compliance). Phase 6 = External Benchmarking. Phase 7 = Synthesis Report (would integrate all per-phase findings files).
 
 ---
 
@@ -70,7 +73,7 @@ dead-light-framework/
 ├── .claude/
 │   └── commands/
 │       └── ivp.md                                         ← Slash command for IVP re-run
-├── README.md                                              ← Manifesto + Map (front door)
+├── README.md                                              ← Manifesto + Map (front door); AI-collab anchors added F-28
 ├── HANDOFF.md                                             ← This file
 ├── LICENSE                                                ← MIT
 ├── chat.txt                                               ← Original chat history that motivated framework
@@ -81,9 +84,12 @@ dead-light-framework/
     ├── calibration-standards.md                           ← Industry-standards reference catalog
     ├── pm-calibration-guide.md                            ← Practical PM step-by-step at 3 rigor tiers
     ├── audit/
-    │   ├── independent-verification-pass-for-debate.md    ← IVP methodology spec (v0.2)
-    │   ├── inventory.md                                   ← Phase 1 inventory output
-    │   └── findings-2026-05-08.md                         ← Phase 2 partial findings (rodage)
+    │   ├── independent-verification-pass-for-debate.md    ← IVP methodology spec (v0.3)
+    │   ├── inventory.md                                   ← Phase 1 inventory output (2026-05-08; may lag remediation)
+    │   ├── findings-2026-05-08.md                         ← Phase 2 rodage (F-01–F-13)
+    │   ├── findings-2026-05-09.md                         ← Phase 2 extension (F-14–F-24)
+    │   ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
+    │   └── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
     └── debates/
         ├── README.md                                      ← Debate index
         ├── 001-laws-count-and-multirepo-scaling.md        [decided]
@@ -112,12 +118,14 @@ Severity LOW:
 
 (The cap-count question, originally listed here, was closed by debate 004.)
 
-### IVP methodology (carried open in spec v0.2 § 9)
+### IVP methodology (carried open in spec v0.3 § 9)
 
-- Should the IVP spec itself be subject to a "meta-IVP" pass periodically? (Today the spec excludes itself from scope to avoid self-reference; a separate reviewer would be the cleanest answer.)
-- For multi-reviewer runs, what inter-rater-reliability metric is reported (Cohen's κ on classification, agreement rate on verdicts)?
+- Should the IVP spec itself be subject to a "meta-IVP" pass periodically? *v0.3 status: spec now references multiple phase-specific findings files; meta-IVP is increasingly relevant.*
+- For multi-reviewer runs, what inter-rater-reliability metric is reported (Cohen's κ on classification, agreement rate on verdicts)? *v0.3 status: F-29 remediation introduced Cohen's κ as anchor for the framework's stress-test threshold; using the same metric for IVP's own inter-rater reliability would be coherent.*
 - Recursion-risk for governance-citing-governance — when Dead Light cites PRINCE2/ITIL/CMMI, does it inherit the cited framework's evidentiary issues? When and how flagged in Phase 6?
-- Should Phase 4 fallacy checklist be expanded based on which fallacies actually surface in real runs? (Add only after observed; do not pre-emptively bloat.)
+- Should Phase 4 fallacy checklist be expanded based on which fallacies actually surface in real runs? *v0.3 status: survivorship bias surfaced multiple times (F-30, F-31); already in v0.2 checklist; no expansion needed yet.*
+- *(New v0.3)* Formal definition of "argument cluster" for Phase 4 cluster-level decomposition.
+- *(New v0.3)* Should remediation commits include a `Findings-addressed:` trailer for traceability?
 
 ### Glossary
 
@@ -129,11 +137,13 @@ Final glossary deferred — to be assembled bottom-up as later phases force real
 
 **Map Phase 0 + Phase 1 against LoreWeave as a real test case.**
 
-Why this is the right next step:
+Why this is still the right next step at end of session 3:
+
 - LoreWeave is the framework's primary case study and the reason the framework exists. Project owner has signaled multiple scope changes — textbook retrofit case.
-- Phase 0 + Phase 1 are now defined in enough detail to execute against real data.
-- Running the framework on a real codebase will expose design weaknesses faster than further abstract debate.
+- Phase 0 + Phase 1 are now defined in enough detail to execute against real data, **and** the IVP audit has substantially de-risked the evidentiary base (76/76 citations verified, 41 load-bearing arguments analyzed, 30 findings remediated).
+- Running the framework on a real codebase will expose design weaknesses faster than further abstract debate or further audit phases.
 - LoreWeave has 6 services in `contracts/api/` (identity, books, catalog, model-billing, model-registry, sharing) — also a candidate for the Sector Astronomican mechanism from debate 001.
+- The IVP work in session 3 surfaced two specific items the LoreWeave application can test empirically: F-29's stress-test 20% threshold (now anchored on Cohen's κ but pending real calibration) and F-21's M&A KLOC heuristic (now downgraded to sanity-check, pending COCOMO-derived budgets in practice).
 
 How to start:
 1. Read `C:\Works\_Researchs\lore-weave\docs\01_foundation\01_PROJECT_OVERVIEW.md` (~390 lines).
@@ -147,13 +157,14 @@ How to start:
 
 If LoreWeave mapping is not the right next move:
 
+- **IVP Phase 5 (Internal Consistency)** — term drift, decision-to-doc reflection, quantitative consistency, policy compliance. Most natural next IVP phase since 1–4 are done; would close out the within-document audit before moving to external benchmarking.
+- **IVP Phase 6 (External Benchmarking)** — places the framework in adjacent literature (AI-agent governance, software governance, frozen-spec patterns). Heaviest IVP phase; produces `audit/benchmark.md`.
+- **IVP Phase 7 (Synthesis Report)** — integrates all per-phase findings files. Lightweight if Phases 5–6 are done; substantial if running on Phases 1–4 only.
 - **Phase 1 #3 (failure of sealing)** — short close-out debate; ceremony exit-ramp question.
 - **Phase 1 #2 (two-tier sharpness)** — deeper internal debate; Law vs Principle distinction.
 - **Phase 2 draft (Codex per Chapter)** — start defining Codex spec, including AI-assistant aide Chapters referenced from Phase 0 / Phase 1 anti-patterns.
-- **IVP full Phase 2** — verify the 46 queued citations rigorously under v0.2 mandatory rules; re-run may surface new findings.
-- **IVP Phase 3+** — Citation Appropriateness on the verified subset (likely catches stretched analogies like Goodhart's-Law-applied-to-recall), then Phases 4–7.
 
-Recommended ordering if doing Phase work over LoreWeave: #3 (short) → #2 (deeper) → Phase 2 draft. Or just LoreWeave first.
+Recommended ordering if doing further audit work over LoreWeave: Phase 5 → LoreWeave → Phase 6+7 (informed by LoreWeave findings). Or just LoreWeave first.
 
 ---
 
@@ -164,32 +175,40 @@ Recommended ordering if doing Phase work over LoreWeave: #3 (short) → #2 (deep
 - Specific arguments live in `docs/debates/NNN-topic.md` with status (open / recommended / decided / superseded).
 - Each debate has a Decision section to be filled when the project owner decides — **never** pre-fill it.
 - The README's "planned" links indicate forthcoming docs; they should not be made into broken-link claims.
-- IVP separation-of-concerns: audit-output files (`docs/audit/`) and remediation edits go in *separate commits*; audit run never modifies framework documents in the same pass.
-- IVP spec changes go *between passes*, never during a run; rubric tables are pre-registered per pass.
+- IVP separation-of-concerns: audit-output files (`docs/audit/`) and remediation edits go in *separate commits*; audit run never modifies framework documents in the same pass. **Per session-3 lesson:** for this small docs-only repo with single-owner review, keep the separation at the *commit* level — do **not** default to separate branches per audit/remediation per phase. The 2026-05-09 multi-phase run created 7 branches + 7 stacked PRs and the project owner explicitly called this "chaos". For future runs prefer one branch per IVP run with multiple commits, OR one branch per phase max — not separate branches for each audit-vs-remediation pair.
+- IVP spec changes go *between runs*, never during a run; rubric tables are pre-registered per pass. (Note: v0.3 clarified this is "between runs", not "between phases of the same run".)
 
 ---
 
 ## How to resume
 
 1. Read this file end-to-end.
-2. Read `README.md` for the framework's elevator pitch.
+2. Read `README.md` for the framework's elevator pitch (now includes AI-collab literature anchors).
 3. Skim `docs/phase-0-for-debate.md` and `docs/phase-1-for-debate.md` — the two main artifacts.
 4. Skim `docs/debates/README.md` for decision history (4 debates decided).
-5. If touching evidentiary claims or calibration anchors: skim IVP spec v0.2 § 4 rubric and § 5 phase procedures before editing.
+5. If touching evidentiary claims or calibration anchors: skim IVP spec v0.3 § 4 rubric, § 5 phase procedures (especially Phase 3 inventory-paraphrase pre-step and Phase 4 cluster option), and § 11 changelog before editing.
 6. Confirm with project owner which path to take from "Recommended next step" or "Alternative next steps" before starting work.
+7. **For PR strategy on multi-phase IVP runs:** do not propose 7 stacked PRs; propose either a single branch with multiple commits or at most one PR per phase. See "Conventions to preserve" above.
 
 ---
 
-## Repo state at end of Session 2
+## Repo state at end of Session 3
 
-- Branch: `claude/read-handoff-status-53xfC` (per system instruction; not yet merged to `main`).
-- All work pushed to `origin`. Five commits on this branch beyond the initial handoff:
-  1. Add IVP spec + slash command (v0.1).
-  2. IVP rodage Phases 1–2: inventory + 30-citation verification.
-  3. Remediate IVP HIGH findings F-01 (Miller), F-02 (CMMI v3.0), F-03 (ISA 320).
-  4. Remediate IVP MEDIUM and LOW findings F-04 through F-13.
-  5. Refine IVP spec to v0.2 from rodage learnings.
-- All 13 findings from the IVP 2026-05-08 rodage are remediated.
-- 46 citations from Phase 1 inventory remain unverified — queued for full Phase 2.
-- IVP Phases 3–7 not yet executed.
+- Branch: `main` (clean). All session-3 work merged via 7 PRs (#2–#8), then merged-branch cleanup (local + remote).
+- Recent commits on `main` (top of log):
+  ```
+  dcfb619  refine IVP spec to v0.3 from multi-phase 2026-05-09 run lessons
+  9094c4c  remediate IVP Phase 4 findings F-28 through F-31
+  b080629  IVP Phase 4 (Argument Analysis) on 41 load-bearing claims + 4 debates
+  6fcbd00  remediate IVP Phase 3 findings F-25 (reduced) and F-27
+  f73384b  audit erratum: reduce F-25 (MEDIUM->LOW) and retract F-26
+  b125401  IVP Phase 3 (Citation Appropriateness) on 73 verified citations
+  5ec327b  remediate IVP 2026-05-09 findings F-14 through F-24
+  843fcba  IVP Phase 2 extension: verify the queued 46 citations
+  6a34721  Merge pull request #1 from letuhao/claude/read-handoff-status-53xfC  ← end of session 2
+  ```
+- All 30 surfaced findings (F-01 through F-31, with F-26 retracted via erratum) are remediated.
+- IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4 complete.
+- IVP spec at v0.3.
+- IVP Phases 5–7 not yet executed.
 - No external dependencies, no build, no tests — this is a documentation repository.
