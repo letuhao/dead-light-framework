@@ -1,9 +1,9 @@
 # Debate 005 — First Chapter: PM / High Lord Aide
 
-> **Status:** open.
+> **Status:** decided.
 > **Opened:** 2026-05-11
-> **Decided:** —
-> **Decided by:** project owner (pending)
+> **Decided:** 2026-05-11
+> **Decided by:** project owner
 > **Affects:** [phase-0-for-debate.md](../phase-0-for-debate.md) §7 (AI-aide accommodation note); [phase-1-for-debate.md](../phase-1-for-debate.md) §8.1 (Council small-team accommodation note); the framework's planned **Phase 2 (Codex per Chapter)** will inherit the Codex template established here. Produces a new `docs/chapters/` or `docs/codex/` directory (path TBD in this debate) for the first concrete Codex artifact.
 > **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), reviewing [`pm-threshold-decisions.md`](../case-study-lore-weave/pm-threshold-decisions.md). Observation: PM threshold-setting tasks require human under Phase 0 §2, but a solo PM on a 358-KLOC polyglot project becomes a bottleneck. Framework already names AI-assistant Chapters as aides ([phase-0:138](../phase-0-for-debate.md), [phase-1:107, 132](../phase-1-for-debate.md)) but defers their concrete Codex to Phase 2.
 
@@ -357,22 +357,27 @@ If approved, the first Chapter is sealed and ready to govern LoreWeave's case st
 
 ## 13. Decision
 
-_(Empty — to be filled when project owner decides.)_
+- **Decision:** Approved — all six sub-decisions per TL;DR §12 adopted:
+  - **A (Name):** Adeptus Administratum.
+  - **B (Codex structure):** 10-section template; applies to all future Chapters too.
+  - **C (Notify mechanism):** 5 trigger types (N-1 to N-5); dual-class channel; blocking N-1/N-2 require acknowledgment; non-blocking N-3/N-4/N-5 logged in audit trail; task-scoped firing rules per D4.
+  - **D (Lifecycle):** D4 — task-scoped instance + persistent role + artifact continuity. Role exists for project's life; instances spawned per task and disband after output commit; continuity entirely via artifacts; re-priming protocol mandatory at instance startup.
+  - **E (Multiplicity):** E2 — singleton role per Astronomican (Imperial + per Sector); concurrent instances on different tasks allowed.
+  - **F (File path):** F2 — `docs/chapters/<chapter-name>/codex.md`.
+- **Decided on:** 2026-05-11
+- **Decided by:** project owner
+- **Codex artifact sealed:** [`docs/chapters/adeptus-administratum/codex.md`](../chapters/adeptus-administratum/codex.md) v1.0, sealed simultaneously with this debate's decision.
 
-- **Decision:** _(pending)_
-- **Decided on:** _(pending)_
-- **Decided by:** _(pending)_
+### Follow-up actions
 
-### Follow-up actions (will be checked on seal)
-
-- [ ] Create `docs/chapters/adeptus-administratum/codex.md` per the 10-section template and the sub-decisions above.
-- [ ] Update [phase-0-for-debate.md §7](../phase-0-for-debate.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
-- [ ] Update [phase-1-for-debate.md §8.1](../phase-1-for-debate.md) similarly.
-- [ ] Update [phase-1-for-debate.md §4 Codex Slot Placeholders](../phase-1-for-debate.md) to reflect that one Codex slot is now filled by Adeptus Administratum.
-- [ ] Update [case-study-lore-weave/reckoning-team-record.md](../case-study-lore-weave/reckoning-team-record.md) — supersede interim Codex with reference to the sealed Codex; create LoreWeave-specific instance file.
-- [ ] Update [HANDOFF.md](../../HANDOFF.md) — Phase 2 (Codex per Chapter) status changes from "Not started" to "First Chapter sealed; remaining Chapters pending real-project trigger."
-- [ ] Update [debates/README.md](README.md) — add debate 005 as `decided`.
-- [ ] Retroactively review the work done under interim Codex (pm-threshold-decisions.md proposal, LoreWeave scan) for compliance; record any gaps in `case-study-lore-weave/methodology-notes.md`.
+- [x] Create `docs/chapters/adeptus-administratum/codex.md` per the 10-section template and the sub-decisions above.
+- [x] Update [phase-0-for-debate.md §7](../phase-0-for-debate.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
+- [x] Update [phase-1-for-debate.md §8.1](../phase-1-for-debate.md) similarly.
+- [x] Update [phase-1-for-debate.md §4 Codex Slot Placeholders](../phase-1-for-debate.md) to reflect that one Codex slot is now filled by Adeptus Administratum.
+- [x] Update [case-study-lore-weave/reckoning-team-record.md](../case-study-lore-weave/reckoning-team-record.md) — supersede interim Codex with reference to the sealed Codex.
+- [x] Update [HANDOFF.md](../../HANDOFF.md) — Phase 2 (Codex per Chapter) status changes from "Not started" to "First Chapter (Adeptus Administratum) sealed; remaining Chapters pending real-project trigger."
+- [x] Update [debates/README.md](README.md) — debate 005 marked `decided`.
+- [x] Retroactively review the work done under interim Codex (`pm-threshold-decisions.md` proposal, LoreWeave scan) for compliance; gaps recorded in [`case-study-lore-weave/methodology-notes.md`](../case-study-lore-weave/methodology-notes.md) § Retroactive review.
 
 ---
 
