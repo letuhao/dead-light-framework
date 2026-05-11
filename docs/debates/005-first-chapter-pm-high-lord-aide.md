@@ -139,55 +139,113 @@ The Draft+Notify authority means the aide *must* surface flags when certain cond
 - **Audit trail (mandatory)**: every notify is logged in the relevant audit-trail file (`methodology-notes.md` for case studies; `findings-YYYY-MM-DD.md` for IVP-style runs).
 - **Active surface (per trigger)**: blocking-class notifies (N-1, N-2) require explicit acknowledgment from project owner / Council recorded inline. Non-blocking-class (N-3, N-4, N-5) appear in the audit trail and the next session summary, not actively interrupting.
 
+### Trigger timing under D4 task-scoped instance lifecycle
+
+Under sub-decision D4 (task-scoped instance + persistent role + artifact continuity per §6), there is no "running" Chapter instance between tasks. Notify triggers therefore fire **only while a task instance is in flight**. Drift that occurs between tasks (e.g., the project owner makes a commit that contradicts an Astronomican Law in a session without an Adeptus Administratum instance) is detected at the **next task instance's re-priming step 5** (spot inconsistencies between Codex, Astronomican, and artifacts).
+
+This means:
+
+- **N-1 / N-2 (blocking)** fire only while an instance is executing a task and observes the violation in real time.
+- **N-3 / N-4 / N-5 (non-blocking)** can fire either during task execution OR during the re-priming step of a new instance that scans the artifact base.
+- **Between-task drift detection** is the re-priming step's job, not a continuously-watching aide's job. This is a structural feature of D4, not a gap.
+
 ### Response window
 
-- **Blocking notify (N-1, N-2)**: project owner / Council acknowledges within the same session before continuing the activity that triggered it. "Acknowledged + proceeding anyway with override rationale" is allowed (preserves binding authority); "Acknowledged + corrected" is the default expected response.
-- **Non-blocking notify (N-3, N-4, N-5)**: project owner reviews within the cadence committed in `pm-threshold-decisions.md` §5 (typically quarterly for non-urgent).
+- **Blocking notify (N-1, N-2)**: project owner / Council acknowledges within the same task session before continuing the activity that triggered it. "Acknowledged + proceeding anyway with override rationale" is allowed (preserves binding authority); "Acknowledged + corrected" is the default expected response.
+- **Non-blocking notify (N-3, N-4, N-5)**: project owner reviews within the cadence committed in `pm-threshold-decisions.md` §5 (typically quarterly for non-urgent). For notifies surfaced at re-priming step, the *new* task instance carries them as context — the project owner may decide whether to address before or after the current task proceeds.
 
 ### Proposed answer
 
-**Adopt the five trigger types + dual-class channel + asymmetric response window** above. This makes Draft+Notify operationally well-defined while keeping binding authority with humans.
+**Adopt the five trigger types + dual-class channel + asymmetric response window + D4-task-scoped firing rules** above. This makes Draft+Notify operationally well-defined while keeping binding authority with humans, and aligns trigger timing with the task-scoped instance lifecycle.
 
 ---
 
 ## 6. Sub-decision D — Lifecycle
 
-When does the Chapter exist? Forever, per project? Phase-bound? Re-instantiated each Phase?
+When does the Chapter exist? Forever, per project? Phase-bound? Re-instantiated each Phase? Per-task?
+
+### Key distinction surfaced during debate
+
+A late-debate observation (raised by project owner 2026-05-11) reframed this sub-decision: **the framework should distinguish ROLE from INSTANCE.** A Chapter as a governance concept is a role (a named, Codex-defined slot in the project's governance model). An *instance* is a specific human or agent currently filling that role to execute a task. The two have different natural lifecycles.
+
+The framework's central thesis — **frozen authority that survives any participant** — operationally implies that no participant (human or agent) needs to be persistently present. The persistent authority lives in the *artifacts* (Astronomican, Codex, audit trail), not in any continuously-running entity. The Chapter as a role is the *abstraction* by which artifacts reference governance work; the instance is just an executor.
+
+This insight forces a re-evaluation of options D1–D3, which all conflated role and instance, and adds two new options.
 
 ### Options
 
-| Option | Lifecycle | Pros | Cons |
-|---|---|---|---|
-| **D1.** Persistent — once instantiated, exists for the life of the project | Same Codex applies across all Phases | Continuity of context; aide accumulates project-specific knowledge | Risk: aide drifts as project context grows; no natural decommissioning event |
-| **D2.** Phase-bound — re-instantiated per Phase with Phase-specific Codex | Cleaner scope per Phase; explicit decommissioning at Phase boundaries | Loses cross-Phase continuity; PM aide doesn't carry into High Lord aide easily |
-| **D3.** Persistent identity, Phase-specific operational overlay | Single Chapter exists for life of project; Codex has Phase-specific Operational Bounds + Notify Triggers within a single document | Continuity preserved; Phase-bound bounds preserved; complexity of Codex grows | Codex doc longer; possible internal contradictions if Phase overlays drift |
+| Option | Role lifecycle | Instance lifecycle | Pros | Cons |
+|---|---|---|---|---|
+| **D1.** Persistent (single instance for project's life) | Conflated with instance | Conflated | Continuity of context within instance memory | Drift over time; LLM context window exhaustion; human bandwidth bottleneck; no natural decommissioning |
+| **D2.** Phase-bound (re-instantiated per Phase) | Phase-bounded role | Phase-bounded instance | Cleaner scope per Phase | Loses cross-Phase continuity |
+| **D3.** Persistent identity, Phase-specific overlay | Persistent role + persistent instance | Conflated | Single document Codex with Phase tables | Codex doc grows; "persistent" instance unrealistic given LLM context limits and human bandwidth |
+| **D4.** **Task-scoped instance, persistent role, artifact continuity** | **Persistent role** (Adeptus Administratum exists as long as project exists) | **Task-scoped** (deploy on task, disband on output commit) | Continuity via artifacts (Codex + audit trail), not via running entity; symmetric for human + agent; matches operational reality (each chat session / sprint = new instance anyway); no drift accumulation; solves LLM context-window problem and human bandwidth problem; re-priming step doubles as drift-detection checkpoint | Re-priming has cost each task (read Codex + scan artifacts); cross-task continuity rely on artifact discipline (mitigated by Output Contract §6 mandating artifact updates) |
+| **D5.** Pure disband (no role persistence) | No role | No persistent reference | Simplest; ad-hoc invocation only | Defeats Phase 2 Chapter abstraction entirely; loses the framework's governance vocabulary; no precedent set for future Chapters |
 
 ### Proposed answer
 
-**Option D3** — persistent identity, Phase-specific operational overlay.
+**Option D4 — task-scoped instance, persistent role, artifact continuity.**
 
-Justification: the multi-role-single-Chapter commitment (§2 pre-decided) implies one identity carrying through Phases. The Codex sections 2 (Operational Bounds), 5 (Notify Triggers), and 8 (Lifecycle) become Phase-aware tables rather than monolithic enumerations. Example structure for Operational Bounds:
+Justification:
+
+1. **Aligns with framework's frozen-authority thesis.** Authority lives in the Astronomican and Codex, not in any human or agent. The Chapter role is the reference; the instance is just an executor. This is precisely what the README:34 thesis ("frozen source of authority that no participant can rewrite at will") says at the project level — D4 applies the same idea to Chapter governance.
+
+2. **Mirrors real-world precedent (policy 1 compliance).** The Adeptus Administratum bureau in 40k canon persists; individual administrators rotate. The chief-of-staff *office* persists for an administration; specific chiefs come and go. Continuity is in the filing system + briefing documents + standard operating procedures — not in any one person being always available. Policy 1 is satisfied: real-world chief-of-staff offices, civil service bureaus, executive assistant pools, financial controller departments, and paralegal staffs all operate this way.
+
+3. **Symmetric for human + agent.** A human filling Adeptus Administratum does not need to be "always on" — they pick up artifacts when tasked, execute, write outputs, terminate session. An agent does the same. This symmetry is on-thesis with Dead Light's foundational human + agent collaboration premise.
+
+4. **Matches LoreWeave case study's operational reality.** Each chat session with AI-aide-1 is already a task-scoped instance (the agent re-primes from prior commits each session). D4 catches the framework up to what is already happening.
+
+5. **Solves problems D1–D3 created.** LLM context-window exhaustion (D1, D3) — solved by per-task re-priming. Human bandwidth bottleneck (D1, D3) — solved by task-scoped invocation. Cross-Phase continuity (D2) — solved by persistent role + artifact base. Codex bloat (D3) — solved because Phase-specific sections in Codex are read selectively per task, not all carried in memory simultaneously.
+
+### How D4 operates
+
+**Role:** Adeptus Administratum is a slot in the governance model, defined by `docs/chapters/adeptus-administratum/codex.md`. The Codex is sealed at debate 005's decision and amended only via Re-consecration.
+
+**Instance:** spawned per task. Each instance startup runs a **re-priming protocol**:
+
+1. **Read the Codex** (full read; not summary).
+2. **Read the current Astronomican** (when sealed) or the proposal-in-flight (pre-seal).
+3. **Scan the artifact base** relevant to the task (e.g., for a Phase 0 audit task: read `case-study-lore-weave/methodology-notes.md` + the relevant Reckoning Record sections).
+4. **Identify the project's current Phase** and activate the Phase-specific Operational Bounds in the Codex.
+5. **Spot inconsistencies** between Codex, Astronomican, and artifacts → may trigger non-blocking notifies (N-3/N-4) at this checkpoint, which doubles as drift-detection.
+6. **Begin task work** under activated Operational Bounds + Notify Triggers.
+7. **On task complete:** update relevant artifact files (Output Contract §6 mandate); commit; **disband**.
+
+**Continuity:** entirely via artifacts. No state lives in the instance; everything load-bearing is in version-controlled files.
+
+**Instance identity:** anonymous by default (any qualified human or agent may instantiate). Identity is *named* in the artifact base for audit purposes ("on 2026-05-11, AI-aide-1 = Claude Code Opus 4.7 instantiated as Adeptus Administratum for task: LoreWeave Phase 0 PM threshold proposal"). The instance's *name* is recorded; the instance's *continuation* is not assumed.
+
+### Phase-specific operational bounds (under D4)
+
+The Codex sections 2 (Operational Bounds), 5 (Notify Triggers), and 8 (Lifecycle) still have Phase-specific subsections — but they are referenced per-task, not "active" persistently. Example:
 
 ```markdown
-## 2. Operational Bounds
+## 2. Operational Bounds (referenced per-task by Phase)
 
-### 2.1 During Phase 0 (Reckoning)
+### 2.1 During Phase 0 (Reckoning) tasks
 - May draft PM Threshold Decisions for project-owner review.
 - May run cloc / scc / git-log queries and report.
 - ...
 
-### 2.2 During Phase 1 (The Astronomican)
+### 2.2 During Phase 1 (Astronomican) tasks
 - May surface stress-test divergence candidates.
 - May draft Boundaries proposals for Council review.
 - ...
 
-### 2.3 Post-seal (High Lord aide mode)
+### 2.3 Post-seal (High Lord aide mode) tasks
 - May propose interpretations of Immutable Laws in concrete-case context.
 - May flag Heresy-detection signals.
 - ...
 ```
 
-This keeps a single Codex document while making Phase-bounded operational behavior explicit.
+Each task instance picks the relevant subsection at re-priming step 4 and operates within it. Bounds from other Phases are *not active* for that task.
+
+### Risk and mitigation
+
+- **Risk:** re-priming cost per task. Mitigation: Codex constrained to ≤ 2 pages per Phase section; audit trail organized with summary-at-top; artifact base structured for efficient re-prime (Output Contract §6 mandate).
+- **Risk:** cross-task continuity relies on artifact discipline. Mitigation: instances are required to write back to artifact base before disband (Output Contract §6); Notify Trigger N-4 (term drift) catches cases where prior instance failed to update.
+- **Risk:** role abstraction is lost if no governance work ever invokes it. Mitigation: project's Phase 0/1/post-seal lifecycle inherently produces Adeptus Administratum tasks (threshold-setting, audit drafting, interpretation aid); role is exercised regularly by construction.
 
 ---
 
@@ -274,7 +332,11 @@ These do not block sealing this debate but should be resolved in subsequent deba
 
 5. **Decommissioning.** Lifecycle §8 says when the Chapter is decommissioned, but what happens to its accumulated audit trail and project knowledge? Inherited by successor Chapter? Frozen as immutable artifact?
 
-6. **Multiple AI providers.** This debate names AI-aide-1 as Claude Code Opus 4.7. If a project's Adeptus Administratum is later instantiated under a different LLM (GPT-5, Gemini-X), is that a new instance or a continuation? Need explicit rule for provider succession.
+6. **Multiple AI providers.** This debate names AI-aide-1 as Claude Code Opus 4.7. Under D4 (task-scoped instance), provider succession is trivial — switching provider = next task spawns under a different LLM, role unchanged, continuity via artifact base. Each instance records its provider identity at re-priming. **This open question is essentially answered by D4** but kept on the list because operational edge cases may surface (e.g., what if mid-task the provider must change — does the instance terminate and respawn? Probably yes per D4's task-atomic principle).
+
+7. **Concurrent instance bound.** D4 says "task-scoped" but does not specify whether two instances of Adeptus Administratum can be active simultaneously on different tasks for the same Astronomican. Per E2 multiplicity rule ("singleton role per Astronomican"), the answer is probably "yes, multiple concurrent instances under one role" — but the framework should make this explicit. Defer to first observed case in practice.
+
+8. **Re-priming protocol formalization.** D4's re-priming protocol (§6 step list) is informal. A formal protocol with checkable items would make instance startup more rigorous and reproducible. Candidate for a follow-up procedural definition once D4 has run on a few real tasks.
 
 ---
 
@@ -284,9 +346,9 @@ These do not block sealing this debate but should be resolved in subsequent deba
 |---|---|
 | Specific name | **Adeptus Administratum** |
 | Codex structure | **10-section template** (above §4); applies to all future Chapters too |
-| Notify mechanism | **5 trigger types** (N-1 to N-5); dual-class channel; blocking N-1/N-2 require acknowledgment, non-blocking N-3/N-4/N-5 logged in audit trail |
-| Lifecycle | **D3** — persistent identity, Phase-specific operational overlay |
-| Multiplicity | **E2** — singleton per Astronomican (Imperial + per Sector) |
+| Notify mechanism | **5 trigger types** (N-1 to N-5); dual-class channel; blocking N-1/N-2 require acknowledgment, non-blocking N-3/N-4/N-5 logged in audit trail; **task-scoped firing rules** (triggers fire only while instance is in flight; between-task drift detected at re-priming step) |
+| Lifecycle | **D4** — task-scoped instance + persistent role + artifact continuity (role exists for project's life; instances spawned per task and disband after output commit; continuity entirely via artifacts) |
+| Multiplicity | **E2** — singleton role per Astronomican (Imperial + per Sector); any number of instances may exist across the role's lifespan (one at a time per active task) |
 | File path | **F2** — `docs/chapters/<chapter-name>/codex.md` |
 
 If approved, the first Chapter is sealed and ready to govern LoreWeave's case study from Pass 1 onward, plus to template all future Chapters in Phase 2.
