@@ -14,7 +14,7 @@
 
 > *What is actually deployed, what is actually in `main`, what services exist with what contracts.* (Phase 0 §3.1)
 >
-> Documentation is **evidence, not truth** — discrepancies between docs and reality are explicitly recorded.
+> Within Dead Light, we treat documentation as **evidence, not truth** — discrepancies between docs and reality are explicitly recorded.
 
 ### 1.1 Repository topology
 

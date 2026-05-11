@@ -10,7 +10,7 @@
 
 ## Why this case study exists
 
-LoreWeave is the project that motivated Dead Light Framework. It hit the failure modes the framework is designed to prevent — conflicting refactors, scope drift between human and AI contributors, accumulated context rot. Running the framework against this codebase is the framework's first empirical test.
+LoreWeave is the project that motivated Dead Light Framework. It hit the failure modes the framework aims to mitigate — conflicting refactors, scope drift between human and AI contributors, accumulated context rot. Running the framework against this codebase is the framework's first empirical test.
 
 Phase 0 (Reckoning) is the natural starting point because LoreWeave is a **retrofit case**: existing code, accumulated decisions, formed habits.
 

@@ -81,7 +81,7 @@ LoreWeave is in a mixed production-status state (per [reckoning-record §1](reck
 ### LoreWeave-specific additions (architect-rot framing per focus area #2)
 
 - **Any decision reversed within 30 days** of being committed — architect-rot signal: late-stage realization that the original decision was wrong.
-- **Any case where an AI agent contradicted a previous design decision in committed code** — the framework's central premise (README:26) names this as the canonical AI-collaboration failure mode; LoreWeave is the empirical test of whether it occurs and how.
+- **Any case where an AI agent contradicted a previous design decision in committed code** — the framework's central premise (README:26) names this as the AI-collaboration failure mode the framework hypothesises; LoreWeave is the empirical test of whether it occurs and how.
 - **Any incident of "conflicting refactors"** — two refactors landing in incompatible directions, the README:20's named failure mode.
 - **Any data-loss-equivalent event for canon integrity** — the framework's narrative-integrity invariant being violated (incorrect cross-reference, contradicted character fact, broken translation alignment) counts as data loss for LoreWeave's purpose.
 

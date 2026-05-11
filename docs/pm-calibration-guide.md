@@ -10,7 +10,7 @@
 
 ## Three rigor tiers
 
-Pick the tier your organization can actually support with data and tooling. Under-shooting is fine; over-claiming is harmful (it produces numbers that look authoritative but are not anchored in real history).
+I'd suggest picking the tier your organization can actually support with data and tooling. Under-shooting is fine; over-claiming tends to be harmful in my experience — it produces numbers that look authoritative but are not anchored in real history.
 
 | Tier | Data available | Tooling | Best for |
 |---|---|---|---|
@@ -115,7 +115,7 @@ Use your DORA baseline and CMMI defect classification. Any incident exceeding ±
 
 ### Sanity check
 
-If no failures appear in the inventory, either the bar is too high or the team is hiding problems. The latter is itself a finding.
+If no failures appear in the inventory, either the bar is too high or the team may be uncomfortable surfacing problems. The latter is itself a finding worth noting.
 
 ---
 
@@ -271,10 +271,10 @@ Tiers can be mixed across the five decisions if data availability differs (e.g.,
 
 ## Common pitfalls
 
-- **Picking too high a tier for show.** Claiming Tier 3 without an actual PPB produces fake-precise numbers. If you don't have the data, drop to the tier you can actually support.
-- **Setting thresholds to match a desired outcome.** "We want the inventory to have N items, so let's set the threshold to filter to N." This inverts the framework — thresholds should be set first, item count is the dependent variable.
-- **Setting time budget by ceremony, not by data.** "Two weeks sounds about right" without anchoring to KLOC or COCOMO produces budgets that systematically miss reality.
-- **Skipping the sanity checks.** They exist because every threshold has known failure modes — running through them takes 10 minutes and catches most calibration errors.
+- **Picking too high a tier for show.** In my experience, claiming Tier 3 without an actual PPB tends to produce fake-precise numbers. If you don't have the data, drop to the tier you can actually support.
+- **Setting thresholds to match a desired outcome.** "We want the inventory to have N items, so let's set the threshold to filter to N." This inverts the framework's intent — within Dead Light we set thresholds first; item count is the dependent variable.
+- **Setting time budget by ceremony, not by data.** "Two weeks sounds about right" without anchoring to KLOC or COCOMO tends to produce budgets that miss reality in projects I've seen.
+- **Skipping the sanity checks.** They exist because each threshold has known failure modes — running through them takes about 10 minutes and tends to catch common calibration errors.
 - **Calibrating in isolation.** Talk to a senior engineer or architect on the team before committing thresholds in writing. If the PM is Council member only, this is the Council; if Council has not yet been seated, find a domain expert.
 
 ---

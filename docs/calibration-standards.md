@@ -133,7 +133,7 @@ This catalog is **reference, not law**. Specific adoption decisions are made in 
 2. **Layered guidance** — the framework offers multiple standards by rigor level (startup might use M&A rule of thumb; CMMI L4 shop uses PPB).
 3. **No adoption** — the standard is documented here for completeness but not referenced from phase docs.
 
-The current adoption status is tracked per phase in each phase's `*-for-debate.md`. As of this writing, no Phase 0 calibration question has been formally anchored to a specific standard from this catalog — that is the work of the next debate iteration on [debate 003](debates/003-phase-0-calibration.md).
+The current adoption status is tracked per phase in each phase's `*-for-debate.md`. Phase 0 calibration questions have been anchored to specific standards from this catalog via [debate 003](debates/003-phase-0-calibration.md); see [pm-calibration-guide.md](pm-calibration-guide.md) for the practical walk-through.
 
 ---
 

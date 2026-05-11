@@ -116,6 +116,6 @@ Status legend:
 
 ## Note on Method
 
-The final glossary will not be authored upfront from this list. Instead, it will be assembled **bottom-up while defining each phase of the framework against the LoreWeave case study**. This mirrors how mature software methodologies are themselves distilled — from accumulated mistakes and concrete lessons, not from speculative taxonomy.
+The final glossary will not be authored upfront from this list. Instead, it will be assembled **bottom-up while defining each phase of the framework against the LoreWeave case study**. This mirrors how I understand mature software methodologies to have been distilled — from accumulated mistakes and concrete lessons, not from speculative taxonomy.
 
 This document exists to be argued with, pruned, renamed, and partially abandoned as the phases force real definitions into the open.
