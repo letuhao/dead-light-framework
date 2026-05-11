@@ -112,19 +112,21 @@ _(Project-owner-driven; AI-aide-1 surfaces git-revert and refactor-thrash candid
 > *Each Reckoning Team member writes, **independently and without coordination**, the principles they believe the team has been operating under.* (Phase 0 §3.4)
 >
 > **Aggregation comes after independent capture; contradictions across members are the most valuable output of this section.**
+>
+> **Spec departure D-2 (see methodology-notes):** project owner has chosen **AI-aide drafts first from evidence, project owner writes second** rather than the spec's strict "independently and without coordination." Rationale captured in methodology-notes; the contamination risk is recorded and mitigated by having the project owner write their contribution **before reading the AI-aide draft** when they reach this section.
 
 ### 4.1 Independent contributions
 
-**Project owner — independent contribution:**
+**AI-aide-1 — evidence-based draft (outside-scope perspective; written FIRST per Departure D-2):**
 
-_(To fill: the project owner writes here, before reading the AI-aide draft below, what they believe LoreWeave has been operating under. Examples of the format the framework expects:_
+_(To fill: AI-aide-1 reads the LoreWeave codebase + docs and writes here what principles APPEAR to be in operation based on code/doc evidence. This is the framework's adaptation of Schein / Argyris-Schön "espoused vs in-use values" — Phase 0 §9. The aide draft is folded blind from the project owner's independent contribution until they have written theirs.)_
+
+**Project owner — independent contribution (written SECOND, without reading the AI-aide draft above):**
+
+_(To fill: the project owner writes here what they believe LoreWeave has been operating under, **before reading the AI-aide draft above**. Examples of format:_
 - _"We always preserve canonical narrative over speed of iteration."_
 - _"Of course we'll preserve author intent across translations."_
 - _"AI agents help, but the human-authored narrative is the ground truth.")_
-
-**AI-aide-1 — independent contribution (outside-scope perspective):**
-
-_(To fill: AI-aide-1 reads the LoreWeave codebase + docs and writes here, without seeing the project owner's draft, what principles APPEAR to be in operation based on code/doc evidence. This is what the project_owner-aide pair captures as "the outside view of espoused vs in-use values" — Schein / Argyris-Schön per Phase 0 §9.)_
 
 ### 4.2 Synthesis (after independent capture)
 

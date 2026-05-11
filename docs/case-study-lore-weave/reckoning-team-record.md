@@ -13,7 +13,7 @@ LoreWeave is a **solo human project**. The single human (project owner) carries 
 
 | Member | Role | Areas owned | Producer or Council? |
 |---|---|---|---|
-| _Project owner (name to fill)_ | Active-IC (mandatory); tenure-spanning; PM; Council member | All 6 services; foundation/governance/planning docs | Both Reckoning Team **and** Ascension Council |
+| **project owner** (anonymized identity throughout this case study — see methodology-notes § Departure D-1) | Active-IC (mandatory); tenure-spanning; PM; Council member | All services in scope; foundation/governance/planning docs | Both Reckoning Team **and** Ascension Council |
 | **AI-aide-1 (Claude Code Opus 4.7)** | Outside-scope aide; **does not vote, does not own areas, does not author final entries unilaterally** | Cross-cutting review of Reckoning Team's drafts; surface contradictions; rote-mechanical Current State Audit (`cloc`/grep across services) | Producer-aide only |
 
 **Why this passes Phase 0 §2 composition rule:**

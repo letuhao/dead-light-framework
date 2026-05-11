@@ -16,6 +16,36 @@
 
 ## 2. Departures from Phase 0 spec (recorded as we hit them)
 
+### D-1 — Attribution anonymized to "project owner" throughout
+
+**Spec text** ([debate 002](../debates/002-retrofit-vs-greenfield.md) Q3 + Phase 0 §3.2-3.3): "Full attribution. History is a valuable lesson, the team must accept it to move forward, and git commits already record names."
+
+**Departure.** Project owner chose to keep attribution anonymized as **"project owner"** throughout this case-study artifact rather than naming individuals. Git commits remain unchanged (the original attribution is preserved in version control); the *case-study document* anonymizes.
+
+**Risk recorded.** The framework's "names are kept, blame is not assigned" reasoning is partially defeated: future readers of the case study cannot independently triangulate decisions to commit authorship without going to git. The framework's social-structure-visibility argument (debate 002 Q3 — "hiding actors hides the social structure that produced the outcomes") is also partially defeated.
+
+**Mitigation.** Where the project owner is the sole decision-maker (solo project), there is only one social structure to surface. The anonymization is effectively a publication-style choice, not a hiding of structure. If LoreWeave grows beyond solo, this departure should be re-evaluated.
+
+**Reversibility.** This is a publication-style choice; reversing it later is a find-and-replace.
+
+### D-2 — Implicit Principles capture order reversed (AI-aide first, project owner second)
+
+**Spec text** (Phase 0 §3.4): "each Reckoning Team member writes, **independently and without coordination**, the principles they believe the team has been operating under. Aggregation comes after independent capture; contradictions across members are *the most valuable output of this section*."
+
+**Departure.** Project owner chose to have **AI-aide-1 draft from evidence FIRST**, then write their independent contribution SECOND. The spec's "independently and without coordination" requirement is partially compromised because the AI-aide draft is technically available to the project owner before they write.
+
+**Risk recorded.** The most valuable Phase 0 output — contradictions between members — is at risk of contamination. The project owner may unconsciously align with or against the AI-aide draft they've read.
+
+**Mitigation.** The project owner commits to **writing their contribution BEFORE reading the AI-aide draft** when they reach Section 4 (enforced by self-discipline; the spec departure is that the AI-aide draft exists earlier in the workflow, not that the project owner reads it first). The project owner's contribution should be written in a session where the AI-aide draft is collapsed / hidden in the editor.
+
+**Why this departure was chosen.** Project owner's rationale: for a solo + AI-aide configuration, having the AI-aide surface candidates first ensures no obvious "of course we'll" pattern is missed when the project owner writes their independent draft. The framework's strict "independently" rule presumes multiple humans with diverse viewpoints; with a single human, there is little to gain from strict independence and more to gain from comprehensive surfacing.
+
+**Reversibility.** Difficult once the project owner has read the AI-aide draft. The departure is logged so future re-reckoning iterations (per `pm-threshold-decisions.md` §5 cadence) can either re-validate or course-correct.
+
+---
+
+### 2.X Operational departures (cosmetic; no spec violation)
+
 ### 2.1 Reckoning Team kick-off as a half-day session vs asynchronous
 
 Phase 0 §3 specifies a half-day Reckoning Team kick-off followed by parallel time-budgeted inventory work. For a solo project with one human + one AI-aide, this collapses to:
