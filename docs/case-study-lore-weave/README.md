@@ -33,7 +33,7 @@ Per Phase 0 §3 "investigative phase" and §4 outputs, the case study surfaces f
 
 1. **Past scope changes** — the trigger that motivated the framework. Each significant scope change is catalogued in the Past Decisions Catalog with attribution and date.
 2. **Architect rot specifically** — conflicting refactors, scope drift, accumulated context rot. The empirical anchor for the framework's central premise (README:26 — Bommasani 2021 / Park 2023). Material entries feed the Failure Inventory.
-3. **Sector Astronomican trigger evaluation** — LoreWeave currently has six services in `contracts/api/` (identity, books, catalog, model-billing, model-registry, sharing). Does this configuration meet the four conjunctive trigger conditions for Sector split per [debate 001](../debates/001-laws-count-and-multirepo-scaling.md)? Carry-forward from debate 001's follow-up actions checklist.
+3. **Sector Astronomican trigger evaluation** — LoreWeave currently has **seven contract directories** in `contracts/api/` (identity, books, catalog, **llm-gateway**, model-billing, model-registry, sharing — `llm-gateway` is new since the 2026-05-09 HANDOFF) **and fifteen service implementations** in `services/`. Does this configuration meet the four conjunctive trigger conditions for Sector split per [debate 001](../debates/001-laws-count-and-multirepo-scaling.md)? Carry-forward from debate 001's follow-up actions checklist.
 4. **Implicit principles surface** — independent capture (per Phase 0 §3 step 4) of "of course we'll" patterns that have been assumed but not stated. The most valuable Phase 0 output, per spec.
 
 ---

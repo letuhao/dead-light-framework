@@ -28,6 +28,20 @@
 
 **Reversibility.** This is a publication-style choice; reversing it later is a find-and-replace.
 
+### D-3 — AI-aide drafts PM Threshold Decisions for project-owner review
+
+**Spec text** (Phase 0 §2 inputs): "PM (Project Manager / Owner) decisions committed in writing **before** Phase 0 begins."
+
+**Departure.** AI-aide-1 produced the [`pm-threshold-decisions.md`](pm-threshold-decisions.md) draft proposal from a preliminary LoreWeave scan; project owner then reviews, adjusts, and signs off. The spec's "before Phase 0 begins" sequencing is preserved (sign-off precedes inventory work), but the *authoring* is delegated to the AI-aide.
+
+**Risk recorded.** PM-ownership of thresholds is partially diluted by AI-authored defaults — the project owner may accept proposed numbers without internalizing the trade-offs.
+
+**Mitigation.** (a) The proposal is explicitly marked "draft proposal pending project-owner review, adjustment, and sign-off." (b) An "Adjustments by project owner" section invites changes before sign-off. (c) The proposal includes provenance (scan data, scan date, AI-aide identifier) so the project owner can audit the reasoning. (d) The sign-off line is explicit and binding.
+
+**Why this departure was chosen.** Project owner's rationale: solo + AI-aide configuration benefits from an AI-drafted starting point so the project owner can react to concrete numbers rather than start from blank. The framework anticipates this kind of accommodation in its small-team accommodation language ("AI assistants may serve as aides to absent perspectives").
+
+**Reversibility.** Reversible. If project owner is uncomfortable with this departure, they can rewrite `pm-threshold-decisions.md` from scratch; the AI-drafted version remains in git history as one input among others.
+
 ### D-2 — Implicit Principles capture order reversed (AI-aide first, project owner second)
 
 **Spec text** (Phase 0 §3.4): "each Reckoning Team member writes, **independently and without coordination**, the principles they believe the team has been operating under. Aggregation comes after independent capture; contradictions across members are *the most valuable output of this section*."
@@ -115,4 +129,10 @@ _(Accumulates as Pass 1 and Pass 2 run.)_
 
 | Date | Action | Source / target | Output (link or summary) |
 |---|---|---|---|
-| 2026-05-11 | Created case-study folder skeleton | `docs/case-study-lore-weave/` | this commit |
+| 2026-05-11 | Created case-study folder skeleton | `docs/case-study-lore-weave/` | commit `324b9f6` |
+| 2026-05-11 | Logged departures D-1 (anonymized attribution) and D-2 (AI-aide-first Implicit Principles) | `methodology-notes.md` §2; `reckoning-team-record.md`; `reckoning-record.md` §4 | commit `0450e47` |
+| 2026-05-11 | `ls C:\Works\_Researchs\lore-weave` top-level walk | LoreWeave repo | 15 services + 7 contracts/api + 2 doc trees (foundation/governance/planning) + frontend + agentic-workflow + design-drafts + poc + tests + infra + sdks + scripts |
+| 2026-05-11 | `git log` on LoreWeave: branches, recent commits, change-frequency last 6mo | LoreWeave git | 1314 commits in 6mo; current branch `mmo-rpg/design-resume`; top dirs by change frequency = frontend/src 1739, docs/03_planning 1439, services/knowledge-service 945 |
+| 2026-05-11 | `cloc` full repo (exclude node_modules/git/cache/build) | LoreWeave | ~358 KLOC total: Python 67K, TypeScript 60K, Go 33K, HTML 30K, JSON 24K, plus smaller buckets |
+| 2026-05-11 | `cloc` per Pass 1 candidate | LoreWeave | docs/01_foundation 0.7 KLOC; docs/02_governance 1.4 KLOC; docs/03_planning 120 KLOC; frontend 70.5 KLOC; services/knowledge-service 49 KLOC. frontend-v2 not present (v2 renamed to frontend per commit `bada6bbd`). |
+| 2026-05-11 | Drafted PM Threshold Decisions proposal | `pm-threshold-decisions.md` | pending project-owner review/sign-off; departure D-3 recorded |
