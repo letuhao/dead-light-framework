@@ -83,7 +83,7 @@ This framework was distilled from a working project: **LoreWeave**, a multi-agen
 
 The lessons that became the framework's laws and principles are documented as a case study, including what went wrong before any sealing process existed and what changed after one was applied.
 
-Case study: [docs/case-study-lore-weave.md](docs/case-study-lore-weave.md) *(planned)*
+Case study: [docs/case-study-lore-weave/](docs/case-study-lore-weave/) *(Phase 0 in flight; folder skeleton drafted 2026-05-11)*
 
 ## Status
 
