@@ -53,7 +53,7 @@ Two of these dominate the design challenge for Phase 1:
 | Software practice | ADR adoption mid-project | Common pattern: document existing decisions retroactively as ADRs *first*, then start writing new ones for future decisions. Surfacing the implicit precedes constraining the explicit. |
 | Refactoring discipline | Strangler fig pattern (Martin Fowler, 2004) | Retrofit works as gradient, not flag-flip. New regime wraps old, gradually replaces. Spolsky (2000, *"Things You Should Never Do, Part I"*) argues from the Netscape 4 → 6 case that a full rewrite is the single worst strategic mistake a software company can make — that is an anecdotal argument, not a statistical correlation, but the case has been widely cited as cautionary. |
 
-**Common pattern across all six precedents:** retrofit governance succeeds when it includes (a) explicit reckoning with the past, (b) clear effective-date semantics, (c) gradual rather than flag-flip transition.
+Across the six precedents I looked at, the recurring pattern seems to be: retrofit governance succeeds when it includes (a) explicit reckoning with the past, (b) clear effective-date semantics, (c) gradual rather than flag-flip transition.
 
 ---
 

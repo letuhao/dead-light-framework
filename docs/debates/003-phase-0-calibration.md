@@ -78,7 +78,7 @@ Agile timeboxing (the Iron Triangle pattern) uses hard time and treats scope as 
   3. **Continue without quality gates met** — accept incomplete inventory; record specific gaps in the Reckoning Record itself; gaps become known risks carried into Phase 1.
 - A single extension is allowed without notification. A second extension requires Council awareness (notification, not approval).
 
-Hard stop is rejected because it produces sanitized inventories under deadline pressure. Unbounded extension is rejected because it dissolves the discipline that protects against documentation-theater drift.
+Hard stop is rejected because it tends to produce sanitized inventories under deadline pressure. Unbounded extension is rejected because it tends to dissolve the discipline that protects against documentation-theater drift.
 
 ---
 

@@ -656,4 +656,4 @@ Three insights worth recording for forward application:
 
 2. **Outward-facing design is its own discipline.** Before debate 006, the framework was inward-facing (project-owner + AI-aide as audiences). Outward-facing design must reckon with adopters who may not share the framework's vocabulary, conventions, or assumptions. The distribution folder is the first concrete recognition of this.
 
-3. **Dual-audience design is genuinely novel at the methodology layer.** Industry has individual examples (Stripe, Anthropic) but no methodology has *prescribed* dual-audience design rules. If Dead Light's J sub-decision proves useful in practice (LoreWeave will be the first test), this is a small but real contribution back to the documentation-architecture field.
+3. **Dual-audience design appears to be without methodology-level precedent in what I have surveyed.** Industry has individual examples (Stripe, Anthropic) but I have not found a methodology that *prescribes* dual-audience design rules. If Dead Light's J sub-decision proves useful in practice (LoreWeave will be the first test), this may be a small contribution back to the documentation-architecture field.

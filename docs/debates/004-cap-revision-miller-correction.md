@@ -67,7 +67,7 @@ Examples across organizations roughly cluster at 5–10 — consistent with Mill
 - **NASA Mission Operations rules** — sub-grouped, never a single recallable list.
 - **Google's "10 things we know to be true"** — 10. Famously hard for Google staff to recall in order without prompts.
 
-Pattern: 5–9 is the empirical sweet spot for *recallable lists*. Above 10, organizations rely on grouping/categorization rather than flat memorization. The framework's hard cap should sit *inside* Miller's range, not above it.
+Pattern: 5–9 appears to be the empirical sweet spot for *recallable lists*. Above 10, organizations tend to rely on grouping/categorization rather than flat memorization. The framework's hard cap should sit *inside* Miller's range, not above it.
 
 ---
 
