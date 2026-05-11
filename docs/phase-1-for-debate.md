@@ -61,7 +61,7 @@ Before convening the Ascension Council:
 | **Ascension Council Record** | Names + roles + date + signatures | Append-only |
 | **Re-consecration Playbook** | Markdown, defines when and how to amend | Living document |
 | **Stress Test Log** | Scenarios run + results per Council member | Reference only |
-| **Codex Slot Placeholders** | One stub file per planned Chapter | Empty, filled in later phases |
+| **Codex Slot Placeholders** | One stub file per planned Chapter | One Codex slot is filled by [Adeptus Administratum](chapters/adeptus-administratum/codex.md) (sealed via [debate 005](debates/005-first-chapter-pm-high-lord-aide.md)); remaining slots are empty and filled as real project needs surface. |
 
 ---
 
@@ -104,7 +104,7 @@ Phase 1 is NOT done until all of the following are true:
 - **Council with uniform background.** Loses the diversity that catches blind spots; consensus arrives faster but is weaker.
 - **Council too large (> 7).** Past the Dunbar threshold for small-group decision quality.
 - **Treat the Astronomican as marketing.** Written to impress rather than to bind.
-- **Use small team size as an excuse to skip Phase 1 or violate the Council minimum-diversity rule.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent functional roles. Aides surface arguments, stress-test proposals, and provide the perspective the missing role would have offered; they do not vote, do not sign the seal, and are not Council members in any voting sense. Voting authority remains exclusively with named humans. Their use is **named in the Ascension Council Record** (which Chapter and Codex stood in for which functional perspective). The specific Chapters and their Codexes are deferred to **Phase 2 (Codex per Chapter)** — the framework's planned next phase — and are not yet defined here.
+- **Use small team size as an excuse to skip Phase 1 or violate the Council minimum-diversity rule.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent functional roles. Aides surface arguments, stress-test proposals, and provide the perspective the missing role would have offered; they do not vote, do not sign the seal, and are not Council members in any voting sense. Voting authority remains exclusively with named humans. Their use is **named in the Ascension Council Record** (which Chapter and Codex stood in for which functional perspective). **The first concrete Chapter — [Adeptus Administratum](chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for Council-aide invocations during Phase 1.** Additional Chapters covering other functional perspectives remain to be sealed in subsequent debates as real project needs surface.
 
 ---
 
@@ -129,7 +129,7 @@ Council size remains **3–7 members** (within the existing framework constraint
 
 This composition rule has direct precedent in real-world boards: corporate boards of directors prescribe role diversity (independent + executive + functional specialists); IETF working groups balance vendor + operator + academic; the Federal Reserve Board of Governors balances geographic + economic perspectives. The pattern is consistent: governance bodies that are functionally homogeneous produce one-sided outputs.
 
-**Small-team accommodation.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — may serve as **aides** to the missing perspectives. Aides surface arguments and analysis; they do not vote and do not sign. The Chapter and Codex specifications for this purpose are deferred to **Phase 2 (Codex per Chapter)**. This accommodation is on-thesis with Dead Light Framework's foundational stance: humans + agents collaborate, but humans alone hold binding authority.
+**Small-team accommodation.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — may serve as **aides** to the missing perspectives. Aides surface arguments and analysis; they do not vote and do not sign. **The first concrete Chapter — [Adeptus Administratum](chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for PM-aide and Council-aide invocations.** Additional Chapter specifications for other functional perspectives remain to be sealed in subsequent debates as real project needs surface. This accommodation is on-thesis with Dead Light Framework's foundational stance: humans + agents collaborate, but humans alone hold binding authority.
 
 ### 8.2 Supporting roles (not Council)
 

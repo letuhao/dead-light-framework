@@ -21,7 +21,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | Glossary — for debate | Working draft (final assembled bottom-up later) |
 | Phase 0 — The Reckoning | **Sealed** (all calibration questions resolved in debate 003) |
 | Phase 1 — The Astronomican | Partial — debates 001 and 004 resolved; 6 known questions still open (see § Open questions) |
-| Phase 2 — Codex per Chapter | Not started |
+| Phase 2 — Codex per Chapter | **First Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11**; remaining Chapters pending real-project trigger |
 | Phase 3 — Heresy detection | Not started |
 | Phase 4 — Re-consecration | Not started |
 | LoreWeave case study application | **Not started — recommended next step** |
@@ -45,7 +45,8 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | [002 — Retrofit vs Greenfield](docs/debates/002-retrofit-vs-greenfield.md) | Introduce **Phase 0: Reckoning** as prerequisite to Phase 1 for retrofit (greenfield runs lightweight or skips). Reckoning-first effective-date model with classification: Keep / Fix-now / Fix-by-date / Reconsider-Law. **Mechanism-based warrant for retrofit precedents (TRC's "explicit past-violations machinery" is the durability anchor) added in session 3 (F-31 remediation).** |
 | [003 — Phase 0 Calibration](docs/debates/003-phase-0-calibration.md) | Significance heuristic (6 categorical bullets), Reckoning Team composition rule (≥1 active-IC mandatory + ≥1 tenure-spanning + ≥1 outside-scope), soft time budget with 80%/100% escalation, lightweight greenfield Phase 0 (Assumption Surface + Commitment Audit + Stakeholder Map). |
 | [004 — Cap Revision: Miller Citation Correction](docs/debates/004-cap-revision-miller-correction.md) | Cap on Immutable Laws and Guiding Principles raised from `≤ 5` to **5–9 with target ~7** (anchored on Miller 1956's actual 7 ± 2). Same caps apply to Imperial and Sector. Driven by IVP finding F-01 (Miller misquote). |
-| Council composition multi-role | PM is a Council member. Council requires ≥ 3 distinct functional perspectives (minimum-diversity rule). Council size 3–7 (anchored on Dunbar / Brooks for group dynamics — *not* affected by debate 004's Miller-anchored cap revision). Small-team accommodation: AI-assistant Chapters as aides; Codex specifics deferred to Phase 2. |
+| [005 — First Chapter: PM / High Lord Aide](docs/debates/005-first-chapter-pm-high-lord-aide.md) | First concrete Chapter sealed: **Adeptus Administratum** ([Codex v1.0](docs/chapters/adeptus-administratum/codex.md)). Multi-role (PM + High Lord aide); Draft + Notify authority (5 trigger types); D4 lifecycle (task-scoped instance + persistent role + artifact continuity via 7-step re-priming protocol); E2 multiplicity (singleton per Astronomican; concurrent instances allowed). Driven by project-owner observation during LoreWeave case-study kick-off that PM threshold-setting on a 358-KLOC project is a bottleneck. |
+| Council composition multi-role | PM is a Council member. Council requires ≥ 3 distinct functional perspectives (minimum-diversity rule). Council size 3–7 (anchored on Dunbar / Brooks for group dynamics — *not* affected by debate 004's Miller-anchored cap revision). Small-team accommodation: AI-assistant Chapters as aides; first Chapter (Adeptus Administratum) sealed via debate 005. |
 | Six embedded answers (debate 002) | No Phase 0 sealing; smaller Reckoning Team produces, Council reviews; full attribution; no fixed grandfather cap; no fixed sunset horizon; PM-defined re-reckoning cadence. |
 
 ---
@@ -92,12 +93,22 @@ dead-light-framework/
     │   ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
     │   ├── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
     │   └── findings-phase5-2026-05-11.md                  ← Phase 5 Internal Consistency (F-32–F-39)
+    ├── chapters/
+    │   └── adeptus-administratum/
+    │       └── codex.md                                   ← First Chapter Codex v1.0 [SEALED via debate 005, 2026-05-11]
+    ├── case-study-lore-weave/                             ← First retrofit application of the framework (Phase 0 in flight)
+    │   ├── README.md                                      ← Case-study overview, scope, focus
+    │   ├── pm-threshold-decisions.md                      ← Draft proposal pending owner sign-off
+    │   ├── reckoning-team-record.md                       ← Team composition; AI-aide invocations
+    │   ├── reckoning-record.md                            ← Phase 0 four-section inventory skeleton
+    │   └── methodology-notes.md                           ← Spec departures (D-1, D-2, D-3); retroactive review
     └── debates/
         ├── README.md                                      ← Debate index
         ├── 001-laws-count-and-multirepo-scaling.md        [decided]
         ├── 002-retrofit-vs-greenfield.md                  [decided]
         ├── 003-phase-0-calibration.md                     [decided]
-        └── 004-cap-revision-miller-correction.md          [decided]
+        ├── 004-cap-revision-miller-correction.md          [decided]
+        └── 005-first-chapter-pm-high-lord-aide.md         [decided]
 ```
 
 ---
@@ -137,21 +148,21 @@ Final glossary deferred — to be assembled bottom-up as later phases force real
 
 ## Recommended next step
 
-**Map Phase 0 + Phase 1 against LoreWeave as a real test case.**
+**Sign off [`pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md), then run LoreWeave Phase 0 Pass 1.**
 
-Why this is still the right next step at end of session 3:
+End-of-session-4 state: LoreWeave case study is scaffolded; PM Threshold Decisions are drafted (under Adeptus Administratum Codex §2.1) and pending project-owner sign-off. Pre-Pass-1 work has already produced a scan summary (~358 KLOC, 1314 commits in 6 months, MMO-RPG pivot on `mmo-rpg/design-resume` branch, frontend v1→v2 rename complete, license + infra pivots in last month).
 
-- LoreWeave is the framework's primary case study and the reason the framework exists. Project owner has signaled multiple scope changes — textbook retrofit case.
-- Phase 0 + Phase 1 are now defined in enough detail to execute against real data, **and** the IVP audit has substantially de-risked the evidentiary base (76/76 citations verified, 41 load-bearing arguments analyzed, 30 findings remediated).
-- Running the framework on a real codebase will expose design weaknesses faster than further abstract debate or further audit phases.
-- LoreWeave has 6 services in `contracts/api/` (identity, books, catalog, model-billing, model-registry, sharing) — also a candidate for the Sector Astronomican mechanism from debate 001.
-- The IVP work in session 3 surfaced two specific items the LoreWeave application can test empirically: F-29's stress-test 20% threshold (now anchored on Cohen's κ but pending real calibration) and F-21's M&A KLOC heuristic (now downgraded to sanity-check, pending COCOMO-derived budgets in practice).
+The framework is now equipped with:
+- IVP through Phase 5 — within-document evidentiary check substantially complete.
+- Adeptus Administratum Codex v1.0 — first Chapter sealed, available for PM-aide and Council-aide invocations during Phase 0 and Phase 1.
+- Three spec departures (D-1 anonymized attribution; D-2 AI-aide-first Implicit Principles; D-3 AI-aide-drafts-PM-thresholds) logged and re-evaluated as compliant with the sealed Codex.
 
-How to start:
-1. Read `C:\Works\_Researchs\lore-weave\docs\01_foundation\01_PROJECT_OVERVIEW.md` (~390 lines).
-2. Skim `docs/02_governance/` and `docs/03_planning/` to identify scope changes and decisions.
-3. Run a Tier 1 (startup) Phase 0 against LoreWeave per `pm-calibration-guide.md`.
-4. Document findings as `docs/case-study-lore-weave.md` (referenced from README as planned).
+How to resume:
+1. Review [`docs/case-study-lore-weave/pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md). Three items flagged for owner attention: (a) §1 #2 "lowered 5 person-days → 1 day for solo pace"; (b) §3 "design-drafts/ and poc/ — committed decisions or exploration?"; (c) §4 "~6 person-week initial commitment" — confirm or scope down.
+2. Add adjustments in the "Adjustments by project owner" section of `pm-threshold-decisions.md` if any.
+3. Check three sign-off checkboxes at the bottom and sign.
+4. Open a new chat session — a new Adeptus Administratum instance re-primes per Codex §8 protocol and begins **Pass 1 Current State Audit** of LoreWeave (`docs/01_foundation/` + `docs/02_governance/` + `docs/03_planning/` + `frontend/` + `services/knowledge-service/`).
+5. The Pass 1 work fills [`reckoning-record.md`](docs/case-study-lore-weave/reckoning-record.md) sections 1, 2 (partial), 3 (partial) for the in-scope areas.
 
 ---
 
@@ -195,21 +206,24 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 
 ## Repo state at end of Session 3
 
-- Branch: `main` (clean). All session-3 work merged via 7 PRs (#2–#8), then merged-branch cleanup (local + remote).
-- Recent commits on `main` (top of log):
+- Branch: `main` (clean as of end of session 4 work; not yet pushed since end-of-session-3 checkpoint).
+- Recent commits on `main` (top of log, end of session 4):
   ```
-  dcfb619  refine IVP spec to v0.3 from multi-phase 2026-05-09 run lessons
-  9094c4c  remediate IVP Phase 4 findings F-28 through F-31
-  b080629  IVP Phase 4 (Argument Analysis) on 41 load-bearing claims + 4 debates
-  6fcbd00  remediate IVP Phase 3 findings F-25 (reduced) and F-27
-  f73384b  audit erratum: reduce F-25 (MEDIUM->LOW) and retract F-26
-  b125401  IVP Phase 3 (Citation Appropriateness) on 73 verified citations
-  5ec327b  remediate IVP 2026-05-09 findings F-14 through F-24
-  843fcba  IVP Phase 2 extension: verify the queued 46 citations
-  6a34721  Merge pull request #1 from letuhao/claude/read-handoff-status-53xfC  ← end of session 2
+  (commit pending) propagate Adeptus Administratum Codex seal across framework + case study
+  78d4bb4  seal debate 005 + create Adeptus Administratum Codex v1.0
+  89039d1  revise debate 005 §6 lifecycle: D3 → D4 (task-scoped instance)
+  b0b952f  open debate 005 — First Chapter: PM/High Lord Aide
+  9c04342  draft PM Threshold Decisions proposal from LoreWeave scan
+  0450e47  log Phase 0 spec departures D-1 D-2 before LoreWeave scan begins
+  324b9f6  scaffold LoreWeave case-study folder per Phase 0 outputs
+  29737aa  remediate IVP Phase 5 findings F-32 through F-39
+  6ce8941  IVP Phase 5 (Internal Consistency) on framework docs + HANDOFF
+  f4c7ba5  consolidate HANDOFF for end of Session 3  ← end of session 3
   ```
 - All 38 surfaced findings (F-01 through F-39, with F-26 retracted via erratum) are remediated.
 - IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4, 5 complete.
+- Phase 2 (Codex per Chapter): first Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11; Codex v1.0 at [`docs/chapters/adeptus-administratum/codex.md`](docs/chapters/adeptus-administratum/codex.md); additional Chapters deferred to real-project trigger.
+- LoreWeave case study: Phase 0 scaffolding complete; pre-Pass-1 work (folder, PM threshold proposal, scan, spec departures D-1/D-2/D-3) committed; pending PM sign-off of [`pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md) before Pass 1 begins.
 - IVP spec at v0.3.
 - IVP Phase 5 complete; Phases 6, 7 queued.
 - No external dependencies, no build, no tests — this is a documentation repository.

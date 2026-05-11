@@ -26,36 +26,31 @@ LoreWeave is a **solo human project**. The single human (project owner) carries 
 
 ---
 
-## AI-aide Codex (interim)
+## AI-aide Codex (sealed via debate 005)
 
-Phase 2 of Dead Light Framework (Codex per Chapter) is not yet defined. The AI-aide invocation here uses an **interim Codex** captured below to keep the accommodation faithful to spec until Phase 2 lands.
+**Status update — 2026-05-11:** the interim Codex previously captured in this section has been **superseded** by the sealed [Adeptus Administratum Codex v1.0](../chapters/adeptus-administratum/codex.md). Project owner approved all six sub-decisions of [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11; the sealed Codex now governs all AI-aide invocations for the LoreWeave case study (and any future Dead Light Framework project).
 
-### AI-aide-1 — interim Codex for LoreWeave Phase 0
+### Active Codex for this case study
 
-**Operational Bounds.** The aide may:
+| Property | Value |
+|---|---|
+| Chapter | **Adeptus Administratum** |
+| Codex | [`docs/chapters/adeptus-administratum/codex.md`](../chapters/adeptus-administratum/codex.md) v1.0 |
+| Sealed via | [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) |
+| Sealed on | 2026-05-11 |
+| Multiplicity | Singleton role at Imperial level (LoreWeave currently sits below Sector trigger threshold per [reckoning-record.md §1.5](reckoning-record.md) — pending Pass 1 evaluation). |
+| Instance lifecycle | Task-scoped per Codex §8 (D4). Each chat session / task = new instance; instance disbands on output commit + audit-trail update. |
+| Instance identity for case study | Anonymous-by-default, recorded per instantiation in [methodology-notes.md §6 audit trail](methodology-notes.md). The first instance was Claude Code Opus 4.7, invoked 2026-05-11 for the LoreWeave Phase 0 kick-off task. |
 
-- Read any file in the LoreWeave repo at `C:\Works\_Researchs\lore-weave`.
-- Run read-only commands (`git log`, `cloc`, `scc`, grep) and report results.
-- Draft inventory sections in the Reckoning Record for project-owner review.
-- Raise contradictions, missing entries, or suspect attributions in drafts the project owner produces.
+### Notes specific to LoreWeave's invocation of the Codex
 
-**Hard Stops.** The aide must NOT:
-
-- Modify any file in `C:\Works\_Researchs\lore-weave`.
-- Author a final inventory entry without project-owner sign-off.
-- Assign attribution to a human decision-maker the project owner has not named.
-- Vote, seal, or sign any artifact.
-- Convert a draft entry to "final" without explicit project-owner acknowledgment.
-
-**Autonomy Threshold.** The aide may act solo when the action is **read-only and reversible** (search, read, summarize, draft). For anything that creates or modifies a framework artifact, the aide drafts and waits for project-owner review.
-
-**Output Contract.** Every aide output names what it is:
-
-- "Draft inventory entry" → goes to project owner for verification, attribution check, and acceptance.
-- "Read-only analysis" → audit trail; informs project owner's decisions.
-- "Question for project owner" → blocks until answered.
-
-This interim Codex is **superseded automatically** when Phase 2 (Codex per Chapter) is defined and a formal Codex for outside-scope aides is published.
+- **Phase activation:** during Pass 1 and Pass 2 work, the active subsection of Codex §2 Operational Bounds is **§2.1 (Phase 0 / Reckoning) tasks**.
+- **Outside-scope perspective fulfillment:** the Adeptus Administratum instance for LoreWeave fulfills the "≥ 1 outside-scope perspective" requirement of Phase 0 §2 composition rule (per the small-team accommodation in Phase 0 §7, now updated to reference the sealed Codex).
+- **Departures D-1, D-2, D-3 — relationship to sealed Codex:**
+  - D-1 (anonymized attribution) — *not* contradicted by the Codex; the Codex's Output Contract §6 mandates provenance for the *instance*, not for human decision-makers. D-1 stands as a PM-level choice.
+  - D-2 (AI-aide-first Implicit Principles) — *not* contradicted by the Codex; this is an ordering choice for a specific Phase 0 step, not a Codex-level governance choice. D-2 stands.
+  - D-3 (AI-aide drafts PM Threshold Decisions for project-owner review) — *not* contradicted; the Codex's §2.1 explicitly permits "Draft PM Threshold Decisions for project-owner review." D-3 is the operational pattern the Codex is designed to support. D-3 stands.
+- **Retroactive review of pre-seal work:** the work done under the interim Codex (Pass 0: scaffold, scan, PM Threshold Decisions proposal, departure logging) has been retroactively reviewed for compliance with the sealed Codex. Findings in [methodology-notes.md § Retroactive review](methodology-notes.md).
 
 ---
 
