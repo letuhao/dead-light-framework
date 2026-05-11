@@ -52,7 +52,7 @@ Phase 0 is an **investigative phase**, not a ceremonial one. There is no sealing
 
 Conducted concurrently across team members:
 
-1. **Current State Audit** — what is actually deployed, what is actually in `main`, what services exist with what contracts. Documentation is *evidence*, not *truth* — discrepancies between docs and reality are explicitly recorded.
+1. **Current State Audit** — what is actually deployed, what is actually in `main`, what services exist with what contracts. Within Dead Light, we treat documentation as *evidence*, not *truth* — discrepancies between docs and reality are explicitly recorded.
 2. **Past Decisions Catalog** — significant scope changes, architectural pivots, abandoned directions, technology choices. Each entry includes: decision, date, named decision-maker(s), context that drove it, what changed as a result. Attribution is required (per [debate 002](debates/002-retrofit-vs-greenfield.md), Q3) — the record names actors and separates personal accountability from systemic learning.
 3. **Failure Inventory** — material failures with date, blast radius, named participants, and root cause where known. Attribution required, blame avoided. Borrowed framing from blameless-postmortem culture: names are kept, blame is not assigned.
 4. **Implicit Principles Surface** — each Reckoning Team member writes, **independently and without coordination**, the principles they believe the team has been operating under. Aggregation comes after independent capture; contradictions across members are *the most valuable output of this section*.
@@ -116,7 +116,7 @@ Phase 0 is NOT done until all of the following are true:
 | Signal | Diagnosis |
 |---|---|
 | Reckoning Team is composed entirely of senior decision-makers | Loses the perspective of those who maintain the code daily; the bottom-up signal is lost. Add ICs who actually run the systems. |
-| Audit is documentation-driven only | Documentation lies. Force one person to verify against deployed reality (logs, configs, running processes). |
+| Audit is documentation-driven only | Documentation can drift from reality. Force one person to verify against deployed reality (logs, configs, running processes). |
 | Past Decisions Catalog reads as a success story | Sanitization. The catalog must include decisions that were made under pressure, decisions that were later reversed, and decisions whose rationale has been forgotten. |
 | Failure Inventory lists symptoms, not root causes | Surface investigation. Either deepen each failure with a "what did we miss?" pass, or mark the entry "root cause unknown" honestly. |
 | Implicit Principles Surface converges suspiciously cleanly | Members coordinated before independent capture. Reset and have each member write privately again. |
@@ -127,7 +127,7 @@ Phase 0 is NOT done until all of the following are true:
 
 ## 7. Anti-patterns — what NOT to do
 
-- **Skip Phase 0 for retrofit.** "We know our project, we don't need an inventory" is the precise reason retrofit Phase 1 fails — the team's confident memory and the actual state diverge.
+- **Skip Phase 0 for retrofit.** "We know our project, we don't need an inventory" is a common reason retrofit Phase 1 struggles in my experience — the team's confident memory and the actual state diverge.
 - **Single-person reckoning.** One author, one viewpoint, one bias. The framework requires plural perspectives in the Reckoning Team for a reason.
 - **Council members do reckoning work themselves.** Defeats the bottom-up signal. Council reviews; Reckoning Team produces.
 - **Anonymize attribution.** Decided against in [debate 002](debates/002-retrofit-vs-greenfield.md). Names are required because (a) git already has them, (b) institutional learning requires knowing context, (c) hiding actors hides the social structure that produced the outcomes.
@@ -171,6 +171,8 @@ These commitments are made **before** Phase 0 begins. Without them, Phase 0 has 
 
 ## 9. What is borrowed vs novel
 
+> "Not found in surveyed precedent" below is an honest negative — I have not found prior art in the literature I read, but counter-examples are welcome.
+
 | Component | Source |
 |---|---|
 | Current state audit + decision archaeology | Borrowed from M&A due diligence practice; the code-reading and code-comprehension tradition (representative reference: Diomidis Spinellis, *Code Reading: The Open Source Perspective*, Addison-Wesley, 2003); *Working Effectively with Legacy Code* (Michael Feathers, Pearson, 2004) |
@@ -179,9 +181,9 @@ These commitments are made **before** Phase 0 begins. Without them, Phase 0 has 
 | Bottom-up Reckoning Team (not Council) producing the inventory | Borrowed from open-source maintainer-driven processes (Linux subsystem maintainers, Apache committers); XP's "spike" pattern for investigation work (Kent Beck, *Extreme Programming Explained*, 1999) |
 | PM-defined thresholds for significance, materiality, scope, cadence | Borrowed from PMBOK / PRINCE2 project sizing patterns; the Agile Iron Triangle's "fix time, vary scope" framing (also expressed in PRINCE2 as the tolerance pattern); Lean Startup's minimal-upfront-artifacts and validated-learning principles for scope discovery |
 | No sealing ceremony for Phase 0 | Borrowed from the engineering review pattern in IETF and W3C — investigation outputs feed governance bodies but are not themselves governance acts |
-| **Phase 0 → Phase 1 hand-off without approval gate** | **Novel** — most prep phases require formal approval; here the Council is a reader, not a gate |
-| **Implicit principles independent capture as a *required* step in retrofit governance** | **Novel** — surfaced as a methodology pattern but not previously codified at the governance level |
-| **Single living Reckoning Record spanning Phase 0 and Phase 1** | **Novel** — combines pre-decision investigation with post-decision migration tracking in one document |
+| **Phase 0 → Phase 1 hand-off without approval gate** | **Not found in surveyed precedent** — most prep phases require formal approval; here the Council is a reader, not a gate |
+| **Implicit principles independent capture as a *required* step in retrofit governance** | **Not found in surveyed precedent** — surfaced as a methodology pattern but not previously codified at the governance level |
+| **Single living Reckoning Record spanning Phase 0 and Phase 1** | **Not found in surveyed precedent** — combines pre-decision investigation with post-decision migration tracking in one document |
 
 ---
 

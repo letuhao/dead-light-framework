@@ -96,7 +96,7 @@ Phase 1 is NOT done until all of the following are true:
 
 ## 7. Anti-patterns — what NOT to do
 
-- **Skip the ceremony.** "The team is already aligned, we don't need a meeting." Six months later, every member remembers something different.
+- **Skip the ceremony.** "The team is already aligned, we don't need a meeting." Six months later, members tend to remember different things.
 - **Single-author draft with rubber-stamp approval.** Bypasses collective sealing; produces no psychological commitment.
 - **Mix Laws and Principles in one tier.** Loses the hard/soft distinction — the whole point of two tiers.
 - **Write Laws before agreeing on Purpose.** Building principles without a north star.
@@ -277,6 +277,8 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 
 ## 11. What is borrowed vs novel
 
+> "Not found in surveyed precedent" below is an honest negative — I have not found prior art in the literature I read, but counter-examples are welcome.
+
 | Component | Source |
 |---|---|
 | Five pre-work questions | Borrowed from Agile Inception Deck |
@@ -284,10 +286,10 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 | Sign-off ceremony | Borrowed from RUP Lifecycle Objective Milestone + PRINCE2 PID approval (current PRINCE2 7th edition, 2023; PID approval is structurally consistent across recent editions) |
 | Re-consecration playbook structure | Borrowed from PRINCE2 Change Control, with stricter cost |
 | Stakeholder register pattern | Borrowed from PMBOK |
-| **Two-tier hardness (Laws / Principles)** | Novel |
-| **Sealing as one-shot, Council disbands** | Novel |
-| **Stress test with divergence threshold** | Novel |
-| **Format constraint for agent recital (ID-addressable, system-prompt-able)** | Novel |
+| **Two-tier hardness (Laws / Principles)** | Not found in surveyed precedent |
+| **Sealing as one-shot, Council disbands** | Not found in surveyed precedent |
+| **Stress test with divergence threshold** | Not found in surveyed precedent |
+| **Format constraint for agent recital (ID-addressable, system-prompt-able)** | Not found in surveyed precedent |
 | **Quality gate "recite without reading"** | Borrowed in spirit from military doctrine drilling; novel applied to software |
 | **Imperial + Sector tier with inherit-and-add rule** | Borrowed from constitutional federalism, Catholic Church canon law plus diocesan customs, Linux kernel maintainer tree, Toyota TPS plus plant kaizen |
 | **Phase 0: Reckoning + retrofit-aware Phase 1** | Borrowed from constitutional retrofit precedents (Japan 1947, Spain 1978, South Africa TRC 1996 — selected as post-WWII *successful* retrofits; failed cases such as Iraq 2005 and Weimar Germany 1919 lacked explicit past-violations machinery, the durability anchor that distinguishes the successes — see [debate 002 § Real-world precedents](debates/002-retrofit-vs-greenfield.md#real-world-precedents-for-retrofit-governance)), corporate transformation patterns (Microsoft / Nadella, Apple / Jobs 1997), Toyota's Ohno-circle exercise, Linux kernel CoC effective-date model, and the Strangler Fig refactoring pattern (Fowler) |
@@ -298,11 +300,11 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 
 This draft is intentionally specific — it commits to numbers (9 Laws max with target ~7 per [debate 004](debates/004-cap-revision-miller-correction.md), 7 Council members max, 20% divergence threshold, 1–2 day session), to ordering (Purpose before Laws), and to ceremony design (Council disbands). Specificity is a debate aid: it is easier to argue against a number than against a vague stance.
 
-The numbers and rules will move. The structure of the phase — pre-work, intensive session, sealing, post-session — is the part most likely to survive intact.
+The numbers and rules will move. The structure of the phase — pre-work, intensive session, sealing, post-session — is the part I expect to survive intact.
 
 Outstanding open questions (carry into debate):
 
-- **Two-tier sharpness** — when is something an Immutable Law vs a Guiding Principle? Content question affecting every Astronomican; the two-tier hardness distinction is the framework's signature design choice but the sharpness criteria are not yet codified.
+- **Two-tier sharpness** — when is something an Immutable Law vs a Guiding Principle? Content question affecting every Astronomican; the two-tier hardness distinction is one of the framework's distinctive choices but the sharpness criteria are not yet codified.
 - **Council size lower bound** — is 3 truly enough, or is it too few for diversity?
 - **Pre-work depth** — five questions sufficient, or do agentic projects need a sixth on agent boundaries?
 - **Session format** — co-located vs distributed; impact on sealing ritual.
