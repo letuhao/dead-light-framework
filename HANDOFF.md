@@ -1,6 +1,6 @@
-# Session Handoff — 2026-05-10 (end of Session 3)
+# Session Handoff — 2026-05-11 (end of Session 4)
 
-> Snapshot of Dead Light Framework state at end of Session 3. Read this first to resume work without re-deriving context. Supersedes the 2026-05-09 handoff (end-of-Session-2).
+> Snapshot of Dead Light Framework state at end of Session 4. Read this first to resume work without re-deriving context. Supersedes the 2026-05-10 handoff (end-of-Session-3).
 
 ---
 
@@ -26,6 +26,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | Phase 4 — Re-consecration | Not started |
 | LoreWeave case study application | **Not started — recommended next step** |
 | IVP audit infrastructure | **Spec v0.3 + slash command + Phases 1, 2 (full coverage), 3, 4, 5 complete; all 38 findings (F-01–F-39, with F-26 retracted) remediated; Phases 6, 7 queued** |
+| Framework-wide voice policy + cleanup pass | **Policy #3 sealed (commit `344bbb2`, session 4). Voice cleanup pass applied across README, phase-0/1 working drafts, calibration docs, glossary, case study files, debates 002/003/004/006, audit findings executive verdicts (commits `1d81e0d` → `68daccb`). Codex v1.0 skipped (sealed — voice cleanup deferred to future Codex Re-consecration debate).** |
 
 ---
 
@@ -206,26 +207,27 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 
 ---
 
-## Repo state at end of Session 3
+## Repo state at end of Session 4
 
-- Branch: `main` (clean as of end of session 4 work; not yet pushed since end-of-session-3 checkpoint).
+- Branch: `main` (clean as of end of session 4; ahead of `origin/main` by 9 commits — not yet pushed pending project-owner authorization).
 - Recent commits on `main` (top of log, end of session 4):
   ```
-  (commit pending) propagate Adeptus Administratum Codex seal across framework + case study
+  68daccb  apply practitioner voice to audit findings executive verdicts
+  d18472d  apply practitioner voice to debates 002 / 003 / 004 / 006
+  52702fe  apply practitioner voice to operational + case-study docs; fix stale debate-003 status
+  f60a606  apply practitioner voice to phase-0 and phase-1 working drafts
+  1d81e0d  apply practitioner voice to README + add "Who is writing this" section
+  344bbb2  add framework-wide policy #3 (practitioner voice, not authority pronouncement)
+  5077769  open debate 006 — Documentation Architecture and Distribution Template
+  e35dcb6  propagate Adeptus Administratum Codex seal across framework + case study
   78d4bb4  seal debate 005 + create Adeptus Administratum Codex v1.0
-  89039d1  revise debate 005 §6 lifecycle: D3 → D4 (task-scoped instance)
-  b0b952f  open debate 005 — First Chapter: PM/High Lord Aide
-  9c04342  draft PM Threshold Decisions proposal from LoreWeave scan
-  0450e47  log Phase 0 spec departures D-1 D-2 before LoreWeave scan begins
-  324b9f6  scaffold LoreWeave case-study folder per Phase 0 outputs
-  29737aa  remediate IVP Phase 5 findings F-32 through F-39
-  6ce8941  IVP Phase 5 (Internal Consistency) on framework docs + HANDOFF
   f4c7ba5  consolidate HANDOFF for end of Session 3  ← end of session 3
   ```
 - All 38 surfaced findings (F-01 through F-39, with F-26 retracted via erratum) are remediated.
 - IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4, 5 complete.
 - Phase 2 (Codex per Chapter): first Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11; Codex v1.0 at [`docs/chapters/adeptus-administratum/codex.md`](docs/chapters/adeptus-administratum/codex.md); additional Chapters deferred to real-project trigger.
 - LoreWeave case study: Phase 0 scaffolding complete; pre-Pass-1 work (folder, PM threshold proposal, scan, spec departures D-1/D-2/D-3) committed; pending PM sign-off of [`pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md) before Pass 1 begins.
-- IVP spec at v0.3.
+- IVP spec at v0.3. Phase 5b (author-voice pass) referenced in framework-wide policy #3 but not yet drafted into spec v0.4.
 - IVP Phase 5 complete; Phases 6, 7 queued.
+- **Session 4 work summary:** debate 006 opened (Documentation Architecture and Distribution Template — still `open`). Framework-wide policy #3 (Practitioner voice, not authority pronouncement) sealed. Voice cleanup pass applied across all major documentation surfaces (17 files, 6 commits) to bring framework text in line with the new policy. First blog post drafted in English (debate-open intro) at `blogs/01-the-emperor-is-dead-the-light-remains.md` (gitignored — blog content stays local).
 - No external dependencies, no build, no tests — this is a documentation repository.
