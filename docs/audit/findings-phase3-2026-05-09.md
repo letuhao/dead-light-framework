@@ -193,7 +193,7 @@ Examined every 40k invocation per inventory § D (analogies A-001 through A-011)
 
 The framework's policy-1 self-discipline holds at the document-text level. The most ambitious load-bearing invocation (Imperial + Sector Astronomican design — A-008) has an explicit Methodological Note (A-009) where the framework retracts an earlier policy-1 violation and re-anchors on real-world precedents. This is a textbook case of a self-correcting framework: the violation existed at one point, was identified, and was repaired in-document.
 
-**No policy-1 finding.** This is a strongly favourable Phase 3 result for the framework's central design discipline.
+**No policy-1 finding.** This looks favourable to me as the Phase 3 auditor for the framework's central design discipline.
 
 The "needs-debate" 40k terms (A-005, A-006, A-007, A-011) are in the glossary as candidates for cut or rename; if any survives a final debate as load-bearing terminology, Phase 3 should re-evaluate. Currently they are pre-load-bearing.
 

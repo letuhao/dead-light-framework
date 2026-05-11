@@ -14,7 +14,7 @@
 
 ## 1. Executive verdict
 
-Phase 5 checks the framework's internal consistency across five axes. The framework is **substantially consistent** after three sessions of remediation; no CRITICAL or HIGH findings surfaced. Eight findings are surfaced across the four MEDIUM/LOW remediation classes — all are localized text edits, none threatens a sealed decision or framework structure.
+Phase 5 checks the framework's internal consistency across five axes. Within the axes Phase 5 checks, the framework is **substantially consistent** after three sessions of remediation; no CRITICAL or HIGH findings surfaced. Eight findings are surfaced across the four MEDIUM/LOW remediation classes — all are localized text edits, none threatens a sealed decision or framework structure.
 
 **Headline result:** the design-level decisions from debates 001–004 are correctly reflected in the phase docs **at the prescriptive level** (caps, ranges, composition rules, classifications). The drift is concentrated in **meta-commentary sections** (phase-1 § Note on Method, phase-0 § 2 Inputs, calibration-standards § C) where late-session remediation didn't propagate into prose that paraphrased the older numbers. HANDOFF.md's "open questions" list also drifted from phase-1's actual open-questions list.
 
