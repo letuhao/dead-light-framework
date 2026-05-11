@@ -4,7 +4,7 @@
 > **Opened:** 2026-05-08
 > **Decided:** 2026-05-08
 > **Decided by:** project owner
-> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md), specifically the "≤ 5 Immutable Laws" and "≤ 5 Guiding Principles" caps.
+> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md), specifically the "≤ 5 Immutable Laws" and "≤ 5 Guiding Principles" caps (subsequently revised to 5–9 with target ~7 by [debate 004](004-cap-revision-miller-correction.md); the arguments below apply to the revised range with the same logic).
 > **Raised by:** project owner during Phase 1 debate.
 
 ---

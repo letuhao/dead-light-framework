@@ -49,7 +49,7 @@ Use the framework's categorical heuristic verbatim. A past decision enters the c
 - It changed team structure (roles added, reassigned, or removed).
 - It has been referenced in subsequent decisions.
 
-5 person-days is a starting anchor, not a law. Adjust if your team's pace is very different.
+5 person-days is a framework-internal Tier 1 starting anchor for teams with no historical velocity data. Tier 2 replaces this with team-velocity-derived rework cost (≥ ½-sprint equivalent in story points — see § Tier 2 below). Adjust if your team's pace is very different.
 
 ### Tier 2 — Mid-org
 

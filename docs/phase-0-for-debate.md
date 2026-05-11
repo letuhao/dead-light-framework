@@ -31,7 +31,7 @@ Before convening the Reckoning Team:
   - **Significance threshold** for inclusion in the Past Decisions Catalog — what counts as "significant enough" to record.
   - **Materiality threshold** for the Failure Inventory — what counts as a "real" failure worth surfacing.
   - **Scope of audit** — which services, repos, components are in scope.
-  - **Time budget** — soft or hard horizon for Phase 0 completion.
+  - **Time budget** — soft target for Phase 0 completion with 80% / 100% structured escalation (per [debate 003 Q3](debates/003-phase-0-calibration.md): pure hard-stop and pure unbounded are both rejected).
 
 The PM commitments matter because the framework deliberately leaves Phase 0 sizing to project-specific judgment (per the answers to open questions in [debate 002](debates/002-retrofit-vs-greenfield.md)). Without these decisions in writing, Phase 0 drifts.
 

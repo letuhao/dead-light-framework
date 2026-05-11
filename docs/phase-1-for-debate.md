@@ -72,8 +72,8 @@ Phase 1 is NOT done until all of the following are true:
 - [ ] Every Council member can articulate The Purpose **without reading** the document.
 - [ ] Every Immutable Law has at least one example of violation and one of compliance.
 - [ ] Every Guiding Principle has both an Intent statement and a Direction statement.
-- [ ] Boundaries contains at least three explicit items (guards against vagueness).
-- [ ] Stress test covers ≥ 5 scenarios; divergence rate between Council members < 20%. *Anchor:* the 20% threshold is calibrated against inter-rater reliability conventions (Cohen 1960 kappa, Krippendorff alpha) — substantial agreement is conventionally κ > 0.6 (≈ < 40% disagreement); 20% disagreement targets stronger than substantial agreement, appropriate for a sealing gate. The exact number is a heuristic anchor pending empirical calibration from the LoreWeave case study.
+- [ ] Boundaries contains at least three explicit items (framework-internal floor guarding against vagueness; no external anchor for an exact minimum, Council may raise the floor).
+- [ ] Stress test covers ≥ 5 scenarios; divergence rate between Council members < 20%. *Anchor:* the 20% threshold is calibrated against inter-rater reliability conventions (Cohen 1960 kappa, Krippendorff alpha) — substantial agreement is conventionally κ > 0.6 (≈ < 40% disagreement); 20% disagreement targets stronger than substantial agreement, appropriate for a sealing gate. The exact number is a heuristic anchor pending empirical calibration from the LoreWeave case study. The ≥ 5 scenario minimum is a framework-internal floor for making the divergence rate meaningfully measurable; the load-bearing measurement is the divergence rate itself, not the scenario count.
 - [ ] All Council members have signed.
 - [ ] Document exists in immutable storage (signed git tag, hash-pinned commit, or equivalent).
 - [ ] At least one agent has been test-run with the Astronomican as system prompt and produced output consistent with the Laws.
@@ -296,15 +296,17 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 
 ## Note on Method
 
-This draft is intentionally specific — it commits to numbers (5 Laws max, 7 Council members max, 20% divergence threshold, 1–2 day session), to ordering (Purpose before Laws), and to ceremony design (Council disbands). Specificity is a debate aid: it is easier to argue against a number than against a vague stance.
+This draft is intentionally specific — it commits to numbers (9 Laws max with target ~7 per [debate 004](debates/004-cap-revision-miller-correction.md), 7 Council members max, 20% divergence threshold, 1–2 day session), to ordering (Purpose before Laws), and to ceremony design (Council disbands). Specificity is a debate aid: it is easier to argue against a number than against a vague stance.
 
 The numbers and rules will move. The structure of the phase — pre-work, intensive session, sealing, post-session — is the part most likely to survive intact.
 
 Outstanding open questions (carry into debate):
 
+- **Two-tier sharpness** — when is something an Immutable Law vs a Guiding Principle? Content question affecting every Astronomican; the two-tier hardness distinction is the framework's signature design choice but the sharpness criteria are not yet codified.
 - **Council size lower bound** — is 3 truly enough, or is it too few for diversity?
 - **Pre-work depth** — five questions sufficient, or do agentic projects need a sixth on agent boundaries?
 - **Session format** — co-located vs distributed; impact on sealing ritual.
 - **Storage of seal** — is signed git tag enough, or is something stronger needed (notarized hash, multi-sig commit)?
-- **First-time vs retrofit** — applying Phase 1 to a fresh project vs to an existing project mid-rot (the LoreWeave case). Same activities, different inputs and risks.
 - **Failure of sealing** — what happens when stress test divergence > 20% on the day of sealing? Postpone? Reduce scope of Astronomican? Disband and start over?
+
+(*"First-time vs retrofit"* was previously listed here and is now resolved: Phase 0 + §10 retrofit additions per [debate 002](debates/002-retrofit-vs-greenfield.md) cover the case.)

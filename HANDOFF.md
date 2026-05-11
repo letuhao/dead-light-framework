@@ -25,7 +25,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | Phase 3 — Heresy detection | Not started |
 | Phase 4 — Re-consecration | Not started |
 | LoreWeave case study application | **Not started — recommended next step** |
-| IVP audit infrastructure | **Spec v0.3 + slash command + Phases 1, 2 (full coverage), 3, 4 complete; all 30 findings (F-01–F-31, with F-26 retracted) remediated; Phases 5–7 queued** |
+| IVP audit infrastructure | **Spec v0.3 + slash command + Phases 1, 2 (full coverage), 3, 4, 5 complete; all 38 findings (F-01–F-39, with F-26 retracted) remediated; Phases 6, 7 queued** |
 
 ---
 
@@ -62,7 +62,8 @@ Audit workflow specified, executed once (rodage 2026-05-08), then run end-to-end
   - [`findings-2026-05-09.md`](docs/audit/findings-2026-05-09.md) — Phase 2 extension over the queued 46. 33 V / 12 P / 1 C; 3 HIGH (F-18 Schein/Argyris, F-19 RUP/XP spike, F-20 Lean Startup scope-as-variable) + 2 MEDIUM (F-14, F-21) + 6 LOW (F-15–F-17, F-22–F-24). All remediated. **76/76 citations now have a Phase 2 verdict.**
   - [`findings-phase3-2026-05-09.md`](docs/audit/findings-phase3-2026-05-09.md) — Phase 3 Citation Appropriateness on 73 verified citations. 70 APPROPRIATE / 3 STRETCHED. 1 MEDIUM (F-25, reduced to LOW via erratum) + 2 LOW (F-26 retracted via erratum; F-27 Goodhart). All practically-effective findings remediated. **Headline:** policy-1 check on R-001 (40k metaphor) PASSES.
   - [`findings-phase4-2026-05-09.md`](docs/audit/findings-phase4-2026-05-09.md) — Phase 4 Argument Analysis on 41 LB claims (clustered into 7) + 4 debates. 35 SOUND / 4 WEAK-WARRANT / 0 FALLACIOUS / 2 UNFALSIFIABLE-but-conventional. 2 MEDIUM (F-28 central-premise WEAK-WARRANT, F-31 retrofit survivorship) + 2 LOW (F-29 stress-test threshold, F-30 multi-tier survivorship). All remediated.
-- **Phases 5–7**: not yet executed. Phase 5 = Internal Consistency (term drift, decision-to-doc reflection, quantitative consistency, policy compliance). Phase 6 = External Benchmarking. Phase 7 = Synthesis Report (would integrate all per-phase findings files).
+  - [`findings-phase5-2026-05-11.md`](docs/audit/findings-phase5-2026-05-11.md) — Phase 5 Internal Consistency across 40 terms, 4 decided debates, ~20 numeric thresholds, both framework-wide policies, and README link integrity. 0 CRITICAL / 0 HIGH / 4 MEDIUM (F-32 phase-1:299 stale "5 Laws max", F-33 calibration-standards Brooks anchor, F-34 Dunbar layer-1 overshoot, F-35 phase-0:34 Time budget) + 4 LOW (F-36 phase-1:309 stale open question, F-37 HANDOFF Two-tier sharpness reflection, F-38 debate-001 metadata annotation, F-39 three small framework-internal heuristics). All 8 remediated. **Headlines:** policy-1 (40k naming-only) PASSES across all 11 inventoried analogies; README link integrity PASSES; design decisions of debates 001–004 reflected at all prescriptive sites — drift was concentrated in meta-commentary sections.
+- **Phases 6, 7**: not yet executed. Phase 6 = External Benchmarking (places framework in adjacent literature on AI-agent governance, software governance, frozen-spec patterns). Phase 7 = Synthesis Report (integrates all per-phase findings files into a single artifact for outside reviewers).
 
 ---
 
@@ -89,7 +90,8 @@ dead-light-framework/
     │   ├── findings-2026-05-08.md                         ← Phase 2 rodage (F-01–F-13)
     │   ├── findings-2026-05-09.md                         ← Phase 2 extension (F-14–F-24)
     │   ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
-    │   └── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
+    │   ├── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
+    │   └── findings-phase5-2026-05-11.md                  ← Phase 5 Internal Consistency (F-32–F-39)
     └── debates/
         ├── README.md                                      ← Debate index
         ├── 001-laws-count-and-multirepo-scaling.md        [decided]
@@ -105,8 +107,8 @@ dead-light-framework/
 ### Phase 1 (from `phase-1-for-debate.md` Note on Method)
 
 Severity HIGH:
-- **#2 Two-tier sharpness** — when is something an Immutable Law vs a Guiding Principle? Content question affecting every Astronomican.
-- **#3 Failure of sealing** — what happens when stress-test divergence > 20% on sealing day, or Council deadlocks? Without an exit ramp, real teams stall.
+- **Two-tier sharpness** — when is something an Immutable Law vs a Guiding Principle? Content question affecting every Astronomican.
+- **Failure of sealing** — what happens when stress-test divergence > 20% on sealing day, or Council deadlocks? Without an exit ramp, real teams stall.
 
 Severity MEDIUM:
 - Council size lower bound — is 3 truly enough?
@@ -116,7 +118,7 @@ Severity LOW:
 - Pre-work questions — 5 sufficient or a 6th on agent boundaries?
 - Session format — co-located vs distributed timezone.
 
-(The cap-count question, originally listed here, was closed by debate 004.)
+(The cap-count question and the "First-time vs retrofit" question were both previously listed and have since been closed — the former by debate 004, the latter by debate 002 + phase-1 §10.)
 
 ### IVP methodology (carried open in spec v0.3 § 9)
 
@@ -157,14 +159,13 @@ How to start:
 
 If LoreWeave mapping is not the right next move:
 
-- **IVP Phase 5 (Internal Consistency)** — term drift, decision-to-doc reflection, quantitative consistency, policy compliance. Most natural next IVP phase since 1–4 are done; would close out the within-document audit before moving to external benchmarking.
 - **IVP Phase 6 (External Benchmarking)** — places the framework in adjacent literature (AI-agent governance, software governance, frozen-spec patterns). Heaviest IVP phase; produces `audit/benchmark.md`.
-- **IVP Phase 7 (Synthesis Report)** — integrates all per-phase findings files. Lightweight if Phases 5–6 are done; substantial if running on Phases 1–4 only.
-- **Phase 1 #3 (failure of sealing)** — short close-out debate; ceremony exit-ramp question.
-- **Phase 1 #2 (two-tier sharpness)** — deeper internal debate; Law vs Principle distinction.
+- **IVP Phase 7 (Synthesis Report)** — integrates all per-phase findings files. Lightweight now that Phases 1–5 are done; one of the cleanest "wrap up the audit story" moves available.
+- **Phase 1 Failure of sealing** — short close-out debate; ceremony exit-ramp question.
+- **Phase 1 Two-tier sharpness** — deeper internal debate; Law vs Principle distinction.
 - **Phase 2 draft (Codex per Chapter)** — start defining Codex spec, including AI-assistant aide Chapters referenced from Phase 0 / Phase 1 anti-patterns.
 
-Recommended ordering if doing further audit work over LoreWeave: Phase 5 → LoreWeave → Phase 6+7 (informed by LoreWeave findings). Or just LoreWeave first.
+Recommended ordering if doing further audit work over LoreWeave: LoreWeave first (it informs Phase 6 benchmarking with real empirical data), then Phase 6 + 7. Phase 7 alone (without Phase 6) is also viable as a synthesis of the now-complete Phases 1–5.
 
 ---
 
@@ -207,8 +208,8 @@ Recommended ordering if doing further audit work over LoreWeave: Phase 5 → Lor
   843fcba  IVP Phase 2 extension: verify the queued 46 citations
   6a34721  Merge pull request #1 from letuhao/claude/read-handoff-status-53xfC  ← end of session 2
   ```
-- All 30 surfaced findings (F-01 through F-31, with F-26 retracted via erratum) are remediated.
-- IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4 complete.
+- All 38 surfaced findings (F-01 through F-39, with F-26 retracted via erratum) are remediated.
+- IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4, 5 complete.
 - IVP spec at v0.3.
-- IVP Phases 5–7 not yet executed.
+- IVP Phase 5 complete; Phases 6, 7 queued.
 - No external dependencies, no build, no tests — this is a documentation repository.
