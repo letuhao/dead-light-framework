@@ -1,6 +1,6 @@
 # Dead Light Framework
 
-> *The Emperor is dead. The light remains.*
+> *The Emperor is all but dead. The light remains.*
 
 An experimental development process for projects where humans and AI agents build together.
 
