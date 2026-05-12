@@ -73,6 +73,8 @@ Status legend:
 | 21 | **Corruption** | needs-debate | Gradual drift in agent behavior or codebase. Possibly redundant with Heresy. Question: is the distinction "Heresy = single sharp violation, Corruption = accumulated drift" worth two terms? |
 | 22 | **Schism** | needs-debate | Irreconcilable interpretation conflict between High Lords. Distinct governance event needing a tiebreaker process. |
 
+**Cross-reference to current AI-dev discourse.** The pattern The Chaos (#19) names — particularly its accumulated-drift sub-modes — is widely called **"vibe coding"** in current community usage (term popularized by Andrej Karpathy, 2025). The framework's vocabulary is more precise (separates Heresy = sharp violation, Corruption = accumulated drift, Chaos = umbrella; vibe coding sits closest to Corruption + Chaos), but "vibe coding" is the natural external bridge when explaining the framework to readers outside this vocabulary. Not a glossary entry on its own — referenced for outward-facing communication only.
+
 ### Group F — Detection & feedback
 
 | # | Term | Status | Rationale |

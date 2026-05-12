@@ -43,6 +43,21 @@ I have come to think of these as **governance gaps wearing technical disguises.*
 
 ---
 
+## What we're fighting against — "The Chaos"
+
+The failure pattern above has a name in this framework: **The Chaos.** It is the umbrella for four specific drift modes that tend to compound:
+
+- **Context rot** — agents lose the *why* behind past decisions and re-invent or contradict prior choices across sessions (the Monday/Wednesday and TODO-misread stories above).
+- **Architect rot** — without a fixed reference, refactors land in incompatible directions. Humans and agents drift further apart from any earlier coherent design.
+- **Scope creep** — the project keeps absorbing new concerns. Agents amplify it because the latest prompt is always more vivid than the original mandate.
+- **Accumulated technical debt** — local conveniences that, once normal, are hard to undo. Humans and agents together can ship more of it, faster than a single human could.
+
+This is roughly what the AI-dev community has lately started calling **"vibe coding"**: shipping code by feel, with agents steering, no anchor strong enough to make Monday's promise survive into Wednesday's commit. Vibe coding is wonderful for prototypes. It is brutal for anything that has to outlive a single session.
+
+The framework's job is not to forbid vibe coding. It is to give a project enough of a fixed backdrop that, when it graduates from prototype to *thing-people-rely-on*, decisions can be made against something stable instead of against the void.
+
+---
+
 ## Where existing methodologies leave a design slot empty
 
 I want to be careful here, because this is the easiest place to overreach.
@@ -99,6 +114,7 @@ For readers who do not know Warhammer 40,000 — one-liners on each term used in
 > - **Adeptus Administratum** — In W40k, the Imperial bureau of records, taxation, and administrative logistics — the empire's "chief of paperwork." **In this framework:** the first sealed Chapter — a PM / High-Lord aide role.
 > - **Ascension Council** — *Not* from canon. The framework's name for the one-time small group of humans who seal the project's founding document before kickoff and then disband.
 > - **Chapter / Chapters** — In W40k, a self-contained battle order of Space Marines, each with its own Codex. **In this framework:** an agent *type*, each with its own Codex.
+> - **The Chaos** — In W40k, the warp-based corrupting forces the Imperium fights eternally. **In this framework:** the umbrella failure mode the framework tries to defend against — context rot, architect rot, scope creep, accumulated technical debt; roughly the kind of drift "vibe coding" produces when extended beyond prototyping.
 
 ---
 
@@ -180,4 +196,4 @@ If I sounded certain anywhere above, treat that as a slip in tone, not a claim o
 
 ---
 
-#AIAgents #HumanAICollaboration #SoftwareGovernance #Methodology #Experimental #FrozenAuthority #SoftwareArchitecture #Debate
+#AIAgents #VibeCoding #HumanAICollaboration #SoftwareGovernance #Methodology #Experimental #FrozenAuthority #SoftwareArchitecture #Debate

@@ -31,6 +31,8 @@ When AI agents join the team as co-developers, those assumptions may not hold au
 - **Authority drift** — when many actors (humans + agents) can each "decide", nothing sticks.
 - **Scope chaos** — agents amplify whatever the latest prompt suggests, including the wrong directions.
 
+In recent AI-dev discourse this pattern has been called **"vibe coding"** — shipping code by feel with agents steering. It is wonderful for prototypes; it tends to compound rot when extended beyond them.
+
 These are not coding bugs. They are *governance* gaps wearing technical disguises.
 
 > **Empirical anchors for the AI-agent properties above.** The "stateless / context-bounded decision-maker" property of foundation-model agents is documented in Bommasani et al. 2021 (*On the Opportunities and Risks of Foundation Models*, Stanford CRFM, [arXiv:2108.07258](https://arxiv.org/abs/2108.07258)). Memory and identity limitations across sessions, and the resulting drift, are explored in Park et al. 2023 (*Generative Agents: Interactive Simulacra of Human Behavior*, UIST 2023). The framing of these as *governance* rather than *capability* problems aligns with practitioner observability literature on agentic systems published 2024–2026 by Anthropic, OpenAI, and Google. The piece Dead Light is *trying* to add is not the observation that agents lose context — that is already documented — but a hypothesis about what an authority layer that *survives* the loss could look like.
