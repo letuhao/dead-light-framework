@@ -1,3 +1,14 @@
+---
+audience: both
+last_updated: '2026-05-13'
+sealed_by: null
+status: working
+supersedes: null
+title: Session Handoff
+type: readme
+version: not versioned
+---
+
 # Session Handoff — 2026-05-11 (end of Session 4)
 
 > Snapshot of Dead Light Framework state at end of Session 4. Read this first to resume work without re-deriving context. Supersedes the 2026-05-10 handoff (end-of-Session-3).

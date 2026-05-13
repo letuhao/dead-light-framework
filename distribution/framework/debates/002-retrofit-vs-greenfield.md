@@ -15,7 +15,7 @@ sealed_by: self
 > **Opened:** 2026-05-08
 > **Decided:** 2026-05-08
 > **Decided by:** project owner
-> **Affects:** [phase-1-for-debate.md](../phases/phase-1-for-debate.md). Produces a new `phase-0.md` as a follow-up artifact.
+> **Affects:** [phase-1-for-debate.md](../phases/phase-1-for-debate.md). Produces a new `phase-0-for-debate.md` as a follow-up artifact.
 > **Raised by:** project owner — priority #1 in open-questions triage.
 
 ---
@@ -123,7 +123,7 @@ Rationale:
 - Naming the work as a phase signals to teams that it must be done; teams cannot speed-run it inside an already-heavy Phase 1 session.
 - Greenfield Phase 1 stays clean and identical to the current draft.
 - Phase 0 can also serve a lightweight role for greenfield projects (mandate audit, stakeholder map) without being forced.
-- This implies a future artifact: `phase-0.md`. That is the next natural document, but its detailed content is out of scope for *this* debate.
+- This implies a future artifact: `phase-0-for-debate.md`. That is the next natural document, but its detailed content is out of scope for *this* debate.
 
 ---
 
@@ -187,7 +187,7 @@ These do not need to be resolved in this debate but are flagged as the natural n
 - **A2 — introduce Phase 0: Reckoning** as a prerequisite to Phase 1 for retrofit projects. Greenfield projects skip it or run a lightweight version.
 - **B3 hybrid — reckoning before sealing**, with classification into Keep / Fix-now / Fix-by-date / Reconsider-Law. Fix-now resolved before seal; Fix-by-date recorded with owners and dates in a Reckoning Record outside the Astronomican.
 - **Add a retrofit-specific section to Phase 1 draft** capturing the additions to pre-work, session, outputs, quality gates, and failure modes.
-- **Plan `phase-0.md`** as the next major artifact once this debate is decided.
+- **Plan `phase-0-for-debate.md`** as the next major artifact once this debate is decided.
 
 ---
 
@@ -205,8 +205,8 @@ These do not need to be resolved in this debate but are flagged as the natural n
 - [x] Update Inputs/Prerequisites in Phase 1 to reference the Phase 0 Reckoning Record for retrofit projects.
 - [x] Add the retrofit pattern to the Borrowed-vs-Novel table.
 - [x] Update [debates/README.md](README.md) index to status `decided`.
-- [x] Create [phase-0.md](../phases/phase-0.md) defining Phase 0: Reckoning in detail.
-- [x] Resolve the six carried-forward open questions (answered by project owner; baked into `phase-0.md`):
+- [x] Create [phase-0-for-debate.md](../phases/phase-0-for-debate.md) defining Phase 0: Reckoning in detail.
+- [x] Resolve the six carried-forward open questions (answered by project owner; baked into `phase-0-for-debate.md`):
   1. Phase 0 sealing → No sealing; output is input to Phase 1.
   2. Reckoning quorum → Smaller Reckoning Team produces; Council reviews.
   3. Past-blame protection → Full attribution with blameless framing.

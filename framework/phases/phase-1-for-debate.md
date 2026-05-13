@@ -51,7 +51,7 @@ Before convening the Ascension Council:
 
 1. **Read prior context.** Council reads the Project mandate together, plus a record of what has previously failed (if any).
 2. **Define The Purpose.** One sentence, by full consensus. If consensus fails, Phase 1 stops here — the project itself is not aligned, and that is the real problem to solve first.
-3. **Draft Immutable Laws.** Propose, stress-test, prune. **Hard cap 9; target ~7** (Miller 7±2 working-memory range; see [debate 004](debates/004-cap-revision-miller-correction.md)). Below 5 is permitted for narrowly-scoped projects but is reviewed by the Council, not auto-padded.
+3. **Draft Immutable Laws.** Propose, stress-test, prune. **Hard cap 9; target ~7** (Miller 7±2 working-memory range; see [debate 004](../debates/004-cap-revision-miller-correction.md)). Below 5 is permitted for narrowly-scoped projects but is reviewed by the Council, not auto-padded.
 4. **Draft Guiding Principles.** Propose, stress-test, prune. **Hard cap 9; target ~7** (same anchor as Laws).
 5. **Define Boundaries.** Concrete list of what the project is NOT.
 6. **Stress test the whole.** Run 5–10 hard scenarios. Each Council member decides independently using the Astronomican, then results are compared. Divergence is a signal of remaining vagueness — fix immediately.
@@ -72,7 +72,7 @@ Before convening the Ascension Council:
 | **Ascension Council Record** | Names + roles + date + signatures | Append-only |
 | **Re-consecration Playbook** | Markdown, defines when and how to amend | Living document |
 | **Stress Test Log** | Scenarios run + results per Council member | Reference only |
-| **Codex Slot Placeholders** | One stub file per planned Chapter | One Codex slot is filled by [Adeptus Administratum](chapters/adeptus-administratum/codex.md) (sealed via [debate 005](debates/005-first-chapter-pm-high-lord-aide.md)); remaining slots are empty and filled as real project needs surface. |
+| **Codex Slot Placeholders** | One stub file per planned Chapter | One Codex slot is filled by [Adeptus Administratum](../chapters/adeptus-administratum/codex.md) (sealed via [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md)); remaining slots are empty and filled as real project needs surface. |
 
 ---
 
@@ -98,7 +98,7 @@ Phase 1 is NOT done until all of the following are true:
 | Council cannot agree on Purpose after two rounds | Disagreement is upstream of Phase 1 — the project itself is not aligned. Stop and resolve before continuing. |
 | Laws read as platitudes ("good code", "best UX") | Too vague — will not be enforceable. |
 | Laws read as coding instructions ("use PostgreSQL", "use React") | Too specific — belong in Codex or ADR, not the Astronomican. |
-| More than 9 Laws or 9 Principles | Bloat — past Miller's upper bound (7±2). Each extra item adds an interpretation surface and breaks the recall premise. Force a cut. (Cap revised in [debate 004](debates/004-cap-revision-miller-correction.md).) |
+| More than 9 Laws or 9 Principles | Bloat — past Miller's upper bound (7±2). Each extra item adds an interpretation surface and breaks the recall premise. Force a cut. (Cap revised in [debate 004](../debates/004-cap-revision-miller-correction.md).) |
 | Document keeps being edited after "sealing" | The seal was symbolic only — either ceremony was skipped or the Council lacked binding authority. |
 | Stress-test divergence > 20% | Wording is still ambiguous; humans and agents will interpret differently at runtime. (Threshold anchored against inter-rater reliability conventions — see § 5 quality gates.) |
 | Boundaries section is empty | The project will scope-creep. Boundaries are the vaccine; an empty list means no immunity. |
@@ -115,7 +115,7 @@ Phase 1 is NOT done until all of the following are true:
 - **Council with uniform background.** Loses the diversity that catches blind spots; consensus arrives faster but is weaker.
 - **Council too large (> 7).** Past the Dunbar threshold for small-group decision quality.
 - **Treat the Astronomican as marketing.** Written to impress rather than to bind.
-- **Use small team size as an excuse to skip Phase 1 or violate the Council minimum-diversity rule.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent functional roles. Aides surface arguments, stress-test proposals, and provide the perspective the missing role would have offered; they do not vote, do not sign the seal, and are not Council members in any voting sense. Voting authority remains exclusively with named humans. Their use is **named in the Ascension Council Record** (which Chapter and Codex stood in for which functional perspective). **The first concrete Chapter — [Adeptus Administratum](chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for Council-aide invocations during Phase 1.** Additional Chapters covering other functional perspectives remain to be sealed in subsequent debates as real project needs surface.
+- **Use small team size as an excuse to skip Phase 1 or violate the Council minimum-diversity rule.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent functional roles. Aides surface arguments, stress-test proposals, and provide the perspective the missing role would have offered; they do not vote, do not sign the seal, and are not Council members in any voting sense. Voting authority remains exclusively with named humans. Their use is **named in the Ascension Council Record** (which Chapter and Codex stood in for which functional perspective). **The first concrete Chapter — [Adeptus Administratum](../chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for Council-aide invocations during Phase 1.** Additional Chapters covering other functional perspectives remain to be sealed in subsequent debates as real project needs surface.
 
 ---
 
@@ -140,7 +140,7 @@ Council size remains **3–7 members** (within the existing framework constraint
 
 This composition rule has direct precedent in real-world boards: corporate boards of directors prescribe role diversity (independent + executive + functional specialists); IETF working groups balance vendor + operator + academic; the Federal Reserve Board of Governors balances geographic + economic perspectives. The pattern is consistent: governance bodies that are functionally homogeneous produce one-sided outputs.
 
-**Small-team accommodation.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — may serve as **aides** to the missing perspectives. Aides surface arguments and analysis; they do not vote and do not sign. **The first concrete Chapter — [Adeptus Administratum](chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for PM-aide and Council-aide invocations.** Additional Chapter specifications for other functional perspectives remain to be sealed in subsequent debates as real project needs surface. This accommodation is on-thesis with Dead Light Framework's foundational stance: humans + agents collaborate, but humans alone hold binding authority.
+**Small-team accommodation.** Where literal humans cannot fill three distinct functional perspectives, AI assistants — invoked as specific Chapters with explicit Codex — may serve as **aides** to the missing perspectives. Aides surface arguments and analysis; they do not vote and do not sign. **The first concrete Chapter — [Adeptus Administratum](../chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for PM-aide and Council-aide invocations.** Additional Chapter specifications for other functional perspectives remain to be sealed in subsequent debates as real project needs surface. This accommodation is on-thesis with Dead Light Framework's foundational stance: humans + agents collaborate, but humans alone hold binding authority.
 
 ### 8.2 Supporting roles (not Council)
 
@@ -162,7 +162,7 @@ This composition rule has direct precedent in real-world boards: corporate board
 
 ## 9. Scaling — Imperial Astronomican and Sector Astronomicans
 
-Phase 1 produces a **single Astronomican** by default. For projects spanning multiple repositories or services with dedicated teams, an Imperial + Sector tier may be required. This decision was reached in [debate 001](debates/001-laws-count-and-multirepo-scaling.md).
+Phase 1 produces a **single Astronomican** by default. For projects spanning multiple repositories or services with dedicated teams, an Imperial + Sector tier may be required. This decision was reached in [debate 001](../debates/001-laws-count-and-multirepo-scaling.md).
 
 ### Trigger — when to split
 
@@ -184,7 +184,7 @@ Below this threshold: keep a single Astronomican. Use Codex per Chapter for agen
 ### Sector Astronomican
 
 - **Inherits all Imperial Laws** — they cannot be relaxed, only tightened.
-- Adds up to 9 local Laws and 9 local Principles (target ~7) within Imperial bounds. Same Miller-7±2 anchor as the Imperial cap; see [debate 004](debates/004-cap-revision-miller-correction.md).
+- Adds up to 9 local Laws and 9 local Principles (target ~7) within Imperial bounds. Same Miller-7±2 anchor as the Imperial cap; see [debate 004](../debates/004-cap-revision-miller-correction.md).
 - Has its own Boundaries.
 - Sealed by a Sector Ascension Council (subset of Imperial Council + local leads).
 - Re-consecration scope is local; Imperial-level Re-consecration invalidates all Sector inheritance and forces every Sector to re-review.
@@ -195,7 +195,7 @@ Imperial Phase 1 must complete before any Sector Phase 1 begins. This is non-neg
 
 ### Real-world precedent
 
-The Imperial + Sector pattern is borrowed directly from constitutional federalism (US, Germany), the Catholic Church's Canon Law plus diocesan customs (with the qualifier that the multi-century continuity refers to the Roman Catholic legal-doctrinal lineage specifically; the Great Schism of 1054 and the Reformation of 1517 are recognized governance events — see [debate 001 § Precedent](debates/001-laws-count-and-multirepo-scaling.md#precedent-real-world-systems-with-this-structure) for fuller treatment), the Linux kernel's whole-tree standards plus subsystem rules, Toyota's TPS plus plant-level kaizen, and AWS Leadership Principles plus team Tenets. The framework is not inventing a new structure — it is adopting a structure with multiple multi-decade-to-multi-century track records.
+The Imperial + Sector pattern is borrowed directly from constitutional federalism (US, Germany), the Catholic Church's Canon Law plus diocesan customs (with the qualifier that the multi-century continuity refers to the Roman Catholic legal-doctrinal lineage specifically; the Great Schism of 1054 and the Reformation of 1517 are recognized governance events — see [debate 001 § Precedent](../debates/001-laws-count-and-multirepo-scaling.md#precedent-real-world-systems-with-this-structure) for fuller treatment), the Linux kernel's whole-tree standards plus subsystem rules, Toyota's TPS plus plant-level kaizen, and AWS Leadership Principles plus team Tenets. The framework is not inventing a new structure — it is adopting a structure with multiple multi-decade-to-multi-century track records.
 
 ---
 
@@ -206,7 +206,7 @@ Most real-world adoptions of the framework are not greenfield. The framework dis
 - **Greenfield** — fresh project, no prior code, no prior architectural decisions. Default Phase 1 applies as written in sections 1–9.
 - **Retrofit** — project already in flight, with existing code, decisions, and team habits. Requires a preceding **Phase 0: Reckoning** plus the additions described in this section.
 
-This decision was reached in [debate 002](debates/002-retrofit-vs-greenfield.md). Phase 0 itself will be defined in a separate document (`phase-0-for-debate.md`); only the interface with Phase 1 is summarized here.
+This decision was reached in [debate 002](../debates/002-retrofit-vs-greenfield.md). Phase 0 itself will be defined in a separate document (`phase-0-for-debate.md`); only the interface with Phase 1 is summarized here.
 
 ### 10.1 Phase 0 prerequisite (retrofit-only)
 
@@ -271,7 +271,7 @@ This produces a hybrid effective-date model: reckoning-first determines status a
 
 ### 10.7 Open questions — resolved
 
-The six open questions carried forward from [debate 002](debates/002-retrofit-vs-greenfield.md) were answered by the project owner and baked into [phase-0-for-debate.md](phase-0-for-debate.md):
+The six open questions carried forward from [debate 002](../debates/002-retrofit-vs-greenfield.md) were answered by the project owner and baked into [phase-0-for-debate.md](phase-0-for-debate.md):
 
 | Question | Decision |
 |---|---|
@@ -303,13 +303,13 @@ Questions 4–6 manifest operationally in this Phase 1 section: the Reckoning st
 | **Format constraint for agent recital (ID-addressable, system-prompt-able)** | Not found in surveyed precedent |
 | **Quality gate "recite without reading"** | Borrowed in spirit from military doctrine drilling; novel applied to software |
 | **Imperial + Sector tier with inherit-and-add rule** | Borrowed from constitutional federalism, Catholic Church canon law plus diocesan customs, Linux kernel maintainer tree, Toyota TPS plus plant kaizen |
-| **Phase 0: Reckoning + retrofit-aware Phase 1** | Borrowed from constitutional retrofit precedents (Japan 1947, Spain 1978, South Africa TRC 1996 — selected as post-WWII *successful* retrofits; failed cases such as Iraq 2005 and Weimar Germany 1919 lacked explicit past-violations machinery, the durability anchor that distinguishes the successes — see [debate 002 § Real-world precedents](debates/002-retrofit-vs-greenfield.md#real-world-precedents-for-retrofit-governance)), corporate transformation patterns (Microsoft / Nadella, Apple / Jobs 1997), Toyota's Ohno-circle exercise, Linux kernel CoC effective-date model, and the Strangler Fig refactoring pattern (Fowler) |
+| **Phase 0: Reckoning + retrofit-aware Phase 1** | Borrowed from constitutional retrofit precedents (Japan 1947, Spain 1978, South Africa TRC 1996 — selected as post-WWII *successful* retrofits; failed cases such as Iraq 2005 and Weimar Germany 1919 lacked explicit past-violations machinery, the durability anchor that distinguishes the successes — see [debate 002 § Real-world precedents](../debates/002-retrofit-vs-greenfield.md#real-world-precedents-for-retrofit-governance)), corporate transformation patterns (Microsoft / Nadella, Apple / Jobs 1997), Toyota's Ohno-circle exercise, Linux kernel CoC effective-date model, and the Strangler Fig refactoring pattern (Fowler) |
 
 ---
 
 ## Note on Method
 
-This draft is intentionally specific — it commits to numbers (9 Laws max with target ~7 per [debate 004](debates/004-cap-revision-miller-correction.md), 7 Council members max, 20% divergence threshold, 1–2 day session), to ordering (Purpose before Laws), and to ceremony design (Council disbands). Specificity is a debate aid: it is easier to argue against a number than against a vague stance.
+This draft is intentionally specific — it commits to numbers (9 Laws max with target ~7 per [debate 004](../debates/004-cap-revision-miller-correction.md), 7 Council members max, 20% divergence threshold, 1–2 day session), to ordering (Purpose before Laws), and to ceremony design (Council disbands). Specificity is a debate aid: it is easier to argue against a number than against a vague stance.
 
 The numbers and rules will move. The structure of the phase — pre-work, intensive session, sealing, post-session — is the part I expect to survive intact.
 
@@ -322,4 +322,4 @@ Outstanding open questions (carry into debate):
 - **Storage of seal** — is signed git tag enough, or is something stronger needed (notarized hash, multi-sig commit)?
 - **Failure of sealing** — what happens when stress test divergence > 20% on the day of sealing? Postpone? Reduce scope of Astronomican? Disband and start over?
 
-(*"First-time vs retrofit"* was previously listed here and is now resolved: Phase 0 + §10 retrofit additions per [debate 002](debates/002-retrofit-vs-greenfield.md) cover the case.)
+(*"First-time vs retrofit"* was previously listed here and is now resolved: Phase 0 + §10 retrofit additions per [debate 002](../debates/002-retrofit-vs-greenfield.md) cover the case.)

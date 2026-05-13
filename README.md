@@ -1,3 +1,14 @@
+---
+audience: both
+last_updated: '2026-05-13'
+sealed_by: null
+status: working
+supersedes: null
+title: Dead Light Framework
+type: readme
+version: 0.6.0
+---
+
 # Dead Light Framework
 
 > *The Emperor is all but dead. The light remains.*

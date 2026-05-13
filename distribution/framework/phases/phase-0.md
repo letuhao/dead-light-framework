@@ -15,7 +15,7 @@ sealed_by: debate-002 + debate-003
 >
 > **Purpose:** Define the prep-phase that precedes Phase 1 for retrofit projects — surveying the past so that the Ascension Council can walk into Phase 1 with a shared, evidence-based view of reality rather than a memory of how things were supposed to be.
 >
-> **Scope:** Phase 0 is **mandatory for retrofit** projects (existing code, accumulated decisions, formed habits) and is either **skipped or run in lightweight form for greenfield** projects. The decision to introduce Phase 0 was made in [debate 002](debates/002-retrofit-vs-greenfield.md).
+> **Scope:** Phase 0 is **mandatory for retrofit** projects (existing code, accumulated decisions, formed habits) and is either **skipped or run in lightweight form for greenfield** projects. The decision to introduce Phase 0 was made in [debate 002](../debates/002-retrofit-vs-greenfield.md).
 
 ---
 
@@ -38,13 +38,13 @@ Before convening the Reckoning Team:
   - Where literal humans cannot fill all three, AI-assistant Chapters may serve as aides per the anti-pattern note in section 7.
 - **Facilitator** — runs the process; has no vote and no inventory authority.
 - **Scribe** — drafts the document; can be the same person who scribes Phase 1.
-- **PM (Project Manager / Owner) decisions** committed in writing before Phase 0 begins. The PM is a member of the Ascension Council (see [phase-1-for-debate.md section 8](phase-1-for-debate.md) for full Council composition); these are the role-specific responsibilities the PM additionally owns during Phase 0. PMs without prior calibration experience should walk through [pm-calibration-guide.md](pm-calibration-guide.md) — it provides step-by-step recipes at three rigor tiers (startup / mid-org / CMMI L4+). Underlying industry standards are catalogued in [calibration-standards.md](calibration-standards.md). The framework adopts industry-standard formulas; it does not invent them.
+- **PM (Project Manager / Owner) decisions** committed in writing before Phase 0 begins. The PM is a member of the Ascension Council (see [phase-1-for-debate.md section 8](phase-1-for-debate.md) for full Council composition); these are the role-specific responsibilities the PM additionally owns during Phase 0. PMs without prior calibration experience should walk through [pm-calibration-guide.md](../pm-calibration-guide.md) — it provides step-by-step recipes at three rigor tiers (startup / mid-org / CMMI L4+). Underlying industry standards are catalogued in [calibration-standards.md](../calibration-standards.md). The framework adopts industry-standard formulas; it does not invent them.
   - **Significance threshold** for inclusion in the Past Decisions Catalog — what counts as "significant enough" to record.
   - **Materiality threshold** for the Failure Inventory — what counts as a "real" failure worth surfacing.
   - **Scope of audit** — which services, repos, components are in scope.
-  - **Time budget** — soft target for Phase 0 completion with 80% / 100% structured escalation (per [debate 003 Q3](debates/003-phase-0-calibration.md): pure hard-stop and pure unbounded are both rejected).
+  - **Time budget** — soft target for Phase 0 completion with 80% / 100% structured escalation (per [debate 003 Q3](../debates/003-phase-0-calibration.md): pure hard-stop and pure unbounded are both rejected).
 
-The PM commitments matter because the framework deliberately leaves Phase 0 sizing to project-specific judgment (per the answers to open questions in [debate 002](debates/002-retrofit-vs-greenfield.md)). Without these decisions in writing, Phase 0 drifts.
+The PM commitments matter because the framework deliberately leaves Phase 0 sizing to project-specific judgment (per the answers to open questions in [debate 002](../debates/002-retrofit-vs-greenfield.md)). Without these decisions in writing, Phase 0 drifts.
 
 ---
 
@@ -64,7 +64,7 @@ Phase 0 is an **investigative phase**, not a ceremonial one. There is no sealing
 Conducted concurrently across team members:
 
 1. **Current State Audit** — what is actually deployed, what is actually in `main`, what services exist with what contracts. Within Dead Light, we treat documentation as *evidence*, not *truth* — discrepancies between docs and reality are explicitly recorded.
-2. **Past Decisions Catalog** — significant scope changes, architectural pivots, abandoned directions, technology choices. Each entry includes: decision, date, named decision-maker(s), context that drove it, what changed as a result. Attribution is required (per [debate 002](debates/002-retrofit-vs-greenfield.md), Q3) — the record names actors and separates personal accountability from systemic learning.
+2. **Past Decisions Catalog** — significant scope changes, architectural pivots, abandoned directions, technology choices. Each entry includes: decision, date, named decision-maker(s), context that drove it, what changed as a result. Attribution is required (per [debate 002](../debates/002-retrofit-vs-greenfield.md), Q3) — the record names actors and separates personal accountability from systemic learning.
 3. **Failure Inventory** — material failures with date, blast radius, named participants, and root cause where known. Attribution required, blame avoided. Borrowed framing from blameless-postmortem culture: names are kept, blame is not assigned.
 4. **Implicit Principles Surface** — each Reckoning Team member writes, **independently and without coordination**, the principles they believe the team has been operating under. Aggregation comes after independent capture; contradictions across members are *the most valuable output of this section*.
 
@@ -141,12 +141,12 @@ Phase 0 is NOT done until all of the following are true:
 - **Skip Phase 0 for retrofit.** "We know our project, we don't need an inventory" is a common reason retrofit Phase 1 struggles in my experience — the team's confident memory and the actual state diverge.
 - **Single-person reckoning.** One author, one viewpoint, one bias. The framework requires plural perspectives in the Reckoning Team for a reason.
 - **Council members do reckoning work themselves.** Defeats the bottom-up signal. Council reviews; Reckoning Team produces.
-- **Anonymize attribution.** Decided against in [debate 002](debates/002-retrofit-vs-greenfield.md). Names are required because (a) git already has them, (b) institutional learning requires knowing context, (c) hiding actors hides the social structure that produced the outcomes.
+- **Anonymize attribution.** Decided against in [debate 002](../debates/002-retrofit-vs-greenfield.md). Names are required because (a) git already has them, (b) institutional learning requires knowing context, (c) hiding actors hides the social structure that produced the outcomes.
 - **Treat Phase 0 as documentation theater.** Producing a polished document that no one reads or argues with. The output of Phase 0 is supposed to provoke debate in Phase 1, not pre-empt it.
 - **Use Phase 0 to settle scores.** Attribution preserves names; blame is not the framework's tool. Facilitator stops this on contact.
 - **Smooth over contradictions in implicit principles.** The contradictions are the data. A unified synthesis with no friction is fabricated.
 - **Skip the PM threshold decisions.** Without them, Phase 0 has no scope and runs forever or stops arbitrarily.
-- **Use small team size as an excuse to skip Phase 0 or violate the Reckoning Team composition rule.** Where literal humans cannot fill all three required roles (active-IC, tenure-spanning, outside-scope), AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent perspectives. Aides surface analysis, raise contradictions, and provide outside-eyes review; they do not own areas, do not author final inventory entries unilaterally, and do not vote in any sense. Their use is **named in the Reckoning Team Record** (which Chapter and Codex stood in for which absent perspective). **The first concrete Chapter — [Adeptus Administratum](chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for PM-aide and outside-scope-aide invocations during Phase 0.** Additional Chapters (e.g., code-reviewer aide, drift-detector aide) remain deferred to later debates as real project needs surface. This accommodation is on-thesis with Dead Light Framework: humans + agents collaborate; humans alone hold authority.
+- **Use small team size as an excuse to skip Phase 0 or violate the Reckoning Team composition rule.** Where literal humans cannot fill all three required roles (active-IC, tenure-spanning, outside-scope), AI assistants — invoked as specific Chapters with explicit Codex — can serve as **aides** to the absent perspectives. Aides surface analysis, raise contradictions, and provide outside-eyes review; they do not own areas, do not author final inventory entries unilaterally, and do not vote in any sense. Their use is **named in the Reckoning Team Record** (which Chapter and Codex stood in for which absent perspective). **The first concrete Chapter — [Adeptus Administratum](../chapters/adeptus-administratum/codex.md) — was sealed by [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11 and is available now for PM-aide and outside-scope-aide invocations during Phase 0.** Additional Chapters (e.g., code-reviewer aide, drift-detector aide) remain deferred to later debates as real project needs surface. This accommodation is on-thesis with Dead Light Framework: humans + agents collaborate; humans alone hold authority.
 
 ---
 
@@ -176,7 +176,7 @@ These commitments are made **before** Phase 0 begins. Without them, Phase 0 has 
 | **Facilitator** | Runs the process; manages the Council review session | May continue as Phase 1 facilitator |
 | **Scribe** | Drafts the Reckoning Record document | Typically continues as Phase 1 scribe |
 
-> **Critical detail:** the Reckoning Team is **not** the Council acting in producer mode. The Reckoning Team can include Council members, and senior ICs who happen to also sit on the Council are natural fits — but the *team that does the inventory work* and the *body that reviews and later seals* are distinct in role, even when membership overlaps. This separation defends the bottom-up signal: inventory comes from people close to the code, governance comes from the multi-role Council. Conflating them — for example, having the full Council attempt to do the inventory itself — defeats the purpose, since the Council does not have bandwidth to review massive existing codebases ([debate 002](debates/002-retrofit-vs-greenfield.md), Q2).
+> **Critical detail:** the Reckoning Team is **not** the Council acting in producer mode. The Reckoning Team can include Council members, and senior ICs who happen to also sit on the Council are natural fits — but the *team that does the inventory work* and the *body that reviews and later seals* are distinct in role, even when membership overlaps. This separation defends the bottom-up signal: inventory comes from people close to the code, governance comes from the multi-role Council. Conflating them — for example, having the full Council attempt to do the inventory itself — defeats the purpose, since the Council does not have bandwidth to review massive existing codebases ([debate 002](../debates/002-retrofit-vs-greenfield.md), Q2).
 
 ---
 
@@ -200,7 +200,7 @@ These commitments are made **before** Phase 0 begins. Without them, Phase 0 has 
 
 ## Note on Method
 
-This Phase 0 specification was authored after the project owner answered the six open questions carried forward from [debate 002](debates/002-retrofit-vs-greenfield.md). Their answers are baked into the design above:
+This Phase 0 specification was authored after the project owner answered the six open questions carried forward from [debate 002](../debates/002-retrofit-vs-greenfield.md). Their answers are baked into the design above:
 
 | Question | Decision |
 |---|---|
@@ -215,13 +215,13 @@ Q4–Q6 live operationally inside Phase 1's Reckoning step (where classification
 
 ### Open questions — resolved
 
-The four Phase 0 calibration questions were closed in [debate 003](debates/003-phase-0-calibration.md):
+The four Phase 0 calibration questions were closed in [debate 003](../debates/003-phase-0-calibration.md):
 
 | Question | Resolution |
 |---|---|
-| Significance threshold heuristic | Categorical heuristic (6 bullets) is the default; PM tunes / extends / overrides. Anchored on ITIL CM, ISA 320 / GAAP / IFRS materiality, PMBOK EVM variance, CMMI CAR. PM walk-through in [pm-calibration-guide.md § 1](pm-calibration-guide.md#1-significance-threshold). |
+| Significance threshold heuristic | Categorical heuristic (6 bullets) is the default; PM tunes / extends / overrides. Anchored on ITIL CM, ISA 320 / GAAP / IFRS materiality, PMBOK EVM variance, CMMI CAR. PM walk-through in [pm-calibration-guide.md § 1](../pm-calibration-guide.md#1-significance-threshold). |
 | Reckoning Team composition rule | Promoted to rule: 2–5 people, ≥ 1 active-IC mandatory, ≥ 1 tenure-spanning when project age permits, ≥ 1 outside-scope when team size permits. Anchored on Brooks's Law, Two-pizza, Dunbar layered, Team Topologies. |
 | Time-boxing semantics | Soft target with 80% / 100% structured escalation. Initial budget derived per PM tier — Tier 1 uses M&A IT due-diligence rule; Tier 2 uses simplified COCOMO II; Tier 3 uses CMMI PPB. |
 | Greenfield "lightweight" Phase 0 | Default for greenfield projects: Assumption Surface + External Commitment Audit + Stakeholder & Integration Map. Time anchor: 1–3 days, or 1–2% of projected effort via COCOMO II planning mode. Full skip permitted only for solo / duo teams that have worked together before. |
 
-**Framework-wide policy adopted alongside this resolution:** Dead Light Framework adopts industry-standard formulas; it does not invent new ones. Reference catalog: [calibration-standards.md](calibration-standards.md). Practical PM walk-through: [pm-calibration-guide.md](pm-calibration-guide.md).
+**Framework-wide policy adopted alongside this resolution:** Dead Light Framework adopts industry-standard formulas; it does not invent new ones. Reference catalog: [calibration-standards.md](../calibration-standards.md). Practical PM walk-through: [pm-calibration-guide.md](../pm-calibration-guide.md).

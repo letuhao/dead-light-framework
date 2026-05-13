@@ -62,7 +62,7 @@ dead-light-framework/
 ├── LICENSE
 └── docs/
     ├── glossary-for-debate.md
-    ├── phase-0.md      ← sealed
+    ├── phase-0-for-debate.md      ← sealed
     ├── phase-1-for-debate.md      ← partial
     ├── calibration-standards.md
     ├── pm-calibration-guide.md
@@ -95,7 +95,7 @@ dead-light-framework/
 │   ├── README.md                 ← framework's own front door + reading guide
 │   ├── glossary-for-debate.md
 │   ├── phases/
-│   │   ├── phase-0.md       ← sealed
+│   │   ├── phase-0-for-debate.md       ← sealed
 │   │   ├── phase-1-for-debate.md       ← partial
 │   │   └── phase-N-for-debate.md       ← future phases
 │   ├── chapters/
@@ -585,7 +585,7 @@ If debate 006 seals as proposed (full recommendations adopted), the migration pl
 3. **Move `case-studies/lore-weave/` → `case-studies/lore-weave/`.**
 4. **Add YAML frontmatter to every existing file** with at minimum: title, status, version, audience, type, last_updated. (Backfill — substantial work, but mostly mechanical.)
 5. **Add summary blocks to every existing file** below frontmatter.
-6. **Move `docs/phases/` reorganization:** move `phase-0.md` and `phase-1-for-debate.md` into a `framework/phases/` subdirectory (current location is `framework/` flat).
+6. **Move `docs/phases/` reorganization:** move `phase-0-for-debate.md` and `phase-1-for-debate.md` into a `framework/phases/` subdirectory (current location is `framework/` flat).
 
 ### Phase 2 of migration (within a follow-up session)
 
@@ -674,7 +674,7 @@ If approved, the framework gains a clean outward-facing distribution surface plu
 Execution is split across multiple commits per the migration plan in §14. Status marked progressively as commits land.
 
 - [x] Update [debates/README.md](README.md) — debate 006 marked decided.
-- [ ] **Migration Phase 1a — folder restructure**: rename `docs/` → `framework/`; move `case-studies/lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move `phase-0.md` + `phase-1-for-debate.md` in; create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
+- [ ] **Migration Phase 1a — folder restructure**: rename `docs/` → `framework/`; move `case-studies/lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move `phase-0-for-debate.md` + `phase-1-for-debate.md` in; create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
 - [ ] **Migration Phase 1b — frontmatter + summary backfill**: add 9-field YAML frontmatter + human summary block to every file across `framework/`, `case-studies/`, and `distribution/`. Estimated ~30 files × ~1-2 minutes each.
 - [ ] **Migration Phase 2a — populate `distribution/framework/`**: copy sealed content (phase-0, debates 001-006, Adeptus Administratum Codex, calibration-standards, pm-calibration-guide) with internal links transformed to be self-contained within `distribution/`.
 - [ ] **Migration Phase 2b — populate `distribution/templates/`**: create fillable scaffolds (`astronomican-template.md`, `reckoning-record-template.md`, `pm-threshold-decisions-template.md`, `reckoning-team-record-template.md`).

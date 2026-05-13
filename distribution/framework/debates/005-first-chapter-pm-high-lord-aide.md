@@ -15,8 +15,8 @@ sealed_by: self
 > **Opened:** 2026-05-11
 > **Decided:** 2026-05-11
 > **Decided by:** project owner
-> **Affects:** [phase-0.md](../phases/phase-0.md) §7 (AI-aide accommodation note); [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §8.1 (Council small-team accommodation note); the framework's planned **Phase 2 (Codex per Chapter)** will inherit the Codex template established here. Produces a new `framework/chapters/` or `docs/codex/` directory (path TBD in this debate) for the first concrete Codex artifact.
-> **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), reviewing [`pm-threshold-decisions.md`](../case-study-lore-weave/pm-threshold-decisions.md). Observation: PM threshold-setting tasks require human under Phase 0 §2, but a solo PM on a 358-KLOC polyglot project becomes a bottleneck. Framework already names AI-assistant Chapters as aides ([phase-0:138](../phases/phase-0.md), [phase-1:107, 132](../phases/phase-1-for-debate.md)) but defers their concrete Codex to Phase 2.
+> **Affects:** [phase-0-for-debate.md](../phases/phase-0-for-debate.md) §7 (AI-aide accommodation note); [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §8.1 (Council small-team accommodation note); the framework's planned **Phase 2 (Codex per Chapter)** will inherit the Codex template established here. Produces a new `framework/chapters/` or `docs/codex/` directory (path TBD in this debate) for the first concrete Codex artifact.
+> **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), reviewing [`pm-threshold-decisions.md`](../case-study-lore-weave/pm-threshold-decisions.md). Observation: PM threshold-setting tasks require human under Phase 0 §2, but a solo PM on a 358-KLOC polyglot project becomes a bottleneck. Framework already names AI-assistant Chapters as aides ([phase-0:138](../phases/phase-0-for-debate.md), [phase-1:107, 132](../phases/phase-1-for-debate.md)) but defers their concrete Codex to Phase 2.
 
 ---
 
@@ -382,7 +382,7 @@ If approved, the first Chapter is sealed and ready to govern LoreWeave's case st
 ### Follow-up actions
 
 - [x] Create `framework/chapters/adeptus-administratum/codex.md` per the 10-section template and the sub-decisions above.
-- [x] Update [phase-0.md §7](../phases/phase-0.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
+- [x] Update [phase-0-for-debate.md §7](../phases/phase-0-for-debate.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
 - [x] Update [phase-1-for-debate.md §8.1](../phases/phase-1-for-debate.md) similarly.
 - [x] Update [phase-1-for-debate.md §4 Codex Slot Placeholders](../phases/phase-1-for-debate.md) to reflect that one Codex slot is now filled by Adeptus Administratum.
 - [x] Update [case-study-lore-weave/reckoning-team-record.md](../case-study-lore-weave/reckoning-team-record.md) — supersede interim Codex with reference to the sealed Codex.

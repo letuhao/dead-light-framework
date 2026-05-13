@@ -63,7 +63,7 @@ Nelson Cowan, *"The magical number 4 in short-term memory: A reconsideration of 
 | Anchor | Where used in the framework | Source value | Comment |
 |---|---|---|---|
 | Council size 3–7 | [phase-1 §8.1](../phases/phase-1-for-debate.md), [calibration-standards.md §C](../calibration-standards.md#c-team-sizing-and-composition) | Brooks (1975) communication channels + Dunbar layer 1 (≤ 5 intimate) | Council cap is for *group decision quality*, not *item recall*. Different cognitive construct from Laws cap. **Not affected by this debate.** |
-| Reckoning Team 2–5 | [phase-0 §2](../phases/phase-0.md) | Same as Council | Same. **Not affected.** |
+| Reckoning Team 2–5 | [phase-0 §2](../phases/phase-0-for-debate.md) | Same as Council | Same. **Not affected.** |
 | Brooks N(N−1)/2 channels | calibration-standards.md §C | Brooks 1975 | Argues *against* large groups, not *for* a specific items-cap. **Not affected.** |
 | AWS Leadership Principles (16) | [debate 001 §35](001-laws-count-and-multirepo-scaling.md) | "criticized for being too many to internalize" | Still works as outer bound — 9 < 16. The argument "16 is too many" is preserved. |
 
