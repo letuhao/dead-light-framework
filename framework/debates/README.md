@@ -41,3 +41,4 @@ Keeping them separate means:
 | [004](004-cap-revision-miller-correction.md) | Cap Revision: Miller Citation Correction (5±2 → 7±2; cap → 5–9 target ~7) | decided | 2026-05-09 | 2026-05-09 |
 | [005](005-first-chapter-pm-high-lord-aide.md) | First Chapter: PM / High Lord Aide (Adeptus Administratum) | decided | 2026-05-11 | 2026-05-11 |
 | [006](006-documentation-architecture-and-distribution.md) | Documentation Architecture and Distribution Template | decided | 2026-05-11 | 2026-05-11 |
+| [007](007-scripting-infrastructure.md) | Scripting Infrastructure (post-debate-006 automation) | open | 2026-05-13 | — |
