@@ -25,15 +25,27 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
-- _(describe what's new in this release; replace this placeholder)_
+- **Debate 007 sealed** (Scripting Infrastructure) — authorises Python tooling under `scripts/` to handle mechanical repository operations. Library stack: `python-frontmatter` + `typer` + `markdown-it-py`. Dry-run-by-default + `--apply` pattern for writes; strict transactions; severity-graded findings per IVP rubric.
+- **12 scripts implemented** across 3 tiers:
+  - Tier 1 (validation + sync): `validate_frontmatter.py`, `check_links.py`, `sync_distribution.py`.
+  - Tier 2 (atomic operations): `frontmatter_set.py`, `bump_version.py`, `snapshot_case_study.py`, `update_handoff_tree.py`.
+  - Tier 3 (orchestration + scaffolding + audit): `release.py` (8-step pipeline), `new_debate.py`, `new_chapter_codex.py`, `new_case_study.py`, `ivp_phase5.py`.
+- `distribution/` regenerated via `sync_distribution.py`: 19 sealed files synced; INDEX.md auto-regenerated; LoreWeave snapshot refreshed.
+- LLM token-cost surfaced as a third framework-design axis (alongside human-time + correctness) per debate 007 §17 — manual mechanical operations replaced by single-script invocations (~99% token reduction).
 
 ### Changed
 
-- _(describe what changed; remove section if not applicable)_
+- `HANDOFF.md` document tree section now bracketed by `<!-- DOC-TREE-START -->` / `<!-- DOC-TREE-END -->` markers; regenerable via `python scripts/update_handoff_tree.py --apply`.
+- All framework files carry 9-field YAML frontmatter (post-debate-006 backfill is now enforced by `validate_frontmatter.py`).
+- `README.md` + `HANDOFF.md` at repo root now have frontmatter (caught and fixed during Tier 1 script testing).
+- `sync_distribution.py` rename rule refined: `-for-debate` suffix dropped only when `status: sealed` (working-status files retain their suffix; e.g., IVP spec at `audit/independent-verification-pass-for-debate.md`).
 
 ### Notes
 
-- _(any additional context for adopters; remove if not applicable)_
+- **Adeptus Administratum Codex amendment deferred to debate 008.** Until v1.1 seals, AA instances may invoke scripts informally as project-owner-authorized task work; the Codex §8 step 5 re-priming protocol does not yet formally reference scripts.
+- `ivp_phase5.py` regex patterns are intentionally permissive (false positives flagged for reviewer dismissal); a reviewer dismisses non-issues in seconds and gets cross-doc numeric-consistency surfacing free.
+- Known limitations from v0.6.0 (phase-1 + glossary not yet sealed; some dangling cross-folder links if `distribution/` extracted to standalone repo) remain — `check_links.py` confirms these are unchanged in scope.
+- End-to-end pipeline tested via `python scripts/release.py minor --apply` (this release); push remains MANUAL per Adeptus Administratum Codex §3 HS-5 + debate 007 §10.
 
 ## [0.6.0] — 2026-05-13
 
