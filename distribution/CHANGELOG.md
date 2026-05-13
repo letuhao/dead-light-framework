@@ -45,4 +45,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - This is the **first outward-facing release** of Dead Light Framework. Per debate 006, the framework was inward-facing until this point.
 - Cumulative IVP audit state at this release: Phases 1–5 complete; 38 findings remediated (F-01 through F-39, F-26 retracted via erratum); Phases 6–7 queued.
 
+### Known limitations (v0.6.0)
+
+- Some sealed files in `framework/debates/` reference `framework/phases/phase-1-for-debate.md` and `framework/audit/findings-*.md`. These artifacts live in the upstream `dead-light-framework` repo (siblings of `distribution/`) but are NOT included in this v0.6.0 distribution. While `distribution/` lives inside the upstream repo, the relative links resolve via `../phases/...` and `../audit/...`. **If you extract `distribution/` to a standalone repo, these links will be dangling.** A future release (likely when Phase 1 fully seals) will rewrite these as plain-text references or inline the necessary content, fully closing the separability constraint of debate 006.
+
 [0.6.0]: ./VERSION
