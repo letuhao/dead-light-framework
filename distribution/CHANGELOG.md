@@ -27,15 +27,29 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
-- _(describe what's new in this release; replace this placeholder)_
+- **Debate 008 sealed** (Adeptus Administratum Deployment Protocol). 10 sub-decisions standardising HOW AI agents engage with the framework at runtime — parallel meta-standard to debate 006 (which standardised paperwork organisation).
+- **`CLAUDE.md` at repo root** — formal Adeptus Administratum bootstrap for Claude Code (A-tier provider). Auto-loaded per Claude Code session.
+- **`distribution/deployment-matrix.md`** — IDE / tooling integration tier mapping (A Claude Code + Anthropic Workbench; B Cursor + ChatGPT + Gemini; C local LLMs + agent frameworks) + 7-failure-mode catalogue (F-J1 through F-J7) + multi-project Codex overrides documentation.
+- **`distribution/templates/aa-codex-overrides-example/`** — worked example for adopter-side Codex overrides (README + additional-operational-bounds + additional-hard-stops + notify-trigger-extensions). Imperial+Sector pattern applied at Codex level per debate 008 sub-decision H4.
+- **`distribution/for-adopters.md` § Quickstart** — 5-step adopter flow (clone → pick tier → scaffold case study → fill PM thresholds → start first AA instance).
+- **`distribution/for-ai-aides.md`** — updated to Codex v1.2; new "Deployment quickstart for adopters" + "Provider tier check" sections.
 
 ### Changed
 
-- _(describe what changed; remove section if not applicable)_
+- **Adeptus Administratum Codex v1.1 → v1.2** (implementation-amendment per [debate 008](framework/debates/008-adeptus-administratum-deployment-protocol.md), following the v1.0→v1.1 precedent for implementation amendments):
+  - §1 Identity and scope: added `.aa-codex-overrides/` mechanism reference + Imperial+Sector pattern at Codex level + worked-example pointer.
+  - §8 Re-priming step 1: added project-root bootstrap reference (`CLAUDE.md` / `.cursorrules` / system prompt) + adopter `.aa-codex-overrides/` reading.
+  - §8 Re-priming step 3: added `distribution/for-ai-aides.md` and `distribution/deployment-matrix.md` as deployment-context artifacts.
+  - §10 Provenance: v1.2 row added to Version history table.
+  - No structural changes to Hard Stops, Notify Triggers, Authority bounds, or Output Contract.
 
 ### Notes
 
-- _(any additional context for adopters; remove if not applicable)_
+- **Framework now has 5 sealed-concern layers** per debate 008 §18: project governance (debates 001-004) / operational aide bounds (Codex via debate 005) / document architecture (debate 006) / tooling infrastructure (debate 007) / **deployment protocol** (debate 008). Each layer is "fractal" of the frozen-authority thesis.
+- **Imperial+Sector pattern re-applies at Codex level** (sub-decision H4) — same design pattern from debate 001 keeps surfacing as the right answer at new layers. Strong signal the pattern is structural, not coincidence.
+- **Adopter-readiness milestone:** debate 006 made the framework *distributable*; debate 007 made it *tool-supported*; debate 008 makes it *deployable*. Framework is now at "minimum viable for first adopter pilot" maturity.
+- **Phase 2/3 tooling deferred:** `scripts/start_aa_session.py`, `scripts/validate_codex_overrides.py`, and `.claude/commands/aa-prime.md` deferred per debate 008 §14 implementation plan. Build on need.
+- **Debate cadence observation:** debate 008 opened and sealed same-day (commit `cc3e193` → `b0cea07`). Framework accelerated through debates 005, 006, 007, 008 in 3 days because the analytical machinery + scaffolding scripts are now in place.
 
 ## [0.7.1] — 2026-05-13
 
