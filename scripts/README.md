@@ -9,7 +9,7 @@ supersedes: null
 sealed_by: debate-007
 ---
 
-> **Status:** Tier 1 + Tier 2 implemented (validate_frontmatter, check_links, sync_distribution, frontmatter_set, bump_version, snapshot_case_study, update_handoff_tree). Tier 3 deferred.
+> **Status:** All three tiers implemented (12 scripts total). Tier 1 = validation + sync; Tier 2 = atomic operations; Tier 3 = orchestration + scaffolding + automated audit.
 > **Audience:** Framework maintainers + Adeptus Administratum instances during re-priming (informal until debate 008 seals Codex v1.1).
 > **Purpose:** Python tooling that handles mechanical repository work — frontmatter validation, link checking, framework/ → distribution/ sync. Reduces LLM token cost on mechanical operations by ~99%.
 > **Read next if:** you're about to do migration / release / consistency-check work, or you're an Adeptus Administratum instance starting a task.
@@ -107,15 +107,52 @@ python scripts/update_handoff_tree.py --apply
 
 **Caveat:** the original tree includes human-written annotation comments (`← ...`). These are stripped on regeneration. If you want them, re-edit manually after regeneration or extend the script's annotation feature.
 
-## Tier 3 scripts (deferred indefinitely)
+## Tier 3 scripts (implemented)
 
-Per debate 007 §3: build on need.
+### `release.py`
 
-- `release.py <version>` — orchestrate full release pipeline.
-- `new_debate.py <slug>` — scaffold new debate.
-- `new_chapter_codex.py <name>` — scaffold new Chapter Codex.
-- `new_case_study.py <project>` — scaffold new case study.
-- `ivp_phase5.py` — automated Phase 5 (Internal Consistency) check.
+Orchestrate the 8-step release pipeline (validate → check_links → sync_distribution → snapshot_case_study × N → update_handoff_tree → bump_version → git commit → git tag). Dry-run default. Push remains manual.
+
+```bash
+python scripts/release.py minor                                       # dry-run
+python scripts/release.py minor --apply \
+  --description "Phase 1 fully sealed; LoreWeave Pass 1 complete"
+python scripts/release.py patch --apply --skip-check-links            # skip known-limitation link warns
+```
+
+### `new_debate.py`
+
+Scaffold a new debate file under `framework/debates/NNN-<slug>.md`. Auto-detects the next debate number. Also appends a row to `framework/debates/README.md` index. Dry-run default.
+
+```bash
+python scripts/new_debate.py "codex-v1-1-script-integration" --apply
+```
+
+### `new_chapter_codex.py`
+
+Scaffold a new Chapter Codex under `framework/chapters/<name>/codex.md` with the 10-section template established by debate 005 §4. Dry-run default. Created file starts at `status: draft`; reviewer fills in operational bounds + hard stops + notify triggers; formally sealed via a debate.
+
+```bash
+python scripts/new_chapter_codex.py "codex-reviewer" --apply
+```
+
+### `new_case_study.py`
+
+Scaffold a new case-study folder under `case-studies/<project>/` with the five standard files (README, pm-threshold-decisions, reckoning-team-record, reckoning-record, methodology-notes). Templates copied from `distribution/templates/`. Dry-run default.
+
+```bash
+python scripts/new_case_study.py "my-project" --apply
+```
+
+### `ivp_phase5.py`
+
+Automated subset of IVP Phase 5 (Internal Consistency) checks. Covers the mechanical parts (numeric consistency cross-doc, plus existing validate_frontmatter + check_links). Generates a `framework/audit/findings-phase5-<date>.md` skeleton with auto-detected numeric findings prepopulated. Reasoning-heavy checks (term drift, decision-to-doc reflection, policy compliance per justification segment) remain manual.
+
+```bash
+python scripts/ivp_phase5.py --apply
+```
+
+**Caveat:** the numeric-pattern regexes catch false positives (e.g., "23-27" being flagged under "Reckoning Team size" because the regex isn't context-aware). A reviewer scans the output and dismisses false positives in seconds. The script's value is making the *consistent* and *inconsistent* clusters visible at a glance.
 
 ## Adeptus Administratum integration
 
