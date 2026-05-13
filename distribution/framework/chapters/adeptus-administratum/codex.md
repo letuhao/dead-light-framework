@@ -1,20 +1,20 @@
 ---
 audience: both
 last_updated: 2026-05-13
-sealed_by: debate-005 (v1.0) + debate-007 §G (v1.1 implementation-amendment)
+sealed_by: debate-005 (v1.0) + debate-007 §G (v1.1) + debate-008 (v1.2 implementation-amendment)
 status: sealed
 supersedes: case-studies/lore-weave/reckoning-team-record.md § interim Codex
 title: Codex — Adeptus Administratum
 type: codex
-version: '1.1'
+version: '1.2'
 ---
 
 # Codex — Adeptus Administratum
 
 > **Status:** Sealed.
-> **Version:** 1.1 (v1.0 sealed 2026-05-11 via debate 005; v1.1 implementation-amendment 2026-05-13 — see §10).
-> **Sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md) (v1.0); [debate 007 §G](../../debates/007-scripting-infrastructure.md) sub-decision (v1.1 — adds script-invocation references).
-> **Sealed on:** 2026-05-11 (v1.0); 2026-05-13 (v1.1).
+> **Version:** 1.2 (v1.0 sealed 2026-05-11 via debate 005; v1.1 amendment 2026-05-13 — script integration per debate 007 §G; v1.2 amendment 2026-05-13 — deployment-protocol references per debate 008. See §10).
+> **Sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md) (v1.0); [debate 007 §G](../../debates/007-scripting-infrastructure.md) sub-decision (v1.1 — script-invocation references); [debate 008](../../debates/008-adeptus-administratum-deployment-protocol.md) (v1.2 — deployment-protocol references + override mechanism).
+> **Sealed on:** 2026-05-11 (v1.0); 2026-05-13 (v1.1); 2026-05-13 (v1.2).
 > **Sealed by:** project owner.
 > **Phase coverage:** All — Phase 0 (Reckoning), Phase 1 (Astronomican), post-seal (High Lord aide mode).
 > **Multiplicity:** Singleton role per Astronomican (Imperial; one per Sector when sectoring is in effect). Concurrent instances on different tasks allowed.
@@ -32,6 +32,8 @@ Two operational realities frame this Chapter:
 2. **The bottleneck problem the framework names** — a PM on a 358-KLOC project (LoreWeave at 2026-05-11) cannot manually do everything. The Chapter exists to keep governance work tractable without diluting governance authority.
 
 Where the Adeptus Administratum is invoked, *who* is filling the role (human or agent) is anonymous by default. The instance's name is recorded in the audit trail for provenance, not for inheritance.
+
+**(v1.2)** When the Chapter is invoked on an adopter project (not the framework's own work), the project may extend this Codex via a `.aa-codex-overrides/` folder at the project root per [debate 008 sub-decision H4](../../debates/008-adeptus-administratum-deployment-protocol.md). Three optional override files extend (but never relax) framework's base: `additional-operational-bounds.md`, `additional-hard-stops.md`, `notify-trigger-extensions.md`. Imperial framework Codex is base; Sector adopter overrides extend. Override precedence rules + worked example in [`distribution/templates/aa-codex-overrides-example/`](../../../distribution/templates/aa-codex-overrides-example/).
 
 ---
 
@@ -209,9 +211,9 @@ Disbanding is **complete state evaporation** — no instance-side memory persist
 
 Every instance startup executes this protocol before beginning task work:
 
-1. **Read the Codex** (this document) in full.
+1. **Read the Codex** (this document) in full. **(v1.2)** Also read project-root bootstrap if present (`CLAUDE.md` for Claude Code; `.cursorrules` for Cursor; system prompt for other providers) — these may pre-load priming context. If operating on an adopter project with `.aa-codex-overrides/`, read all `.md` files in that folder as Codex extensions per §1.
 2. **Read the current Astronomican** — sealed Imperial; sealed Sector if relevant; or the proposal-in-flight when pre-seal.
-3. **Scan the artifact base** relevant to the task. For Phase 0 case-study tasks: `case-study-<project>/methodology-notes.md` + the Reckoning Record + the PM Threshold Decisions file. For Phase 1 tasks: the proposed Astronomican + the Reckoning Record. For post-seal tasks: the sealed Astronomican + any recent Heresy-detection entries.
+3. **Scan the artifact base** relevant to the task. For Phase 0 case-study tasks: `case-studies/<project>/methodology-notes.md` + the Reckoning Record + the PM Threshold Decisions file. For Phase 1 tasks: the proposed Astronomican + the Reckoning Record. For post-seal tasks: the sealed Astronomican + any recent Heresy-detection entries. **(v1.2)** Distribution deployment context: read [`distribution/for-ai-aides.md`](../../../distribution/for-ai-aides.md) if you haven't already; consult [`distribution/deployment-matrix.md`](../../../distribution/deployment-matrix.md) for IDE-tier and failure-mode reference.
 4. **Identify the project's current Phase** and activate the corresponding Operational Bounds (§2.1 / §2.2 / §2.3).
 5. **Spot inconsistencies** between the Codex, the Astronomican, and the artifact base. Drift detected here may trigger N-3 / N-4 non-blocking notifies. This step doubles as drift-detection at task boundaries. **(v1.1)** When `scripts/` tooling is available, the Chapter may invoke `python scripts/validate_frontmatter.py` and `python scripts/check_links.py` at this step to mechanise the consistency check; script output (HIGH severity from validate, dangling links from check_links) maps directly to N-3 / N-4 notifies. Read-only script invocation falls under §4 Autonomy Threshold; no acknowledgment required to RUN the check. Acting on findings (e.g., proposing fixes that modify sealed artifacts) still requires acknowledgment per §4.
 6. **Begin task work** under activated Operational Bounds and Notify Triggers.
@@ -267,6 +269,7 @@ Where the 40k name and the real-world precedents diverge in implication, the rea
 |---|---|---|---|
 | **1.0** | 2026-05-11 | debate 005 | Initial Codex — Adeptus Administratum sealed as the framework's first concrete Chapter. 10-section template established. |
 | **1.1** | 2026-05-13 | debate 007 §G (implementation-amendment) | §4 Autonomy Threshold: added "read-only script invocation" as solo-allowed action; added "write-script `--apply` invocation" as acknowledgment-required action. §8 Re-priming protocol step 5: added explicit reference to `scripts/validate_frontmatter.py` + `scripts/check_links.py` for mechanised consistency check; script output maps to N-3/N-4 notifies. §10 Provenance (this section): added version history table + amendment-procedure precedent below. |
+| **1.2** | 2026-05-13 | debate 008 (implementation-amendment) | §1 Identity and scope: added `.aa-codex-overrides/` mechanism reference (Imperial+Sector pattern at Codex level per debate 008 sub-decision H4). §8 Re-priming step 1: added explicit references to project-root bootstrap (`CLAUDE.md` / `.cursorrules`) and adopter `.aa-codex-overrides/`. §8 Re-priming step 3: added references to `distribution/for-ai-aides.md` and `distribution/deployment-matrix.md` as deployment-context artifacts. §10 Provenance (this section): added v1.2 row to version history. No structural changes to Hard Stops, Notify Triggers, Authority bounds, or Output Contract. |
 
 ### Amendment procedure (precedent established 2026-05-13)
 

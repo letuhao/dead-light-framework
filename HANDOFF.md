@@ -138,12 +138,18 @@ dead-light-framework/
 │   │   │   ├── 005-first-chapter-pm-high-lord-aide.md  [DECIDED]
 │   │   │   ├── 006-documentation-architecture-and-distribution.md  [DECIDED]
 │   │   │   ├── 007-scripting-infrastructure.md  [DECIDED]
+│   │   │   ├── 008-adeptus-administratum-deployment-protocol.md  [DECIDED]
 │   │   │   └── README.md  [working]
 │   │   ├── phases/
 │   │   │   └── phase-0.md  [SEALED]
 │   │   ├── calibration-standards.md  [SEALED]
 │   │   └── pm-calibration-guide.md  [SEALED]
 │   ├── templates/
+│   │   ├── aa-codex-overrides-example/
+│   │   │   ├── README.md  [fillable]
+│   │   │   ├── additional-hard-stops.md  [fillable]
+│   │   │   ├── additional-operational-bounds.md  [fillable]
+│   │   │   └── notify-trigger-extensions.md  [fillable]
 │   │   ├── astronomican-template.md  [fillable]
 │   │   ├── pm-threshold-decisions-template.md  [fillable]
 │   │   ├── reckoning-record-template.md  [fillable]
@@ -152,6 +158,7 @@ dead-light-framework/
 │   ├── INDEX.md  [working]
 │   ├── README.md  [working]
 │   ├── VERSION
+│   ├── deployment-matrix.md  [working]
 │   ├── for-adopters.md  [working]
 │   ├── for-ai-aides.md  [working]
 │   ├── for-ics.md  [working]
@@ -176,6 +183,7 @@ dead-light-framework/
 │   │   ├── 005-first-chapter-pm-high-lord-aide.md  [DECIDED]
 │   │   ├── 006-documentation-architecture-and-distribution.md  [DECIDED]
 │   │   ├── 007-scripting-infrastructure.md  [DECIDED]
+│   │   ├── 008-adeptus-administratum-deployment-protocol.md  [DECIDED]
 │   │   └── README.md  [working]
 │   ├── phases/
 │   │   ├── phase-0-for-debate.md  [SEALED]

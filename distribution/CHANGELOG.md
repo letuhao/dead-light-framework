@@ -22,6 +22,21 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 
 
+
+## [0.8.0] — 2026-05-13
+
+### Added
+
+- _(describe what's new in this release; replace this placeholder)_
+
+### Changed
+
+- _(describe what changed; remove section if not applicable)_
+
+### Notes
+
+- _(any additional context for adopters; remove if not applicable)_
+
 ## [0.7.1] — 2026-05-13
 
 ### Added

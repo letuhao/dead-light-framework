@@ -37,6 +37,7 @@ Sealed and decided artifacts. Adopter modifies = adopter forks.
 | Debate 005 — First Chapter: PM/High Lord Aide | decided | debate | `distribution\framework\debates\005-first-chapter-pm-high-lord-aide.md` |
 | Debate 006 — Documentation Architecture and Distribution Template | decided | debate | `distribution\framework\debates\006-documentation-architecture-and-distribution.md` |
 | Debate 007 — Scripting Infrastructure (post-debate-006 automation) | decided | debate | `distribution\framework\debates\007-scripting-infrastructure.md` |
+| Debate 008 — Adeptus Administratum Deployment Protocol | decided | debate | `distribution\framework\debates\008-adeptus-administratum-deployment-protocol.md` |
 | Debates | working | readme | `distribution\framework\debates\README.md` |
 | Phase 0 — The Reckoning (For Debate) | sealed | phase | `distribution\framework\phases\phase-0.md` |
 | PM Calibration Guide | sealed | reference | `distribution\framework\pm-calibration-guide.md` |
