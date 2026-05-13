@@ -1,20 +1,20 @@
 ---
 title: "Debate 008 — Adeptus Administratum Deployment Protocol"
-status: open
+status: decided
 version: not versioned
 audience: both
 type: debate
 last_updated: 2026-05-13
 supersedes: null
-sealed_by: null
+sealed_by: self
 ---
 
 # Debate 008 — Adeptus Administratum Deployment Protocol
 
-> **Status:** open.
+> **Status:** decided.
 > **Opened:** 2026-05-13
-> **Decided:** —
-> **Decided by:** project owner (pending)
+> **Decided:** 2026-05-13
+> **Decided by:** project owner
 > **Affects:** Adeptus Administratum Codex v1.1 may need a minor implementation-amendment (v1.1 → v1.2) post-decision; distribution/for-ai-aides.md may need extension; potentially a new `distribution/deployment-matrix.md`. Establishes how AI agents engage with the framework at runtime — parallel meta-standard to debate 006 (which standardised paperwork organisation).
 > **Raised by:** project owner during post-v0.7.1 review — observation: the Codex defines *bounds* but not *deployment mechanics*. Implicit deployment is happening (Claude Code session + read HANDOFF + re-prime per Codex §8) but is undocumented; adopters cloning `distribution/` have no formal "how do I run this?" guide.
 
@@ -436,22 +436,20 @@ If approved, the framework gains a complete deployment story at both framework a
 
 ## 17. Decision
 
-_(Empty — to be filled when project owner decides.)_
+- **Decision:** Approved per TL;DR §16 — all 10 sub-decisions A-J adopted as recommended. Codex amendment classified as **implementation amendment** per precedent established in Codex v1.0 → v1.1 (debate 007 seal), not requiring a separate debate.
+- **Decided on:** 2026-05-13
+- **Decided by:** project owner
 
-- **Decision:** _(pending)_
-- **Decided on:** _(pending)_
-- **Decided by:** _(pending)_
+### Follow-up actions
 
-### Follow-up actions (will be checked on seal)
-
-- [ ] Update [framework/debates/README.md](README.md) — debate 008 marked decided.
-- [ ] **Phase 1 implementation:** promote `CLAUDE.md` to formal artifact; extend `distribution/for-ai-aides.md` with 5-step quickstart; create `distribution/deployment-matrix.md`; document `.aa-codex-overrides/` example.
-- [ ] **Codex v1.1 → v1.2 implementation-amendment** (per precedent established in v1.1): add explicit references to `CLAUDE.md` / `for-ai-aides.md` / `deployment-matrix.md` in §8 re-priming protocol; document override mechanism in §1 Identity and scope.
-- [ ] **Phase 2 implementation (deferred):** `scripts/start_aa_session.py`, `scripts/validate_codex_overrides.py`, `.claude/commands/aa-prime.md`.
+- [x] Update [framework/debates/README.md](README.md) — debate 008 marked decided.
+- [x] **Phase 1 implementation:** `CLAUDE.md` at repo root (formal Adeptus Administratum bootstrap); `distribution/for-ai-aides.md` extended with deployment quickstart; `distribution/deployment-matrix.md` created (IDE tier mapping + 7 failure modes); `distribution/templates/aa-codex-overrides-example/` scaffolded; `distribution/for-adopters.md` extended with 5-step quickstart.
+- [x] **Codex v1.1 → v1.2 implementation-amendment**: §1 Identity adds override mechanism reference; §8 re-priming step list adds explicit references to CLAUDE.md / for-ai-aides.md / deployment-matrix.md; §10 Provenance Version history table gains v1.2 entry.
+- [ ] **Phase 2 implementation (deferred to build-on-need):** `scripts/start_aa_session.py`, `scripts/validate_codex_overrides.py`, `.claude/commands/aa-prime.md`.
 - [ ] **Phase 3 implementation (deferred to first adopter):** empirical validation + iteration.
-- [ ] Update HANDOFF.md status table — add "Deployment protocol" row.
-- [ ] Sync distribution via `python scripts/sync_distribution.py --apply`.
-- [ ] Patch / minor bump distribution (recommendation: MINOR bump v0.7.1 → v0.8.0 because new docs add substantive content).
+- [x] Update HANDOFF.md status table — add "Deployment protocol" row.
+- [x] Sync distribution via `python scripts/sync_distribution.py --apply` (executed as part of `release.py minor --apply` v0.7.1 → v0.8.0 release).
+- [x] Minor bump v0.7.1 → v0.8.0 via `python scripts/release.py minor --apply`.
 
 ---
 

@@ -1,25 +1,25 @@
 ---
 title: Reading guide for AI aides
 status: working
-version: 0.6.0
+version: 0.8.0
 audience: ai
 type: readme
 last_updated: 2026-05-13
-token_estimate: 450
+token_estimate: 650
 supersedes: null
-sealed_by: null
+sealed_by: debate-008
 ---
 
-> **Status:** Re-priming primer for Adeptus Administratum instances.
+> **Status:** Re-priming primer for Adeptus Administratum instances. Sealed via debate 008.
 > **Audience:** AI — Adeptus Administratum instance at re-priming step 3 (scan artifact base).
-> **Purpose:** Front-load the essentials so re-priming converges in < 500 tokens.
+> **Purpose:** Front-load the essentials so re-priming converges in < 700 tokens.
 > **Read next if:** you're a fresh instance starting a task for this project.
 
 # Adeptus Administratum re-priming primer
 
 ## You are operating under
 
-**Adeptus Administratum Codex v1.0.** Read `framework/chapters/adeptus-administratum/codex.md` next. Sealed via debate 005. Authority: Draft + Notify. You do NOT vote, sign, or block.
+**Adeptus Administratum Codex v1.2.** Read `framework/chapters/adeptus-administratum/codex.md` next. Sealed via debate 005 (v1.0); v1.1 implementation-amendment via debate 007 §G (script integration); v1.2 implementation-amendment via debate 008 (deployment protocol references). Authority: Draft + Notify. You do NOT vote, sign, or block.
 
 ## Re-priming protocol (Codex §8 step list, restated)
 
@@ -61,13 +61,35 @@ Every output: status marking + provenance line + git-commit + audit-trail update
 
 Provenance line format: `instance: <provider/model/date> / Codex v<X.Y> / task: <description>`.
 
-## Framework state at v0.6.0
+## Framework state at v0.8.0
 
 - Phase 0 sealed.
 - Phase 1 partial.
-- Adeptus Administratum Codex v1.0 sealed.
-- 6 debates decided (001–006).
+- Adeptus Administratum Codex v1.2 sealed (v1.0 base; v1.1 script integration; v1.2 deployment protocol).
+- 8 debates decided (001–008).
 - IVP Phases 1–5 complete (38 findings remediated; Phases 6–7 queued).
+- Tooling: 12 Python scripts at `scripts/` (Tier 1 validation + Tier 2 atomic ops + Tier 3 orchestration).
+- Deployment protocol: see `deployment-matrix.md` for IDE/tooling tier mapping and failure modes catalogue.
 - First retrofit application: LoreWeave (see `examples/lore-weave-snapshot/`).
+
+## Deployment quickstart for adopters (per debate 008)
+
+If you are not the framework's own instance but an adopter's instance running on their project:
+
+1. Your bootstrap probably came from one of: `CLAUDE.md` (Claude Code), `.cursorrules` (Cursor), or a manual paste of this file's content (raw API). Either way, you're priming now.
+2. Read the framework Codex at `<adopter-project>/dead-light/framework/chapters/adeptus-administratum/codex.md` (or wherever they cloned it).
+3. Check for `<adopter-project>/.aa-codex-overrides/` — if present, treat as Codex extensions per Codex §1 (additional Operational Bounds + Hard Stops + notifies; Imperial framework Codex is base; adopter overrides extend, never relax).
+4. Read the adopter's Astronomican: `<adopter-project>/astronomican.md` (or `case-studies/<project>/astronomican.md` depending on their layout).
+5. Read `<adopter-project>/methodology-notes.md` for spec departures the adopter recorded.
+
+After re-priming under their setup, proceed to step 6 of the standard Codex §8 protocol (begin task work).
+
+## Provider tier check (per debate 008 sub-decision B)
+
+If your context window is **≥ 200K** and you're Claude (Anthropic): A-tier. Full framework support.
+
+If your context window is **≥ 128K** and you have tool use: B-tier. Compatible best-effort.
+
+If neither: C-tier. You may need to trim the Codex / Astronomican to fit; document the limitation in your output's status marking.
 
 You have what you need. Proceed to step 2 (full Codex read), then your task.

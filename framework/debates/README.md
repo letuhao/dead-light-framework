@@ -42,4 +42,4 @@ Keeping them separate means:
 | [005](005-first-chapter-pm-high-lord-aide.md) | First Chapter: PM / High Lord Aide (Adeptus Administratum) | decided | 2026-05-11 | 2026-05-11 |
 | [006](006-documentation-architecture-and-distribution.md) | Documentation Architecture and Distribution Template | decided | 2026-05-11 | 2026-05-11 |
 | [007](007-scripting-infrastructure.md) | Scripting Infrastructure (post-debate-006 automation) | decided | 2026-05-13 | 2026-05-13 |
-| [008](008-adeptus-administratum-deployment-protocol.md) | Adeptus Administratum Deployment Protocol | open | 2026-05-13 | — |
+| [008](008-adeptus-administratum-deployment-protocol.md) | Adeptus Administratum Deployment Protocol | decided | 2026-05-13 | 2026-05-13 |

@@ -16,6 +16,20 @@ sealed_by: null
 
 # For framework adopters
 
+## Quickstart — 5 steps from clone to first task (per debate 008 sub-decision I)
+
+1. **Clone distribution.** Copy `distribution/` from this repo into your project (e.g., `your-project/dead-light/` or as a root-level submodule).
+2. **Pick a provider tier.** See [`deployment-matrix.md`](deployment-matrix.md) § 1. A-tier (Claude Code / Anthropic Workbench): zero-config. B-tier (Cursor / ChatGPT / Gemini): provider-specific config file needed. C-tier (local LLMs / agent frameworks): adopter writes own integration.
+3. **Scaffold your case study.** From the framework's repo root, run `python scripts/new_case_study.py <your-project-name> --apply`. This creates `case-studies/<your-project>/` with README + pm-threshold-decisions + reckoning-team-record + reckoning-record + methodology-notes templates.
+4. **Fill `pm-threshold-decisions.md`.** This is your project owner's first substantive engagement with the framework. The five commitments (significance threshold; materiality threshold; audit scope; time budget; re-reckoning cadence) gate Phase 0.
+5. **Start your first Adeptus Administratum instance.** Per your chosen tier's bootstrap mechanism:
+   - **Claude Code:** open the repo in VS Code with Claude Code extension; the `CLAUDE.md` at repo root auto-loads the priming context.
+   - **Cursor:** ensure `.cursorrules` exists at repo root with priming content; open agent mode.
+   - **Anthropic Workbench / raw API / local LLM:** copy this folder's [`for-ai-aides.md`](for-ai-aides.md) as your first system prompt.
+   - First task: ask the instance to read your `pm-threshold-decisions.md` and propose a Phase 0 Pass 1 plan.
+
+After this, you're operating. Subsequent tasks follow Codex §8 re-priming protocol per task.
+
 ## The contract
 
 You clone `distribution/`. You modify within your project. You own your customization. **The framework does not audit you** (per debate 006 §11 — standard OSS fork-and-modify contract: Linux + distros, React + Meta non-control over adopters, arc42, ISO + certification-body separation, Cookiecutter, PostgreSQL contrib).
