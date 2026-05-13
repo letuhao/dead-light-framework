@@ -4,7 +4,7 @@
 > **Opened:** 2026-05-08
 > **Decided:** 2026-05-08
 > **Decided by:** project owner
-> **Affects:** [phase-0-for-debate.md](../phase-0-for-debate.md). Produces [calibration-standards.md](../calibration-standards.md) and [pm-calibration-guide.md](../pm-calibration-guide.md) as supporting artifacts.
+> **Affects:** [phase-0-for-debate.md](../phases/phase-0-for-debate.md). Produces [calibration-standards.md](../calibration-standards.md) and [pm-calibration-guide.md](../pm-calibration-guide.md) as supporting artifacts.
 > **Raised by:** project owner — close-out triage for Phase 0.
 
 ---
@@ -138,6 +138,6 @@ All four proposed answers approved with the additional commitment to anchor them
 
 - [x] Create [calibration-standards.md](../calibration-standards.md) reference catalog of industry standards.
 - [x] Create [pm-calibration-guide.md](../pm-calibration-guide.md) practical step-by-step guide at three rigor tiers.
-- [x] Bake the four decisions into [phase-0-for-debate.md](../phase-0-for-debate.md): Inputs, Quality Gates, Roles, Anti-patterns updated; "Note on Method" open questions resolved.
+- [x] Bake the four decisions into [phase-0-for-debate.md](../phases/phase-0-for-debate.md): Inputs, Quality Gates, Roles, Anti-patterns updated; "Note on Method" open questions resolved.
 - [x] Update [debates/README.md](README.md) index to status `decided`.
 - [x] Establish framework-wide policy: industry standards over framework-invented formulas. Apply forward.

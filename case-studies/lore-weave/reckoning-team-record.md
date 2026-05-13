@@ -28,15 +28,15 @@ LoreWeave is a **solo human project**. The single human (project owner) carries 
 
 ## AI-aide Codex (sealed via debate 005)
 
-**Status update — 2026-05-11:** the interim Codex previously captured in this section has been **superseded** by the sealed [Adeptus Administratum Codex v1.0](../chapters/adeptus-administratum/codex.md). Project owner approved all six sub-decisions of [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11; the sealed Codex now governs all AI-aide invocations for the LoreWeave case study (and any future Dead Light Framework project).
+**Status update — 2026-05-11:** the interim Codex previously captured in this section has been **superseded** by the sealed [Adeptus Administratum Codex v1.0](../../framework/chapters/adeptus-administratum/codex.md). Project owner approved all six sub-decisions of [debate 005](../../framework/debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11; the sealed Codex now governs all AI-aide invocations for the LoreWeave case study (and any future Dead Light Framework project).
 
 ### Active Codex for this case study
 
 | Property | Value |
 |---|---|
 | Chapter | **Adeptus Administratum** |
-| Codex | [`docs/chapters/adeptus-administratum/codex.md`](../chapters/adeptus-administratum/codex.md) v1.0 |
-| Sealed via | [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) |
+| Codex | [`framework/chapters/adeptus-administratum/codex.md`](../../framework/chapters/adeptus-administratum/codex.md) v1.0 |
+| Sealed via | [debate 005](../../framework/debates/005-first-chapter-pm-high-lord-aide.md) |
 | Sealed on | 2026-05-11 |
 | Multiplicity | Singleton role at Imperial level (LoreWeave currently sits below Sector trigger threshold per [reckoning-record.md §1.5](reckoning-record.md) — pending Pass 1 evaluation). |
 | Instance lifecycle | Task-scoped per Codex §8 (D4). Each chat session / task = new instance; instance disbands on output commit + audit-trail update. |

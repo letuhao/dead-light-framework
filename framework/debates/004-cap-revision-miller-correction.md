@@ -4,8 +4,8 @@
 > **Opened:** 2026-05-09
 > **Decided:** 2026-05-09
 > **Decided by:** project owner
-> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md) §3 (Activities, Laws/Principles caps), §6 (Failure Modes, "more than N" threshold), §9 (Sector Astronomican local caps); [debate 001](001-laws-count-and-multirepo-scaling.md) Option A "Why it fails" rationale and Sector inheritance numerical cap.
-> **Raised by:** Independent Verification Pass (IVP) — finding F-01 in [`docs/audit/findings-2026-05-08.md`](../audit/findings-2026-05-08.md). The IVP rodage on 2026-05-08 verified that the framework's cited authority for the "≤ 5 Laws / ≤ 5 Principles" cap — Miller (1956) "working-memory range, ~5 ± 2" — was a misquote of the original source.
+> **Affects:** [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §3 (Activities, Laws/Principles caps), §6 (Failure Modes, "more than N" threshold), §9 (Sector Astronomican local caps); [debate 001](001-laws-count-and-multirepo-scaling.md) Option A "Why it fails" rationale and Sector inheritance numerical cap.
+> **Raised by:** Independent Verification Pass (IVP) — finding F-01 in [`framework/audit/findings-2026-05-08.md`](../audit/findings-2026-05-08.md). The IVP rodage on 2026-05-08 verified that the framework's cited authority for the "≤ 5 Laws / ≤ 5 Principles" cap — Miller (1956) "working-memory range, ~5 ± 2" — was a misquote of the original source.
 
 ---
 
@@ -51,8 +51,8 @@ Nelson Cowan, *"The magical number 4 in short-term memory: A reconsideration of 
 
 | Anchor | Where used in the framework | Source value | Comment |
 |---|---|---|---|
-| Council size 3–7 | [phase-1 §8.1](../phase-1-for-debate.md), [calibration-standards.md §C](../calibration-standards.md#c-team-sizing-and-composition) | Brooks (1975) communication channels + Dunbar layer 1 (≤ 5 intimate) | Council cap is for *group decision quality*, not *item recall*. Different cognitive construct from Laws cap. **Not affected by this debate.** |
-| Reckoning Team 2–5 | [phase-0 §2](../phase-0-for-debate.md) | Same as Council | Same. **Not affected.** |
+| Council size 3–7 | [phase-1 §8.1](../phases/phase-1-for-debate.md), [calibration-standards.md §C](../calibration-standards.md#c-team-sizing-and-composition) | Brooks (1975) communication channels + Dunbar layer 1 (≤ 5 intimate) | Council cap is for *group decision quality*, not *item recall*. Different cognitive construct from Laws cap. **Not affected by this debate.** |
+| Reckoning Team 2–5 | [phase-0 §2](../phases/phase-0-for-debate.md) | Same as Council | Same. **Not affected.** |
 | Brooks N(N−1)/2 channels | calibration-standards.md §C | Brooks 1975 | Argues *against* large groups, not *for* a specific items-cap. **Not affected.** |
 | AWS Leadership Principles (16) | [debate 001 §35](001-laws-count-and-multirepo-scaling.md) | "criticized for being too many to internalize" | Still works as outer bound — 9 < 16. The argument "16 is too many" is preserved. |
 
@@ -107,9 +107,9 @@ Trade-off accepted: slight interpretation surface added — projects must decide
 
 ## Consequential edits (applied alongside this decision)
 
-- [phase-1-for-debate.md](../phase-1-for-debate.md) §3 Activities — "Maximum five Immutable Laws" → "Maximum 9 Immutable Laws (target ~7)". Same for Guiding Principles.
-- [phase-1-for-debate.md](../phase-1-for-debate.md) §6 Failure Modes — "More than 5 Laws or 5 Principles" threshold → "More than 9 Laws or 9 Principles".
-- [phase-1-for-debate.md](../phase-1-for-debate.md) §9 Sector Astronomican — "Adds up to 5 local Laws and 5 local Principles" → "Adds up to 9 local Laws and 9 local Principles (target ~7)". Inheritance rule (cannot relax Imperial; can only tighten or add) is unchanged.
+- [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §3 Activities — "Maximum five Immutable Laws" → "Maximum 9 Immutable Laws (target ~7)". Same for Guiding Principles.
+- [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §6 Failure Modes — "More than 5 Laws or 5 Principles" threshold → "More than 9 Laws or 9 Principles".
+- [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §9 Sector Astronomican — "Adds up to 5 local Laws and 5 local Principles" → "Adds up to 9 local Laws and 9 local Principles (target ~7)". Inheritance rule (cannot relax Imperial; can only tighten or add) is unchanged.
 - [debate 001](001-laws-count-and-multirepo-scaling.md) §32 — "Miller's working-memory range, ~5 ± 2" → "Miller's working-memory range, ~7 ± 2".
 - [debate 001](001-laws-count-and-multirepo-scaling.md) §165 (nested Sector code block) — "≤ 5 Imperial Laws" → "≤ 9 Imperial Laws (target ~7)". Same for Sector and Principles.
 - [debate 001](001-laws-count-and-multirepo-scaling.md) Methodological note — adds a second methodological note recording this citation correction.
@@ -155,4 +155,4 @@ This debate is the **second self-correction** in the framework's history (the fi
 
 This is the operational meaning of the framework-wide policy: *"industry standards over framework-invented formulas."* Numbers anchor to documented practice, and when documented practice and the framework's text drift apart, the framework's text yields.
 
-The IVP audit workflow ([`docs/audit/independent-verification-pass-for-debate.md`](../audit/independent-verification-pass-for-debate.md)) will be re-run periodically to keep the framework honest in this respect.
+The IVP audit workflow ([`framework/audit/independent-verification-pass-for-debate.md`](../audit/independent-verification-pass-for-debate.md)) will be re-run periodically to keep the framework honest in this respect.

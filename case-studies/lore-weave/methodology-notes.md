@@ -18,7 +18,7 @@
 
 ### D-1 — Attribution anonymized to "project owner" throughout
 
-**Spec text** ([debate 002](../debates/002-retrofit-vs-greenfield.md) Q3 + Phase 0 §3.2-3.3): "Full attribution. History is a valuable lesson, the team must accept it to move forward, and git commits already record names."
+**Spec text** ([debate 002](../../framework/debates/002-retrofit-vs-greenfield.md) Q3 + Phase 0 §3.2-3.3): "Full attribution. History is a valuable lesson, the team must accept it to move forward, and git commits already record names."
 
 **Departure.** Project owner chose to keep attribution anonymized as **"project owner"** throughout this case-study artifact rather than naming individuals. Git commits remain unchanged (the original attribution is preserved in version control); the *case-study document* anonymizes.
 
@@ -123,7 +123,7 @@ Items the Phase 0 audit surfaced that should be flagged when LoreWeave runs Phas
 
 ## 5.X Retroactive review — pre-seal work vs sealed Codex
 
-**Trigger:** [Adeptus Administratum Codex v1.0](../chapters/adeptus-administratum/codex.md) sealed via [debate 005](../debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11. Per debate 005's follow-up actions, the work done under the interim Codex (before the seal) is retroactively reviewed for compliance.
+**Trigger:** [Adeptus Administratum Codex v1.0](../../framework/chapters/adeptus-administratum/codex.md) sealed via [debate 005](../../framework/debates/005-first-chapter-pm-high-lord-aide.md) on 2026-05-11. Per debate 005's follow-up actions, the work done under the interim Codex (before the seal) is retroactively reviewed for compliance.
 
 ### Scope of retroactive review
 
@@ -145,7 +145,7 @@ Work performed under the interim Codex (2026-05-11 — same day as debate 005 se
 - HS-3 (unconfirmed attribution): D-1 explicitly chose anonymized attribution — no unconfirmed naming occurred.
 - HS-4 (vote/seal/sign): no voting, sealing, or signing actions performed.
 - HS-5 (override of human decisions): no overrides; clarifying questions used instead.
-- HS-6 (audit-output file modification outside IVP run): no `docs/audit/*` files were modified in pre-seal case-study work.
+- HS-6 (audit-output file modification outside IVP run): no `framework/audit/*` files were modified in pre-seal case-study work.
 - HS-7 (state persistence outside artifacts): all load-bearing observations were committed to artifact files.
 - HS-8 (40k as substantive justification): no 40k justification used; metaphor used only as naming per policy 1.
 - HS-9 (framework-internal arithmetic without anchor): PM Threshold Decisions proposal anchored on M&A IT due-diligence rule of thumb (Tier 1 industry-pragmatic), COCOMO II hedge for time-budget, ITIL / DORA for materiality, debate 003 Q3 for time-boxing escalation. **Note for review:** the "lowered 5 person-days → 1 day for solo pace" adjustment in §1 #2 of pm-threshold-decisions.md is a project-specific tuning of an already-hedged Tier 1 anchor. The hedge is explicit ("Tier 1 default is '5 person-days'; lowered to 1 person-day to match solo-developer iteration pace per PM Calibration Guide §1 hedge 'Adjust if your team's pace is very different.'"). Compliant; would not trigger HS-9 under the sealed Codex.
@@ -197,15 +197,15 @@ _(Accumulates as Pass 1 and Pass 2 run.)_
 
 | Date | Action | Source / target | Output (link or summary) |
 |---|---|---|---|
-| 2026-05-11 | Created case-study folder skeleton | `docs/case-study-lore-weave/` | commit `324b9f6` |
+| 2026-05-11 | Created case-study folder skeleton | `case-studies/lore-weave/` | commit `324b9f6` |
 | 2026-05-11 | Logged departures D-1 (anonymized attribution) and D-2 (AI-aide-first Implicit Principles) | `methodology-notes.md` §2; `reckoning-team-record.md`; `reckoning-record.md` §4 | commit `0450e47` |
 | 2026-05-11 | `ls C:\Works\_Researchs\lore-weave` top-level walk | LoreWeave repo | 15 services + 7 contracts/api + 2 doc trees (foundation/governance/planning) + frontend + agentic-workflow + design-drafts + poc + tests + infra + sdks + scripts |
 | 2026-05-11 | `git log` on LoreWeave: branches, recent commits, change-frequency last 6mo | LoreWeave git | 1314 commits in 6mo; current branch `mmo-rpg/design-resume`; top dirs by change frequency = frontend/src 1739, docs/03_planning 1439, services/knowledge-service 945 |
 | 2026-05-11 | `cloc` full repo (exclude node_modules/git/cache/build) | LoreWeave | ~358 KLOC total: Python 67K, TypeScript 60K, Go 33K, HTML 30K, JSON 24K, plus smaller buckets |
 | 2026-05-11 | `cloc` per Pass 1 candidate | LoreWeave | docs/01_foundation 0.7 KLOC; docs/02_governance 1.4 KLOC; docs/03_planning 120 KLOC; frontend 70.5 KLOC; services/knowledge-service 49 KLOC. frontend-v2 not present (v2 renamed to frontend per commit `bada6bbd`). |
 | 2026-05-11 | Drafted PM Threshold Decisions proposal | `pm-threshold-decisions.md` | pending project-owner review/sign-off; departure D-3 recorded |
-| 2026-05-11 | Opened debate 005 (First Chapter: PM/High Lord Aide) following project-owner observation that PM threshold-setting is a bottleneck on a 358-KLOC project | `docs/debates/005-first-chapter-pm-high-lord-aide.md` | commit `b0b952f` |
-| 2026-05-11 | Revised debate 005 §6 Lifecycle (D3 → D4 task-scoped instance + persistent role + artifact continuity) per project-owner observation | `docs/debates/005-...` | commit `89039d1` |
-| 2026-05-11 | Sealed debate 005; created Adeptus Administratum Codex v1.0 at `docs/chapters/adeptus-administratum/codex.md` | debate 005 + Codex | commit `78d4bb4` |
+| 2026-05-11 | Opened debate 005 (First Chapter: PM/High Lord Aide) following project-owner observation that PM threshold-setting is a bottleneck on a 358-KLOC project | `framework/debates/005-first-chapter-pm-high-lord-aide.md` | commit `b0b952f` |
+| 2026-05-11 | Revised debate 005 §6 Lifecycle (D3 → D4 task-scoped instance + persistent role + artifact continuity) per project-owner observation | `framework/debates/005-...` | commit `89039d1` |
+| 2026-05-11 | Sealed debate 005; created Adeptus Administratum Codex v1.0 at `framework/chapters/adeptus-administratum/codex.md` | debate 005 + Codex | commit `78d4bb4` |
 | 2026-05-11 | Propagated sealed-Codex references: phase-0 §7, phase-1 §8.1 + §4 + §7, case-study/reckoning-team-record (interim Codex superseded), this file (Retroactive review §5.X) | framework + case-study files | commit pending |
 | 2026-05-11 | **N-4 backfill (retroactive):** HANDOFF describes LoreWeave as "6 services in contracts/api/"; current state has 7 (llm-gateway new). Term drift recorded; resolution deferred to Pass 1 Current State Audit completion | HANDOFF.md ↔ LoreWeave repo | this commit |

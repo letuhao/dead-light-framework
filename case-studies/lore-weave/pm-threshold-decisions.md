@@ -1,7 +1,7 @@
 # PM Threshold Decisions — LoreWeave Phase 0
 
 > **Status:** **Draft proposal** by AI-aide-1 based on LoreWeave quick-scan 2026-05-11 — pending project-owner review, adjustment, and sign-off.
-> **Spec:** Phase 0 §2 inputs; PM walk-through at [`pm-calibration-guide.md`](../pm-calibration-guide.md); calibration anchors at [`calibration-standards.md`](../calibration-standards.md).
+> **Spec:** Phase 0 §2 inputs; PM walk-through at [`pm-calibration-guide.md`](../../framework/pm-calibration-guide.md); calibration anchors at [`calibration-standards.md`](../../framework/calibration-standards.md).
 > **Tier applied:** **Tier 1 — Startup / Lean** (solo project, no historical PPB, no formal velocity baseline).
 > **Spec departure D-3 (recorded in methodology-notes):** Phase 0 §2 says PM commits these in writing BEFORE Phase 0 begins. Here AI-aide-1 produces a *proposal* drawn from a preliminary scan, and the project owner signs off (or adjusts) afterward. This is a productivity adaptation for solo + AI-aide configuration; the binding semantics are preserved (project owner remains the committer).
 >
@@ -198,11 +198,11 @@ Project owner: please adjust this number based on your real available time. Lowe
 - Any new service added to `services/` or any new contract added to `contracts/api/`.
 - Any architectural rewrite at the v1→v2 frontend scale.
 - Any license / package-management / core-infrastructure pivot.
-- Any case where the Sector Astronomican trigger conditions ([debate 001](../debates/001-laws-count-and-multirepo-scaling.md)) flip — i.e., the project crosses or un-crosses the 4-conjunctive threshold for Sector split.
+- Any case where the Sector Astronomican trigger conditions ([debate 001](../../framework/debates/001-laws-count-and-multirepo-scaling.md)) flip — i.e., the project crosses or un-crosses the 4-conjunctive threshold for Sector split.
 
 ### Commitment site
 
-Per [debate 002 Q6](../debates/002-retrofit-vs-greenfield.md): the cadence is committed in writing **inside the Reckoning Record itself**, not just here. Once Phase 1 seals, the Reckoning Record carries this cadence as part of its living-document property.
+Per [debate 002 Q6](../../framework/debates/002-retrofit-vs-greenfield.md): the cadence is committed in writing **inside the Reckoning Record itself**, not just here. Once Phase 1 seals, the Reckoning Record carries this cadence as part of its living-document property.
 
 ---
 

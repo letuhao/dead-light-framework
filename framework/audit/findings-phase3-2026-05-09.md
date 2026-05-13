@@ -239,7 +239,7 @@ Sub-checks:
 
 #### F-25 — Catholic Church "no schism" claim does not surface obvious in-domain counter-examples
 
-- **Where:** `docs/debates/001-laws-count-and-multirepo-scaling.md:69`; `docs/phase-1-for-debate.md:187`. Load-bearing for the Imperial + Sector inherit-and-add pattern (C-032).
+- **Where:** `framework/debates/001-laws-count-and-multirepo-scaling.md:69`; `framework/phases/phase-1-for-debate.md:187`. Load-bearing for the Imperial + Sector inherit-and-add pattern (C-032).
 - **Source's actual state:** Catholic Church has had two well-documented schisms — the East-West Schism (1054, ~50% of pre-existing communion split off) and the Reformation (1517). These are widely-cited examples of multi-tier religious governance failure modes.
 - **Framework's claim:** "~2,000 years doctrinal coherence" (debate 001 / phase-1) — used as an exemplar for the Imperial-tier inherit-and-add pattern.
 - **Why this matters:** Per IVP spec v0.2 § 5 Phase 3 sub-check 4 (Anachronism / cherry-pick): the framework uses Catholic Church as a *positive* example of stable inherit-and-add governance; the Great Schism and Reformation are *precisely* the inherit-and-add failure modes that would disconfirm the pattern. Selecting only the post-Reformation Roman-Catholic-defined "no schism" period is a methodological cherry-pick.
@@ -287,7 +287,7 @@ Phase 3 is internal-text analysis; no new web queries beyond those in Phase 2 we
 - **F-25 (Catholic Church Schism check):** confirmed via prior knowledge that the East-West Schism (1054) and Reformation (1517) are widely-documented schisms; both are textbook material. Did not run a fresh WebSearch as the historical fact is uncontested.
 - **F-26 (Spotify model departure):** drew on Phase 2 R-011 trail (Atlassian + Agile Pain Relief sources already accessed in rodage 2026-05-08). Confirmed Spotify departure is well-documented in those existing citations.
 - **F-27 (Goodhart's Law scope):** drew on Phase 2 audit trail Round 3 (Wikipedia *Goodhart's law*; Splunk; ModelThinkers; Psych Safety) — Goodhart's canonical scope is measure-as-target, not memorability.
-- **R-001 policy-1 check:** drew on framework's own self-correction in `docs/debates/001-laws-count-and-multirepo-scaling.md:191–198` (Methodological Note) which explicitly removes prior policy-1 violations.
+- **R-001 policy-1 check:** drew on framework's own self-correction in `framework/debates/001-laws-count-and-multirepo-scaling.md:191–198` (Methodological Note) which explicitly removes prior policy-1 violations.
 
 ---
 
@@ -297,15 +297,15 @@ During the immediately-following remediation pass on `remediate/ivp-2026-05-09-p
 
 ### F-25 reduction: MEDIUM → LOW
 
-The original F-25 stated that the framework's Catholic Church citation "does not surface" the Great Schism (1054) and Reformation (1517). In fact, [`docs/debates/001-laws-count-and-multirepo-scaling.md:69`](../debates/001-laws-count-and-multirepo-scaling.md#L69) **already explicitly acknowledges both** events in its post-F-12-remediation text: "institutional continuity ~2,000 years (despite the Great Schism of 1054 and the Reformation of 1517 producing the Eastern Orthodox and Protestant traditions, the Roman Catholic legal-doctrinal continuity itself is uninterrupted)."
+The original F-25 stated that the framework's Catholic Church citation "does not surface" the Great Schism (1054) and Reformation (1517). In fact, [`framework/debates/001-laws-count-and-multirepo-scaling.md:69`](../debates/001-laws-count-and-multirepo-scaling.md#L69) **already explicitly acknowledges both** events in its post-F-12-remediation text: "institutional continuity ~2,000 years (despite the Great Schism of 1054 and the Reformation of 1517 producing the Eastern Orthodox and Protestant traditions, the Roman Catholic legal-doctrinal continuity itself is uninterrupted)."
 
-The legitimate residual issue: [`docs/phase-1-for-debate.md:187`](../phase-1-for-debate.md#L187) referenced Catholic Church without the same qualifier. That is a one-line consistency issue, **LOW severity** (not MEDIUM). Remediation pass added a brief cross-reference to debate 001's fuller treatment.
+The legitimate residual issue: [`framework/phases/phase-1-for-debate.md:187`](../phases/phase-1-for-debate.md#L187) referenced Catholic Church without the same qualifier. That is a one-line consistency issue, **LOW severity** (not MEDIUM). Remediation pass added a brief cross-reference to debate 001's fuller treatment.
 
 The Phase 3 finding's underlying concern — methodological cherry-pick of the most generous time-window — is technically resolved by the existing acknowledgment, although a stricter reading might still flag the definitional choice ("Roman Catholic specifically" rather than "Christian governance generally"). That deeper question is outside Phase 3's scope (it is a Phase 4 argument-validity question about how the framework defines its category boundaries).
 
 ### F-26 needed no action: already satisfied
 
-The original F-26 stated that the Spotify model citation "should acknowledge Spotify's departure from it." In fact, [`docs/debates/001-laws-count-and-multirepo-scaling.md:73`](../debates/001-laws-count-and-multirepo-scaling.md#L73) **already says** "Industry-cited even though Spotify itself has since modified the model — the two-tier pattern persists." This qualifier was present before Phase 3 began. The finding was based on a re-read miss against the inventory's older paraphrase. No remediation needed.
+The original F-26 stated that the Spotify model citation "should acknowledge Spotify's departure from it." In fact, [`framework/debates/001-laws-count-and-multirepo-scaling.md:73`](../debates/001-laws-count-and-multirepo-scaling.md#L73) **already says** "Industry-cited even though Spotify itself has since modified the model — the two-tier pattern persists." This qualifier was present before Phase 3 began. The finding was based on a re-read miss against the inventory's older paraphrase. No remediation needed.
 
 ### F-27 stands
 

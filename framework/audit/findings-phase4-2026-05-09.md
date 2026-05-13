@@ -5,7 +5,7 @@
 > **Auditor:** Claude Code (Opus 4.7), single pass.
 > **Mode:** Industry-pragmatic (per IVP spec v0.2 § 1).
 > **Branch:** `audit/ivp-2026-05-09-phase4`.
-> **Inputs:** 41 load-bearing claims from [`inventory.md`](inventory.md) § A (LB=Y) + 4 decided debates (001–004) from `docs/debates/`.
+> **Inputs:** 41 load-bearing claims from [`inventory.md`](inventory.md) § A (LB=Y) + 4 decided debates (001–004) from `framework/debates/`.
 > **Spec applied:** [`independent-verification-pass-for-debate.md`](independent-verification-pass-for-debate.md) v0.2 § 5 Phase 4 + § 4.4 rubric (SOUND / WEAK-WARRANT / FALLACIOUS / UNFALSIFIABLE) + § 4.1 cross-cutting rule (UNFALSIFIABLE escalates by one severity level above rubric base, except for definitional/conventional claims).
 > **Rubric integrity:** Pre-registered v0.2 § 4.4 rubric used unmodified.
 > **Methodological lesson from Phase 3 applied:** Phase 4 evaluates against the **current (post-remediation) framework text**, not against `inventory.md`'s paraphrases. Every implicit warrant cited below was traced back to current source files.
@@ -171,7 +171,7 @@ Per IVP spec v0.2 § 5 Phase 4 procedure: Toulmin decomposition + fallacy checkl
 
 **Cluster C finding: F-29 — WEAK-WARRANT on stress-test 20% threshold.**
 
-- **Where:** `docs/phase-1-for-debate.md:46, 76, 92`. Load-bearing for Phase 1 sealing gate.
+- **Where:** `framework/phases/phase-1-for-debate.md:46, 76, 92`. Load-bearing for Phase 1 sealing gate.
 - **Severity:** **LOW**. The 20% threshold is one of the few framework-invented numbers; the framework's policy 2 says calibration anchors to external practice. Not finding any external anchor (e.g., inter-rater reliability literature; Cohen's κ acceptability thresholds — typically κ > 0.6 = "substantial agreement", which roughly corresponds to disagreement < 40%) is a policy-2 anomaly. Severity is LOW because the warrant *direction* is correct (high divergence = ambiguity); only the *specific number* is asserted.
 - **Recommended action:** `obvious fix`: anchor on an inter-rater reliability or governance-consensus literature reference (Cohen's κ, Krippendorff's α) and either preserve 20% as one anchor among several or recalibrate. Alternatively: explicitly state that 20% is a heuristic anchor pending empirical calibration from LoreWeave or other case studies.
 
@@ -245,7 +245,7 @@ Per IVP spec v0.2 § 5 Phase 4 procedure: Toulmin decomposition + fallacy checkl
 
 **Cluster E finding: F-30 — survivorship-bias risk on multi-tier success precedents (LOW).**
 
-- **Where:** `docs/debates/001-laws-count-and-multirepo-scaling.md:67–73`; `docs/phase-1-for-debate.md:187`. Load-bearing for Imperial+Sector design.
+- **Where:** `framework/debates/001-laws-count-and-multirepo-scaling.md:67–73`; `framework/phases/phase-1-for-debate.md:187`. Load-bearing for Imperial+Sector design.
 - **Severity:** **LOW**. The Soviet and Late-Roman counter-examples (C-041, R-012, R-013) are present in the document set but at LB=N severity. A stricter argument would explicitly pair each success-side anchor with a failure-side anchor at the same load-bearing level. As-is, the success side is more thoroughly developed than the failure side.
 - **Recommended action:** `defer to project owner`: optionally add a one-paragraph "selection criteria for these precedents" note that explains why these five succeeded and others (Soviet, Late Roman) did not. Helps preempt the "you cherry-picked the winners" objection without restructuring the argument. Or: leave as-is — the Schism acknowledgment + the C-041 examples already provide a reasonable counterweight.
 
@@ -288,7 +288,7 @@ Per IVP spec v0.2 § 5 Phase 4 procedure: Toulmin decomposition + fallacy checkl
 
 **Cluster F finding: F-31 — survivorship bias on retrofit constitution precedents (MEDIUM).**
 
-- **Where:** `docs/debates/002-retrofit-vs-greenfield.md:49`; `docs/phase-1-for-debate.md:293`. Load-bearing for Phase 0 retrofit-mandate argument.
+- **Where:** `framework/debates/002-retrofit-vs-greenfield.md:49`; `framework/phases/phase-1-for-debate.md:293`. Load-bearing for Phase 0 retrofit-mandate argument.
 - **Severity:** **MEDIUM**. The framework cites three successful retrofit constitutions (Japan, Spain, SA TRC) without surfacing Iraq 2005 (problematic), Weimar Germany 1919 (eventual failure), or any other failed-retrofit case. This is closer to selection bias than the F-30 success-list bias in Cluster E because the *number* of successful constitutional retrofits in modern history is small enough that a representative sample should include both successes and failures.
 - **Recommended action:** `obvious fix`: add a one-sentence acknowledgment that the framework selected post-WWII successful retrofits as the relevant comparison set; failed-retrofit cases (Iraq 2005, Weimar) suggest that the *mechanism* of past-violations reckoning matters more than the existence of a retrofit constitution per se. The TRC framing (R-018) is already singled out as the strongest example *because* it has explicit past-violations machinery — this point can be sharpened to address the survivorship objection.
 
@@ -371,7 +371,7 @@ Per Phase 4 inputs, all decided debates require argument analysis. The four deci
 
 #### F-31 — Survivorship bias on retrofit constitution precedents
 
-- **Where:** `docs/debates/002-retrofit-vs-greenfield.md:49`; `docs/phase-1-for-debate.md:293`. Load-bearing for Phase 0 retrofit-mandate (C-017).
+- **Where:** `framework/debates/002-retrofit-vs-greenfield.md:49`; `framework/phases/phase-1-for-debate.md:293`. Load-bearing for Phase 0 retrofit-mandate (C-017).
 - **Issue:** Framework cites three successful retrofit constitutions (Japan 1947, Spain 1978, SA TRC 1996) without surfacing failed cases (Iraq 2005, Weimar 1919). The successful-case-only selection is selection bias.
 - **Why this matters:** The TRC is already singled out as "strongest example because it has explicit past-violations machinery" — this argument-from-mechanism is much stronger than the argument-from-track-record, but the latter is what's currently surfaced. Strengthening to argument-from-mechanism would resolve the bias.
 - **Recommended action:** `obvious fix`: add a one-sentence acknowledgment that the selection is post-WWII successes, and pivot the warrant to "explicit past-violations machinery is what distinguishes the durable retrofits" (already implicit in the TRC framing).
@@ -380,13 +380,13 @@ Per Phase 4 inputs, all decided debates require argument analysis. The four deci
 
 #### F-29 — WEAK-WARRANT on stress-test 20% threshold (no inter-rater reliability anchor)
 
-- **Where:** `docs/phase-1-for-debate.md:46, 76, 92`. Load-bearing for Phase 1 sealing gate (C-008, C-043).
+- **Where:** `framework/phases/phase-1-for-debate.md:46, 76, 92`. Load-bearing for Phase 1 sealing gate (C-008, C-043).
 - **Issue:** The 20% threshold is framework-invented with no external anchor. Inter-rater reliability literature (Cohen's κ, Krippendorff's α) provides natural anchoring.
 - **Recommended action:** `obvious fix`: anchor on Cohen's κ acceptability conventions (e.g., κ > 0.6 = "substantial agreement" = roughly < 40% disagreement). Either preserve 20% as one anchor among several or recalibrate to κ-equivalent.
 
 #### F-30 — Survivorship bias on multi-tier success precedents
 
-- **Where:** `docs/debates/001-laws-count-and-multirepo-scaling.md:67–73`; `docs/phase-1-for-debate.md:187`. Load-bearing for Imperial+Sector design (C-032).
+- **Where:** `framework/debates/001-laws-count-and-multirepo-scaling.md:67–73`; `framework/phases/phase-1-for-debate.md:187`. Load-bearing for Imperial+Sector design (C-032).
 - **Issue:** Five successes (US, Germany, Catholic, Linux, TPS) on the success side; failure-side counter-examples (Soviet, Late Roman) are present but at LB=N, lower load-bearing visibility.
 - **Recommended action:** `defer to project owner`: optional one-paragraph "selection criteria for these precedents" note. Schism acknowledgment + Soviet/Late-Roman counter-examples already provide partial counterweight; this is a polish item, not a structural fix.
 
@@ -426,8 +426,8 @@ Phase 4 is internal-text analysis; all reasoning derives from the framework's cu
 
 **Sources consulted for Phase 4 (no fresh web queries):**
 - All `docs/**/*.md` files in current state (post all remediations through F-25/F-27).
-- `docs/audit/inventory.md` § A (claims) and § B (citations) for the LB=Y filter.
-- `docs/audit/findings-2026-05-08.md`, `findings-2026-05-09.md`, `findings-phase3-2026-05-09.md` for prior-Phase verdicts and remediation status.
+- `framework/audit/inventory.md` § A (claims) and § B (citations) for the LB=Y filter.
+- `framework/audit/findings-2026-05-08.md`, `findings-2026-05-09.md`, `findings-phase3-2026-05-09.md` for prior-Phase verdicts and remediation status.
 - IVP spec v0.2 § 5 Phase 4 procedure + § 4.4 rubric + § 4.1 cross-cutting rules.
 
 **External literature considered for F-28 anchoring suggestions** (search not performed in this run because Phase 4 is text analysis; suggestions are from auditor's prior knowledge):

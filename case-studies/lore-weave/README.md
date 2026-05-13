@@ -3,7 +3,7 @@
 > **Status:** Phase 0 in flight (2026-05-11). First retrofit application of Dead Light Framework against a real codebase.
 >
 > **Source codebase:** `C:\Works\_Researchs\lore-weave` (alternate workstation: `D:\Works\source\lore-weave`).
-> **Framework version applied:** Phase 0 spec at [`docs/phase-0-for-debate.md`](../phase-0-for-debate.md); calibration anchors at [`docs/calibration-standards.md`](../calibration-standards.md); PM walk-through at [`docs/pm-calibration-guide.md`](../pm-calibration-guide.md).
+> **Framework version applied:** Phase 0 spec at [`framework/phases/phase-0-for-debate.md`](../../framework/phases/phase-0-for-debate.md); calibration anchors at [`framework/calibration-standards.md`](../../framework/calibration-standards.md); PM walk-through at [`framework/pm-calibration-guide.md`](../../framework/pm-calibration-guide.md).
 > **Tier:** **Tier 1 — Startup / Lean** (solo project, no formal PPB, no SonarQube baseline, no historical sprint velocity).
 
 ---
@@ -33,7 +33,7 @@ Per Phase 0 §3 "investigative phase" and §4 outputs, the case study surfaces f
 
 1. **Past scope changes** — the trigger that motivated the framework. Each significant scope change is catalogued in the Past Decisions Catalog with attribution and date.
 2. **Architect rot specifically** — conflicting refactors, scope drift, accumulated context rot. The empirical anchor for the framework's central premise (README:26 — Bommasani 2021 / Park 2023). Material entries feed the Failure Inventory.
-3. **Sector Astronomican trigger evaluation** — LoreWeave currently has **seven contract directories** in `contracts/api/` (identity, books, catalog, **llm-gateway**, model-billing, model-registry, sharing — `llm-gateway` is new since the 2026-05-09 HANDOFF) **and fifteen service implementations** in `services/`. Does this configuration meet the four conjunctive trigger conditions for Sector split per [debate 001](../debates/001-laws-count-and-multirepo-scaling.md)? Carry-forward from debate 001's follow-up actions checklist.
+3. **Sector Astronomican trigger evaluation** — LoreWeave currently has **seven contract directories** in `contracts/api/` (identity, books, catalog, **llm-gateway**, model-billing, model-registry, sharing — `llm-gateway` is new since the 2026-05-09 HANDOFF) **and fifteen service implementations** in `services/`. Does this configuration meet the four conjunctive trigger conditions for Sector split per [debate 001](../../framework/debates/001-laws-count-and-multirepo-scaling.md)? Carry-forward from debate 001's follow-up actions checklist.
 4. **Implicit principles surface** — independent capture (per Phase 0 §3 step 4) of "of course we'll" patterns that have been assumed but not stated. The most valuable Phase 0 output, per spec.
 
 ---
@@ -41,7 +41,7 @@ Per Phase 0 §3 "investigative phase" and §4 outputs, the case study surfaces f
 ## Folder layout
 
 ```
-docs/case-study-lore-weave/
+case-studies/lore-weave/
 ├── README.md                       ← this file (overview, status, scope, focus)
 ├── pm-threshold-decisions.md       ← five PM commitments per Phase 0 §2 inputs
 ├── reckoning-team-record.md        ← team composition; named AI-aide Chapters per §7 accommodation

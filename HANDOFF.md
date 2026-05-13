@@ -44,11 +44,11 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 | Debate | Decision (one-line) |
 |---|---|
-| [001 — Laws Count Cap and Multi-Repo Scaling](docs/debates/001-laws-count-and-multirepo-scaling.md) | Hierarchical Imperial + Sector Astronomicans with inherit-and-add rule. Default = single Astronomican; split only when ≥ 2 repos + dedicated teams + cross-team contracts + genuinely local decisions are all true. **Anti-survivorship-bias selection-criteria note added in session 3 (F-30 remediation).** |
-| [002 — Retrofit vs Greenfield](docs/debates/002-retrofit-vs-greenfield.md) | Introduce **Phase 0: Reckoning** as prerequisite to Phase 1 for retrofit (greenfield runs lightweight or skips). Reckoning-first effective-date model with classification: Keep / Fix-now / Fix-by-date / Reconsider-Law. **Mechanism-based warrant for retrofit precedents (TRC's "explicit past-violations machinery" is the durability anchor) added in session 3 (F-31 remediation).** |
-| [003 — Phase 0 Calibration](docs/debates/003-phase-0-calibration.md) | Significance heuristic (6 categorical bullets), Reckoning Team composition rule (≥1 active-IC mandatory + ≥1 tenure-spanning + ≥1 outside-scope), soft time budget with 80%/100% escalation, lightweight greenfield Phase 0 (Assumption Surface + Commitment Audit + Stakeholder Map). |
-| [004 — Cap Revision: Miller Citation Correction](docs/debates/004-cap-revision-miller-correction.md) | Cap on Immutable Laws and Guiding Principles raised from `≤ 5` to **5–9 with target ~7** (anchored on Miller 1956's actual 7 ± 2). Same caps apply to Imperial and Sector. Driven by IVP finding F-01 (Miller misquote). |
-| [005 — First Chapter: PM / High Lord Aide](docs/debates/005-first-chapter-pm-high-lord-aide.md) | First concrete Chapter sealed: **Adeptus Administratum** ([Codex v1.0](docs/chapters/adeptus-administratum/codex.md)). Multi-role (PM + High Lord aide); Draft + Notify authority (5 trigger types); D4 lifecycle (task-scoped instance + persistent role + artifact continuity via 7-step re-priming protocol); E2 multiplicity (singleton per Astronomican; concurrent instances allowed). Driven by project-owner observation during LoreWeave case-study kick-off that PM threshold-setting on a 358-KLOC project is a bottleneck. |
+| [001 — Laws Count Cap and Multi-Repo Scaling](framework/debates/001-laws-count-and-multirepo-scaling.md) | Hierarchical Imperial + Sector Astronomicans with inherit-and-add rule. Default = single Astronomican; split only when ≥ 2 repos + dedicated teams + cross-team contracts + genuinely local decisions are all true. **Anti-survivorship-bias selection-criteria note added in session 3 (F-30 remediation).** |
+| [002 — Retrofit vs Greenfield](framework/debates/002-retrofit-vs-greenfield.md) | Introduce **Phase 0: Reckoning** as prerequisite to Phase 1 for retrofit (greenfield runs lightweight or skips). Reckoning-first effective-date model with classification: Keep / Fix-now / Fix-by-date / Reconsider-Law. **Mechanism-based warrant for retrofit precedents (TRC's "explicit past-violations machinery" is the durability anchor) added in session 3 (F-31 remediation).** |
+| [003 — Phase 0 Calibration](framework/debates/003-phase-0-calibration.md) | Significance heuristic (6 categorical bullets), Reckoning Team composition rule (≥1 active-IC mandatory + ≥1 tenure-spanning + ≥1 outside-scope), soft time budget with 80%/100% escalation, lightweight greenfield Phase 0 (Assumption Surface + Commitment Audit + Stakeholder Map). |
+| [004 — Cap Revision: Miller Citation Correction](framework/debates/004-cap-revision-miller-correction.md) | Cap on Immutable Laws and Guiding Principles raised from `≤ 5` to **5–9 with target ~7** (anchored on Miller 1956's actual 7 ± 2). Same caps apply to Imperial and Sector. Driven by IVP finding F-01 (Miller misquote). |
+| [005 — First Chapter: PM / High Lord Aide](framework/debates/005-first-chapter-pm-high-lord-aide.md) | First concrete Chapter sealed: **Adeptus Administratum** ([Codex v1.0](framework/chapters/adeptus-administratum/codex.md)). Multi-role (PM + High Lord aide); Draft + Notify authority (5 trigger types); D4 lifecycle (task-scoped instance + persistent role + artifact continuity via 7-step re-priming protocol); E2 multiplicity (singleton per Astronomican; concurrent instances allowed). Driven by project-owner observation during LoreWeave case-study kick-off that PM threshold-setting on a 358-KLOC project is a bottleneck. |
 | Council composition multi-role | PM is a Council member. Council requires ≥ 3 distinct functional perspectives (minimum-diversity rule). Council size 3–7 (anchored on Dunbar / Brooks for group dynamics — *not* affected by debate 004's Miller-anchored cap revision). Small-team accommodation: AI-assistant Chapters as aides; first Chapter (Adeptus Administratum) sealed via debate 005. |
 | Six embedded answers (debate 002) | No Phase 0 sealing; smaller Reckoning Team produces, Council reviews; full attribution; no fixed grandfather cap; no fixed sunset horizon; PM-defined re-reckoning cadence. |
 
@@ -58,15 +58,15 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 
 Audit workflow specified, executed once (rodage 2026-05-08), then run end-to-end across Phases 2 (extension), 3, and 4 in session 3 (2026-05-09 → 2026-05-10) with remediation between phases. **All 30 surfaced findings remediated (F-01–F-31; F-26 retracted via erratum after re-reading).** The framework now has a substantially complete external-reviewable evidentiary check through Phase 4.
 
-- **Spec** (v0.3, 2026-05-09): [`docs/audit/independent-verification-pass-for-debate.md`](docs/audit/independent-verification-pass-for-debate.md). 7 phases; pre-registered rubric; industry-pragmatic source-tier hierarchy; argument-warrant tier-floor (new in v0.3); cluster-level Phase 4 option (new in v0.3); multi-phase-run pattern with audit-erratum convention (new in v0.3); changelog at § 11.
+- **Spec** (v0.3, 2026-05-09): [`framework/audit/independent-verification-pass-for-debate.md`](framework/audit/independent-verification-pass-for-debate.md). 7 phases; pre-registered rubric; industry-pragmatic source-tier hierarchy; argument-warrant tier-floor (new in v0.3); cluster-level Phase 4 option (new in v0.3); multi-phase-run pattern with audit-erratum convention (new in v0.3); changelog at § 11.
 - **Slash command**: [`.claude/commands/ivp.md`](.claude/commands/ivp.md) — `/ivp [scope]` to re-run.
-- **Inventory** (2026-05-08): [`docs/audit/inventory.md`](docs/audit/inventory.md) — 44 load-bearing claims, 76 distinct citations, 40 defined terms, 11 analogy invocations. *Note: inventory paraphrases capture Phase-1-state at audit time and may lag remediation; per IVP v0.3 § 5 Phase 3 pre-step, refresh against current source files before re-running Phase 3.*
+- **Inventory** (2026-05-08): [`framework/audit/inventory.md`](framework/audit/inventory.md) — 44 load-bearing claims, 76 distinct citations, 40 defined terms, 11 analogy invocations. *Note: inventory paraphrases capture Phase-1-state at audit time and may lag remediation; per IVP v0.3 § 5 Phase 3 pre-step, refresh against current source files before re-running Phase 3.*
 - **Findings**:
-  - [`findings-2026-05-08.md`](docs/audit/findings-2026-05-08.md) — Phase 2 rodage on 30 citations. 17 V / 11 P / 1 C; 3 HIGH (F-01–F-03) + 4 MEDIUM (F-04–F-07) + 6 LOW (F-08–F-13). All remediated.
-  - [`findings-2026-05-09.md`](docs/audit/findings-2026-05-09.md) — Phase 2 extension over the queued 46. 33 V / 12 P / 1 C; 3 HIGH (F-18 Schein/Argyris, F-19 RUP/XP spike, F-20 Lean Startup scope-as-variable) + 2 MEDIUM (F-14, F-21) + 6 LOW (F-15–F-17, F-22–F-24). All remediated. **76/76 citations now have a Phase 2 verdict.**
-  - [`findings-phase3-2026-05-09.md`](docs/audit/findings-phase3-2026-05-09.md) — Phase 3 Citation Appropriateness on 73 verified citations. 70 APPROPRIATE / 3 STRETCHED. 1 MEDIUM (F-25, reduced to LOW via erratum) + 2 LOW (F-26 retracted via erratum; F-27 Goodhart). All practically-effective findings remediated. **Headline:** policy-1 check on R-001 (40k metaphor) PASSES.
-  - [`findings-phase4-2026-05-09.md`](docs/audit/findings-phase4-2026-05-09.md) — Phase 4 Argument Analysis on 41 LB claims (clustered into 7) + 4 debates. 35 SOUND / 4 WEAK-WARRANT / 0 FALLACIOUS / 2 UNFALSIFIABLE-but-conventional. 2 MEDIUM (F-28 central-premise WEAK-WARRANT, F-31 retrofit survivorship) + 2 LOW (F-29 stress-test threshold, F-30 multi-tier survivorship). All remediated.
-  - [`findings-phase5-2026-05-11.md`](docs/audit/findings-phase5-2026-05-11.md) — Phase 5 Internal Consistency across 40 terms, 4 decided debates, ~20 numeric thresholds, both framework-wide policies, and README link integrity. 0 CRITICAL / 0 HIGH / 4 MEDIUM (F-32 phase-1:299 stale "5 Laws max", F-33 calibration-standards Brooks anchor, F-34 Dunbar layer-1 overshoot, F-35 phase-0:34 Time budget) + 4 LOW (F-36 phase-1:309 stale open question, F-37 HANDOFF Two-tier sharpness reflection, F-38 debate-001 metadata annotation, F-39 three small framework-internal heuristics). All 8 remediated. **Headlines:** policy-1 (40k naming-only) PASSES across all 11 inventoried analogies; README link integrity PASSES; design decisions of debates 001–004 reflected at all prescriptive sites — drift was concentrated in meta-commentary sections.
+  - [`findings-2026-05-08.md`](framework/audit/findings-2026-05-08.md) — Phase 2 rodage on 30 citations. 17 V / 11 P / 1 C; 3 HIGH (F-01–F-03) + 4 MEDIUM (F-04–F-07) + 6 LOW (F-08–F-13). All remediated.
+  - [`findings-2026-05-09.md`](framework/audit/findings-2026-05-09.md) — Phase 2 extension over the queued 46. 33 V / 12 P / 1 C; 3 HIGH (F-18 Schein/Argyris, F-19 RUP/XP spike, F-20 Lean Startup scope-as-variable) + 2 MEDIUM (F-14, F-21) + 6 LOW (F-15–F-17, F-22–F-24). All remediated. **76/76 citations now have a Phase 2 verdict.**
+  - [`findings-phase3-2026-05-09.md`](framework/audit/findings-phase3-2026-05-09.md) — Phase 3 Citation Appropriateness on 73 verified citations. 70 APPROPRIATE / 3 STRETCHED. 1 MEDIUM (F-25, reduced to LOW via erratum) + 2 LOW (F-26 retracted via erratum; F-27 Goodhart). All practically-effective findings remediated. **Headline:** policy-1 check on R-001 (40k metaphor) PASSES.
+  - [`findings-phase4-2026-05-09.md`](framework/audit/findings-phase4-2026-05-09.md) — Phase 4 Argument Analysis on 41 LB claims (clustered into 7) + 4 debates. 35 SOUND / 4 WEAK-WARRANT / 0 FALLACIOUS / 2 UNFALSIFIABLE-but-conventional. 2 MEDIUM (F-28 central-premise WEAK-WARRANT, F-31 retrofit survivorship) + 2 LOW (F-29 stress-test threshold, F-30 multi-tier survivorship). All remediated.
+  - [`findings-phase5-2026-05-11.md`](framework/audit/findings-phase5-2026-05-11.md) — Phase 5 Internal Consistency across 40 terms, 4 decided debates, ~20 numeric thresholds, both framework-wide policies, and README link integrity. 0 CRITICAL / 0 HIGH / 4 MEDIUM (F-32 phase-1:299 stale "5 Laws max", F-33 calibration-standards Brooks anchor, F-34 Dunbar layer-1 overshoot, F-35 phase-0:34 Time budget) + 4 LOW (F-36 phase-1:309 stale open question, F-37 HANDOFF Two-tier sharpness reflection, F-38 debate-001 metadata annotation, F-39 three small framework-internal heuristics). All 8 remediated. **Headlines:** policy-1 (40k naming-only) PASSES across all 11 inventoried analogies; README link integrity PASSES; design decisions of debates 001–004 reflected at all prescriptive sites — drift was concentrated in meta-commentary sections.
 - **Phases 6, 7**: not yet executed. Phase 6 = External Benchmarking (places framework in adjacent literature on AI-agent governance, software governance, frozen-spec patterns). Phase 7 = Synthesis Report (integrates all per-phase findings files into a single artifact for outside reviewers).
 
 ---
@@ -145,13 +145,13 @@ Severity LOW:
 
 ### Glossary
 
-Final glossary deferred — to be assembled bottom-up as later phases force real definitions. The 25 candidates and 11 needs-debate items are catalogued in `docs/glossary-for-debate.md`.
+Final glossary deferred — to be assembled bottom-up as later phases force real definitions. The 25 candidates and 11 needs-debate items are catalogued in `framework/glossary-for-debate.md`.
 
 ---
 
 ## Recommended next step
 
-**Sign off [`pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md), then run LoreWeave Phase 0 Pass 1.**
+**Sign off [`pm-threshold-decisions.md`](case-studies/lore-weave/pm-threshold-decisions.md), then run LoreWeave Phase 0 Pass 1.**
 
 End-of-session-4 state: LoreWeave case study is scaffolded; PM Threshold Decisions are drafted (under Adeptus Administratum Codex §2.1) and pending project-owner sign-off. Pre-Pass-1 work has already produced a scan summary (~358 KLOC, 1314 commits in 6 months, MMO-RPG pivot on `mmo-rpg/design-resume` branch, frontend v1→v2 rename complete, license + infra pivots in last month).
 
@@ -161,11 +161,11 @@ The framework is now equipped with:
 - Three spec departures (D-1 anonymized attribution; D-2 AI-aide-first Implicit Principles; D-3 AI-aide-drafts-PM-thresholds) logged and re-evaluated as compliant with the sealed Codex.
 
 How to resume:
-1. Review [`docs/case-study-lore-weave/pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md). Three items flagged for owner attention: (a) §1 #2 "lowered 5 person-days → 1 day for solo pace"; (b) §3 "design-drafts/ and poc/ — committed decisions or exploration?"; (c) §4 "~6 person-week initial commitment" — confirm or scope down.
+1. Review [`case-studies/lore-weave/pm-threshold-decisions.md`](case-studies/lore-weave/pm-threshold-decisions.md). Three items flagged for owner attention: (a) §1 #2 "lowered 5 person-days → 1 day for solo pace"; (b) §3 "design-drafts/ and poc/ — committed decisions or exploration?"; (c) §4 "~6 person-week initial commitment" — confirm or scope down.
 2. Add adjustments in the "Adjustments by project owner" section of `pm-threshold-decisions.md` if any.
 3. Check three sign-off checkboxes at the bottom and sign.
 4. Open a new chat session — a new Adeptus Administratum instance re-primes per Codex §8 protocol and begins **Pass 1 Current State Audit** of LoreWeave (`docs/01_foundation/` + `docs/02_governance/` + `docs/03_planning/` + `frontend/` + `services/knowledge-service/`).
-5. The Pass 1 work fills [`reckoning-record.md`](docs/case-study-lore-weave/reckoning-record.md) sections 1, 2 (partial), 3 (partial) for the in-scope areas.
+5. The Pass 1 work fills [`reckoning-record.md`](case-studies/lore-weave/reckoning-record.md) sections 1, 2 (partial), 3 (partial) for the in-scope areas.
 
 ---
 
@@ -185,12 +185,12 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 
 ## Conventions to preserve
 
-- All documents in `docs/` use English; conversation language with the project owner is Vietnamese.
+- All documents in `framework/`, `case-studies/`, and `distribution/` use English; conversation language with the project owner is Vietnamese.
 - Working drafts use the `*-for-debate.md` suffix; final docs drop the suffix.
-- Specific arguments live in `docs/debates/NNN-topic.md` with status (open / recommended / decided / superseded).
+- Specific arguments live in `framework/debates/NNN-topic.md` with status (open / recommended / decided / superseded).
 - Each debate has a Decision section to be filled when the project owner decides — **never** pre-fill it.
 - The README's "planned" links indicate forthcoming docs; they should not be made into broken-link claims.
-- IVP separation-of-concerns: audit-output files (`docs/audit/`) and remediation edits go in *separate commits*; audit run never modifies framework documents in the same pass. **Per session-3 lesson:** for this small docs-only repo with single-owner review, keep the separation at the *commit* level — do **not** default to separate branches per audit/remediation per phase. The 2026-05-09 multi-phase run created 7 branches + 7 stacked PRs and the project owner explicitly called this "chaos". For future runs prefer one branch per IVP run with multiple commits, OR one branch per phase max — not separate branches for each audit-vs-remediation pair.
+- IVP separation-of-concerns: audit-output files (`framework/audit/`) and remediation edits go in *separate commits*; audit run never modifies framework documents in the same pass. **Per session-3 lesson:** for this small docs-only repo with single-owner review, keep the separation at the *commit* level — do **not** default to separate branches per audit/remediation per phase. The 2026-05-09 multi-phase run created 7 branches + 7 stacked PRs and the project owner explicitly called this "chaos". For future runs prefer one branch per IVP run with multiple commits, OR one branch per phase max — not separate branches for each audit-vs-remediation pair.
 - IVP spec changes go *between runs*, never during a run; rubric tables are pre-registered per pass. (Note: v0.3 clarified this is "between runs", not "between phases of the same run".)
 
 ---
@@ -199,8 +199,8 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 
 1. Read this file end-to-end.
 2. Read `README.md` for the framework's elevator pitch (now includes AI-collab literature anchors).
-3. Skim `docs/phase-0-for-debate.md` and `docs/phase-1-for-debate.md` — the two main artifacts.
-4. Skim `docs/debates/README.md` for decision history (4 debates decided).
+3. Skim `framework/phases/phase-0-for-debate.md` and `framework/phases/phase-1-for-debate.md` — the two main artifacts.
+4. Skim `framework/debates/README.md` for decision history (4 debates decided).
 5. If touching evidentiary claims or calibration anchors: skim IVP spec v0.3 § 4 rubric, § 5 phase procedures (especially Phase 3 inventory-paraphrase pre-step and Phase 4 cluster option), and § 11 changelog before editing.
 6. Confirm with project owner which path to take from "Recommended next step" or "Alternative next steps" before starting work.
 7. **For PR strategy on multi-phase IVP runs:** do not propose 7 stacked PRs; propose either a single branch with multiple commits or at most one PR per phase. See "Conventions to preserve" above.
@@ -225,8 +225,8 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
   ```
 - All 38 surfaced findings (F-01 through F-39, with F-26 retracted via erratum) are remediated.
 - IVP infrastructure: Phases 1, 2 (full coverage of all 76 citations), 3, 4, 5 complete.
-- Phase 2 (Codex per Chapter): first Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11; Codex v1.0 at [`docs/chapters/adeptus-administratum/codex.md`](docs/chapters/adeptus-administratum/codex.md); additional Chapters deferred to real-project trigger.
-- LoreWeave case study: Phase 0 scaffolding complete; pre-Pass-1 work (folder, PM threshold proposal, scan, spec departures D-1/D-2/D-3) committed; pending PM sign-off of [`pm-threshold-decisions.md`](docs/case-study-lore-weave/pm-threshold-decisions.md) before Pass 1 begins.
+- Phase 2 (Codex per Chapter): first Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11; Codex v1.0 at [`framework/chapters/adeptus-administratum/codex.md`](framework/chapters/adeptus-administratum/codex.md); additional Chapters deferred to real-project trigger.
+- LoreWeave case study: Phase 0 scaffolding complete; pre-Pass-1 work (folder, PM threshold proposal, scan, spec departures D-1/D-2/D-3) committed; pending PM sign-off of [`pm-threshold-decisions.md`](case-studies/lore-weave/pm-threshold-decisions.md) before Pass 1 begins.
 - IVP spec at v0.3. Phase 5b (author-voice pass) referenced in framework-wide policy #3 but not yet drafted into spec v0.4.
 - IVP Phase 5 complete; Phases 6, 7 queued.
 - **Session 4 work summary:** debate 006 opened (Documentation Architecture and Distribution Template — still `open`). Framework-wide policy #3 (Practitioner voice, not authority pronouncement) sealed. Voice cleanup pass applied across all major documentation surfaces (17 files, 6 commits) to bring framework text in line with the new policy. First blog post drafted in English (debate-open intro) at `blogs/01-the-emperor-is-dead-the-light-remains.md` (gitignored — blog content stays local).

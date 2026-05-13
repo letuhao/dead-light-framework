@@ -4,7 +4,7 @@
 > **Opened:** 2026-05-08
 > **Decided:** 2026-05-08
 > **Decided by:** project owner
-> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md). Produces a new `phase-0-for-debate.md` as a follow-up artifact.
+> **Affects:** [phase-1-for-debate.md](../phases/phase-1-for-debate.md). Produces a new `phase-0-for-debate.md` as a follow-up artifact.
 > **Raised by:** project owner — priority #1 in open-questions triage.
 
 ---
@@ -190,11 +190,11 @@ These do not need to be resolved in this debate but are flagged as the natural n
 
 ### Follow-up actions
 
-- [x] Update [phase-1-for-debate.md](../phase-1-for-debate.md) with a Retrofit section covering Phase 0 prerequisite, session additions, output additions, quality-gate additions, failure-mode additions, and effective-date semantics.
+- [x] Update [phase-1-for-debate.md](../phases/phase-1-for-debate.md) with a Retrofit section covering Phase 0 prerequisite, session additions, output additions, quality-gate additions, failure-mode additions, and effective-date semantics.
 - [x] Update Inputs/Prerequisites in Phase 1 to reference the Phase 0 Reckoning Record for retrofit projects.
 - [x] Add the retrofit pattern to the Borrowed-vs-Novel table.
 - [x] Update [debates/README.md](README.md) index to status `decided`.
-- [x] Create [phase-0-for-debate.md](../phase-0-for-debate.md) defining Phase 0: Reckoning in detail.
+- [x] Create [phase-0-for-debate.md](../phases/phase-0-for-debate.md) defining Phase 0: Reckoning in detail.
 - [x] Resolve the six carried-forward open questions (answered by project owner; baked into `phase-0-for-debate.md`):
   1. Phase 0 sealing → No sealing; output is input to Phase 1.
   2. Reckoning quorum → Smaller Reckoning Team produces; Council reviews.

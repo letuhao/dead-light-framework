@@ -5,7 +5,7 @@
 > **Auditor:** Claude Code (Opus 4.7), single pass.
 > **Mode:** Industry-pragmatic (per IVP spec v0.3 § 1).
 > **Branch:** none — per Session-3 lesson (HANDOFF § Conventions), this small docs-only repo runs Phase 5 directly on `main` with separation enforced at the *commit* level (audit-output commit precedes remediation commit; remediation is a follow-up after project-owner review).
-> **Inputs:** All `docs/**/*.md` (excluding `docs/audit/*` per IVP § Scope — audit-output files are themselves audit history, not framework artifacts), plus `README.md` and `HANDOFF.md`. Cross-reference: 4 decided debates in `docs/debates/`, 40 defined terms + 76 citations from [`inventory.md`](inventory.md) as a pointer-list.
+> **Inputs:** All `docs/**/*.md` (excluding `framework/audit/*` per IVP § Scope — audit-output files are themselves audit history, not framework artifacts), plus `README.md` and `HANDOFF.md`. Cross-reference: 4 decided debates in `framework/debates/`, 40 defined terms + 76 citations from [`inventory.md`](inventory.md) as a pointer-list.
 > **Spec applied:** [`independent-verification-pass-for-debate.md`](independent-verification-pass-for-debate.md) v0.3 § 5 Phase 5 procedure + § 4.1 severity rubric.
 > **Rubric integrity:** Pre-registered v0.3 § 4.1 severity scale used unmodified.
 > **Methodological note from IVP v0.3 § 5 Phase 3 pre-step applied:** Phase 5 evaluates against **current source files**, treating `inventory.md` as a pointer-list only. Inventory paraphrases that lag remediation are noted separately (§ 8) but not counted as findings against the framework.
@@ -25,7 +25,7 @@ Phase 5 checks the framework's internal consistency across five axes. Within the
 - **F-35 (MEDIUM)** — `phase-0-for-debate.md:34` "Time budget — soft or hard horizon" contradicts phase-0:211 (Open questions resolved: "Soft target with 80% / 100% structured escalation") per debate 003 Q3.
 - **F-36 (LOW)** — `phase-1-for-debate.md:309` still lists "First-time vs retrofit" as an outstanding open question; debate 002 effectively answered this by introducing Phase 0 + retrofit additions in §10.
 - **F-37 (LOW)** — `HANDOFF.md:108` lists "#2 Two-tier sharpness" as a phase-1 open question claimed to be "from phase-1-for-debate.md Note on Method"; this question is not present in phase-1's actual open-questions list (§303–310).
-- **F-38 (LOW)** — `docs/debates/001-laws-count-and-multirepo-scaling.md:7` metadata "Affects: …'≤ 5 Immutable Laws' and '≤ 5 Guiding Principles' caps." is retrospective; debate 004 raised the cap to 9. A "subsequently revised by debate 004" annotation would prevent reader confusion.
+- **F-38 (LOW)** — `framework/debates/001-laws-count-and-multirepo-scaling.md:7` metadata "Affects: …'≤ 5 Immutable Laws' and '≤ 5 Guiding Principles' caps." is retrospective; debate 004 raised the cap to 9. A "subsequently revised by debate 004" annotation would prevent reader confusion.
 - **F-39 (LOW)** — Three framework-internal heuristics in quality gates lack explicit external anchors (phase-1:75 "at least three explicit items in Boundaries"; phase-1:76 "≥ 5 scenarios" stress-test minimum; pm-calibration-guide:46 "> 5 person-days of rework"). All three are bounded minima or explicitly hedged starting anchors; under a strict v0.3 § 4.1 argument-warrant tier-floor reading they could be argued MEDIUM, but the hedging is faithfully recorded in the framework text.
 
 All eight are remediation candidates of the same low-cost "edit a sentence or add an annotation" class. None changes the framework's structural design or a sealed decision.
@@ -240,21 +240,21 @@ All eight are remediation candidates of the same low-cost "edit a sentence or ad
 
 #### F-32 — phase-1:299 stale "5 Laws max"
 
-- **Where:** `docs/phase-1-for-debate.md:299` ("This draft is intentionally specific — it commits to numbers (**5 Laws max**, 7 Council members max, 20% divergence threshold, 1–2 day session)…").
+- **Where:** `framework/phases/phase-1-for-debate.md:299` ("This draft is intentionally specific — it commits to numbers (**5 Laws max**, 7 Council members max, 20% divergence threshold, 1–2 day session)…").
 - **Why this drifts:** debate 004 raised the cap to 9 (target ~7) and applied consequential edits at phase-1 §3, §6, §9. The Note-on-Method sentence at line 299 paraphrases the framework's specific commitments and was missed during the debate-004 propagation.
 - **Severity:** **MEDIUM.** Per IVP § 4.1 rubric: "terminology drift between drafts" is MEDIUM; this is also a cross-doc inconsistency since debate 004 explicitly enumerates the consequential edits and this paraphrase is not in that list.
 - **Recommended remediation:** edit phase-1:299 from "5 Laws max" → "9 Laws max (target ~7)".
 
 #### F-33 — calibration-standards.md:76 "cap of 5–7 for Reckoning Team and Council"
 
-- **Where:** `docs/calibration-standards.md:76` ("Brooks's Law… At N=5: 10 channels. At N=7: 21 channels. **Justifies cap of 5–7 for Reckoning Team and Council.**").
+- **Where:** `framework/calibration-standards.md:76` ("Brooks's Law… At N=5: 10 channels. At N=7: 21 channels. **Justifies cap of 5–7 for Reckoning Team and Council.**").
 - **Why this drifts:** the framework's authoritative sizes per phase-0:23 and phase-1:128 (re-confirmed by debate 004:54–55) are **Reckoning Team 2–5** and **Council 3–7**. The "5–7 for both" claim is wrong on both: too high for Reckoning Team (which goes down to 2), too narrow for Council (which goes down to 3).
 - **Severity:** **MEDIUM.** Cross-doc numeric inconsistency on a sealed range used for governance composition rules.
 - **Recommended remediation:** rephrase to something like: "Justifies the framework's small-group sizes — Reckoning Team 2–5 and Council 3–7 — by bounding communication overhead: at N=7 (Council upper bound) channels reach 21, and beyond that the Dunbar layer-1 / Brooks regime no longer holds."
 
 #### F-34 — calibration-standards.md:78 "layer 1 (≤5)" applied to Council
 
-- **Where:** `docs/calibration-standards.md:78` ("Dunbar's number — layered model. 5 / 15 / 50 / 150 / 500 / 1500 cognitive layers. **Reckoning Team and Council both sit at layer 1 (≤5)** for tight decision groups.").
+- **Where:** `framework/calibration-standards.md:78` ("Dunbar's number — layered model. 5 / 15 / 50 / 150 / 500 / 1500 cognitive layers. **Reckoning Team and Council both sit at layer 1 (≤5)** for tight decision groups.").
 - **Why this drifts:** Council is 3–7, partially exceeding Dunbar layer 1 (≤5). debate 004:54 carefully hedges this — "Council size 3–7 (anchored on Brooks 1975 communication channels + Dunbar layer 1 (≤ 5 intimate))" — i.e., layer 1 is *one* anchor among two, not a strict cap. The calibration-standards.md wording overclaims: it asserts Council "sits at" layer 1, which is false for the upper half of 3–7.
 - **Severity:** **MEDIUM.** Two consequences: (a) the anchor is partially mis-applied (Dunbar layer 1 supports 2–5, not 6–7); (b) the wording implies stronger external support than the source actually provides for the upper half of Council size — a policy-2 hedge that's already correct in debate 004 needs to propagate to calibration-standards.
 - **Recommended remediation:** rephrase to match debate 004:54's hedge — "Reckoning Team (2–5) sits squarely at Dunbar layer 1; Council (3–7) extends slightly beyond layer 1 into the lower edge of layer 2, accommodating the functional-diversity rule. Brooks's N(N−1)/2 explains why the framework does not push Council size into layer-2 territory."
@@ -316,7 +316,7 @@ Treating these as **LOW** is consistent with v0.3 spec intent because the *hedgi
 | Link target | Tagged "(planned)"? | Target exists? | Verdict |
 |---|---|---|---|
 | `LICENSE` | No | **Yes** (root of repo) | ✓ |
-| `docs/glossary.md` | **Yes** (line 65) | No (working draft is `docs/glossary-for-debate.md`) | ✓ |
+| `docs/glossary.md` | **Yes** (line 65) | No (working draft is `framework/glossary-for-debate.md`) | ✓ |
 | `docs/protocol/` | **Yes** (line 78) | No | ✓ |
 | `docs/case-study-lore-weave.md` | **Yes** (line 86) | No | ✓ |
 | README Astronomican Protocol table phases 2/3/4 | **Yes** (line 74–76 "*(planned)*") | N/A | ✓ |
@@ -330,9 +330,9 @@ Spot-checked internal markdown links in phase docs and debates for stale targets
 
 | Sample link | From | To | Resolves? |
 |---|---|---|---|
-| `debates/002-retrofit-vs-greenfield.md` | phase-0:7 | docs/debates/002-…md | ✓ |
-| `debates/003-phase-0-calibration.md` | phase-0:205 | docs/debates/003-…md | ✓ |
-| `debates/004-cap-revision-miller-correction.md` | phase-1:43 | docs/debates/004-…md | ✓ |
+| `debates/002-retrofit-vs-greenfield.md` | phase-0:7 | framework/debates/002-…md | ✓ |
+| `debates/003-phase-0-calibration.md` | phase-0:205 | framework/debates/003-…md | ✓ |
+| `debates/004-cap-revision-miller-correction.md` | phase-1:43 | framework/debates/004-…md | ✓ |
 | `[phase-1-for-debate.md section 8]` | phase-0:30 | phase-1 §8 (Roles in Phase 1) | ✓ (section exists at line 111) |
 | `calibration-standards.md#a-decision-significance-and-change-impact` | pm-calibration-guide:62 | calibration-standards § A | ✓ |
 | `phase-1-for-debate.md§3` (cap revision target) | debate 004:110 | phase-1 §3 Activities | ✓ |
@@ -395,7 +395,7 @@ The four LOW findings are hygiene-class: stale open-questions list, retrospectiv
 - **Inventory used as pointer-list only.** Per v0.3 § 5 Phase 3 pre-step procedure (b). The inventory was not refreshed before this run; staleness is recorded in § 8 of this file but not counted as findings.
 - **README "planned" external link not verified.** The arXiv:2108.07258 link (Bommasani et al. 2021) was not fetched in this phase — Phase 5 scope is internal consistency, not external citation verification (that was Phase 2's job). The link is structurally sound; its content was verified in Phase 4 F-28 remediation.
 - **Cross-references checked by sample, not exhaustively.** Six internal cross-doc markdown links were spot-checked (§7 Bonus check). The dataset has dozens of such links; the sample was selected to cover each phase doc once. No exhaustive walk was performed.
-- **Audit files excluded from scope.** `docs/audit/*` files are themselves audit history (per IVP § Scope) and were not audited for internal consistency in this phase. Their content was *referenced* (HANDOFF status table) but not subject to term-drift / quantitative-consistency checks.
+- **Audit files excluded from scope.** `framework/audit/*` files are themselves audit history (per IVP § Scope) and were not audited for internal consistency in this phase. Their content was *referenced* (HANDOFF status table) but not subject to term-drift / quantitative-consistency checks.
 - **Out-of-scope reflection.** HANDOFF.md is in scope (per IVP § Scope) and the F-37 finding records one HANDOFF / phase-1 drift. A more exhaustive HANDOFF reflection would compare every HANDOFF claim against every source it summarizes; this run captured only the open-questions discrepancy because it was the most direct claim of verbatim reflection.
 
 ---
@@ -434,7 +434,7 @@ The four LOW findings are hygiene-class: stale open-questions list, retrospectiv
 
 ### Bash actions
 
-- `ls -la docs/ docs/audit/ docs/debates/` — file-existence check for cross-references (all files referenced from HANDOFF and README resolve except the README "planned" links, which are correctly tagged)
+- `ls -la docs/ framework/audit/ framework/debates/` — file-existence check for cross-references (all files referenced from HANDOFF and README resolve except the README "planned" links, which are correctly tagged)
 - `ls README.md HANDOFF.md LICENSE chat.txt` — root-level file existence check (all present)
 
 ### IVP methodology references applied

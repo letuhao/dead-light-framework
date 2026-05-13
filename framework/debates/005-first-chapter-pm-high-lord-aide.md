@@ -4,8 +4,8 @@
 > **Opened:** 2026-05-11
 > **Decided:** 2026-05-11
 > **Decided by:** project owner
-> **Affects:** [phase-0-for-debate.md](../phase-0-for-debate.md) §7 (AI-aide accommodation note); [phase-1-for-debate.md](../phase-1-for-debate.md) §8.1 (Council small-team accommodation note); the framework's planned **Phase 2 (Codex per Chapter)** will inherit the Codex template established here. Produces a new `docs/chapters/` or `docs/codex/` directory (path TBD in this debate) for the first concrete Codex artifact.
-> **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), reviewing [`pm-threshold-decisions.md`](../case-study-lore-weave/pm-threshold-decisions.md). Observation: PM threshold-setting tasks require human under Phase 0 §2, but a solo PM on a 358-KLOC polyglot project becomes a bottleneck. Framework already names AI-assistant Chapters as aides ([phase-0:138](../phase-0-for-debate.md), [phase-1:107, 132](../phase-1-for-debate.md)) but defers their concrete Codex to Phase 2.
+> **Affects:** [phase-0-for-debate.md](../phases/phase-0-for-debate.md) §7 (AI-aide accommodation note); [phase-1-for-debate.md](../phases/phase-1-for-debate.md) §8.1 (Council small-team accommodation note); the framework's planned **Phase 2 (Codex per Chapter)** will inherit the Codex template established here. Produces a new `framework/chapters/` or `docs/codex/` directory (path TBD in this debate) for the first concrete Codex artifact.
+> **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), reviewing [`pm-threshold-decisions.md`](../case-study-lore-weave/pm-threshold-decisions.md). Observation: PM threshold-setting tasks require human under Phase 0 §2, but a solo PM on a 358-KLOC polyglot project becomes a bottleneck. Framework already names AI-assistant Chapters as aides ([phase-0:138](../phases/phase-0-for-debate.md), [phase-1:107, 132](../phases/phase-1-for-debate.md)) but defers their concrete Codex to Phase 2.
 
 ---
 
@@ -200,7 +200,7 @@ Justification:
 
 ### How D4 operates
 
-**Role:** Adeptus Administratum is a slot in the governance model, defined by `docs/chapters/adeptus-administratum/codex.md`. The Codex is sealed at debate 005's decision and amended only via Re-consecration.
+**Role:** Adeptus Administratum is a slot in the governance model, defined by `framework/chapters/adeptus-administratum/codex.md`. The Codex is sealed at debate 005's decision and amended only via Re-consecration.
 
 **Instance:** spawned per task. Each instance startup runs a **re-priming protocol**:
 
@@ -278,12 +278,12 @@ The framework does not specify where Codex documents live. Options:
 | Option | Path | Reasoning |
 |---|---|---|
 | **F1.** `docs/codex/<chapter>.md` | One file per Chapter, all under `docs/codex/` | Codex = the document; path matches glossary T-013 vocabulary |
-| **F2.** `docs/chapters/<chapter>/codex.md` | One subdirectory per Chapter, codex inside | Allows future expansion (test cases, examples, instance variants) per Chapter |
+| **F2.** `framework/chapters/<chapter>/codex.md` | One subdirectory per Chapter, codex inside | Allows future expansion (test cases, examples, instance variants) per Chapter |
 | **F3.** `docs/chapter-codexes/<chapter>.md` | Long descriptive directory name | Avoids potential confusion between "Chapter" (the agent type) and "codex" (the document) when both terms appear |
 
 ### Proposed answer
 
-**Option F2** — `docs/chapters/<chapter-name>/codex.md`. Allows future per-Chapter test cases, example Codex instances at different project scales, and instance-specific overrides (e.g., LoreWeave's instantiation of Adeptus Administratum lives at `docs/case-study-lore-weave/chapters/adeptus-administratum-instance.md`, inheriting from the framework's abstract Codex at `docs/chapters/adeptus-administratum/codex.md`).
+**Option F2** — `framework/chapters/<chapter-name>/codex.md`. Allows future per-Chapter test cases, example Codex instances at different project scales, and instance-specific overrides (e.g., LoreWeave's instantiation of Adeptus Administratum lives at `case-studies/lore-weave/chapters/adeptus-administratum-instance.md`, inheriting from the framework's abstract Codex at `framework/chapters/adeptus-administratum/codex.md`).
 
 ---
 
@@ -310,7 +310,7 @@ The 40k Adeptus Administratum name is the metaphor; the design rests on these re
 If debate 005 seals as proposed, LoreWeave's case study transitions from "operating under interim Codex" to "operating under sealed Adeptus Administratum Codex". Concretely:
 
 - AI-aide-1 (Claude Code Opus 4.7) is **reinstantiated** as the Adeptus Administratum instance for LoreWeave.
-- The interim Codex in [`reckoning-team-record.md`](../case-study-lore-weave/reckoning-team-record.md) is **superseded** by the new Codex artifact at `docs/chapters/adeptus-administratum/codex.md` plus a LoreWeave-specific instance file.
+- The interim Codex in [`reckoning-team-record.md`](../case-study-lore-weave/reckoning-team-record.md) is **superseded** by the new Codex artifact at `framework/chapters/adeptus-administratum/codex.md` plus a LoreWeave-specific instance file.
 - All work done under the interim Codex (`pm-threshold-decisions.md` proposal, the LoreWeave scan, departures D-1/D-2/D-3) is **retroactively reviewed** for compliance with the sealed Codex; departures that are still valid are re-recorded under the sealed Codex framework.
 - LoreWeave Phase 0 Pass 1 begins under the sealed Codex with Notify Triggers active.
 
@@ -349,7 +349,7 @@ These do not block sealing this debate but should be resolved in subsequent deba
 | Notify mechanism | **5 trigger types** (N-1 to N-5); dual-class channel; blocking N-1/N-2 require acknowledgment, non-blocking N-3/N-4/N-5 logged in audit trail; **task-scoped firing rules** (triggers fire only while instance is in flight; between-task drift detected at re-priming step) |
 | Lifecycle | **D4** — task-scoped instance + persistent role + artifact continuity (role exists for project's life; instances spawned per task and disband after output commit; continuity entirely via artifacts) |
 | Multiplicity | **E2** — singleton role per Astronomican (Imperial + per Sector); any number of instances may exist across the role's lifespan (one at a time per active task) |
-| File path | **F2** — `docs/chapters/<chapter-name>/codex.md` |
+| File path | **F2** — `framework/chapters/<chapter-name>/codex.md` |
 
 If approved, the first Chapter is sealed and ready to govern LoreWeave's case study from Pass 1 onward, plus to template all future Chapters in Phase 2.
 
@@ -363,17 +363,17 @@ If approved, the first Chapter is sealed and ready to govern LoreWeave's case st
   - **C (Notify mechanism):** 5 trigger types (N-1 to N-5); dual-class channel; blocking N-1/N-2 require acknowledgment; non-blocking N-3/N-4/N-5 logged in audit trail; task-scoped firing rules per D4.
   - **D (Lifecycle):** D4 — task-scoped instance + persistent role + artifact continuity. Role exists for project's life; instances spawned per task and disband after output commit; continuity entirely via artifacts; re-priming protocol mandatory at instance startup.
   - **E (Multiplicity):** E2 — singleton role per Astronomican (Imperial + per Sector); concurrent instances on different tasks allowed.
-  - **F (File path):** F2 — `docs/chapters/<chapter-name>/codex.md`.
+  - **F (File path):** F2 — `framework/chapters/<chapter-name>/codex.md`.
 - **Decided on:** 2026-05-11
 - **Decided by:** project owner
-- **Codex artifact sealed:** [`docs/chapters/adeptus-administratum/codex.md`](../chapters/adeptus-administratum/codex.md) v1.0, sealed simultaneously with this debate's decision.
+- **Codex artifact sealed:** [`framework/chapters/adeptus-administratum/codex.md`](../chapters/adeptus-administratum/codex.md) v1.0, sealed simultaneously with this debate's decision.
 
 ### Follow-up actions
 
-- [x] Create `docs/chapters/adeptus-administratum/codex.md` per the 10-section template and the sub-decisions above.
-- [x] Update [phase-0-for-debate.md §7](../phase-0-for-debate.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
-- [x] Update [phase-1-for-debate.md §8.1](../phase-1-for-debate.md) similarly.
-- [x] Update [phase-1-for-debate.md §4 Codex Slot Placeholders](../phase-1-for-debate.md) to reflect that one Codex slot is now filled by Adeptus Administratum.
+- [x] Create `framework/chapters/adeptus-administratum/codex.md` per the 10-section template and the sub-decisions above.
+- [x] Update [phase-0-for-debate.md §7](../phases/phase-0-for-debate.md) to link to the sealed Codex instead of saying "deferred to Phase 2."
+- [x] Update [phase-1-for-debate.md §8.1](../phases/phase-1-for-debate.md) similarly.
+- [x] Update [phase-1-for-debate.md §4 Codex Slot Placeholders](../phases/phase-1-for-debate.md) to reflect that one Codex slot is now filled by Adeptus Administratum.
 - [x] Update [case-study-lore-weave/reckoning-team-record.md](../case-study-lore-weave/reckoning-team-record.md) — supersede interim Codex with reference to the sealed Codex.
 - [x] Update [HANDOFF.md](../../HANDOFF.md) — Phase 2 (Codex per Chapter) status changes from "Not started" to "First Chapter (Adeptus Administratum) sealed; remaining Chapters pending real-project trigger."
 - [x] Update [debates/README.md](README.md) — debate 005 marked `decided`.

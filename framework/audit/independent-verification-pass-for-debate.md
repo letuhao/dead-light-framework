@@ -33,7 +33,7 @@ These principles must be honoured by anyone executing IVP. They are deliberately
 2. **Symmetric search (mandatory for load-bearing).** For every **load-bearing** citation or claim sent to external search, the auditor MUST run both a confirming query *and* a disconfirming query, and record the disconfirming result with the same weight as the confirming one. For non-load-bearing items, disconfirming search is recommended but optional. Disconfirming-query templates appear in [§ 5 Phase 2 procedure](#phase-2--citation-verification-factual). The 2026-05-08 rodage held this loosely (~6 of 30 verifications had disconfirming counterparts) and was identified as a coverage gap; this revision closes it.
 3. **Audit trail mandatory.** Every verdict is backed by: (a) the file:line of the claim, (b) the search query or read action performed, (c) the source consulted including URL and access date, (d) the excerpt or summary supporting the verdict. No verdict without trail.
 4. **Falsifiability check.** For each load-bearing claim, the auditor states what evidence would falsify it. A claim with no conceivable disconfirming evidence is flagged `UNFALSIFIABLE` regardless of its plausibility.
-5. **Separation of concerns.** During an IVP run the auditor must not modify the framework documents themselves. Findings go to `docs/audit/findings-YYYY-MM-DD.md`. Remediation is a separate authoring pass after the project owner reviews findings.
+5. **Separation of concerns.** During an IVP run the auditor must not modify the framework documents themselves. Findings go to `framework/audit/findings-YYYY-MM-DD.md`. Remediation is a separate authoring pass after the project owner reviews findings.
 6. **Stop-on-trail-break.** If audit trail cannot be established for a verdict (e.g., source paywalled, archive offline), the verdict is `UNVERIFIABLE`, not a guess. Continuing with a guess corrupts the pass.
 7. **Industry-pragmatic, not lax.** Grey literature is admissible, but tier matters (section 5). A grey-literature-only basis for a load-bearing claim is itself a finding (severity MEDIUM or higher depending on the claim's role).
 8. **No early termination on CRITICAL findings.** Per project owner decision, run all seven phases to completion regardless of severity encountered. A single critical finding is not allowed to short-circuit later phases that may surface independent issues.
@@ -194,7 +194,7 @@ Each phase has a fixed structure: Goal · Inputs · Procedure · Output · Accep
 
 **Goal.** Decompose each load-bearing argument and test it.
 
-**Inputs.** Load-bearing claims from Phase 1 (load-bearing = `Y`), plus all decisions in `docs/debates/`.
+**Inputs.** Load-bearing claims from Phase 1 (load-bearing = `Y`), plus all decisions in `framework/debates/`.
 
 **Procedure.** **(Cluster option added v0.3) — cluster-level Toulmin decomposition is acceptable when multiple load-bearing claims share data, warrant, and backing structure.** Each cluster gets one full Toulmin decomposition + one fallacy checklist + one falsifiability test; per-claim verdicts are recorded in the cluster's verdict table. A stricter pass produces per-claim decompositions. Cluster grouping must be explicit (claim IDs listed) and the analysis must surface per-claim differences (e.g., one claim in the cluster may earn WEAK-WARRANT while others earn SOUND for the same data and warrant). Driven by the 2026-05-09 Phase 4 execution against 41 load-bearing claims; cluster-level analysis kept the run tractable without losing per-claim resolution.
 
@@ -233,7 +233,7 @@ For each load-bearing argument (or cluster):
 
 **Goal.** Detect contradictions, term drift, and unreflected decisions across the document set.
 
-**Inputs.** All Phase 1 outputs; all `docs/debates/*.md` decision sections.
+**Inputs.** All Phase 1 outputs; all `framework/debates/*.md` decision sections.
 
 **Procedure.**
 1. **Term drift.** For each defined term `T-NNN`, list every occurrence in non-defining files. Compare against the definition. Flag scope shifts, role shifts, or quietly added/removed attributes.
@@ -399,7 +399,7 @@ Status legend: ✅ resolved (decision baked into v0.2 or v0.3 spec); ⏳ still o
 - ✅ **Is the load-bearing classification reliable?** Single-reviewer classification has correlation risk (resolved as a § 7 limitation; mitigation = second-pass independent classification or explicit risk-listing). Not a hard rubric requirement, since requiring two independent reviewers is impractical for many runs.
 - ✅ **Should `UNFALSIFIABLE` automatically escalate severity, or informational only?** Resolved: escalates by one severity level above rubric base, except for definitional/conventional claims (§ 4.1 cross-cutting rule).
 - ✅ **Industry-pragmatic admits T3; hard cap on the fraction of T3-only?** Resolved: not a hard fractional cap; instead a *tier-floor rule* — load-bearing claims resting solely on T3 are flagged at minimum MEDIUM regardless of T3 source accuracy (§ 4.1 cross-cutting rule).
-- ✅ **Phase 6's gap matrix — own debate document or part of audit?** Resolved: stays as part of audit, lives in `docs/audit/benchmark.md` (§ 5 Phase 6 unchanged).
+- ✅ **Phase 6's gap matrix — own debate document or part of audit?** Resolved: stays as part of audit, lives in `framework/audit/benchmark.md` (§ 5 Phase 6 unchanged).
 - ✅ **Re-run cadence — 90 days vs event-driven?** Resolved: event-driven primary, 12-month calendar fallback (§ 6 Cadence guidance).
 
 **Resolved in v0.3 (from 2026-05-09 multi-phase run lessons):**

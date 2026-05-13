@@ -1,6 +1,6 @@
 # IVP — Inventory (Phase 1 output)
 
-> **Run date:** 2026-05-08 · **Scope:** all `docs/**/*.md`, `README.md`, `HANDOFF.md`. **Excluded:** `docs/audit/independent-verification-pass-for-debate.md` (the IVP methodology itself — self-referential audit deferred to a separate pass), `chat.txt`, `LICENSE`. **Mode:** industry-pragmatic. **Auditor:** Claude Code (Opus 4.7).
+> **Run date:** 2026-05-08 · **Scope:** all `docs/**/*.md`, `README.md`, `HANDOFF.md`. **Excluded:** `framework/audit/independent-verification-pass-for-debate.md` (the IVP methodology itself — self-referential audit deferred to a separate pass), `chat.txt`, `LICENSE`. **Mode:** industry-pragmatic. **Auditor:** Claude Code (Opus 4.7).
 >
 > This file is *extraction only*. Verdicts live in `findings-2026-05-08.md` from Phase 2 onward.
 
@@ -217,7 +217,7 @@ Per framework policy 1, 40k vocabulary is naming-only. This table flags every 40
 
 ## E. Scope note
 
-- `docs/audit/independent-verification-pass-for-debate.md` was authored in the same session as this run and is excluded; auditing the audit methodology against itself in a single pass would compromise independence. Defer to a follow-up pass when (a) more time has elapsed and (b) a different reviewer can run it.
+- `framework/audit/independent-verification-pass-for-debate.md` was authored in the same session as this run and is excluded; auditing the audit methodology against itself in a single pass would compromise independence. Defer to a follow-up pass when (a) more time has elapsed and (b) a different reviewer can run it.
 - `chat.txt` excluded per IVP spec section "Scope" (raw history; not a framework artifact).
 - `LICENSE` excluded per IVP spec.
 - HANDOFF.md is in scope but is a session-state document; its assertive content overlaps the docs it summarizes. Counted but cross-referenced rather than independently audited.

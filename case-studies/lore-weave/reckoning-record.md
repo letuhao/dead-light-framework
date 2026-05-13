@@ -43,7 +43,7 @@ _(Pending — third-party model providers, payment processors, identity provider
 
 ### 1.5 Sector Astronomican trigger evaluation
 
-Per [debate 001](../debates/001-laws-count-and-multirepo-scaling.md), Sector split requires **all four** of the following to be true:
+Per [debate 001](../../framework/debates/001-laws-count-and-multirepo-scaling.md), Sector split requires **all four** of the following to be true:
 
 | Trigger condition | Status for LoreWeave |
 |---|---|
@@ -61,7 +61,7 @@ Verdict will be: Sector split warranted **only** if all four are true; otherwise
 > *Significant scope changes, architectural pivots, abandoned directions, technology choices.* (Phase 0 §3.2)
 >
 > Each entry: decision, date, named decision-maker(s), context that drove it, what changed as a result.
-> **Attribution is required** per [debate 002](../debates/002-retrofit-vs-greenfield.md) Q3.
+> **Attribution is required** per [debate 002](../../framework/debates/002-retrofit-vs-greenfield.md) Q3.
 
 ### 2.1 Format
 
@@ -152,7 +152,7 @@ Per `reckoning-team-record.md` § "Single-reviewer risk acknowledgment", this se
 >
 > **This section is empty until Phase 1 runs.**
 
-Per [debate 002](../debates/002-retrofit-vs-greenfield.md) Sub-decision B (B3 hybrid), each significant past decision (from Section 2) is classified into one of four buckets:
+Per [debate 002](../../framework/debates/002-retrofit-vs-greenfield.md) Sub-decision B (B3 hybrid), each significant past decision (from Section 2) is classified into one of four buckets:
 
 | Decision | Classification | Owner (if Fix-now / Fix-by-date) | Sunset date | Reasoning |
 |---|---|---|---|---|

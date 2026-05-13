@@ -4,7 +4,7 @@
 > **Opened:** 2026-05-08
 > **Decided:** 2026-05-08
 > **Decided by:** project owner
-> **Affects:** [phase-1-for-debate.md](../phase-1-for-debate.md), specifically the "≤ 5 Immutable Laws" and "≤ 5 Guiding Principles" caps (subsequently revised to 5–9 with target ~7 by [debate 004](004-cap-revision-miller-correction.md); the arguments below apply to the revised range with the same logic).
+> **Affects:** [phase-1-for-debate.md](../phases/phase-1-for-debate.md), specifically the "≤ 5 Immutable Laws" and "≤ 5 Guiding Principles" caps (subsequently revised to 5–9 with target ~7 by [debate 004](004-cap-revision-miller-correction.md); the arguments below apply to the revised range with the same logic).
 > **Raised by:** project owner during Phase 1 debate.
 
 ---
@@ -186,7 +186,7 @@ The Phase 1 draft will need a "Sector variant" subsection covering the same acti
 - **Decided on:** 2026-05-08
 - **Decided by:** project owner
 - **Follow-up actions:**
-  - [x] Update [phase-1-for-debate.md](../phase-1-for-debate.md) with a Scaling section covering Imperial and Sector variants and the ordering rule (Imperial before Sector).
+  - [x] Update [phase-1-for-debate.md](../phases/phase-1-for-debate.md) with a Scaling section covering Imperial and Sector variants and the ordering rule (Imperial before Sector).
   - [x] Update [debates/README.md](README.md) index to status `decided`.
   - [ ] When mapping to LoreWeave, evaluate whether its current 6 services in `contracts/api/` warrant Sector Astronomicans or whether a single platform Astronomican is sufficient at this stage.
 

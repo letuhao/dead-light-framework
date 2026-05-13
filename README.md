@@ -74,7 +74,7 @@ If you adopt this, run Scrum or Kanban for delivery rhythm and use Dead Light fo
 - **Chapters** — agent types, each governed by its own *Codex* (operational bounds, hard stops, autonomy thresholds, output contracts).
 - **The Chaos** — the failure modes the framework defends against: scope creep, architect rot, context drift, accumulated technical debt.
 
-Full glossary: [docs/glossary.md](docs/glossary.md) *(planned)*
+Full glossary: [framework/glossary.md](framework/glossary.md) *(planned)*
 
 ## The Astronomican Protocol
 
@@ -87,7 +87,7 @@ The framework is delivered as a sequence of phases. Earlier phases produce artif
 | 3     | *(planned)*       | Heresy detection / drift sensors  |
 | 4     | *(planned)*       | Re-consecration process           |
 
-Detailed protocol: [docs/protocol/](docs/protocol/) *(planned)*
+Detailed protocol: [framework/phases/](framework/phases/) *(in flight; Phase 0 sealed, Phase 1 partial)*
 
 ## Case Study — LoreWeave
 
@@ -95,7 +95,7 @@ This framework was distilled from a working project: **LoreWeave**, a multi-agen
 
 The lessons that motivated the framework's laws and principles are documented as a case study, covering what went wrong before any sealing process existed and what we hope to learn from applying it.
 
-Case study: [docs/case-study-lore-weave/](docs/case-study-lore-weave/) *(Phase 0 in flight; folder skeleton drafted 2026-05-11)*
+Case study: [case-studies/lore-weave/](case-studies/lore-weave/) *(Phase 0 in flight; folder skeleton drafted 2026-05-11)*
 
 ## Status
 

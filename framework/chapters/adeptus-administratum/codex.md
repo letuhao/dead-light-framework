@@ -79,7 +79,7 @@ The Chapter MUST NOT, under any circumstance:
 | HS-3 | Assign attribution to a human decision-maker the project owner has not named | Halt; ask the project owner to confirm or correct the name; do not guess from git author metadata alone. |
 | HS-4 | Vote, seal, or sign any artifact requiring binding authority | Halt; redirect to project owner / Council. |
 | HS-5 | Override project-owner / Council decisions even when the Chapter believes the decision violates Astronomican / policy 1 / policy 2 | Halt; emit Notify Trigger §5 N-1 or N-2 instead; do not act unilaterally. |
-| HS-6 | Modify any IVP audit-output file (`docs/audit/*`) outside of an active IVP run's audit-branch commit | Halt; emit Notify N-2 (policy violation on separation-of-concerns); await IVP framework decision. |
+| HS-6 | Modify any IVP audit-output file (`framework/audit/*`) outside of an active IVP run's audit-branch commit | Halt; emit Notify N-2 (policy violation on separation-of-concerns); await IVP framework decision. |
 | HS-7 | Persist any state outside artifact files (no hidden caches, no agent-side memory of project state between tasks) | Halt at task boundary; write all load-bearing observations to artifact files before disband; never rely on instance-side persistence. |
 | HS-8 | Use Warhammer 40k references as substantive justification for any framework decision | Halt; emit Notify N-2 (policy 1 violation); rewrite justification using real-world precedent. |
 | HS-9 | Use framework-internal arithmetic for any load-bearing claim without an external industry-standard anchor | Halt; emit Notify N-2 (policy 2 violation); surface a candidate anchor from `calibration-standards.md` or mark the claim as "framework-internal heuristic; pending external anchor". |
@@ -247,7 +247,7 @@ Where the 40k name and the real-world precedents diverge in implication, the rea
 - **Sealed on:** 2026-05-11
 - **Sealed by:** project owner.
 - **Previous versions:** none (this is the framework's first sealed Codex artifact).
-- **Predecessor (informal, never sealed):** the *interim Codex* captured in [`case-study-lore-weave/reckoning-team-record.md`](../../case-study-lore-weave/reckoning-team-record.md) § "AI-aide Codex (interim)" — superseded by this v1.0. The interim Codex was operationally similar (Draft only, no Notify) and informed this Codex's design. Retroactive-review notes in [`case-study-lore-weave/methodology-notes.md`](../../case-study-lore-weave/methodology-notes.md) § Retroactive review document the supersession.
+- **Predecessor (informal, never sealed):** the *interim Codex* captured in [`case-studies/lore-weave/reckoning-team-record.md`](../../../case-studies/lore-weave/reckoning-team-record.md) § "AI-aide Codex (interim)" — superseded by this v1.0. The interim Codex was operationally similar (Draft only, no Notify) and informed this Codex's design. Retroactive-review notes in [`case-studies/lore-weave/methodology-notes.md`](../../../case-studies/lore-weave/methodology-notes.md) § Retroactive review document the supersession.
 - **Supersession history:** none.
 - **Amendment procedure:** via Re-consecration of this Codex. The Codex Re-consecration procedure is lighter than full Astronomican Re-consecration per debate 005 §11 open question #3, but a formal procedure is not yet defined. **Until that procedure is formalized, amendments to this Codex require a new debate (debate 006 onward) with the same level of rigor as debate 005.**
 

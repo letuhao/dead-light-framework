@@ -571,7 +571,7 @@ If debate 006 seals as proposed (full recommendations adopted), the migration pl
 
 1. **Create `distribution/` folder** with INDEX.md, VERSION, role-based reading guides (G).
 2. **Rename `docs/` → `framework/`.** Update all internal cross-references. (This is the breaking-change step.)
-3. **Move `docs/case-study-lore-weave/` → `case-studies/lore-weave/`.**
+3. **Move `case-studies/lore-weave/` → `case-studies/lore-weave/`.**
 4. **Add YAML frontmatter to every existing file** with at minimum: title, status, version, audience, type, last_updated. (Backfill — substantial work, but mostly mechanical.)
 5. **Add summary blocks to every existing file** below frontmatter.
 6. **Move `docs/phases/` reorganization:** move `phase-0-for-debate.md` and `phase-1-for-debate.md` into a `framework/phases/` subdirectory (current location is `framework/` flat).
@@ -663,14 +663,14 @@ If approved, the framework gains a clean outward-facing distribution surface plu
 Execution is split across multiple commits per the migration plan in §14. Status marked progressively as commits land.
 
 - [x] Update [debates/README.md](README.md) — debate 006 marked decided.
-- [ ] **Migration Phase 1a — folder restructure**: rename `docs/` → `framework/`; move `docs/case-study-lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move `phase-0-for-debate.md` + `phase-1-for-debate.md` in; create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
+- [ ] **Migration Phase 1a — folder restructure**: rename `docs/` → `framework/`; move `case-studies/lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move `phase-0-for-debate.md` + `phase-1-for-debate.md` in; create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
 - [ ] **Migration Phase 1b — frontmatter + summary backfill**: add 9-field YAML frontmatter + human summary block to every file across `framework/`, `case-studies/`, and `distribution/`. Estimated ~30 files × ~1-2 minutes each.
 - [ ] **Migration Phase 2a — populate `distribution/framework/`**: copy sealed content (phase-0, debates 001-006, Adeptus Administratum Codex, calibration-standards, pm-calibration-guide) with internal links transformed to be self-contained within `distribution/`.
 - [ ] **Migration Phase 2b — populate `distribution/templates/`**: create fillable scaffolds (`astronomican-template.md`, `reckoning-record-template.md`, `pm-threshold-decisions-template.md`, `reckoning-team-record-template.md`).
 - [ ] **Migration Phase 2c — populate `distribution/examples/lore-weave-snapshot/`**: read-only snapshot of `case-studies/lore-weave/` at debate-006-seal time.
 - [ ] **Migration Phase 3 — sweep + audit**: update every cross-reference in the repo to use new paths; run an IVP Phase 5 equivalent against the new structure to catch any drift; update HANDOFF.md (document tree + recent commits + recommended next step).
 - [ ] Stamp `distribution/VERSION` with `0.6.0` and write `distribution/CHANGELOG.md` recording the v0.6.0 initial release.
-- [ ] Adeptus Administratum Codex §9 file path (`docs/chapters/adeptus-administratum/codex.md`) will need to be updated to reflect the new `framework/chapters/...` location; cross-reference scan picks this up.
+- [ ] Adeptus Administratum Codex §9 file path (`framework/chapters/adeptus-administratum/codex.md`) will need to be updated to reflect the new `framework/chapters/...` location; cross-reference scan picks this up.
 
 ---
 

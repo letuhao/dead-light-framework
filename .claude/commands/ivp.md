@@ -5,7 +5,7 @@ argument-hint: "[scope] e.g. all | phase-0 | phase-1 | debates | phases:1-3"
 
 # Independent Verification Pass — Run
 
-You are about to execute an **Independent Verification Pass (IVP)** against this repository. The full specification is in `docs/audit/independent-verification-pass-for-debate.md` — read it before doing anything else; do not paraphrase the rubric from memory.
+You are about to execute an **Independent Verification Pass (IVP)** against this repository. The full specification is in `framework/audit/independent-verification-pass-for-debate.md` — read it before doing anything else; do not paraphrase the rubric from memory.
 
 ## Arguments
 
@@ -19,14 +19,14 @@ If the argument is unclear, ask the project owner with `AskUserQuestion` before 
 
 ## Mandatory pre-flight
 
-1. Read `docs/audit/independent-verification-pass-for-debate.md` end-to-end. The rubric tables in section 4 are pre-registered and may not be modified during this run.
+1. Read `framework/audit/independent-verification-pass-for-debate.md` end-to-end. The rubric tables in section 4 are pre-registered and may not be modified during this run.
 2. Confirm the working tree is on a branch suitable for an audit run (e.g. `audit/ivp-YYYY-MM-DD`). If on `main` or a feature branch, ask before continuing.
-3. Confirm `docs/audit/` exists; create it if not.
+3. Confirm `framework/audit/` exists; create it if not.
 4. Set today's date once at the start; reuse it for `findings-YYYY-MM-DD.md` and all access-date entries.
 
 ## Hard rules during the run (from spec § 2 + cross-cutting rules in § 4.1, v0.2)
 
-- **Do not modify any file outside `docs/audit/`** during the run. Findings only; remediation is a separate downstream activity.
+- **Do not modify any file outside `framework/audit/`** during the run. Findings only; remediation is a separate downstream activity.
 - **Symmetric search — MANDATORY for load-bearing.** For every load-bearing citation or claim, run both a confirming and a disconfirming query; record both outcomes. For non-load-bearing items, disconfirming is recommended but optional.
 - **Primary-source read — MANDATORY for load-bearing citations.** A T2 textbook summary or T3 grey-literature secondary is *insufficient* grounds for `VERIFIED` on a load-bearing item. If primary cannot be reached (paywall, archive offline, language barrier), the verdict is `UNVERIFIABLE` until a future pass — no guess from secondary.
 - **Audit trail mandatory.** No verdict without (file:line, query, source URL, access date, excerpt).
@@ -38,15 +38,15 @@ If the argument is unclear, ask the project owner with `AskUserQuestion` before 
 
 ## Execution order
 
-Run phases sequentially per the spec. Each phase writes its own file under `docs/audit/`.
+Run phases sequentially per the spec. Each phase writes its own file under `framework/audit/`.
 
-1. **Phase 1 — Inventory** → `docs/audit/inventory.md` (four tables: Claims, Citations, Defined terms, Analogies). Use `Read` for full files and `Agent (Explore)` to parallelise across files. **Citation deduplication is mandatory** (spec § 5 Phase 1): each distinct entity gets one row with a `Locations` column listing every file:line. No judgement during this phase.
-2. **Phase 2 — Citation Verification** → append to `docs/audit/findings-YYYY-MM-DD.md` under "Phase 2". Use `WebSearch` (confirming + disconfirming for LB) and `WebFetch` for primary sources. **Load-bearing items require primary-source read AND disconfirming query — both mandatory** (spec § 5 Phase 2 procedure steps 2 and 4). Apply rubric 4.2 plus cross-cutting rules from § 4.1 (`UNFALSIFIABLE` escalation, tier-floor rule).
+1. **Phase 1 — Inventory** → `framework/audit/inventory.md` (four tables: Claims, Citations, Defined terms, Analogies). Use `Read` for full files and `Agent (Explore)` to parallelise across files. **Citation deduplication is mandatory** (spec § 5 Phase 1): each distinct entity gets one row with a `Locations` column listing every file:line. No judgement during this phase.
+2. **Phase 2 — Citation Verification** → append to `framework/audit/findings-YYYY-MM-DD.md` under "Phase 2". Use `WebSearch` (confirming + disconfirming for LB) and `WebFetch` for primary sources. **Load-bearing items require primary-source read AND disconfirming query — both mandatory** (spec § 5 Phase 2 procedure steps 2 and 4). Apply rubric 4.2 plus cross-cutting rules from § 4.1 (`UNFALSIFIABLE` escalation, tier-floor rule).
 3. **Phase 3 — Citation Appropriateness** → append under "Phase 3". For each verified citation, state actual scope vs framework use; apply rubric 4.3.
 4. **Phase 4 — Argument Analysis** → append under "Phase 4". Toulmin decomposition + the fixed fallacy checklist + falsifiability test; apply rubric 4.4.
 5. **Phase 5 — Internal Consistency** → append under "Phase 5". Term drift, decision-to-doc reflection, quantitative consistency, policy compliance, README link integrity.
-6. **Phase 6 — External Benchmarking** → `docs/audit/benchmark.md`. Adjacent-frameworks, empirical evidence, counter-frameworks, gap matrix. Tier every source.
-7. **Phase 7 — Synthesis Report** → finalise `docs/audit/findings-YYYY-MM-DD.md` with executive verdict, aggregate stats, severity-binned findings tables, disconfirming evidence, limitations, full audit trail.
+6. **Phase 6 — External Benchmarking** → `framework/audit/benchmark.md`. Adjacent-frameworks, empirical evidence, counter-frameworks, gap matrix. Tier every source.
+7. **Phase 7 — Synthesis Report** → finalise `framework/audit/findings-YYYY-MM-DD.md` with executive verdict, aggregate stats, severity-binned findings tables, disconfirming evidence, limitations, full audit trail.
 
 ## Reporting back
 
