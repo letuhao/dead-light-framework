@@ -22,6 +22,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | Phase 0 — The Reckoning | **Sealed** (all calibration questions resolved in debate 003) |
 | Phase 1 — The Astronomican | Partial — debates 001 and 004 resolved; 6 known questions still open (see § Open questions) |
 | Phase 2 — Codex per Chapter | **First Chapter (Adeptus Administratum) sealed via debate 005 on 2026-05-11**; remaining Chapters pending real-project trigger |
+| Documentation architecture & distribution | **Sealed via debate 006 on 2026-05-13.** Migration executed across commits `1a857c2` (folder restructure) → `c4a574e` (frontmatter backfill, 25 files) → `9e9afb8` (distribution/ populated with sealed framework + 4 templates + lore-weave snapshot). Distribution v0.6.0 ready at `distribution/` (separable from repo; clone target for adopters). |
 | Phase 3 — Heresy detection | Not started |
 | Phase 4 — Re-consecration | Not started |
 | LoreWeave case study application | **Not started — recommended next step** |
@@ -49,6 +50,7 @@ Reference / case-study codebase (not yet integrated): `C:\Works\_Researchs\lore-
 | [003 — Phase 0 Calibration](framework/debates/003-phase-0-calibration.md) | Significance heuristic (6 categorical bullets), Reckoning Team composition rule (≥1 active-IC mandatory + ≥1 tenure-spanning + ≥1 outside-scope), soft time budget with 80%/100% escalation, lightweight greenfield Phase 0 (Assumption Surface + Commitment Audit + Stakeholder Map). |
 | [004 — Cap Revision: Miller Citation Correction](framework/debates/004-cap-revision-miller-correction.md) | Cap on Immutable Laws and Guiding Principles raised from `≤ 5` to **5–9 with target ~7** (anchored on Miller 1956's actual 7 ± 2). Same caps apply to Imperial and Sector. Driven by IVP finding F-01 (Miller misquote). |
 | [005 — First Chapter: PM / High Lord Aide](framework/debates/005-first-chapter-pm-high-lord-aide.md) | First concrete Chapter sealed: **Adeptus Administratum** ([Codex v1.0](framework/chapters/adeptus-administratum/codex.md)). Multi-role (PM + High Lord aide); Draft + Notify authority (5 trigger types); D4 lifecycle (task-scoped instance + persistent role + artifact continuity via 7-step re-priming protocol); E2 multiplicity (singleton per Astronomican; concurrent instances allowed). Driven by project-owner observation during LoreWeave case-study kick-off that PM threshold-setting on a 358-KLOC project is a bottleneck. |
+| [006 — Documentation Architecture and Distribution Template](framework/debates/006-documentation-architecture-and-distribution.md) | Full doc architecture sealed. **A4 folder topology** (root `framework/` + `case-studies/` + `distribution/`); **SemVer** versioning (initial v0.6.0); **document-type-aware** organization (phase = arc42; debate = ADR-extended; codex = 10-section; audit = IVP-spec; case-study = Diátaxis how-to; reference = Diátaxis reference); **500-line hard cap + 300 soft + 100 per-section soft**; **YAML frontmatter (9 fields) + human summary block**; **role-based reading guides** (for-pms / for-ics / for-ai-aides / for-adopters); **strictly one-way framework/ → distribution/ sync** with no adopter audit (standard OSS fork-and-modify per Linux/React/arc42/ISO); **I0 — no customization protocol** (folder convention + status frontmatter classify implicitly); **dual-audience design rules** (7 rules incl. Mermaid diagram convention + tool stack recommendation). |
 | Council composition multi-role | PM is a Council member. Council requires ≥ 3 distinct functional perspectives (minimum-diversity rule). Council size 3–7 (anchored on Dunbar / Brooks for group dynamics — *not* affected by debate 004's Miller-anchored cap revision). Small-team accommodation: AI-assistant Chapters as aides; first Chapter (Adeptus Administratum) sealed via debate 005. |
 | Six embedded answers (debate 002) | No Phase 0 sealing; smaller Reckoning Team produces, Council reviews; full attribution; no fixed grandfather cap; no fixed sunset horizon; PM-defined re-reckoning cadence. |
 
@@ -73,45 +75,82 @@ Audit workflow specified, executed once (rodage 2026-05-08), then run end-to-end
 
 ## Document tree
 
+> **Tree post-debate-006-migration (2026-05-13).** Restructured per debate 006 §3 sub-decision A4 (hybrid): root folders `framework/` + `case-studies/` + `distribution/`. Working drafts in `framework/`; outward-facing sealed snapshot in `distribution/`; project applications in `case-studies/`.
+
 ```
 dead-light-framework/
 ├── .claude/
 │   └── commands/
 │       └── ivp.md                                         ← Slash command for IVP re-run
-├── README.md                                              ← Manifesto + Map (front door); AI-collab anchors added F-28
+├── README.md                                              ← Manifesto + Map (front door); practitioner voice
 ├── HANDOFF.md                                             ← This file
 ├── LICENSE                                                ← MIT
 ├── chat.txt                                               ← Original chat history that motivated framework
-└── docs/
-    ├── glossary-for-debate.md                             ← Working glossary (final assembled bottom-up later)
-    ├── phase-0-for-debate.md                              ← Phase 0: The Reckoning [SEALED]
-    ├── phase-1-for-debate.md                              ← Phase 1: The Astronomican [partial]
-    ├── calibration-standards.md                           ← Industry-standards reference catalog
-    ├── pm-calibration-guide.md                            ← Practical PM step-by-step at 3 rigor tiers
-    ├── audit/
-    │   ├── independent-verification-pass-for-debate.md    ← IVP methodology spec (v0.3)
-    │   ├── inventory.md                                   ← Phase 1 inventory output (2026-05-08; may lag remediation)
-    │   ├── findings-2026-05-08.md                         ← Phase 2 rodage (F-01–F-13)
-    │   ├── findings-2026-05-09.md                         ← Phase 2 extension (F-14–F-24)
-    │   ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
-    │   ├── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
-    │   └── findings-phase5-2026-05-11.md                  ← Phase 5 Internal Consistency (F-32–F-39)
-    ├── chapters/
-    │   └── adeptus-administratum/
-    │       └── codex.md                                   ← First Chapter Codex v1.0 [SEALED via debate 005, 2026-05-11]
-    ├── case-study-lore-weave/                             ← First retrofit application of the framework (Phase 0 in flight)
-    │   ├── README.md                                      ← Case-study overview, scope, focus
-    │   ├── pm-threshold-decisions.md                      ← Draft proposal pending owner sign-off
-    │   ├── reckoning-team-record.md                       ← Team composition; AI-aide invocations
-    │   ├── reckoning-record.md                            ← Phase 0 four-section inventory skeleton
-    │   └── methodology-notes.md                           ← Spec departures (D-1, D-2, D-3); retroactive review
-    └── debates/
-        ├── README.md                                      ← Debate index
-        ├── 001-laws-count-and-multirepo-scaling.md        [decided]
-        ├── 002-retrofit-vs-greenfield.md                  [decided]
-        ├── 003-phase-0-calibration.md                     [decided]
-        ├── 004-cap-revision-miller-correction.md          [decided]
-        └── 005-first-chapter-pm-high-lord-aide.md         [decided]
+├── blogs/                                                 ← Long-form practitioner blog posts (session-3 era)
+│
+├── framework/                                             ← Dead Light Framework — working artifacts (was: docs/)
+│   ├── glossary-for-debate.md                             ← Working glossary (final assembled bottom-up later)
+│   ├── calibration-standards.md                           ← Industry-standards reference catalog [SEALED via debate 003]
+│   ├── pm-calibration-guide.md                            ← Practical PM step-by-step at 3 rigor tiers [SEALED via debate 003]
+│   ├── phases/
+│   │   ├── phase-0-for-debate.md                          ← Phase 0: The Reckoning [SEALED via debate 002 + 003]
+│   │   └── phase-1-for-debate.md                          ← Phase 1: The Astronomican [partial; sealed by debate 001 + 004 + 005]
+│   ├── chapters/
+│   │   └── adeptus-administratum/
+│   │       └── codex.md                                   ← First Chapter Codex v1.0 [SEALED via debate 005, 2026-05-11]
+│   ├── debates/
+│   │   ├── README.md                                      ← Debate index
+│   │   ├── 001-laws-count-and-multirepo-scaling.md        [decided]
+│   │   ├── 002-retrofit-vs-greenfield.md                  [decided]
+│   │   ├── 003-phase-0-calibration.md                     [decided]
+│   │   ├── 004-cap-revision-miller-correction.md          [decided]
+│   │   ├── 005-first-chapter-pm-high-lord-aide.md         [decided]
+│   │   └── 006-documentation-architecture-and-distribution.md [decided]
+│   └── audit/                                             ← IVP methodology + findings history
+│       ├── independent-verification-pass-for-debate.md    ← IVP methodology spec (v0.3)
+│       ├── inventory.md                                   ← Phase 1 inventory output (2026-05-08; may lag remediation)
+│       ├── findings-2026-05-08.md                         ← Phase 2 rodage (F-01–F-13)
+│       ├── findings-2026-05-09.md                         ← Phase 2 extension (F-14–F-24)
+│       ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
+│       ├── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
+│       └── findings-phase5-2026-05-11.md                  ← Phase 5 Internal Consistency (F-32–F-39)
+│
+├── case-studies/                                          ← Project-specific framework applications (was: docs/case-study-*)
+│   └── lore-weave/                                        ← First retrofit application of the framework (Phase 0 in flight)
+│       ├── README.md                                      ← Case-study overview, scope, focus
+│       ├── pm-threshold-decisions.md                      ← Draft proposal pending owner sign-off
+│       ├── reckoning-team-record.md                       ← Team composition; AI-aide invocations under sealed Codex
+│       ├── reckoning-record.md                            ← Phase 0 four-section inventory skeleton
+│       └── methodology-notes.md                           ← Spec departures (D-1, D-2, D-3); retroactive review under sealed Codex
+│
+└── distribution/                                          ← Outward-facing sealed snapshot v0.6.0 [NEW per debate 006]
+    ├── README.md                                          ← How to use this template
+    ├── INDEX.md                                           ← Master TOC of distribution contents
+    ├── VERSION                                            ← 0.6.0
+    ├── CHANGELOG.md                                       ← Per Keep-a-Changelog convention
+    ├── for-pms.md                                         ← Role-based reading guide: PMs
+    ├── for-ics.md                                         ← Role-based reading guide: ICs / engineers
+    ├── for-ai-aides.md                                    ← Role-based reading guide: Adeptus Administratum instances (re-priming primer)
+    ├── for-adopters.md                                    ← Role-based reading guide: framework adopters
+    ├── framework/                                         ← Sealed framework snapshot (copy of upstream framework/, sealed-only)
+    │   ├── phases/phase-0.md                              ← Renamed from phase-0-for-debate.md per sub-decision B
+    │   ├── chapters/adeptus-administratum/codex.md
+    │   ├── debates/{001-006}.md + README.md
+    │   ├── calibration-standards.md
+    │   ├── pm-calibration-guide.md
+    │   └── audit/{IVP-spec + inventory + 5 findings}.md   ← Audit evidence trail (read-only for adopters)
+    ├── templates/                                         ← Fillable scaffolds (status: fillable)
+    │   ├── astronomican-template.md                       ← Phase 1 sealed Astronomican output
+    │   ├── reckoning-record-template.md                   ← Phase 0 + Phase 1 living document
+    │   ├── pm-threshold-decisions-template.md             ← 5 PM commitments
+    │   └── reckoning-team-record-template.md              ← Team composition + AI-aide invocations
+    └── examples/
+        └── lore-weave-snapshot/                           ← Read-only snapshot of case-studies/lore-weave/ at v0.6.0 release
+            ├── README.md
+            ├── pm-threshold-decisions.md
+            ├── reckoning-team-record.md
+            ├── reckoning-record.md
+            └── methodology-notes.md
 ```
 
 ---
@@ -200,7 +239,7 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 1. Read this file end-to-end.
 2. Read `README.md` for the framework's elevator pitch (now includes AI-collab literature anchors).
 3. Skim `framework/phases/phase-0-for-debate.md` and `framework/phases/phase-1-for-debate.md` — the two main artifacts.
-4. Skim `framework/debates/README.md` for decision history (4 debates decided).
+4. Skim `framework/debates/README.md` for decision history (6 debates decided).
 5. If touching evidentiary claims or calibration anchors: skim IVP spec v0.3 § 4 rubric, § 5 phase procedures (especially Phase 3 inventory-paraphrase pre-step and Phase 4 cluster option), and § 11 changelog before editing.
 6. Confirm with project owner which path to take from "Recommended next step" or "Alternative next steps" before starting work.
 7. **For PR strategy on multi-phase IVP runs:** do not propose 7 stacked PRs; propose either a single branch with multiple commits or at most one PR per phase. See "Conventions to preserve" above.
@@ -209,12 +248,17 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 
 ## Repo state at end of Session 4
 
-- Branch: `main` (clean as of end of session 4; ahead of `origin/main` by 9 commits — not yet pushed pending project-owner authorization).
+- Branch: `main` (clean as of end of session 4; ahead of `origin/main` by 13 commits — not yet pushed pending project-owner authorization).
 - Recent commits on `main` (top of log, end of session 4):
   ```
+  (commit pending) Phase 3 — HANDOFF tree refresh + final sweep
+  9e9afb8  Phase 2 — populate distribution/ with framework + templates + lore-weave snapshot
+  c4a574e  Phase 1b — YAML frontmatter backfill across framework/ + case-studies/
+  1a857c2  Phase 1a — folder restructure + cross-reference updates per debate 006
+  7f58439  seal debate 006 — Documentation Architecture and Distribution Template
   68daccb  apply practitioner voice to audit findings executive verdicts
   d18472d  apply practitioner voice to debates 002 / 003 / 004 / 006
-  52702fe  apply practitioner voice to operational + case-study docs; fix stale debate-003 status
+  52702fe  apply practitioner voice to operational + case-study docs
   f60a606  apply practitioner voice to phase-0 and phase-1 working drafts
   1d81e0d  apply practitioner voice to README + add "Who is writing this" section
   344bbb2  add framework-wide policy #3 (practitioner voice, not authority pronouncement)
@@ -229,5 +273,5 @@ Recommended ordering if doing further audit work over LoreWeave: LoreWeave first
 - LoreWeave case study: Phase 0 scaffolding complete; pre-Pass-1 work (folder, PM threshold proposal, scan, spec departures D-1/D-2/D-3) committed; pending PM sign-off of [`pm-threshold-decisions.md`](case-studies/lore-weave/pm-threshold-decisions.md) before Pass 1 begins.
 - IVP spec at v0.3. Phase 5b (author-voice pass) referenced in framework-wide policy #3 but not yet drafted into spec v0.4.
 - IVP Phase 5 complete; Phases 6, 7 queued.
-- **Session 4 work summary:** debate 006 opened (Documentation Architecture and Distribution Template — still `open`). Framework-wide policy #3 (Practitioner voice, not authority pronouncement) sealed. Voice cleanup pass applied across all major documentation surfaces (17 files, 6 commits) to bring framework text in line with the new policy. First blog post drafted in English (debate-open intro) at `blogs/01-the-emperor-is-dead-the-light-remains.md` (gitignored — blog content stays local).
+- **Session 4 work summary:** Framework-wide policy #3 (Practitioner voice) sealed and applied across 17 files (commits `344bbb2` → `68daccb`). Debate 006 opened (`5077769`), refined through decide-debate dialogue (sub-decision D Lifecycle revised from D3 → D4 task-scoped instance; sub-decision I revised from I4 markers → I0 no-protocol; sub-decision J extended with J.6 Mermaid + J.7 tool stack), then sealed (`7f58439`). Three-phase migration executed: Phase 1a folder restructure (`1a857c2` — docs/ → framework/, case-studies/ at root, distribution/ skeleton); Phase 1b YAML frontmatter backfill across 25 files (`c4a574e`); Phase 2 populate distribution/ with sealed framework copy + 4 fillable templates + lore-weave-snapshot (`9e9afb8`). First blog post drafted earlier in session at `blogs/01-the-emperor-is-dead-the-light-remains.md`.
 - No external dependencies, no build, no tests — this is a documentation repository.
