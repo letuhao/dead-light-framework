@@ -1,9 +1,9 @@
 # Debate 006 — Documentation Architecture and Distribution Template
 
-> **Status:** open.
+> **Status:** decided.
 > **Opened:** 2026-05-11
-> **Decided:** —
-> **Decided by:** project owner (pending)
+> **Decided:** 2026-05-11
+> **Decided by:** project owner
 > **Affects:** Whole framework tree organization. Creates a new root-level distribution folder; introduces explicit conventions for working drafts, debates, audit history, chapters, case studies; defines update + sync mechanism between working and distribution; introduces dual-audience (human + AI) design rules.
 > **Raised by:** project owner during LoreWeave case-study kick-off (2026-05-11), after [debate 005](005-first-chapter-pm-high-lord-aide.md) sealed the first Chapter. Observation: now that the framework has *sealed* artifacts (Phase 0/1 + 5 decided debates + Adeptus Administratum Codex), adopters need a clear surface to clone/use; ad-hoc organization is no longer adequate.
 
@@ -49,7 +49,6 @@ dead-light-framework/
 ├── README.md
 ├── HANDOFF.md
 ├── LICENSE
-├── chat.txt
 └── docs/
     ├── glossary-for-debate.md
     ├── phase-0-for-debate.md      ← sealed
@@ -80,7 +79,6 @@ dead-light-framework/
 ├── README.md                     ← project front door (also acts as INDEX)
 ├── HANDOFF.md                    ← session-state handoff
 ├── LICENSE
-├── chat.txt                      ← historical motivation; not in framework spec
 │
 ├── framework/                    ← Dead Light Framework — working artifacts (was: docs/)
 │   ├── README.md                 ← framework's own front door + reading guide
@@ -407,7 +405,8 @@ Concretely:
 - **Sealed artifacts** keep their working-location filename but flip `status: draft` → `status: sealed` in frontmatter and drop the `-for-debate` suffix (rename optional; the suffix becomes redundant once `status: sealed` is set).
 - **Distribution generation:** a script (`scripts/build-distribution.sh` or equivalent — maintained manually until project owner authorizes scripting infrastructure) walks `framework/`, filters files with `status: sealed`, copies into `distribution/framework/` mirroring the source path, transforms internal links to keep `distribution/` self-contained, generates `distribution/INDEX.md` from the collected metadata, and writes `distribution/VERSION`.
 - **Manual sync allowed** (project owner copies a single file from `framework/` to `distribution/`) when scripting is overkill — but the periodic check-pass (IVP-equivalent) verifies sync integrity.
-- **Sync direction is one-way: `framework/` → `distribution/`.** Adopters who modify `distribution/` for their own project work on a fork or downstream copy; their changes never flow back unless they open a debate.
+- **Sync direction is strictly one-way: `framework/` → `distribution/`.** No backflow path is assumed or built. Adopters who clone `distribution/` for their own project work on their own copy; their adaptations are their own concern, not the framework's.
+- **No adopter-audit obligation on the framework side.** Per sub-decision I (below) and the central thesis "frozen authority survives any participant — within its scope," Dead Light Framework prescribes governance *within* a project that adopts it, not *of* the adoption itself. The framework does not police downstream forks. (Standard OSS fork-and-modify pattern: Linux kernel + distros, React + adopting companies, arc42 + adopting organizations, ISO standards + certified bodies — none of these upstream maintainers audit downstream usage.) IVP audit applies only to the framework's own state.
 
 ### Real-world precedent
 
@@ -420,54 +419,75 @@ Concretely:
 
 ## 11. Sub-decision I — Customization protocol (fillable vs immutable)
 
-### What problem this solves
+### What problem this solves — and what it does NOT
 
-Adopters need to know **what they can change** vs **what they must keep as-is** when cloning the distribution. Without explicit markers, every adopter's adaptation drifts from framework — and the framework can't tell whether a deviation is intentional or a bug.
+Adopters need to **understand** what they can change vs what defines the framework's core spec. They do **not** need the framework to police their choices. This sub-decision distinguishes two purposes that early drafts of this debate conflated:
+
+| Concern | Whose job |
+|---|---|
+| **Framework's own quality** (spec accuracy, citation integrity, internal consistency) | **Framework maintainer's job.** Tooling: IVP Phases 1–7 — covers framework's own state. |
+| **Adopter customization compliance** (did the adopter modify something they "shouldn't have"?) | **Not the framework's job.** Standard open-source fork-and-modify contract applies: clone, modify, own the result. |
 
 ### Options
 
 | Option | Mechanism | Pros | Cons |
 |---|---|---|---|
-| **I1.** No markers; adopters change anything | All distribution content is suggestion | Maximum flexibility | No way to audit adopters; framework's load-bearing decisions can be silently broken |
-| **I2.** Inline `<!-- FILLABLE -->` markers + `<!-- IMMUTABLE -->` markers | HTML comments in markdown bracket sections | Clear; visible to anyone reading | Verbose; clutters source |
-| **I3.** Frontmatter `customization: fillable | immutable | partial` field; per-file granularity | One marker per file | Lightweight | Can't mix within a file |
-| **I4.** Hybrid: frontmatter for file-level + inline for sub-sections | I3 + I2 combined for mixed-content files | Most expressive | Most complex |
+| **I0.** No protocol; informational guidance only | Distribution README explains folder convention (`framework/` immutable; `templates/` fillable; `examples/` reference). Adopter is trusted to read + act. Folder placement + `status: sealed` frontmatter (per sub-decision F) carry classification implicitly. | Cleanest source; lowest AI re-priming cost; standard OSS pattern (Linux kernel + distros; React + adopters; arc42 + adopting orgs; ISO + certified bodies); on-thesis with "framework's authority is within-scope only" | No programmatic adopter-violation detection |
+| **I1.** No markers; adopters change anything; no folder convention | All distribution content is suggestion | Maximum flexibility | No classification at all; adopter has no guidance on intent |
+| **I2.** Inline `<!-- FILLABLE -->` / `<!-- IMMUTABLE -->` markers | HTML comments bracket sections | Clear; visible to anyone reading | Verbose; clutters source |
+| **I3.** Frontmatter `customization` field; per-file granularity | One marker per file | Lightweight; partial machine-routable | Can't mix within a file; one extra frontmatter field cost |
+| **I4.** Hybrid: frontmatter + inline | I3 + I2 combined | Most expressive | Most complex; highest token cost; framework polices what's not its job |
 
 ### Recommended answer
 
-**Option I4 — Hybrid (file-level frontmatter + inline markers for sub-sections).**
+**Option I0 — No protocol; informational guidance only.**
 
-**File-level (frontmatter):**
+Justification:
 
-```yaml
-customization: fillable | immutable | partial
-```
+1. **Scope of authority.** Dead Light Framework's central thesis — *frozen authority survives any participant* — applies **within** a project that adopts it. The framework has no authority over the adoption itself. Auditing adopter customization would be the framework reaching past its own scope, which contradicts the thesis.
 
-- `fillable` — entire file is a template; adopter is expected to fill or replace content. Examples: `templates/astronomican-template.md`.
-- `immutable` — entire file represents a sealed framework decision; adopter must NOT change it (only fork the framework via Re-consecration). Examples: `distribution/framework/chapters/adeptus-administratum/codex.md`, `distribution/framework/phases/phase-0.md`.
-- `partial` — file has both immutable framework content and fillable adopter slots; use inline markers.
+2. **Standard OSS contract.** Mature open-source ecosystems (Linux + distros, React + Meta non-control over adopters, arc42 + adopting organizations, ISO + certified-body separation, Cookiecutter + generated projects) all converge on the same pattern: maintainer publishes, downstream adopts freely, no upstream audit. Dead Light should not invent a different model unless there is a strong reason — there isn't.
 
-**Inline markers (for `partial` files):**
+3. **Classification is already carried implicitly.**
+   - **Folder convention:** `distribution/framework/` = sealed framework spec; `distribution/templates/` = fillable scaffolds; `distribution/examples/` = reference snapshots.
+   - **`status: sealed` frontmatter** (sub-decision F): every framework file is marked sealed. Adopter who modifies a sealed file is explicitly forking; this is visible without inline markers.
+   - **Source location:** files under `distribution/framework/` came from `framework/` upstream and are obviously the spec.
+4. **AI re-priming cost is lower.** No inline markers + no extra frontmatter field = cheapest possible token cost per file read.
+
+5. **Adeptus Administratum Codex §5 Notify Triggers still apply, but within framework scope only.** N-1 / N-2 / N-3 / N-4 fire during framework's own work (IVP, debates, sealing). They do not fire on adopter projects unless an adopter instantiates their own Adeptus Administratum and chooses to run those triggers locally — which is the adopter's decision.
+
+### What the Distribution README says (informational guidance text)
 
 ```markdown
-<!-- IMMUTABLE: framework-spec — do not modify without Re-consecration -->
-Phase 0 is mandatory for retrofit projects.
-<!-- /IMMUTABLE -->
+# Using this template
 
-<!-- FILLABLE: adopter-specific — replace with project context -->
-Project name: <fill in your project name>
-Significance threshold: <see pm-calibration-guide.md to derive>
-<!-- /FILLABLE -->
+This distribution is Dead Light Framework v<X.Y.Z>. Three folder rules:
+
+- `distribution/framework/` — the framework's sealed specification. If you
+  modify these files, you are forking the framework and accept responsibility
+  for maintaining your divergence. Reach back upstream via a PR if you think
+  your change should be in the framework.
+- `distribution/templates/` — fillable scaffolds. Copy these into your
+  project and fill the placeholder text marked with `<...>`.
+- `distribution/examples/` — read-only reference snapshots (e.g.,
+  `lore-weave-snapshot/`). Use as illustrative examples; do not include
+  in your project.
+
+You own your customization. The framework does not audit downstream forks.
 ```
 
-**Audit support:** Adeptus Administratum instances operating on an adopter project can scan for inline markers + frontmatter and flag violations (Codex §5 N-3 / N-4 equivalent) — adopter modified an `immutable` section.
+That's the entire customization protocol.
 
 ### Real-world precedent
 
-- **Cookiecutter** — `{{ jinja_variable }}` patterns mark fillable slots; everything else is template-as-is.
-- **Spring Boot starter projects** — explicit "your code goes here" comments.
-- **AsciiDoctor / DocBook** — `<replaceable>` tags for fillable content.
-- **GitHub Actions reusable workflows** — `inputs:` block is fillable; the rest is immutable.
+- **Linux kernel + distributions** — Ubuntu, RHEL, Android customize freely; Linus + maintainers audit only the kernel mainline, not downstream.
+- **React + adopting companies** — Meta publishes; every adopter customizes; Meta does not audit usage.
+- **arc42** — Starke + Hruschka publish the template; thousands of companies adopt and modify; authors do not audit.
+- **ISO 9001 / ISO 27001 / CMMI** — standards bodies publish; certification bodies (third parties) audit if customers want certification; the standards body itself does not police compliance.
+- **Cookiecutter** — Audrey Roy publishes templating engine + templates; users generate projects freely; maintainers do not audit generated projects.
+- **PostgreSQL extension model** — core is core; `contrib/` is for community extensions; users build their own without core auditing them.
+
+The pattern across all six: upstream publishes; downstream adopts; no upstream audit. Dead Light follows the same pattern.
 
 ---
 
@@ -507,6 +527,10 @@ Dead Light is the first framework to treat human and AI as co-equal first-class 
    - Every internal link has visible link text (no bare URLs).
    - Cross-file links use `[file:line-range](path#section-id)` format when pointing at a specific section.
 
+6. **Diagram convention.** Prefer **Mermaid** (text source rendering as SVG in GitHub / VS Code / Mermaid Live Editor; AI reads as graph DSL — structurally meaningful, not opaque). ASCII art acceptable for trivial structural diagrams (folder trees, simple sequence flows). PNG / SVG embedded images require **full transcribed alt-text** of text-equivalent fidelity. PlantUML allowed but not recommended (external-renderer dependency; less universally supported than Mermaid). Excalidraw, Lucid, Figma, etc. — image-only formats — count as embedded images and require transcription.
+
+7. **Tool stack recommendation (informational; not prescriptive).** Default human-reader tooling: **VS Code + YAML (Red Hat) extension + Markdown All in One extension + Markdown Preview Mermaid Support extension**. Default web view: **GitHub native rendering**. Optional polished release path: **MkDocs Material** or **Docusaurus** built from `distribution/` source. None of these tools are *required* by Dead Light Framework — framework artifacts must render correctly under **plain markdown + GitHub web view at minimum**. The recommendation exists to lower the friction floor for new adopters who haven't established their own markdown toolchain.
+
 ### Real-world precedent
 
 - **Stripe API docs** — dual-format: human-readable narrative + machine-readable OpenAPI spec sourced from same definitions.
@@ -532,8 +556,8 @@ Consolidated table mapping each sub-decision to industry standards we draw from.
 | F. Frontmatter format | Jekyll / Hugo / Astro / Eleventy; MADR; GitHub README YAML; Anthropic / OpenAI docs |
 | G. Index + reading guide | Read the Docs; Vercel / Stripe docs; arc42; Linux kernel Documentation/ |
 | H. Update + sync mechanism | Cookiecutter; Spring Initializr; Hugo / Jekyll / Astro source + build separation; Helm charts |
-| I. Customization protocol | Cookiecutter; Spring Boot starter; AsciiDoctor `<replaceable>`; GitHub Actions reusable workflows `inputs:` |
-| J. Dual-audience design rules | Stripe API; Anthropic Console; OpenAPI; Hugo frontmatter; Diátaxis; GraphQL SDL |
+| I. Customization protocol (I0 — no protocol) | Linux kernel + distributions; React + adopting companies; arc42 + adopting organizations; ISO 9001 / 27001 / CMMI + certification-body separation; Cookiecutter + generated projects; PostgreSQL extension model |
+| J. Dual-audience design rules | Stripe API; Anthropic Console; OpenAPI; Hugo frontmatter; Diátaxis; GraphQL SDL; Mermaid (text-DSL diagrams); VS Code + Red Hat YAML / Markdown All in One / Mermaid Preview ext; MkDocs Material; Docusaurus |
 
 **Policy 1 compliance:** every recommendation in sub-decisions A–J above rests on at least one real-world standard. Where the framework's choice differs from the standard, the rationale is recorded inline (e.g., E recommends 500 hard / 300 soft because Dead Light's documents are larger than typical ADRs but smaller than book chapters — a calibration choice on top of industry conventions).
 
@@ -610,9 +634,9 @@ This is substantial. Consider running it as a single dedicated session (or sever
 | E. File size + split rules | **E3** — 500-line hard cap; 300-line soft; 100-line per-section soft; multi-concern files split; exceptions for reference catalogs / comprehensive debates / IVP findings (require explanatory note) |
 | F. Frontmatter format | **F3** — YAML frontmatter (status, version, audience, type, token_estimate, last_updated, supersedes, sealed_by) + human summary block (≤ 50 words + status badge + purpose + read-next) |
 | G. Index + reading guide | **G4** — Root README + per-folder README + 4 role-based guides in `distribution/` (for-pms, for-ics, for-ai-aides, for-adopters) |
-| H. Update + sync mechanism | **H2** — Scripted build (manual until scripting infra authorized); one-way `framework/` → `distribution/`; status-driven filtering |
-| I. Customization protocol | **I4** — File-level frontmatter `customization: fillable / immutable / partial` + inline `<!-- IMMUTABLE -->` / `<!-- FILLABLE -->` markers for `partial` files |
-| J. Dual-audience design rules | **J full** — frontmatter audience field; summary block; deterministic section IDs; structured markdown over prose for structured information; citation discipline; cross-link discipline |
+| H. Update + sync mechanism | **H2** — Scripted build (manual until scripting infra authorized); strictly one-way `framework/` → `distribution/`; no backflow path; no adopter-audit obligation on the framework side (standard OSS fork-and-modify contract) |
+| I. Customization protocol | **I0** — No protocol; informational guidance in distribution README only. Folder convention (`framework/` immutable; `templates/` fillable; `examples/` reference) + `status: sealed` frontmatter carry classification implicitly. Framework does not police downstream adopters; on-thesis with "frozen authority within scope only" |
+| J. Dual-audience design rules | **7 rules** — (1) frontmatter audience field; (2) `both`-audience rules (summary block, deterministic section IDs, structured-markdown-over-prose, citation discipline, no-image-as-evidence, no-hidden-context); (3) `ai`-audience rules (first-200-tokens-essence, token-budget annotation, imperatives forward); (4) `human`-audience rules; (5) cross-link discipline; (6) diagram convention (prefer Mermaid; ASCII for trivial; transcribe images); (7) tool stack recommendation (VS Code extensions + GitHub web view minimum) |
 
 If approved, the framework gains a clean outward-facing distribution surface plus explicit conventions for human + AI dual-audience design that no existing methodology currently prescribes at this level.
 
@@ -620,25 +644,33 @@ If approved, the framework gains a clean outward-facing distribution surface plu
 
 ## 17. Decision
 
-_(Empty — to be filled when project owner decides.)_
+- **Decision:** Approved per TL;DR §16 with two refinements added during decide-debate dialogue:
+  - **A (Folder topology):** A4 hybrid — `framework/` + `case-studies/` + `distribution/` at root; `chapters/`, `phases/`, `audit/`, `debates/` nested under `framework/`. `distribution/` organized to be separable (no cross-references that break if extracted).
+  - **B (Naming conventions):** Folder names neutral (`distribution/`); status via frontmatter (`status:` field), not filename suffix; same-name working/sealed.
+  - **C (Versioning):** SemVer 2.0; initial v0.6.0 at distribution-folder creation; CHANGELOG.md maintained.
+  - **D (Document organization):** D5 — document-type-aware hybrid (phase = arc42-derived; debate = ADR-extended; codex = 10-section per debate 005; audit = IVP-spec-derived; case-study = Diátaxis how-to; reference = Diátaxis reference; README = Diátaxis explanation + index).
+  - **E (File size + split rules):** E3 — 500-line hard cap; 300-line soft; 100-line per-section soft; multi-concern files split; exceptions for reference catalogs / comprehensive debates / IVP findings (require explanatory note).
+  - **F (Frontmatter format):** F3 hybrid — YAML frontmatter (9 fields: title, status, version, audience, type, token_estimate, last_updated, supersedes, sealed_by) + human summary block (≤ 50 words + status badge + purpose + read-next).
+  - **G (Index + reading guide):** G4 — Root README + per-folder README + 4 role-based guides in `distribution/` (for-pms, for-ics, for-ai-aides, for-adopters).
+  - **H (Sync mechanism):** H2 scripted build (manual until scripting infra authorized) with H3-style discipline; strictly one-way framework/ → distribution/; **no backflow assumption; no adopter audit on framework side** (standard OSS fork-and-modify contract).
+  - **I (Customization protocol):** **I0 — No protocol; informational guidance in distribution README only.** Folder convention + `status: sealed` frontmatter carry classification implicitly. Framework does not police downstream adopters. Refinement during decide-debate: dropped earlier I4 proposal after project-owner observation that auditing adopter customization is not the framework's job (standard OSS pattern — Linux kernel + distros, React, arc42, ISO + certification-body separation, Cookiecutter, PostgreSQL contrib all converge on this).
+  - **J (Dual-audience design rules):** 7 rules including added J.6 (diagram convention — prefer Mermaid; ASCII for trivial; transcribe images) and J.7 (tool stack — VS Code + Red Hat YAML / Markdown All in One / Mermaid Preview ext; GitHub web view minimum). Added during decide-debate dialogue after project-owner question about YAML viewing tools and markdown's dual-audience fit.
+- **Decided on:** 2026-05-11
+- **Decided by:** project owner
 
-- **Decision:** _(pending)_
-- **Decided on:** _(pending)_
-- **Decided by:** _(pending)_
+### Follow-up actions
 
-### Follow-up actions (will be checked on seal)
+Execution is split across multiple commits per the migration plan in §14. Status marked progressively as commits land.
 
-- [ ] Restructure: rename `docs/` → `framework/`; move `docs/case-study-lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move phase docs in.
-- [ ] Create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
-- [ ] Backfill YAML frontmatter on every existing file (estimate: ~25 files × ~2 minutes each = ~50 minutes).
-- [ ] Backfill human summary block on every existing file.
-- [ ] Populate `distribution/templates/` with fillable scaffolds.
-- [ ] Populate `distribution/examples/lore-weave-snapshot/` with case-study read-only copy.
-- [ ] Update every cross-reference in the repo to use the new paths.
-- [ ] Re-run IVP Phase 5 (Internal Consistency) against the new structure to catch any drift.
-- [ ] Update HANDOFF.md (document tree + recent commits + recommended next step).
-- [ ] Update [debates/README.md](README.md) — debate 006 marked decided.
-- [ ] (If migration substantial) Open a dedicated `audit/ivp-2026-MM-DD-doc-arch-migration.md` to track per-file backfill compliance.
+- [x] Update [debates/README.md](README.md) — debate 006 marked decided.
+- [ ] **Migration Phase 1a — folder restructure**: rename `docs/` → `framework/`; move `docs/case-study-lore-weave/` → `case-studies/lore-weave/`; create `framework/phases/` subdir and move `phase-0-for-debate.md` + `phase-1-for-debate.md` in; create `distribution/` folder skeleton (README + INDEX + VERSION + CHANGELOG + role-based guides + framework + templates + examples subdirectories).
+- [ ] **Migration Phase 1b — frontmatter + summary backfill**: add 9-field YAML frontmatter + human summary block to every file across `framework/`, `case-studies/`, and `distribution/`. Estimated ~30 files × ~1-2 minutes each.
+- [ ] **Migration Phase 2a — populate `distribution/framework/`**: copy sealed content (phase-0, debates 001-006, Adeptus Administratum Codex, calibration-standards, pm-calibration-guide) with internal links transformed to be self-contained within `distribution/`.
+- [ ] **Migration Phase 2b — populate `distribution/templates/`**: create fillable scaffolds (`astronomican-template.md`, `reckoning-record-template.md`, `pm-threshold-decisions-template.md`, `reckoning-team-record-template.md`).
+- [ ] **Migration Phase 2c — populate `distribution/examples/lore-weave-snapshot/`**: read-only snapshot of `case-studies/lore-weave/` at debate-006-seal time.
+- [ ] **Migration Phase 3 — sweep + audit**: update every cross-reference in the repo to use new paths; run an IVP Phase 5 equivalent against the new structure to catch any drift; update HANDOFF.md (document tree + recent commits + recommended next step).
+- [ ] Stamp `distribution/VERSION` with `0.6.0` and write `distribution/CHANGELOG.md` recording the v0.6.0 initial release.
+- [ ] Adeptus Administratum Codex §9 file path (`docs/chapters/adeptus-administratum/codex.md`) will need to be updated to reflect the new `framework/chapters/...` location; cross-reference scan picks this up.
 
 ---
 

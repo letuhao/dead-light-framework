@@ -29,4 +29,4 @@ Keeping them separate means:
 | [003](003-phase-0-calibration.md) | Phase 0 Calibration (significance, team, time-box, greenfield variant) | decided | 2026-05-08 | 2026-05-08 |
 | [004](004-cap-revision-miller-correction.md) | Cap Revision: Miller Citation Correction (5±2 → 7±2; cap → 5–9 target ~7) | decided | 2026-05-09 | 2026-05-09 |
 | [005](005-first-chapter-pm-high-lord-aide.md) | First Chapter: PM / High Lord Aide (Adeptus Administratum) | decided | 2026-05-11 | 2026-05-11 |
-| [006](006-documentation-architecture-and-distribution.md) | Documentation Architecture and Distribution Template | open | 2026-05-11 | — |
+| [006](006-documentation-architecture-and-distribution.md) | Documentation Architecture and Distribution Template | decided | 2026-05-11 | 2026-05-11 |
