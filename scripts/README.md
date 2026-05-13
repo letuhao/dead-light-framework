@@ -9,7 +9,7 @@ supersedes: null
 sealed_by: debate-007
 ---
 
-> **Status:** Tier 1 implemented (sync_distribution, validate_frontmatter, check_links). Tier 2 + 3 deferred.
+> **Status:** Tier 1 + Tier 2 implemented (validate_frontmatter, check_links, sync_distribution, frontmatter_set, bump_version, snapshot_case_study, update_handoff_tree). Tier 3 deferred.
 > **Audience:** Framework maintainers + Adeptus Administratum instances during re-priming (informal until debate 008 seals Codex v1.1).
 > **Purpose:** Python tooling that handles mechanical repository work — frontmatter validation, link checking, framework/ → distribution/ sync. Reduces LLM token cost on mechanical operations by ~99%.
 > **Read next if:** you're about to do migration / release / consistency-check work, or you're an Adeptus Administratum instance starting a task.
@@ -65,12 +65,47 @@ python scripts/sync_distribution.py --apply         # write changes
 - **Error handling**: write scripts use strict transactions (build full plan, validate, then write all-or-nothing). Read-only scripts use best-effort continue (report all issues, exit reflects overall count).
 - **No backflow**: scripts operate one-way from `framework/` → `distribution/`. Per debate 006 §H and debate 006 §11 (I0), the framework does not police adopter customizations.
 
-## Tier 2 scripts (deferred to subsequent commits)
+## Tier 2 scripts (implemented)
 
-- `snapshot_case_study.py <name>` — snapshot a case study to `distribution/examples/<name>-snapshot/`.
-- `bump_version.py <major|minor|patch>` — update `distribution/VERSION` + prepend to `distribution/CHANGELOG.md`.
-- `update_handoff_tree.py` — regenerate `HANDOFF.md` document tree from current filesystem.
-- `frontmatter_set.py <file> <field>=<value>` — atomically update one frontmatter field.
+### `frontmatter_set.py`
+
+Atomically update one frontmatter field in one file. Validates enum values for status/audience/type. Dry-run default.
+
+```bash
+python scripts/frontmatter_set.py framework/debates/008-foo.md status=decided --apply
+python scripts/frontmatter_set.py file.md supersedes=null --apply
+```
+
+### `bump_version.py`
+
+Bump distribution version per SemVer (debate 006 sub-decision C). Updates `distribution/VERSION` + prepends new section to `distribution/CHANGELOG.md`. Dry-run default.
+
+```bash
+python scripts/bump_version.py minor                            # 0.6.0 -> 0.7.0 (dry-run)
+python scripts/bump_version.py patch --apply                    # write
+python scripts/bump_version.py minor --apply \
+  --description "Phase 1 fully sealed; lore-weave Pass 1 complete"
+```
+
+### `snapshot_case_study.py`
+
+Copy a case-study folder to `distribution/examples/<name>-snapshot/`, injecting `snapshot_of` + `snapshot_date` frontmatter and path-rewriting `phase-0-for-debate.md` → `phase-0.md`. Dry-run default.
+
+```bash
+python scripts/snapshot_case_study.py lore-weave --apply
+```
+
+### `update_handoff_tree.py`
+
+Regenerate the `## Document tree` section of `HANDOFF.md` from current filesystem state. Auto-annotates each file with `[SEALED]` / `[DECIDED]` / `[working]` etc. from frontmatter. Dry-run default.
+
+Requires `<!-- DOC-TREE-START -->` and `<!-- DOC-TREE-END -->` markers around the tree block in `HANDOFF.md`. Markers exist after debate-007 sealing.
+
+```bash
+python scripts/update_handoff_tree.py --apply
+```
+
+**Caveat:** the original tree includes human-written annotation comments (`← ...`). These are stripped on regeneration. If you want them, re-edit manually after regeneration or extend the script's annotation feature.
 
 ## Tier 3 scripts (deferred indefinitely)
 
