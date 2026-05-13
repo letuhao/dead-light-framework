@@ -1,20 +1,20 @@
 ---
-title: "Codex — Adeptus Administratum"
-status: sealed
-version: 1.0
 audience: both
-type: codex
-last_updated: 2026-05-11
+last_updated: 2026-05-13
+sealed_by: debate-005 (v1.0) + debate-007 §G (v1.1 implementation-amendment)
+status: sealed
 supersedes: case-studies/lore-weave/reckoning-team-record.md § interim Codex
-sealed_by: debate-005
+title: Codex — Adeptus Administratum
+type: codex
+version: '1.1'
 ---
 
 # Codex — Adeptus Administratum
 
 > **Status:** Sealed.
-> **Version:** 1.0
-> **Sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md).
-> **Sealed on:** 2026-05-11
+> **Version:** 1.1 (v1.0 sealed 2026-05-11 via debate 005; v1.1 implementation-amendment 2026-05-13 — see §10).
+> **Sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md) (v1.0); [debate 007 §G](../../debates/007-scripting-infrastructure.md) sub-decision (v1.1 — adds script-invocation references).
+> **Sealed on:** 2026-05-11 (v1.0); 2026-05-13 (v1.1).
 > **Sealed by:** project owner.
 > **Phase coverage:** All — Phase 0 (Reckoning), Phase 1 (Astronomican), post-seal (High Lord aide mode).
 > **Multiplicity:** Singleton role per Astronomican (Imperial; one per Sector when sectoring is in effect). Concurrent instances on different tasks allowed.
@@ -106,12 +106,14 @@ The Chapter may act **solo** when the action is:
 - **Read-only** — file read, grep, web search for citation verification.
 - **Draft-only** — creates new artifact content marked "draft proposal pending project-owner sign-off"; never finalizes.
 - **Non-modifying analysis** — produces audit-trail entries (`methodology-notes.md`, scan reports) without modifying sealed artifacts.
+- **Read-only script invocation** (v1.1) — invoking `scripts/validate_frontmatter.py`, `scripts/check_links.py`, `scripts/ivp_phase5.py` (dry-run), `scripts/sync_distribution.py` (dry-run), or any other Tier 1/2/3 script in dry-run mode. The script's read-only or dry-run behaviour is itself a guarantee per debate 007 §E.
 
 The Chapter MUST wait for project-owner / Council acknowledgment when:
 
 - Producing a **final (non-draft) artifact entry** that will be sealed.
 - Modifying any **sealed artifact** (Astronomican, sealed Codex, sealed phase doc).
 - Acting on a **Notify Trigger of class N-1 or N-2** (blocking notifies require acknowledgment before continuing).
+- **Invoking a write script with `--apply`** (v1.1) — `sync_distribution.py --apply`, `bump_version.py --apply`, `snapshot_case_study.py --apply`, `update_handoff_tree.py --apply`, `frontmatter_set.py ... --apply`, `release.py --apply`, etc. Write-script invocation is structurally equivalent to modifying sealed artifacts (the script's effect equals what the Chapter would otherwise need acknowledgment for). The Chapter proposes the `--apply` invocation, surfaces the dry-run output, awaits acknowledgment.
 
 Where a task crosses the boundary between autonomous and acknowledgment-required actions, the Chapter pauses at the boundary and emits a "question for project owner" output per the Output Contract §6.
 
@@ -211,7 +213,7 @@ Every instance startup executes this protocol before beginning task work:
 2. **Read the current Astronomican** — sealed Imperial; sealed Sector if relevant; or the proposal-in-flight when pre-seal.
 3. **Scan the artifact base** relevant to the task. For Phase 0 case-study tasks: `case-study-<project>/methodology-notes.md` + the Reckoning Record + the PM Threshold Decisions file. For Phase 1 tasks: the proposed Astronomican + the Reckoning Record. For post-seal tasks: the sealed Astronomican + any recent Heresy-detection entries.
 4. **Identify the project's current Phase** and activate the corresponding Operational Bounds (§2.1 / §2.2 / §2.3).
-5. **Spot inconsistencies** between the Codex, the Astronomican, and the artifact base. Drift detected here may trigger N-3 / N-4 non-blocking notifies. This step doubles as drift-detection at task boundaries.
+5. **Spot inconsistencies** between the Codex, the Astronomican, and the artifact base. Drift detected here may trigger N-3 / N-4 non-blocking notifies. This step doubles as drift-detection at task boundaries. **(v1.1)** When `scripts/` tooling is available, the Chapter may invoke `python scripts/validate_frontmatter.py` and `python scripts/check_links.py` at this step to mechanise the consistency check; script output (HIGH severity from validate, dangling links from check_links) maps directly to N-3 / N-4 notifies. Read-only script invocation falls under §4 Autonomy Threshold; no acknowledgment required to RUN the check. Acting on findings (e.g., proposing fixes that modify sealed artifacts) still requires acknowledgment per §4.
 6. **Begin task work** under activated Operational Bounds and Notify Triggers.
 7. **On task complete:** update artifact files; commit; **disband**.
 
@@ -253,14 +255,36 @@ Where the 40k name and the real-world precedents diverge in implication, the rea
 
 ## 10. Provenance and version
 
-- **Version:** 1.0
-- **Sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md).
-- **Sealed on:** 2026-05-11
+- **Current version:** 1.1
+- **v1.0 sealed via:** [debate 005 — First Chapter: PM/High Lord Aide](../../debates/005-first-chapter-pm-high-lord-aide.md), 2026-05-11.
+- **v1.1 sealed via:** [debate 007 §G](../../debates/007-scripting-infrastructure.md) sub-decision (G2 + G4 — script-invocation rules), 2026-05-13. Implementation-amendment per the precedent defined below.
 - **Sealed by:** project owner.
-- **Previous versions:** none (this is the framework's first sealed Codex artifact).
-- **Predecessor (informal, never sealed):** the *interim Codex* captured in [`case-studies/lore-weave/reckoning-team-record.md`](../../../case-studies/lore-weave/reckoning-team-record.md) § "AI-aide Codex (interim)" — superseded by this v1.0. The interim Codex was operationally similar (Draft only, no Notify) and informed this Codex's design. Retroactive-review notes in [`case-studies/lore-weave/methodology-notes.md`](../../../case-studies/lore-weave/methodology-notes.md) § Retroactive review document the supersession.
-- **Supersession history:** none.
-- **Amendment procedure:** via Re-consecration of this Codex. The Codex Re-consecration procedure is lighter than full Astronomican Re-consecration per debate 005 §11 open question #3, but a formal procedure is not yet defined. **Until that procedure is formalized, amendments to this Codex require a new debate (debate 006 onward) with the same level of rigor as debate 005.**
+- **Predecessor (informal, never sealed):** the *interim Codex* captured in [`case-studies/lore-weave/reckoning-team-record.md`](../../../case-studies/lore-weave/reckoning-team-record.md) § "AI-aide Codex (interim)" — superseded by v1.0. The interim Codex was operationally similar (Draft only, no Notify) and informed this Codex's design.
+
+### Version history
+
+| Version | Date | Source | Changes |
+|---|---|---|---|
+| **1.0** | 2026-05-11 | debate 005 | Initial Codex — Adeptus Administratum sealed as the framework's first concrete Chapter. 10-section template established. |
+| **1.1** | 2026-05-13 | debate 007 §G (implementation-amendment) | §4 Autonomy Threshold: added "read-only script invocation" as solo-allowed action; added "write-script `--apply` invocation" as acknowledgment-required action. §8 Re-priming protocol step 5: added explicit reference to `scripts/validate_frontmatter.py` + `scripts/check_links.py` for mechanised consistency check; script output maps to N-3/N-4 notifies. §10 Provenance (this section): added version history table + amendment-procedure precedent below. |
+
+### Amendment procedure (precedent established 2026-05-13)
+
+Resolving the open question carried forward from debate 005 §11 #3, the Codex distinguishes two amendment classes:
+
+**Implementation amendments** — execute prior decided-debate's design decisions without introducing new design questions. Examples: this v1.0 → v1.1 patch (executes debate 007 §G's already-decided script-integration approach); future Tier 3 Chapter Codex updates that incorporate sealed scripting decisions; mechanical edits that flow from a sealed debate's follow-up actions.
+
+- **Procedure:** apply directly via vX.Y → vX.(Y+1) minor bump. Reference the originating debate's sub-decision. Document the diff in the Version history table. Run `python scripts/sync_distribution.py --apply` to propagate. No new debate required.
+- **Audit trail:** the commit message + Version history table entry are the audit record.
+
+**Design amendments** — introduce new design questions, contradict prior debate's analysis, or change the Codex's structural design (the 10-section template itself, the role of the Chapter, the authority model). Examples (hypothetical): changing from D4 task-scoped lifecycle to a different lifecycle; adding a new Notify Trigger class beyond N-1..N-5; expanding Chapter authority to include voting.
+
+- **Procedure:** full debate rigor (multiple sub-decisions, options + recommended + real-world precedent, decision section). Major version bump (vX → v(X+1)) on seal. Mirrors how debates 005-007 operated.
+- **Audit trail:** the originating debate document.
+
+**The risk this precedent runs:** future amendments might mis-classify "design" as "implementation" to skip discipline. Mitigation: any AI-aide instance that detects an amendment-classification dispute SHOULD emit Codex §5 N-2 notify (policy 2 — framework-internal arithmetic without anchor) treating the misclassification as a policy-anchor violation, blocking until project owner adjudicates. The Chapter is the first line of discipline; the project owner is the final.
+
+**Why this precedent is itself created via an implementation amendment:** debate 005 §11 #3 ("Codex Re-consecration — lighter mechanism") was the open question; debate 007 §G + this precedent jointly answer it; the precedent's substantive design (two-class distinction) is the analysis already done by debate 007's identification of "rubber-stamp debate" as wasteful process. This is the framework using its own thesis on itself: frozen authority (debate decisions) drives implementation (Codex amendment); no separate debate authority is needed when the implementing analysis is already done.
 
 ---
 

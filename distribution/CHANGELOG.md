@@ -21,6 +21,29 @@ All notable changes to this distribution will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+
+## [0.7.1] — 2026-05-13
+
+### Added
+
+- **Adeptus Administratum Codex v1.0 → v1.1** (implementation-amendment per [debate 007 §G](framework/debates/007-scripting-infrastructure.md)).
+  - §4 Autonomy Threshold: read-only script invocation now explicitly allowed solo; write-script `--apply` invocation explicitly requires acknowledgment.
+  - §8 Re-priming protocol step 5: explicit reference to `scripts/validate_frontmatter.py` + `scripts/check_links.py` for mechanised drift detection; script output maps to N-3/N-4 notifies.
+  - §10 Provenance: new Version history table; new Amendment procedure precedent.
+- **Codex Re-consecration procedure precedent established** in Codex §10 — resolves debate 005 §11 open question #3. Two amendment classes defined:
+  - *Implementation amendments* (execute prior decided debate's design without new design questions) — apply directly via minor version bump; reference originating debate; no new debate required.
+  - *Design amendments* (introduce new design questions / contradict prior analysis / change structural design) — full debate rigor; major version bump.
+  - This v1.0 → v1.1 itself is the first implementation-amendment, demonstrating the precedent in practice.
+
+### Changed
+
+- Adeptus Administratum Codex effective immediately as v1.1 for all future re-priming. Existing instances completing tasks under v1.0 understanding are not retrospectively impacted; new instances re-prime against v1.1.
+
+### Notes
+
+- **Debate 008 NOT opened.** The strict reading of Codex §10 v1.0 said "amendments require a new debate" — but the v1.1 precedent reframes that rule: implementation amendments (where the design decision is already sealed in a prior debate) do not need a separate debate. Debate 007 §G was the substantive analysis; this Codex patch is the implementation. Re-debating would have been process-for-process.
+- The risk mitigation for the new precedent: AI-aides that detect a misclassification of "design" vs "implementation" emit N-2 (policy 2 / framework-internal arithmetic) notify, blocking until project owner adjudicates. First-line discipline at the Chapter; final adjudication at the project owner.
+
 ## [0.7.0] — 2026-05-13
 
 ### Added
