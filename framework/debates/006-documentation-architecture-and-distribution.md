@@ -1,3 +1,14 @@
+---
+title: "Debate 006 — Documentation Architecture and Distribution Template"
+status: decided
+version: not versioned
+audience: both
+type: debate
+last_updated: 2026-05-13
+supersedes: null
+sealed_by: self
+---
+
 # Debate 006 — Documentation Architecture and Distribution Template
 
 > **Status:** decided.

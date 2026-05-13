@@ -1,3 +1,14 @@
+---
+title: "PM Threshold Decisions — LoreWeave Phase 0"
+status: draft
+version: not versioned
+audience: human
+type: case-study
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: null
+---
+
 # PM Threshold Decisions — LoreWeave Phase 0
 
 > **Status:** **Draft proposal** by AI-aide-1 based on LoreWeave quick-scan 2026-05-11 — pending project-owner review, adjustment, and sign-off.

@@ -1,3 +1,14 @@
+---
+title: "Debates"
+status: working
+version: not versioned
+audience: human
+type: readme
+last_updated: 2026-05-13
+supersedes: null
+sealed_by: null
+---
+
 # Debates
 
 Register of design decisions for Dead Light Framework that are under debate, currently being decided, or recently resolved.

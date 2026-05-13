@@ -1,3 +1,14 @@
+---
+title: "IVP Findings — Phase 3 (Citation Appropriateness) — 2026-05-09"
+status: working
+version: not versioned
+audience: both
+type: audit
+last_updated: 2026-05-09
+supersedes: null
+sealed_by: null
+---
+
 # IVP Findings — Phase 3 (Citation Appropriateness) — 2026-05-09
 
 > **Status:** Phase 3 only. This run executes **Phase 3 (Citation Appropriateness)** against the verified subset from Phase 2. Phases 4–7 remain queued.

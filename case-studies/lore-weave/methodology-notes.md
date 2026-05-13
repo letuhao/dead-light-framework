@@ -1,3 +1,14 @@
+---
+title: "Methodology Notes — LoreWeave Case Study"
+status: working
+version: not versioned
+audience: human
+type: case-study
+last_updated: 2026-05-13
+supersedes: null
+sealed_by: null
+---
+
 # Methodology Notes — LoreWeave Case Study
 
 > **Status:** Accumulating during Phase 0 (2026-05-11 onward).

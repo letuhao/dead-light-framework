@@ -1,3 +1,14 @@
+---
+title: "Debate 001 — Laws Count Cap and Multi-Repo Scaling"
+status: decided
+version: not versioned
+audience: both
+type: debate
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: self
+---
+
 # Debate 001 — Laws Count Cap and Multi-Repo Scaling
 
 > **Status:** decided.

@@ -1,3 +1,14 @@
+---
+title: "Debate 005 — First Chapter: PM/High Lord Aide"
+status: decided
+version: not versioned
+audience: both
+type: debate
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: self
+---
+
 # Debate 005 — First Chapter: PM / High Lord Aide
 
 > **Status:** decided.

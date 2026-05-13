@@ -1,3 +1,14 @@
+---
+title: "IVP Findings — Phase 4 (Argument Analysis) — 2026-05-09"
+status: working
+version: not versioned
+audience: both
+type: audit
+last_updated: 2026-05-09
+supersedes: null
+sealed_by: null
+---
+
 # IVP Findings — Phase 4 (Argument Analysis) — 2026-05-09
 
 > **Status:** Phase 4 only. This run executes **Phase 4 (Argument Analysis — Toulmin + fallacy check)** against load-bearing claims and decided debates. Phases 5–7 remain queued.

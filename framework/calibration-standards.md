@@ -1,3 +1,14 @@
+---
+title: "Calibration Standards — Reference Catalog"
+status: sealed
+version: not versioned
+audience: both
+type: reference
+last_updated: 2026-05-09
+supersedes: null
+sealed_by: debate-003
+---
+
 # Calibration Standards — Reference Catalog
 
 > **Status:** Working reference. Not yet adopted by any phase document. Adoption decisions for specific standards are tracked in [debates/](debates/).

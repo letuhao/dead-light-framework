@@ -1,3 +1,14 @@
+---
+title: "IVP Findings — Phase 5 (Internal Consistency) — 2026-05-11"
+status: working
+version: not versioned
+audience: both
+type: audit
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: null
+---
+
 # IVP Findings — Phase 5 (Internal Consistency) — 2026-05-11
 
 > **Status:** Phase 5 only. This run executes **Phase 5 (Internal Consistency — term drift, decision-to-doc reflection, quantitative consistency, policy compliance, README link integrity)** against the post-Session-3 framework text. Phases 6–7 remain queued.

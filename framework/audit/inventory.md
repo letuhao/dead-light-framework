@@ -1,3 +1,14 @@
+---
+title: "IVP — Inventory (Phase 1 output)"
+status: working
+version: not versioned
+audience: both
+type: audit
+last_updated: 2026-05-08
+supersedes: null
+sealed_by: null
+---
+
 # IVP — Inventory (Phase 1 output)
 
 > **Run date:** 2026-05-08 · **Scope:** all `docs/**/*.md`, `README.md`, `HANDOFF.md`. **Excluded:** `framework/audit/independent-verification-pass-for-debate.md` (the IVP methodology itself — self-referential audit deferred to a separate pass), `chat.txt`, `LICENSE`. **Mode:** industry-pragmatic. **Auditor:** Claude Code (Opus 4.7).

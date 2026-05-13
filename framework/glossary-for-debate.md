@@ -1,3 +1,14 @@
+---
+title: "Glossary — For Debate"
+status: working
+version: not versioned
+audience: both
+type: reference
+last_updated: 2026-05-08
+supersedes: null
+sealed_by: null
+---
+
 # Glossary — For Debate
 
 > **Status:** Working document, not final. The official glossary will be assembled bottom-up while we define each phase of the framework against the LoreWeave case study.

@@ -1,3 +1,14 @@
+---
+title: "Codex — Adeptus Administratum"
+status: sealed
+version: 1.0
+audience: both
+type: codex
+last_updated: 2026-05-11
+supersedes: case-studies/lore-weave/reckoning-team-record.md § interim Codex
+sealed_by: debate-005
+---
+
 # Codex — Adeptus Administratum
 
 > **Status:** Sealed.

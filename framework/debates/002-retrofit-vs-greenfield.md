@@ -1,3 +1,14 @@
+---
+title: "Debate 002 — Retrofit vs Greenfield Application of Phase 1"
+status: decided
+version: not versioned
+audience: both
+type: debate
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: self
+---
+
 # Debate 002 — Retrofit vs Greenfield Application of Phase 1
 
 > **Status:** decided.

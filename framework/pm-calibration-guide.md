@@ -1,3 +1,14 @@
+---
+title: "PM Calibration Guide"
+status: sealed
+version: not versioned
+audience: human
+type: reference
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: debate-003
+---
+
 # PM Calibration Guide
 
 > **Audience:** Project Managers who own the Phase 0 threshold decisions but may not have prior experience with quantitative calibration. This guide walks through *how* to derive the numbers Phase 0 requires, step by step. Examples and rule-of-thumb formulas are given at three rigor tiers so PMs at any organization size can apply them.

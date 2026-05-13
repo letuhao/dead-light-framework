@@ -1,3 +1,14 @@
+---
+title: "Case Study — LoreWeave"
+status: working
+version: not versioned
+audience: human
+type: case-study
+last_updated: 2026-05-13
+supersedes: null
+sealed_by: null
+---
+
 # Case Study — LoreWeave
 
 > **Status:** Phase 0 in flight (2026-05-11). First retrofit application of Dead Light Framework against a real codebase.

@@ -1,3 +1,14 @@
+---
+title: "Independent Verification Pass (IVP) — Audit Workflow (For Debate)"
+status: working
+version: 0.3
+audience: both
+type: audit
+last_updated: 2026-05-09
+supersedes: null
+sealed_by: null
+---
+
 # Independent Verification Pass (IVP) — Audit Workflow (For Debate)
 
 > **Version:** v0.3 (2026-05-09). Refined after the 2026-05-09 multi-phase run executed Phases 2 (extension), 3, and 4 with remediation between phases. See [§ 11 Changelog](#11-changelog) for what changed and why; findings in [`findings-2026-05-08.md`](findings-2026-05-08.md), [`findings-2026-05-09.md`](findings-2026-05-09.md), [`findings-phase3-2026-05-09.md`](findings-phase3-2026-05-09.md), [`findings-phase4-2026-05-09.md`](findings-phase4-2026-05-09.md).

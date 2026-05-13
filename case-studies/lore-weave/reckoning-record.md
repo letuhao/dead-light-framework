@@ -1,3 +1,14 @@
+---
+title: "Reckoning Record (draft) — LoreWeave Phase 0"
+status: working
+version: not versioned
+audience: both
+type: case-study
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: null
+---
+
 # Reckoning Record (draft) — LoreWeave Phase 0
 
 > **Status:** Skeleton (2026-05-11). Content fills in as Pass 1 and Pass 2 of the Current State Audit complete and project owner contributes Past Decisions, Failures, and Implicit Principles entries.

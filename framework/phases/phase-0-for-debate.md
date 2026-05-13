@@ -1,3 +1,14 @@
+---
+title: "Phase 0 — The Reckoning (For Debate)"
+status: sealed
+version: not versioned
+audience: both
+type: phase
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: debate-002 + debate-003
+---
+
 # Phase 0 — The Reckoning (For Debate)
 
 > **Status:** Draft, not final. To be refined through debate against the LoreWeave case study before any element is canonized.

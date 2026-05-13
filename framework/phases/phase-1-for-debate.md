@@ -1,3 +1,14 @@
+---
+title: "Phase 1 — The Astronomican (For Debate)"
+status: partial
+version: not versioned
+audience: both
+type: phase
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: debate-001 + debate-004 (caps); debate-005 (small-team accommodation)
+---
+
 # Phase 1 — The Astronomican (For Debate)
 
 > **Status:** Draft, not final. To be refined through debate against the LoreWeave case study and from multiple critical angles before any element is canonized.

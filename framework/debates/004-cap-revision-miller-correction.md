@@ -1,3 +1,14 @@
+---
+title: "Debate 004 — Cap Revision: Miller Citation Correction"
+status: decided
+version: not versioned
+audience: both
+type: debate
+last_updated: 2026-05-11
+supersedes: null
+sealed_by: self
+---
+
 # Debate 004 — Cap Revision: Miller Citation Correction (5±2 → 7±2)
 
 > **Status:** decided.

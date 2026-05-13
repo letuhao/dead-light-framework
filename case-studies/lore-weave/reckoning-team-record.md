@@ -1,3 +1,14 @@
+---
+title: "Reckoning Team Record — LoreWeave Phase 0"
+status: working
+version: not versioned
+audience: both
+type: case-study
+last_updated: 2026-05-13
+supersedes: null
+sealed_by: null
+---
+
 # Reckoning Team Record — LoreWeave Phase 0
 
 > **Status:** Pending project-owner confirmation (2026-05-11).
