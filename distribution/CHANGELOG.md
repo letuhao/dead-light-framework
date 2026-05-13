@@ -20,6 +20,21 @@ All notable changes to this distribution will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.7.0] — 2026-05-13
+
+### Added
+
+- _(describe what's new in this release; replace this placeholder)_
+
+### Changed
+
+- _(describe what changed; remove section if not applicable)_
+
+### Notes
+
+- _(any additional context for adopters; remove if not applicable)_
+
 ## [0.6.0] — 2026-05-13
 
 ### Added

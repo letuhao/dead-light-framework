@@ -1,14 +1,14 @@
 ---
-title: "Reckoning Team Record — LoreWeave Phase 0"
-status: working
-version: not versioned
 audience: both
-type: case-study
 last_updated: 2026-05-13
-snapshot_of: case-studies/lore-weave/ (upstream working copy)
-snapshot_date: 2026-05-13
-supersedes: null
 sealed_by: null
+snapshot_date: '2026-05-13'
+snapshot_of: case-studies/lore-weave/ (upstream working copy)
+status: working
+supersedes: null
+title: Reckoning Team Record — LoreWeave Phase 0
+type: case-study
+version: not versioned
 ---
 
 # Reckoning Team Record — LoreWeave Phase 0

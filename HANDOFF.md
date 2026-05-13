@@ -95,76 +95,107 @@ Audit workflow specified, executed once (rodage 2026-05-08), then run end-to-end
 dead-light-framework/
 ├── .claude/
 │   └── commands/
-│       └── ivp.md                                         ← Slash command for IVP re-run
-├── README.md                                              ← Manifesto + Map (front door); practitioner voice
-├── HANDOFF.md                                             ← This file
-├── LICENSE                                                ← MIT
-├── chat.txt                                               ← Original chat history that motivated framework
-├── blogs/                                                 ← Long-form practitioner blog posts (session-3 era)
-│
-├── framework/                                             ← Dead Light Framework — working artifacts (was: docs/)
-│   ├── glossary-for-debate.md                             ← Working glossary (final assembled bottom-up later)
-│   ├── calibration-standards.md                           ← Industry-standards reference catalog [SEALED via debate 003]
-│   ├── pm-calibration-guide.md                            ← Practical PM step-by-step at 3 rigor tiers [SEALED via debate 003]
-│   ├── phases/
-│   │   ├── phase-0-for-debate.md                          ← Phase 0: The Reckoning [SEALED via debate 002 + 003]
-│   │   └── phase-1-for-debate.md                          ← Phase 1: The Astronomican [partial; sealed by debate 001 + 004 + 005]
+│       └── ivp.md
+├── README.md
+├── HANDOFF.md
+├── LICENSE
+├── blogs/
+│   └── 01-the-emperor-is-dead-the-light-remains.md
+├── case-studies/
+│   └── lore-weave/
+│       ├── README.md  [working]
+│       ├── methodology-notes.md  [working]
+│       ├── pm-threshold-decisions.md  [draft]
+│       ├── reckoning-record.md  [working]
+│       └── reckoning-team-record.md  [working]
+├── distribution/
+│   ├── examples/
+│   │   └── lore-weave-snapshot/
+│   │       ├── README.md  [working]
+│   │       ├── methodology-notes.md  [working]
+│   │       ├── pm-threshold-decisions.md  [draft]
+│   │       ├── reckoning-record.md  [working]
+│   │       └── reckoning-team-record.md  [working]
+│   ├── framework/
+│   │   ├── audit/
+│   │   │   ├── findings-2026-05-08.md  [working]
+│   │   │   ├── findings-2026-05-09.md  [working]
+│   │   │   ├── findings-phase3-2026-05-09.md  [working]
+│   │   │   ├── findings-phase4-2026-05-09.md  [working]
+│   │   │   ├── findings-phase5-2026-05-11.md  [working]
+│   │   │   ├── independent-verification-pass-for-debate.md  [working]
+│   │   │   └── inventory.md  [working]
+│   │   ├── chapters/
+│   │   │   └── adeptus-administratum/
+│   │   │       └── codex.md  [SEALED]
+│   │   ├── debates/
+│   │   │   ├── 001-laws-count-and-multirepo-scaling.md  [DECIDED]
+│   │   │   ├── 002-retrofit-vs-greenfield.md  [DECIDED]
+│   │   │   ├── 003-phase-0-calibration.md  [DECIDED]
+│   │   │   ├── 004-cap-revision-miller-correction.md  [DECIDED]
+│   │   │   ├── 005-first-chapter-pm-high-lord-aide.md  [DECIDED]
+│   │   │   ├── 006-documentation-architecture-and-distribution.md  [DECIDED]
+│   │   │   ├── 007-scripting-infrastructure.md  [DECIDED]
+│   │   │   └── README.md  [working]
+│   │   ├── phases/
+│   │   │   └── phase-0.md  [SEALED]
+│   │   ├── calibration-standards.md  [SEALED]
+│   │   └── pm-calibration-guide.md  [SEALED]
+│   ├── templates/
+│   │   ├── astronomican-template.md  [fillable]
+│   │   ├── pm-threshold-decisions-template.md  [fillable]
+│   │   ├── reckoning-record-template.md  [fillable]
+│   │   └── reckoning-team-record-template.md  [fillable]
+│   ├── CHANGELOG.md  [working]
+│   ├── INDEX.md  [working]
+│   ├── README.md  [working]
+│   ├── VERSION
+│   ├── for-adopters.md  [working]
+│   ├── for-ai-aides.md  [working]
+│   ├── for-ics.md  [working]
+│   └── for-pms.md  [working]
+├── framework/
+│   ├── audit/
+│   │   ├── findings-2026-05-08.md  [working]
+│   │   ├── findings-2026-05-09.md  [working]
+│   │   ├── findings-phase3-2026-05-09.md  [working]
+│   │   ├── findings-phase4-2026-05-09.md  [working]
+│   │   ├── findings-phase5-2026-05-11.md  [working]
+│   │   ├── independent-verification-pass-for-debate.md  [working]
+│   │   └── inventory.md  [working]
 │   ├── chapters/
 │   │   └── adeptus-administratum/
-│   │       └── codex.md                                   ← First Chapter Codex v1.0 [SEALED via debate 005, 2026-05-11]
+│   │       └── codex.md  [SEALED]
 │   ├── debates/
-│   │   ├── README.md                                      ← Debate index
-│   │   ├── 001-laws-count-and-multirepo-scaling.md        [decided]
-│   │   ├── 002-retrofit-vs-greenfield.md                  [decided]
-│   │   ├── 003-phase-0-calibration.md                     [decided]
-│   │   ├── 004-cap-revision-miller-correction.md          [decided]
-│   │   ├── 005-first-chapter-pm-high-lord-aide.md         [decided]
-│   │   └── 006-documentation-architecture-and-distribution.md [decided]
-│   └── audit/                                             ← IVP methodology + findings history
-│       ├── independent-verification-pass-for-debate.md    ← IVP methodology spec (v0.3)
-│       ├── inventory.md                                   ← Phase 1 inventory output (2026-05-08; may lag remediation)
-│       ├── findings-2026-05-08.md                         ← Phase 2 rodage (F-01–F-13)
-│       ├── findings-2026-05-09.md                         ← Phase 2 extension (F-14–F-24)
-│       ├── findings-phase3-2026-05-09.md                  ← Phase 3 Citation Appropriateness (F-25–F-27 + erratum)
-│       ├── findings-phase4-2026-05-09.md                  ← Phase 4 Argument Analysis (F-28–F-31)
-│       └── findings-phase5-2026-05-11.md                  ← Phase 5 Internal Consistency (F-32–F-39)
-│
-├── case-studies/                                          ← Project-specific framework applications (was: docs/case-study-*)
-│   └── lore-weave/                                        ← First retrofit application of the framework (Phase 0 in flight)
-│       ├── README.md                                      ← Case-study overview, scope, focus
-│       ├── pm-threshold-decisions.md                      ← Draft proposal pending owner sign-off
-│       ├── reckoning-team-record.md                       ← Team composition; AI-aide invocations under sealed Codex
-│       ├── reckoning-record.md                            ← Phase 0 four-section inventory skeleton
-│       └── methodology-notes.md                           ← Spec departures (D-1, D-2, D-3); retroactive review under sealed Codex
-│
-└── distribution/                                          ← Outward-facing sealed snapshot v0.6.0 [NEW per debate 006]
-    ├── README.md                                          ← How to use this template
-    ├── INDEX.md                                           ← Master TOC of distribution contents
-    ├── VERSION                                            ← 0.6.0
-    ├── CHANGELOG.md                                       ← Per Keep-a-Changelog convention
-    ├── for-pms.md                                         ← Role-based reading guide: PMs
-    ├── for-ics.md                                         ← Role-based reading guide: ICs / engineers
-    ├── for-ai-aides.md                                    ← Role-based reading guide: Adeptus Administratum instances (re-priming primer)
-    ├── for-adopters.md                                    ← Role-based reading guide: framework adopters
-    ├── framework/                                         ← Sealed framework snapshot (copy of upstream framework/, sealed-only)
-    │   ├── phases/phase-0.md                              ← Renamed from phase-0-for-debate.md per sub-decision B
-    │   ├── chapters/adeptus-administratum/codex.md
-    │   ├── debates/{001-006}.md + README.md
-    │   ├── calibration-standards.md
-    │   ├── pm-calibration-guide.md
-    │   └── audit/{IVP-spec + inventory + 5 findings}.md   ← Audit evidence trail (read-only for adopters)
-    ├── templates/                                         ← Fillable scaffolds (status: fillable)
-    │   ├── astronomican-template.md                       ← Phase 1 sealed Astronomican output
-    │   ├── reckoning-record-template.md                   ← Phase 0 + Phase 1 living document
-    │   ├── pm-threshold-decisions-template.md             ← 5 PM commitments
-    │   └── reckoning-team-record-template.md              ← Team composition + AI-aide invocations
-    └── examples/
-        └── lore-weave-snapshot/                           ← Read-only snapshot of case-studies/lore-weave/ at v0.6.0 release
-            ├── README.md
-            ├── pm-threshold-decisions.md
-            ├── reckoning-team-record.md
-            ├── reckoning-record.md
-            └── methodology-notes.md
+│   │   ├── 001-laws-count-and-multirepo-scaling.md  [DECIDED]
+│   │   ├── 002-retrofit-vs-greenfield.md  [DECIDED]
+│   │   ├── 003-phase-0-calibration.md  [DECIDED]
+│   │   ├── 004-cap-revision-miller-correction.md  [DECIDED]
+│   │   ├── 005-first-chapter-pm-high-lord-aide.md  [DECIDED]
+│   │   ├── 006-documentation-architecture-and-distribution.md  [DECIDED]
+│   │   ├── 007-scripting-infrastructure.md  [DECIDED]
+│   │   └── README.md  [working]
+│   ├── phases/
+│   │   ├── phase-0-for-debate.md  [SEALED]
+│   │   └── phase-1-for-debate.md  [partial]
+│   ├── calibration-standards.md  [SEALED]
+│   ├── glossary-for-debate.md  [working]
+│   └── pm-calibration-guide.md  [SEALED]
+└── scripts/
+    ├── README.md  [working]
+    ├── bump_version.py
+    ├── check_links.py
+    ├── frontmatter_set.py
+    ├── ivp_phase5.py
+    ├── new_case_study.py
+    ├── new_chapter_codex.py
+    ├── new_debate.py
+    ├── release.py
+    ├── requirements.txt
+    ├── snapshot_case_study.py
+    ├── sync_distribution.py
+    ├── update_handoff_tree.py
+    └── validate_frontmatter.py
 ```
 <!-- DOC-TREE-END -->
 

@@ -1,14 +1,14 @@
 ---
-title: "PM Threshold Decisions — LoreWeave Phase 0"
-status: draft
-version: not versioned
 audience: human
-type: case-study
 last_updated: 2026-05-11
-snapshot_of: case-studies/lore-weave/ (upstream working copy)
-snapshot_date: 2026-05-13
-supersedes: null
 sealed_by: null
+snapshot_date: '2026-05-13'
+snapshot_of: case-studies/lore-weave/ (upstream working copy)
+status: draft
+supersedes: null
+title: PM Threshold Decisions — LoreWeave Phase 0
+type: case-study
+version: not versioned
 ---
 
 # PM Threshold Decisions — LoreWeave Phase 0

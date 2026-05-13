@@ -1,14 +1,14 @@
 ---
-title: "Methodology Notes — LoreWeave Case Study"
-status: working
-version: not versioned
 audience: human
-type: case-study
 last_updated: 2026-05-13
-snapshot_of: case-studies/lore-weave/ (upstream working copy)
-snapshot_date: 2026-05-13
-supersedes: null
 sealed_by: null
+snapshot_date: '2026-05-13'
+snapshot_of: case-studies/lore-weave/ (upstream working copy)
+status: working
+supersedes: null
+title: Methodology Notes — LoreWeave Case Study
+type: case-study
+version: not versioned
 ---
 
 # Methodology Notes — LoreWeave Case Study
